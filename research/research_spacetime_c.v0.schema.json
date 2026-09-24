@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/ropeflow/research_spacetime_c.v0.schema.json",
+  "title": "Contrato científico paralelo para spacetime_c_live (propuesta v0)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_id", "session_id", "stream_id", "source_frame_id", "slot_id", "signal_name", "algorithm_version", "input_manifest_sha256", "calibration_version", "body_frame_version", "path_definition", "region_definition", "segment_definition", "window_seconds", "clock", "coverage", "status", "invalid_reason", "value_L_per_s"],
+  "properties": {
+    "contract_id": {"const": "ropeflow.research.spacetime_c.v0"},
+    "session_id": {"type": "string", "minLength": 1},
+    "stream_id": {"type": "string", "minLength": 1},
+    "source_frame_id": {"type": "integer", "minimum": 0},
+    "slot_id": {"type": "integer", "minimum": 0},
+    "signal_name": {"const": "spacetime_c_live"},
+    "algorithm_version": {"type": "string", "minLength": 1},
+    "input_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "calibration_version": {"type": "string", "minLength": 1},
+    "body_frame_version": {"type": "string", "minLength": 1},
+    "path_definition": {"enum": ["co_rotating", "waist_centered_uncompensated_rotation", "world"]},
+    "region_definition": {"const": "body_front_back_midpoint_v0"},
+    "segment_definition": {"type": "string", "minLength": 1},
+    "window_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "clock": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_clock_id", "source_time_us", "source_time_kind", "clock_map_id", "session_clock_id", "feature_window_start_us", "feature_window_end_us", "available_at_us", "availability_time_kind"],
+      "properties": {
+        "source_clock_id": {"type": "string", "minLength": 1},
+        "source_time_us": {"type": "integer", "minimum": 0},
+        "source_time_kind": {"enum": ["optical_exposure", "media_pts", "software_after_read", "sample_index_nominal", "synthetic_logical"]},
+        "clock_map_id": {"type": "string", "minLength": 1},
+        "session_clock_id": {"type": "string", "minLength": 1},
+        "feature_window_start_us": {"type": "integer", "minimum": 0},
+        "feature_window_end_us": {"type": "integer", "minimum": 0},
+        "available_at_us": {"type": "integer", "minimum": 0},
+        "availability_time_kind": {"enum": ["measured", "logical_replay"]}
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["front_arc_L", "rear_arc_L", "front_segments", "rear_segments", "min_arc_L", "min_segments", "front_speed_arc_weighted_L_per_s", "rear_speed_arc_weighted_L_per_s"],
+      "properties": {
+        "front_arc_L": {"type": "number", "minimum": 0},
+        "rear_arc_L": {"type": "number", "minimum": 0},
+        "front_segments": {"type": "integer", "minimum": 0},
+        "rear_segments": {"type": "integer", "minimum": 0},
+        "min_arc_L": {"type": "number", "exclusiveMinimum": 0},
+        "min_segments": {"type": "integer", "minimum": 1},
+        "front_speed_arc_weighted_L_per_s": {"type": ["number", "null"], "minimum": 0},
+        "rear_speed_arc_weighted_L_per_s": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "status": {"enum": ["estimated_valid", "invalid"]},
+    "invalid_reason": {"enum": [null, "insufficient_region", "occlusion", "frame_unstable", "calibration_unavailable", "transition", "expired"]},
+    "value_L_per_s": {"type": ["number", "null"]}
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "estimated_valid"}}, "required": ["status"]}, "then": {"properties": {"invalid_reason": {"type": "null"}, "value_L_per_s": {"type": "number"}}}},
+    {"if": {"properties": {"status": {"const": "invalid"}}, "required": ["status"]}, "then": {"properties": {"invalid_reason": {"type": "string"}, "value_L_per_s": {"type": "null"}}}}
+  ]
+}

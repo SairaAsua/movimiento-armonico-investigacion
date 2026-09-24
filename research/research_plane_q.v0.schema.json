@@ -1,0 +1,410 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/ropeflow/research_plane_q.v0.schema.json",
+  "title": "Sobre científico paralelo para plane_normal_Q_live (propuesta v0)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_id",
+    "session_id",
+    "stream_id",
+    "source_frame_id",
+    "slot_id",
+    "signal_name",
+    "algorithm_version",
+    "input_manifest_sha256",
+    "calibration_version",
+    "body_frame_version",
+    "path_definition",
+    "segment_definition",
+    "window_seconds",
+    "clock",
+    "coverage",
+    "uncertainty",
+    "status",
+    "invalid_reason",
+    "q_lateral_up_front"
+  ],
+  "properties": {
+    "contract_id": {
+      "const": "ropeflow.research.plane_q.v0"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stream_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_frame_id": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "slot_id": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "signal_name": {
+      "const": "plane_normal_Q_live"
+    },
+    "algorithm_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "calibration_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "body_frame_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "path_definition": {
+      "enum": [
+        "co_rotating",
+        "waist_relative_step_body_axes"
+      ]
+    },
+    "segment_definition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "window_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "clock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_clock_id",
+        "source_time_us",
+        "source_time_kind",
+        "clock_map_id",
+        "session_clock_id",
+        "feature_window_start_us",
+        "feature_window_end_us",
+        "last_observation_us",
+        "available_at_us",
+        "availability_time_kind"
+      ],
+      "properties": {
+        "source_clock_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_time_us": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_time_kind": {
+          "enum": [
+            "optical_exposure",
+            "media_pts",
+            "software_after_read",
+            "sample_index_nominal",
+            "synthetic_logical"
+          ]
+        },
+        "clock_map_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session_clock_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "feature_window_start_us": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "feature_window_end_us": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "last_observation_us": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "available_at_us": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "availability_time_kind": {
+          "enum": [
+            "measured",
+            "logical_replay"
+          ]
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "arc_L",
+        "segments",
+        "min_arc_L",
+        "min_segments",
+        "max_age_us"
+      ],
+      "properties": {
+        "arc_L": {
+          "type": "number",
+          "minimum": 0
+        },
+        "segments": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "min_arc_L": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "min_segments": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_age_us": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "estimated_valid",
+        "invalid"
+      ]
+    },
+    "invalid_reason": {
+      "enum": [
+        null,
+        "insufficient_arc",
+        "occlusion",
+        "frame_unstable",
+        "calibration_unavailable",
+        "transition",
+        "expired"
+      ]
+    },
+    "q_lateral_up_front": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      ]
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "max_angle_error_deg",
+        "length_weight_tv_bound",
+        "missing_arc_fraction_max",
+        "q_component_abs_bound",
+        "validation_profile_id"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not_estimated",
+            "bounded"
+          ]
+        },
+        "max_angle_error_deg": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 90
+        },
+        "length_weight_tv_bound": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "missing_arc_fraction_max": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "q_component_abs_bound": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "validation_profile_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "estimated_valid"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "invalid_reason": {
+            "type": "null"
+          },
+          "q_lateral_up_front": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "invalid"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "invalid_reason": {
+            "type": "string"
+          },
+          "q_lateral_up_front": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "uncertainty": {
+            "properties": {
+              "status": {
+                "const": "not_estimated"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        },
+        "required": [
+          "uncertainty"
+        ]
+      },
+      "then": {
+        "properties": {
+          "uncertainty": {
+            "properties": {
+              "max_angle_error_deg": {
+                "type": "null"
+              },
+              "length_weight_tv_bound": {
+                "type": "null"
+              },
+              "missing_arc_fraction_max": {
+                "type": "null"
+              },
+              "q_component_abs_bound": {
+                "type": "null"
+              },
+              "validation_profile_id": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "uncertainty": {
+            "properties": {
+              "status": {
+                "const": "bounded"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        },
+        "required": [
+          "uncertainty"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "estimated_valid"
+          },
+          "uncertainty": {
+            "properties": {
+              "max_angle_error_deg": {
+                "type": "number"
+              },
+              "length_weight_tv_bound": {
+                "type": "number"
+              },
+              "missing_arc_fraction_max": {
+                "type": "number"
+              },
+              "q_component_abs_bound": {
+                "type": "number"
+              },
+              "validation_profile_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+# Contraste estructurado frente a consonancia constante
+
+Nota de diseño del 23 de septiembre de 2026. Plantea **hipótesis rivales** para el piloto de rope flow, no una fórmula de Laban ni un resultado de Nico. La [reconstrucción histórica de Susanne Franco](LABAN_ARMONIA_HISTORICA.md) interpreta la armonía espacial de Laban como relaciones que incluyen oposición, desequilibrio y disonancia; no autoriza a convertir cada desvío en fallo. Esta nota pregunta cómo distinguir empíricamente una estabilidad continua de una frase que sale, contrasta y vuelve.
+
+## Evidencia experimental próxima y límite de transferencia
+
+[Orlandi, Cross y Orgs (2020), *Timing is everything: Dance aesthetics depend on the complexity of movement kinematics*](https://eprints.gla.ac.uk/227924/1/227924.pdf), manipularon el **tiempo de ejecución** de 12 secuencias de danza ejecutadas por un bailarín profesional: versión uniforme y versión con aceleraciones y pausas, conservando aproximadamente orden y trayectoria. Añadieron reproducción invertida como control visual. Participaron 41 observadores sin experiencia profesional; el análisis final incluyó 32 y 11 de las 12 secuencias por exclusiones y un problema técnico (secciones 2.2–2.9). Las versiones variadas se juzgaron más disfrutables, rápidas, esforzadas y difíciles de reproducir. Mostraron más cambios de velocidad, menos suavidad según su índice y menor entropía estimada de aceleración, que los autores interpretaron como mayor predictibilidad (secciones 3–4).
+
+Este antecedente **debilita** la expectativa universal de que la mayor lisura o menor variación visible siempre se juzgará más bella. No demuestra que la disonancia de Laban cause belleza, ni que el rope flow siga el mismo patrón. En su manipulación, las versiones variadas duraron aproximadamente **10,24 s** frente a **13,32 s** de las uniformes; también cambiaron velocidad, aceleración y energía de movimiento de imagen. La preferencia no aísla cuál de esos factores fue decisivo. Su resultado de *esfuerzo percibido por espectadores* no fue calorimetría ni economía metabólica del bailarín. Incluso señalan que un movimiento uniforme puede exigir más esfuerzo muscular real que uno que aprovecha inercia (discusión, p. 10), sin medir ese costo en el estudio.
+
+## Tres descripciones separadas de una frase
+
+Se calculan sólo cuando la geometría y el reloj sean válidos. Los nombres siguientes son **operaciones de este proyecto**:
+
+| Descriptor | Definición candidata sin valencia | Control indispensable |
+|---|---|---|
+| Estabilidad local | Dispersión circular de orientación de la línea de movimiento o de fase relativa, en ciclos del **mismo patrón**; siempre con cobertura y error. Menor dispersión significa mayor regularidad de esa variable, no mayor armonía global. | Cadencia, velocidad, ventana, ruido de pose, segmentos detenidos y cambios de figura. |
+| Contraste espacial | Magnitud de cambios entre direcciones de tramos consecutivos, expresada como ángulo o clase de oposición cuando la resolución lo permita. Mantener por separado línea, ubicación y marco corporal/sala. | Distribución de direcciones, amplitud, número de transiciones, giros y límites de movimiento. |
+| Organización temporal del contraste | Proporción de salidas de una región/dirección de referencia que vuelven a ella dentro de un horizonte **predefinido en ciclos**, más orden de las transiciones; informar cambios sin retorno y periodos sin contraste. | Nulos que preserven ocupación de regiones, duración de tramos, patrón y cadencia, pero alteren el orden entre tramos. El resultado nulo depende del control escogido. |
+
+La referencia para una «salida» debe fijarse por la tarea (por ejemplo una región de trayectoria estable en desarrollo), **sin escoger el punto que maximice el retorno** en cada clip. Una salida puede formar parte legítima de una transición a otra figura; allí el retorno no es exigible y se registra como transición de tarea. La fase de soga/mano tiene su [protocolo propio](FASE_ROPEFLOW.md); regularidad de fase no equivale a organización espacial. Un valor de entropía de aceleración tampoco equivale a la entropía de HIT: distribución de magnitudes, orden temporal y predicción futura son objetos distintos.
+
+Dos frases pueden visitar las **mismas direcciones durante el mismo tiempo** y diferir en orden. Por eso un histograma de ocupación o una distancia media a vértices no contrasta por sí solo la hipótesis de retorno estructurado. Del mismo modo, una frase con contraste podría parecer «más regular» en fase de soga pero «menos estable» en dirección de mano. Publicar componentes y sus correlaciones; no sumar signos favorables en un índice después de ver los ratings.
+
+La [nota de segmentación](FRASES_TRANSICIONES_SEGMENTACION.md) concreta cómo preservar transiciones y límites de frase sin forzarles una fase periódica, y comprueba con dos secuencias sintéticas que igual ocupación espacial no implica igual orden de retorno.
+
+## Preguntas que el primer estudio podría responder
+
+1. **Observacional, dentro de Nico:** dentro del mismo patrón y rangos de cadencia/amplitud comparables, ¿la estabilidad local, el contraste espacial y el orden de salida–retorno describen diferencias reproducibles entre sesiones? Si un descriptor falla con cruces u oclusiones, esa es una conclusión de factibilidad, no una puntuación de desarmonía.
+2. **Estética percibida:** en clips completos seleccionados sin mirar el resultado, ¿el orden de contraste predice la valoración de jueces reservados después de una base que ya incluya patrón, duración, cadencia, amplitud, velocidad, pausas y aceleración? Un beneficio sólo frente a «velocidad media» sería débil a la luz de Orlandi. Los juicios de belleza, sensualidad y disfrute se preguntan por separado; *enjoyment* del artículo no se traduce directamente en los tres.
+3. **Experiencia de Nico:** ¿sus reportes por bloque sobre facilidad, placer o absorción se asocian a alguna de estas descripciones al mismo nivel de bloque? No transferir ratings de espectadores al estado vivido del ejecutante ni repetir una etiqueta del bloque en cada cuadro.
+4. **Costo energético posterior:** en condiciones de tarea equiparables y con laboratorio, ¿las frases con estabilidad o contraste organizado muestran diferente potencia neta o J/ciclo? Ni el estudio de Orlandi ni la cinemática resuelven esto; véanse [estimandos](ESTIMANDOS_Y_CONTRASTES.md) y [sensores](SENSORES_DECISION.md).
+
+La comparación **confirmatoria** debe elegir pocos descriptores, direcciones de efecto y resultados antes de reservar días completos. Si el repertorio no ofrece variación suficiente en estabilidad y contraste dentro de una misma tarea, el primer estudio sólo puede describir; no hay base para elegir una teoría ganadora.
+
+## Experimento posterior si la factibilidad lo permite
+
+Una prueba más fuerte pediría a Nico repetir el **mismo recorrido y patrón** bajo dos consignas de ritmo: más uniforme y con cambios/pausas organizados, intentando igualar duración total, ciclos y amplitud para separar variación temporal de velocidad global. La ejecución real se mediría: la consigna no garantiza igual trayectoria, cadencia o carga. El orden se alternaría entre bloques/días; los espectadores verían versiones sin audio y con montaje visual constante. Otro factor, si se logra de modo seguro y técnicamente distinguible, variaría el **orden espacial** manteniendo repertorio y ritmos comparables. Si los factores no pueden separarse en ejecución, no adjudicar la respuesta estética a uno de ellos. Un estudio con sonido Beacon exige además control sonoro y aprendizaje por separado.
+
+La tesis fuerte de Saira —máxima consonancia = mínimo costo = mayor belleza/placer/conciencia— requeriría que **cada enlace** tenga evidencia propia y convergente. Una frase variada y placentera para espectadores que cueste igual o más energía sería evidencia contra la igualdad universal, aunque no contra el valor artístico ni contra una hipótesis HIT más delimitada. El primer paper puede concluir con estas divergencias sin convertirlas en fracaso.

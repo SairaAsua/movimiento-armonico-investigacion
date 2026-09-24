@@ -1,0 +1,22 @@
+# «Alles ist Bewegung»: cribado de notas atribuidas a Laban
+
+Lectura documental del 23 de septiembre de 2026. [Kalliope DE-611-HS-3390905](https://kalliope-verbund.info/DE-611-HS-3390905) registra *Alles ist Bewegung* como «Notizen» (notas), signatura **NL 396/4/1/93**, siete hojas y nueve páginas manuscritas, sin fecha ni lugar; Rudolf von Laban figura con rol `aut` en el registro MODS. El [manifiesto IIIF](https://iiif.ub.uni-leipzig.de/0000065649/manifest.json) contiene catorce lienzos. Se examinaron los catorce en miniatura y se ampliaron los lienzos 1, 3, 5, 6, 7, 9 y 11 a 1800 píxeles. La ficha atribuye el **ítem** a Laban; no verifica la mano o la fecha de cada apunte o añadido.
+
+## Mapa de lectura
+
+| Lienzos IIIF | Evidencia visible | Alcance para nuestro estudio |
+|---|---|---|
+| [1](https://iiif.ub.uni-leipzig.de/0000065649/00000001.jpg) | Encabezado *Alles ist Bewegung!*; lista fenómenos de escala grande y pequeña, incluidos sol/planetas/cosmos y células; también menciona luz, electricidad, pulso y respiración. Son palabras clave separadas, no un desarrollo continuo. | Documenta un interés conceptual amplio por el movimiento. **No** mide la relación entre fenómenos ni prueba que compartan una frecuencia o proporción. |
+| [3](https://iiif.ub.uni-leipzig.de/0000065649/00000003.jpg), [5](https://iiif.ub.uni-leipzig.de/0000065649/00000005.jpg) | Apuntes sueltos con encabezados o rótulos referentes a forma, mente, espacio/tiempo, danza y coreografía. Hay lectura insegura en varios términos. | No contienen en estas páginas una definición operacional de consonancia, eficiencia, belleza o estado de conciencia. |
+| [6](https://iiif.ub.uni-leipzig.de/0000065649/00000006.jpg) | Diagrama arbóreo cuyo nodo de partida es danza y que ramifica hacia actividad científica, arte y pedagogía; entre las ramas aparece coreología con espacio y tiempo. | Es un esquema de clasificación disciplinar. Que «espacio» y «tiempo» aparezcan juntos orienta preguntas, pero no fija nuestra matemática espacial ni la fase de rope flow. |
+| [7](https://iiif.ub.uni-leipzig.de/0000065649/00000007.jpg), [8](https://iiif.ub.uni-leipzig.de/0000065649/00000008.jpg) | Notas sobre trabajo/grupos y un pequeño dibujo tachado y repetido en el reverso; tinta y presentación distintas de las primeras hojas. | No reconstruimos el sentido completo del dibujo ni lo tratamos como notación de movimiento. |
+| [9](https://iiif.ub.uni-leipzig.de/0000065649/00000009.jpg), [10](https://iiif.ub.uni-leipzig.de/0000065649/00000010.jpg), [11](https://iiif.ub.uni-leipzig.de/0000065649/00000011.jpg), [12](https://iiif.ub.uni-leipzig.de/0000065649/00000012.jpg) | Rótulos y diagramas en tinta azul relativos a sociología de danza, trabajo, formación y estructura organizativa; algunos trazos se transparentan en reversos. | Son material histórico de contexto. La presencia de autores, instituciones o programas en el fondo no implica que cada hoja desarrolle teoría coreútica. |
+| [13](https://iiif.ub.uni-leipzig.de/0000065649/00000013.jpg), [14](https://iiif.ub.uni-leipzig.de/0000065649/00000014.jpg) | Sobre y reverso. | Documentan el contenedor, no una variable corporal. |
+
+Esta clasificación es **cribado visual**, no transcripción paleográfica ni edición crítica. Las hojas no forman necesariamente una argumentación continua. El cambio de soporte/tinta en la segunda mitad refuerza la conveniencia de atribuir sólo al nivel que el catálogo permite. Antes de citar una frase exacta habría que verificarla con una segunda lectura del original ampliado y su procedencia de hoja.
+
+## Decisión metodológica
+
+El ítem sirve como **contexto histórico de alcance**, no como fuente de una ecuación para Nico. Para geometría direccional, [*Die menschliche Bewegung*](LABAN_MANUSCRITO_DIRECCIONES.md) es más específico y aún exige lectura experta. Para el estudio científico seguiremos separando: coordenadas y recorridos medidos, relaciones temporales postuladas por HIT, gasto metabólico observado y experiencias autoinformadas. La enumeración de cosmos, células o electricidad no es evidencia de que una misma ley armónica conecte esas escalas, ni justifica asignar a tejidos o al core frecuencias acústicas fijas.
+
+La próxima lectura con potencial geométrico sigue siendo *Choreographie*/*Choreutics* en edición completa y, en el archivo, manuscritos cuyo contenido y autoría puedan verificarse hoja por hoja. No se obtuvieron datos humanos de este ítem.

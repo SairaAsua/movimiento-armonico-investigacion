@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "clips": [
+    {
+      "clip_id": "clip_s01",
+      "session_id": "session_s01",
+      "attempt_id": "attempt_s01",
+      "media_bundle_id": "bundle_s01",
+      "start_us": 0,
+      "end_us": 3000000
+    }
+  ],
+  "bundles": [
+    {
+      "media_bundle_id": "bundle_s01",
+      "session_id": "session_s01",
+      "attempt_id": "attempt_s01",
+      "views": [
+        {
+          "view_id": "C1",
+          "media_id": "media_s01_C1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sync_version": "sync_demo_01",
+          "calibration_version": "cal_demo_01",
+          "clock": {
+            "offset_us": 0,
+            "slope_session_per_pts": 1.0,
+            "valid_start_pts_us": 0,
+            "valid_end_pts_us": 3000000,
+            "max_residual_us": 1000
+          }
+        },
+        {
+          "view_id": "C2",
+          "media_id": "media_s01_C2",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sync_version": "sync_demo_01",
+          "calibration_version": "cal_demo_01",
+          "clock": {
+            "offset_us": 0,
+            "slope_session_per_pts": 1.0,
+            "valid_start_pts_us": 0,
+            "valid_end_pts_us": 3000000,
+            "max_residual_us": 1000
+          }
+        }
+      ]
+    }
+  ]
+}

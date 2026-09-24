@@ -1,0 +1,61 @@
+# Protocolo de primera fase: geometría de Laban en rope flow
+
+**Versión de trabajo 0.1 · 23 de septiembre de 2026. No preregistrado ni ejecutado.** Este es el primer estudio instrumental y de factibilidad del programa de Saira. El [plan completo](PLAN_INVESTIGACION.md) abarca HIT, economía, experiencia y Beacon en fases posteriores; no se exige comprar o instalar esos instrumentos para probar primero si las cámaras permiten describir el movimiento propuesto.
+
+## Objetivo y unidad de inferencia
+
+**Objetivo principal:** estimar, para el repertorio de rope flow que Nico realmente ejecuta, cobertura y error de un conjunto pequeño de descriptores espaciales inspirados en Laban: posición versus dirección de desplazamiento, alcance, orientación/continuidad del recorrido y, sólo si la captura lo permite, planos y situación espacial 3D. La unidad biológica es **Nico**, observado en frases y sesiones repetidas; cuadros/ciclos no son personas independientes. Las variables y estados candidatos constan en el [diccionario 0.1](DICCIONARIO_SENALES_V0.md).
+
+**Preguntas secundarias de factibilidad:** si se puede detectar el ciclo de tarea, estimar fase en episodios periódicos y distinguir transiciones; si analistas formados en Laban consideran pertinente/reproducible alguna categoría espacial sobre este repertorio; si la cadena de datos puede conservar originales, relojes y derivaciones. Nada de esto demuestra belleza, sensualidad, economía metabólica o un estado de conciencia. Su estudio está diseñado por separado en [estimandos](ESTIMANDOS_Y_CONTRASTES.md), [experiencia](EXPERIENCIA_ESTETICA.md) y [fase](FASE_ROPEFLOW.md).
+
+Si desarrollo decide ensayar las **26 direcciones principales** de kinetografía, deberá congelar cuál convención angular usa. La [retícula explícita de Fügedi 2016](LABAN_24_INCLINACIONES.md) usa 45° y no debe atribuirse íntegra a Hutchinson ni confundirse con la geometría icosaédrica temprana; el [banco sintético](direcciones_26_sintetico.py) demuestra que cambiar plantilla o frente supuesto puede cambiar la etiqueta de un vector idéntico. Por tanto el piloto medirá error de frente y de segmento anatómico, conservará casos ambiguos y pedirá acuerdo experto antes de incorporar esa clase a un contraste con HIT o Beacon. La orientación continua sigue siendo resultado aunque las 26 etiquetas no sean fiables.
+
+## Diseño por etapas que evitan circularidad
+
+| Etapa | Material | Decisión que permite | Datos que no se usan para decidirla |
+|---|---|---|---|
+| A. Banco técnico | Objetos/patrones sin persona, curvas sintéticas, eventos de luz/audio | Inventario, calibración, volumen, reloj, prueba 2D/3D y límites de velocidad/oclusión | Ninguna valoración estética ni hipótesis sobre Nico |
+| B. Repertorio y desarrollo | Videos consentidos de práctica naturalista, intentos completos incluidos | Elegir una o dos frases habituales y descriptores identificables, revisar código/filtros y guía Laban | Sesiones reservadas, ratings posteriores y resultados HIT |
+| C. Evaluación reservada | Sesiones enteras nuevas con montaje y tarea documentados | Cobertura/error/acuerdo fuera del ajuste y estabilidad entre días o reinstalaciones | Reajuste de parámetros con resultados de esta etapa |
+
+No se fija aquí un número de sesiones, cuadros o evaluadores basado en una potencia imaginaria. Tras el banco técnico y una muestra de desarrollo se estimarán variabilidad, proporción inválida y diferencia mínima de interés; con ello se justificará tamaño y margen de error **antes** de la etapa C. Si no hay material suficiente para reserva por día, se reportará un piloto descriptivo, sin llamar «validación fuera de muestra» a una división por cuadros.
+
+## Antes de captar a Nico
+
+1. Acordar participación, posibilidad de detenerse, usos de video/imagen, almacenamiento, acceso y eventual publicación; resolver revisión ética aplicable. El archivo local sólo guarda diseño, no video ni datos identificables.
+2. Inventariar cámaras con la [ficha de preparación](CAMARAS_PREPARACION.md). Registrar lente, resolución, exposición, FPS/PTS reales, duración, reloj, compresión y cobertura esperada del cuerpo y de la soga. Realizar la prueba de objetos, calibración, sincronía al inicio/fin y comprobación de deriva del [piloto instrumental](PILOTO_VALIDACION_VIDEO.md).
+3. Decidir explícitamente `2D_projected` o `3D_reconstructed` **por descriptor**. El [contraejemplo](IDENTIFICABILIDAD_2D_3D.md) prueba que una cámara ideal puede mostrar igual imagen de dos recorridos 3D muy diferentes. Multivista exige calibración, correspondencias, sincronía y error físico verificado; pose 2D de HarMoCAP no se convierte sola en 3D.
+   Para la soga, aplicar además la [prueba de identificabilidad de su curva](SOGA_IDENTIFICABILIDAD.md): una proyección monocular y un largo conocido pueden corresponder a dos recorridos de profundidad opuesta. Registrar por separado mano, soga proyectada y evento de tarea.
+4. Preparar IDs seudónimos, originales con hash, reloj por cuadro, versión de guía/algoritmo y registro de fallos. Separar archivo científico de transmisión live; este piloto de medición no requiere poner Beacon en funcionamiento.
+
+## Tarea y captura de desarrollo
+
+Observar primero práctica habitual sin prescribir qué se verá «armónico». Registrar nombre local de cada patrón, soga/agarre, superficie, música o pulso, giros, apoyos, visibilidad, transiciones y duración de frases ([repertorio candidato](ROPEFLOW_TAREAS.md)). La selección de una frase repetible se justifica por presencia real, seguridad y capacidad de medición, no por su belleza. Grabar entradas, errores y salidas, no sólo vueltas fluidas. Una frase con soga invisible no se reetiqueta como fase segura de soga porque las muñecas parezcan periódicas.
+
+Cada ensayo deja `session_id`, `block_id`, `phrase_id`, patrón, condición, archivos originales, orientación de cámaras, versión de calibración, eventos de sincronía y cualquier cambio de montaje. Frases y ciclos se delimitan con timestamps del medio; fase sólo donde el evento vuelva con configuración y sentido equivalentes. La [guía de anotación](ANOTACION_LABAN_PILOTO.md) distingue observación de interpretación Laban, admite `no_codable` y conserva desacuerdos antes de conciliarlos.
+
+## Referencias y resultados instrumentales
+
+| Resultado | Referencia aceptable para el piloto | Resumen que se reporta |
+|---|---|---|
+| Cobertura por señal | Original + estado de visibilidad, oclusión e identidad por vista | Fracción válida de **todos** los tramos intentados por tarea, vista, giro, velocidad y día; `held` separado de `observed` |
+| Coordenada/dirección 2D | Marcación independiente en imagen sobre tramos reservados, con error de anotación | Error en píxeles/grados proyectados, sesgo, dispersión y cobertura; no exactitud 3D |
+| Posición/recorrido/planos 3D | Puntos o distancias físicas conocidas fuera de calibración; referencia dinámica apropiada cuando exista | Error físico/angular por volumen y movimiento; además sensibilidad a filtro/origen/ejes |
+| Evento de ciclo | Anotadores independientes sobre originales, soga y sentido visibles | Omisiones/dobles conteos, desacuerdo temporal y episodios sin fase identificable |
+| Categorías espaciales Laban | Dos o más especialistas con guía congelada en clips reservados | Acuerdo **por categoría**, cobertura y razones de desacuerdo; consenso posterior conservado aparte |
+
+La referencia física estática valida calibración y reconstrucción de **objetos conocidos**, pero no valida por sí sola la dirección de una mano rápida, el codo oculto ni la orientación corporal. Para esos descriptores hace falta una referencia dinámica independiente apropiada, o limitar la afirmación a repetibilidad/2D. El [presupuesto angular](MARGEN_ANGULAR_INCLINACIONES.md) da una prueba de diseño: con cotas de error posicional en los extremos de un tramo, la dirección sólo puede certificarse si el desplazamiento supera la suma de esas cotas; el margen a la frontera de una etiqueta Laban debe superar además su incertidumbre angular. Los valores de ejemplo allí son hipotéticos, no umbrales para Nico. La [comparación OpenPose–Vicon de Koul y Novembre](https://link.springer.com/article/10.3758/s13428-024-02546-6) motiva comprobar especialmente los segmentos de baja amplitud, pero su correlación de rapidez no proporciona una cota de posición para esta regla.
+
+No usar coincidencia de dos algoritmos sobre la misma imagen como referencia anatómica independiente. La [lista GRRAS original](https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf) orienta reporte de evaluadores, objetos, muestreo, cegamiento, estimaciones de acuerdo e incertidumbre; su actualización [GRRAS-COSMIN](https://www.grras-cosmin.org/) estaba en desarrollo al consultar. Una checklist de reporte no sustituye diseño ni calibra una cámara.
+
+## Análisis y reglas de paso
+
+El resultado principal de esta fase es un **perfil de identificabilidad por descriptor y subdominio**, no un puntaje global de «consonancia». Para cada señal: denominador de intentos, cobertura, error con incertidumbre, estabilidad entre días, sensibilidad al procesamiento, acuerdo experto cuando corresponde y causas de invalidez. Presentar extremos y transiciones, donde puede concentrarse el fallo. Se decide `usable`, `usable_en_subdominio_predefinido` o `no_identificable_con_este_montaje` según la diferencia que el contraste posterior necesite distinguir. Umbrales numéricos se fijan desde desarrollo y antes de etapa C; no se ajustan para favorecer una asociación estética.
+
+Si sólo hay 2D confiable, publicar factibilidad y descriptores `*_proj` con su vista. Si 3D falla en giros, no presentar un promedio que esconda el fallo: restringir a condiciones definidas antes o declarar no identificable. Si eventos/ciclo fallan, las relaciones de fase/HIT quedan fuera de esos tramos. Una categoría Laban con poco acuerdo puede conservarse como observación cualitativa o exploratoria, no como verdad automática para entrenar Beacon.
+
+**Resultado posterior, no de esta fase:** comparar en sesiones reservadas modelos base, base + geometría Laban válida y base + relaciones HIT, con el mismo conjunto de clips y resultados externos independientes ([estimandos](ESTIMANDOS_Y_CONTRASTES.md), [control de ritmo común](CONTROLES_RITMO_COMUN.md)). Economía metabólica requiere calorimetría y definición de tarea comparable; la intervención Beacon necesita otro diseño con sonido registrado y controles. El [contrato HarMoCAP/Beacon](INTEGRACION_HARMOCAP_BEACON.md) especifica cómo transportar sólo señales ya validadas; su OSC actual no declara validez científica de Laban.
+
+## Productos de una ejecución real
+
+Un informe de flujo con todos los intentos y exclusiones; inventario/calibración/relojes; videos resguardados y hashes; tabla de error/cobertura por descriptor; anotaciones independientes y guía versionada; decisiones de inclusión; código/configuraciones congelados; figuras de trayectorias con incertidumbre; y un manuscrito ajustado a lo que efectivamente se midió ([esqueleto](ESQUELETO_PAIPER.md)). Este archivo local no es un preregistro fechado ni una publicación. Si se busca preregistro, se preparará la versión final sin datos de contraste y se registrará antes de abrir la etapa C.

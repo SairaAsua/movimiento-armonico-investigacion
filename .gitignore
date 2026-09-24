@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+*.key
+*.pem
+personal/
+raw_video/
+consentimientos/
+datos_humanos/

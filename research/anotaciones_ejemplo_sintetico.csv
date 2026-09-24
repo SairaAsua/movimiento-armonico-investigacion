@@ -1,0 +1,7 @@
+annotation_id,action_id,clip_id,media_bundle_id,view_ids,coder_id,guide_version,unit_type,target,start_us,end_us,time_uncertainty_us,coordinate_frame,layer,feature,value,certainty,cannot_code_reason,scope,evidence_note
+a01,act_s01,clip_s01,bundle_s01,C1|C2,coder_demo,0.1,segment,hand_R,1000000,2000000,10000,body,1,radial_position,right,high,,whole,Ejemplo geometrico sin persona
+a02,act_s01,clip_s01,bundle_s01,C1|C2,coder_demo,0.1,segment,hand_R,1000000,2000000,10000,body,1,motion_direction,up,high,,whole,La misma mano se mueve hacia arriba
+a03,act_s01,clip_s01,bundle_s01,C1|C2,coder_demo,0.1,segment,arm_R,1000000,2000000,10000,body,1,limb_axis,right,medium,,whole,Distal relativo a proximal
+a04,,clip_s01,bundle_s01,C1,coder_demo,0.1,event,rope,1500000,1500000,20000,camera,0,visibility,no_codable,unknown,occlusion,instant,Cruce sintetico oculto en C1
+a05,act_s01,clip_s01,bundle_s01,C1|C2,coder_demo,0.1,segment,arm_R,1000000,2000000,10000,body,1,limb_arrival_direction,right,medium,,arrival,La etiqueta describe solo el destino al final
+a06,act_s02,clip_s01,bundle_s01,C1|C2,coder_demo,0.1,segment,arm_L,1200000,1900000,10000,body,1,limb_arrival_direction,left,medium,,arrival,Accion simultanea con otro identificador
