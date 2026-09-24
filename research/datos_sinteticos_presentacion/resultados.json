@@ -1,0 +1,86 @@
+{
+  "type": "synthetic_fixture_not_human_evidence",
+  "version": 1,
+  "fps": 30,
+  "seconds_per_condition": 8,
+  "formula": "theta=2*pi*t+sign*1.8*sin(pi*u)^2; opposed flips right sign",
+  "axes": "lateral, anterior, vertical; unit radius",
+  "rows": 960,
+  "conditions": [
+    {
+      "condition": "lateral_anterior__aligned",
+      "plane": "lateral_anterior",
+      "timing": "aligned",
+      "frames": 240,
+      "Q_lateral": 0.500095435812254,
+      "Q_anterior": 0.4999045641877448,
+      "Q_vertical": 0.0,
+      "R_continuous": 1.0,
+      "R_event_only": 1.0,
+      "path_length": 50.062711749534955,
+      "audio": "lateral_anterior__aligned.wav"
+    },
+    {
+      "condition": "lateral_anterior__opposed",
+      "plane": "lateral_anterior",
+      "timing": "opposed",
+      "frames": 240,
+      "Q_lateral": 0.5000954358122539,
+      "Q_anterior": 0.49990456418774465,
+      "Q_vertical": 0.0,
+      "R_continuous": 0.07724562475605432,
+      "R_event_only": 1.0,
+      "path_length": 50.06271174953496,
+      "audio": "lateral_anterior__opposed.wav"
+    },
+    {
+      "condition": "lateral_vertical__aligned",
+      "plane": "lateral_vertical",
+      "timing": "aligned",
+      "frames": 240,
+      "Q_lateral": 0.500095435812254,
+      "Q_anterior": 0.0,
+      "Q_vertical": 0.4999045641877448,
+      "R_continuous": 1.0,
+      "R_event_only": 1.0,
+      "path_length": 50.062711749534955,
+      "audio": "lateral_vertical__aligned.wav"
+    },
+    {
+      "condition": "lateral_vertical__opposed",
+      "plane": "lateral_vertical",
+      "timing": "opposed",
+      "frames": 240,
+      "Q_lateral": 0.5000954358122539,
+      "Q_anterior": 0.0,
+      "Q_vertical": 0.49990456418774465,
+      "R_continuous": 0.07724562475605432,
+      "R_event_only": 1.0,
+      "path_length": 50.06271174953496,
+      "audio": "lateral_vertical__opposed.wav"
+    }
+  ],
+  "negative_controls": {
+    "in_phase": {
+      "R": 1.0,
+      "mean_delta_rad": 0.0
+    },
+    "anti_phase": {
+      "R": 1.0,
+      "mean_delta_rad": 3.141592653589793
+    },
+    "uniform_phase": {
+      "R": 1.559322466582485e-17,
+      "mean_delta_rad": null
+    }
+  },
+  "sha256_csv": "583f0bbf568f96d09a4a9d878589a30992d57435645aa47cd72ca2ff570d5841",
+  "limitations": [
+    "no rope physics",
+    "no human movement",
+    "no aesthetic labels",
+    "no metabolic variables",
+    "no consciousness labels",
+    "diagnostic audio is not live Beacon output"
+  ]
+}

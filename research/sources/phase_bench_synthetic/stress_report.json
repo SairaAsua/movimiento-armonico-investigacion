@@ -1,0 +1,14 @@
+{
+  "missing_frame": {
+    "outcome": "rejected",
+    "reason": "missing or unexpected frame PTS"
+  },
+  "identity_swap": {
+    "outcome": "rejected",
+    "reason": "point identity inconsistent with fixture at frame 91"
+  },
+  "tiny_orbit": {
+    "outcome": "rejected",
+    "reason": "angular precision below fixture requirement"
+  }
+}

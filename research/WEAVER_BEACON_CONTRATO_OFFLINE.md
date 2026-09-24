@@ -1,0 +1,23 @@
+# Contrato real de beacon-spatial compilado en Weaver, sin audio
+
+Prueba offline del 23-09-2026, sobre [Weaver `a4ca91e3`](https://github.com/AlterMundi/harmonic-weaver/tree/a4ca91e3145ce950d4e96f6ae44fd93fd987a4d1), [beacon-spatial `de2768c3`](https://github.com/AlterMundi/beacon-spatial/tree/de2768c3a4f07cc0d744c89bf6e63b168e5f2b61) y el kit sintético [HarMoCAP `bdeebbf5`](https://github.com/AlterMundi/HarMoCAP/tree/bdeebbf5bef4f78d1dc6ff43feb8228e994feb49). No se inició OSC UDP, SuperCollider, cámara ni salida sonora. La ruta fue un **ejemplo técnico** de muñeca 2D a ganancia de banda; no una sonificación validada de Laban/HIT.
+
+## Montaje del ensayo
+
+En el `RecordingOutputTransport` de Weaver se instaló un manifiesto de fuente de prueba con los canales del driver HarMoCAP y un [manifiesto auténtico del instrumento](https://github.com/AlterMundi/beacon-spatial/blob/de2768c3a4f07cc0d744c89bf6e63b168e5f2b61/beacon_spatial.contract.json). El ID calculado con el codec de Weaver coincidió con el archivo `beacon_spatial.contract_id.golden`: `eaad56d9081d01c4a63646e0055b37b7`. Se declaró un perfil de seguridad **sólo para el ensayo**: `sustained_processor`, acción de silencio `master_gain=0`, reset de `band_gain` banda 4 a cero. Se aceptaron `source_hello`, `instrument_hello` y `instrument_sync_complete` con los IDs instalados; estas llamadas del motor no verifican un instrumento de audio realmente conectado.
+
+La escena declarativa leyó `harmocap.slot_0_keypoint_left_wrist_y`, aplicó `scale_range` de `[0,1]` a `[0,0,8]`, y apuntó a la capacidad `band_gain`, `N=4`, argumento `gain`. La política válida para rechazar datos retenidos es `held: "reject"`, `invalid: "suppress"`. Un primer intento con `held: "suppress"` fue rechazado al compilar la escena: el schema de Weaver exige `accept` o `reject` para `held`. La corrección se hizo **antes** de alimentar el fixture; no se ajustó al resultado de audio o humano.
+
+Esa política fue suficiente para probar ruteo de un valor observado, **no** para demostrar qué pasa al volverse inválido. Una [prueba posterior del motor](BEACON_TRANSICIONES_Y_RESET.md) mostró que `invalid: "suppress"` no envía reset y deja el último control registrado; una capa de fase que expire o quede no aplicable necesita una política y un default explícitos.
+
+Se enviaron el handshake y los bundles de la primera fila del fixture `two_persons.jsonl` mediante el `HarMoCAPDriver` real, conectado a `engine.driver_callback`. Resultado observado: **dos** registros de ruta, ambos con `instrument_id=beacon-spatial`, `capability=band_gain`, `address=/beacon/gain/4`, `N=4`, `argument=gain` y valor `0,4880000114`, dentro del rango `[0,0,8]`. Esto demuestra que el contrato nativo del instrumento, la compilación de escena y el registro de salida pueden encadenarse con datos sintéticos.
+
+En el [motor de audio auditado](BEACON_BANDAS_NO_FRECUENCIAS_CORPORALES.md), la banda 4 es un filtro centrado en **160 Hz**; este registro ajustaría su ganancia, no la frecuencia física de la muñeca ni la frecuencia central del filtro. La presencia/ausencia real de energía audible en esa banda sigue sin medirse.
+
+## Dos registros idénticos y su interpretación limitada
+
+El fixture contiene dos personas y [HarMoCAP envía un bundle atómico por persona](https://github.com/AlterMundi/HarMoCAP/blob/bdeebbf5bef4f78d1dc6ff43feb8228e994feb49/schemas/osc_contract.v1.json). El driver emite una instantánea de canales después de cada bundle. Cuando se recibe el bundle de la segunda persona, el valor de muñeca del slot 0 sigue igual y la ruta vuelve a registrar el mismo control: **dos registros iguales por el mismo cuadro del fixture**. No se midió impacto acústico, ancho de banda ni latencia. Para una prueba live se debe decidir explícitamente si una ruta por slot evalúa sólo cambios de su entrada, espera el conjunto de personas del cuadro con plazo, o admite reenvíos; ninguna opción debe alterar el tratamiento de pérdida entre personas sin prueba.
+
+## Lo que queda por verificar
+
+`RecordingOutputTransport` registra una intención de escritura, no construye el datagrama OSC ni demuestra que `beacon.scd` lo aplique. Antes de decir «HarMoCAP controla Beacon», falta un adaptador de instrumento que haga hello y sincronización **reales**, traduzca `OutputRecord` a OSC nativo, registre envíos y valores aplicados, y mida salida de audio y latencia. También falta probar qué ocurre con un slot inválido o retenido en esta escena concreta y con cambios de foco. El gate científico posterior exige además pose/curva de soga reales, validadas, más los resultados humanos definidos en el [protocolo](PROTOCOLO_PILOTO_V0.md). El par muñeca→ganancia no implementa por sí mismo geometría coreútica ni proporciones HIT.

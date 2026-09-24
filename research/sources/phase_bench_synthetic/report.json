@@ -1,0 +1,36 @@
+{
+  "aligned": {
+    "file": "aligned.mkv",
+    "sha256": "9c3d076406dfb15806c3f61c6f1163bf86a64ca0ce958e2773ac046a534b77c1",
+    "frames": 240,
+    "fps": 30,
+    "q_projected_xy": [
+      0.5010318269971498,
+      0.4989681730028496
+    ],
+    "r_continuous_truth": 1.0,
+    "r_continuous_from_pixels": 1.0,
+    "r_event_only": 1.0,
+    "max_pixel_phase_error_deg": 0.8137711532877459,
+    "pts_first_s": 0.0,
+    "pts_last_s": 7.967,
+    "max_pts_grid_error_ms": 0.3333333333337407
+  },
+  "opposed": {
+    "file": "opposed.mkv",
+    "sha256": "df2c185ea669e0f53b3c8162ea2c4a3171ac07fdeb5814372065448a9f472aed",
+    "frames": 240,
+    "fps": 30,
+    "q_projected_xy": [
+      0.5007770934889118,
+      0.49922290651108775
+    ],
+    "r_continuous_truth": 0.0772456247560545,
+    "r_continuous_from_pixels": 0.07692010139759477,
+    "r_event_only": 1.0,
+    "max_pixel_phase_error_deg": 0.81377115328776,
+    "pts_first_s": 0.0,
+    "pts_last_s": 7.967,
+    "max_pts_grid_error_ms": 0.3333333333337407
+  }
+}

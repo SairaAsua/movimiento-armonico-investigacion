@@ -1,0 +1,9 @@
+{
+  "algorithm": "cmu_q_live_replay.py, segments/estimate, mano izquierda, W=120 cuadros",
+  "clock_basis": "índice de muestra / FPS nominal; sin timestamps ópticos ni latencia medida",
+  "nominal_fps": 120,
+  "scale_first_second_mm": 303.5319389822251,
+  "source": "CMU mocap subject 05 trial 02; danza, no rope flow",
+  "source_file": "sources/cmu_mocap/05_02.c3d",
+  "source_sha256": "04bb9be74cd9183eb9f873b26c6eb4dbbf613747af5d6d0ef41f146b859d51d7"
+}
