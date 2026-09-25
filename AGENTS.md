@@ -1,12 +1,12 @@
 # Contexto para agentes de IA
 
-Este repositorio privado documenta una **investigación propuesta**; no contiene resultados empíricos de Nico. Leer `README.md`, `research/README.md`, `research/PROTOCOLO_PILOTO_V0.md` y la issue dueña antes de modificar algo. Las GitHub Issues son el estado canónico de tareas y bloqueos; no crear un tracker paralelo.
+Este repositorio privado documenta una **investigación propuesta**; no contiene resultados empíricos del caso principal. Leer `README.md`, `research/README.md`, `research/PROTOCOLO_PILOTO_V0.md` y la issue dueña antes de modificar algo. Las GitHub Issues son el estado canónico de tareas y bloqueos; no crear un tracker paralelo.
 
 ## Jerarquía de evidencia
 
-1. Originales autorizados, mediciones con reloj/calibración, protocolo y análisis congelados (aún pendientes para Nico).
+1. Originales autorizados, mediciones con reloj/calibración, protocolo y análisis congelados (aún pendientes para el caso principal).
 2. Fuentes primarias y documentación de repositorios citados, distinguiendo citas directas de interpretaciones.
-3. Bancos sintéticos y datos humanos externos: prueban software o transferencia limitada, no la hipótesis sobre Nico.
+3. Bancos sintéticos y datos humanos externos: prueban software o transferencia limitada, no la hipótesis sobre el caso principal.
 4. Intuiciones, conversaciones y borradores: generan preguntas, no resultados.
 
 ## Invariantes de esta investigación
@@ -19,6 +19,6 @@ Este repositorio privado documenta una **investigación propuesta**; no contiene
 
 ## Datos y colaboración
 
-No subir videos/fotos personales, consentimientos, rutas privadas, identificadores crudos, secretos ni logs locales. Las fotos de contexto en `assets/` tienen procedencia y licencia en el README; **no son datos de Nico**. Los archivos de terceros citados en `research/` se consultan en su origen, sin redistribuirlos.
+No subir videos/fotos personales, consentimientos, rutas privadas, identificadores crudos, secretos ni logs locales. Las fotos de contexto en `assets/` tienen procedencia y licencia en el README; **no son datos del caso principal**. Los archivos de terceros citados en `research/` se consultan en su origen, sin redistribuirlos.
 
-Saira dirige la pregunta; Nico es participante propuesto y coautor de HIT junto con Mariano Fernández Méndez. Las contribuciones de personas y sistemas de IA se documentan sin asignar autoría académica antes de acordarla. Al reportar un resultado, decir qué se midió, con qué unidades, contra qué referencia, en qué material, y qué sigue sin poder concluirse.
+La investigación se presenta como trabajo del equipo de Harmonic Beacon. La autoría de HIT se conserva en su referencia bibliográfica, sin atribuir funciones individuales dentro de este estudio. Las contribuciones humanas y de IA se documentan sin asignar autoría académica antes de acordarla. Al reportar un resultado, decir qué se midió, con qué unidades, contra qué referencia, en qué material, y qué sigue sin poder concluirse.
