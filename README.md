@@ -8,7 +8,7 @@ Queremos investigar si la organización espacial y temporal de un movimiento se 
 |:---:|:---:|
 | ![Fotografía histórica de Rudolf Laban y su compañía en movimiento, Ascona, 1914](assets/laban-dancers-1914.jpg) | ![Cuatro intérpretes de danza contemporánea sobre un escenario, 2009](assets/contemporary-dance-2009.jpg) |
 
-*Fotos de contexto: la imagen contemporánea **no muestra a Nico ni rope flow**. [Créditos y licencias](#fotografías-y-créditos) al final.*
+*Fotos de contexto: la imagen contemporánea **no muestra al caso de estudio ni rope flow**. [Créditos y licencias](#fotografías-y-créditos) al final.*
 
 > **Estado:** hay dossier, protocolos y bancos sintéticos reproducibles. **Todavía no hay mediciones del caso principal ni una cadena de video a audio Beacon validada.** La simulación comprueba el diseño de las medidas; no demuestra belleza, menor gasto o un estado de conciencia en una persona.
 
