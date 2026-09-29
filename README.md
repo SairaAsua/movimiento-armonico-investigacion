@@ -31,7 +31,17 @@ flowchart LR
     G --> H[Ensayo posterior de feedback]
 ```
 
-El **primer paper** previsto es de método y factibilidad: qué se puede medir con error conocido en rope flow. Las asociaciones con estética y experiencia, el costo oxidativo y el efecto causal del sonido son estudios separables. [Dossier completo en PDF](docs/DOSSIER_MOVIMIENTO_ARMONICO.pdf) · [versión editable](docs/DOSSIER_MOVIMIENTO_ARMONICO.docx).
+El **artículo teórico-metodológico** ya está redactado como propuesta sin resultados humanos. El primer **paper empírico** previsto será de método y factibilidad: qué se puede medir con error conocido en rope flow. Las asociaciones con estética y experiencia, el costo oxidativo y el efecto causal del sonido son estudios separables. [Leer el artículo principal](papers/ARTICULO_TEORETICO_METODOLOGICO.md) · [PDF](papers/ARTICULO_TEORETICO_METODOLOGICO.pdf) · [dossier general](docs/DOSSIER_MOVIMIENTO_ARMONICO.pdf).
+
+## Artículos y manuscritos
+
+| Lectura | Para qué sirve |
+|---|---|
+| **[Geometría del movimiento, organización temporal y escucha](papers/ARTICULO_TEORETICO_METODOLOGICO.md)** · [PDF](papers/ARTICULO_TEORETICO_METODOLOGICO.pdf) | **Texto principal actual:** matemática inspirada en Laban, hipótesis HIT, experiencia somática, experimento propuesto y uso exploratorio de Weaver/Beacon. Es un artículo teórico-metodológico sin datos humanos. |
+| [Introducción y Métodos del futuro estudio instrumental](research/BORRADOR_INTRO_METODOS_PAIPER.md) | Borrador de la investigación empírica de video y rope flow. |
+| [Esqueleto del primer paper empírico](research/ESQUELETO_PAIPER.md) | Estructura de factibilidad, validación y resultados a completar sólo tras mediciones. |
+
+[Ver el índice completo de manuscritos y documentos base](papers/README.md).
 
 ## Investigación del equipo y referentes
 
@@ -59,9 +69,9 @@ La próxima demostración audiovisual usa primero un **video de baile autorizado
 
 ## Por dónde entrar
 
-**Si sos parte del equipo humano:** leé el [dossier](docs/DOSSIER_MOVIMIENTO_ARMONICO.pdf), revisá [lo que necesitamos de cada persona](docs/EQUIPO_HUMANO_Y_COMPRAS.md) y elegí una tarea en el [tablero de 13 issues](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/14). Los videos y consentimientos se coordinan fuera de GitHub.
+**Si sos parte del equipo humano:** empezá por el [artículo principal](papers/ARTICULO_TEORETICO_METODOLOGICO.pdf), seguí con el [dossier](docs/DOSSIER_MOVIMIENTO_ARMONICO.pdf), revisá [lo que necesitamos de cada persona](docs/EQUIPO_HUMANO_Y_COMPRAS.md) y elegí una tarea en el [tablero de 13 issues](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/14). Los videos y consentimientos se coordinan fuera de GitHub.
 
-**Si sos una IA que va a trabajar acá:** empezá por [AGENTS.md](AGENTS.md), luego [el índice de investigación](research/README.md), el [protocolo piloto](research/PROTOCOLO_PILOTO_V0.md), el [diccionario de señales](research/DICCIONARIO_SENALES_V0.md) y la issue dueña. Conservá las distinciones `sintético/humano`, `2D/3D`, `observado/retenido/inválido`, `predicción/causalidad` y `señal cinemática/costo metabólico`. No inventes grabaciones, citas ni mediciones.
+**Si sos una IA que va a trabajar acá:** empezá por [AGENTS.md](AGENTS.md), luego [el artículo principal](papers/ARTICULO_TEORETICO_METODOLOGICO.md) y [el índice de investigación](research/README.md), el [protocolo piloto](research/PROTOCOLO_PILOTO_V0.md), el [diccionario de señales](research/DICCIONARIO_SENALES_V0.md) y la issue dueña. Conservá las distinciones `sintético/humano`, `2D/3D`, `observado/retenido/inválido`, `predicción/causalidad` y `señal cinemática/costo metabólico`. No inventes grabaciones, citas ni mediciones.
 
 Los scripts y audios de ejemplo viven en [`research/datos_sinteticos_presentacion/`](research/datos_sinteticos_presentacion/resultados.json). Para repetir el fixture: `python research/experimento_sintetico_presentacion.py`. Los originales externos citados en las notas no se redistribuyen aquí.
 
