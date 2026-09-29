@@ -1,0 +1,177 @@
+# Geometría del movimiento, organización temporal y escucha: una propuesta matemática y experimental inspirada en Laban y Harmonic Information Theory
+
+**Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
+**Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
+**Versión:** 0.1, 29 de septiembre de 2026
+
+## Resumen
+
+¿Puede describirse matemáticamente una organización del movimiento que las personas reconozcan como fluida, bella o sensual, y que quien se mueve experimente como fácil o plenamente presente? Este artículo propone un marco para estudiar la pregunta sin convertir esas experiencias en sinónimos. La coreútica y el análisis del movimiento asociados con Rudolf Laban orientan la descripción de direcciones, planos, recorridos y transiciones. *Harmonic Information Theory* (HIT) motiva hipótesis contrastables sobre relaciones de fase, proporción y estabilidad dinámica. La práctica de atención somática de Risa F. Kaparo informa cómo recoger la experiencia en primera persona; la investigación de Michael Levin sobre organización bioeléctrica aporta un marco conceptual de integración entre escalas, sin constituir evidencia de bioelectricidad durante la danza. Formulamos descriptores espaciales, temporales y conjuntos, demostramos tres límites de identificabilidad de esos descriptores y proponemos una secuencia de contrastes con juicios estéticos, autoinforme y, en un estudio posterior, medición fisiológica. HarMoCAP funcionaría como fuente de señales cinemáticas; Harmonic Weaver, como instrumento para construir y comparar rutas de sonificación; Beacon, como salida audible experimental. La contribución presente es una arquitectura matemática y epistemológica refutable. No se informan grabaciones, mediciones corporales ni efectos del sonido en participantes.
+
+**Palabras clave:** análisis del movimiento; Laban; coreútica; dinámica de coordinación; fase; Harmonic Information Theory; somática; sonificación; HarMoCAP; Harmonic Weaver.
+
+## 1. Introducción
+
+Un movimiento puede conservar sus posiciones inicial y final y, sin embargo, cambiar por completo su sentido al alterar la trayectoria, el orden de los acentos o la relación temporal entre sus partes. Quien baila puede sentir una transición como fácil mientras otra persona la percibe exigente; un observador puede preferir una frase rápida que parece costosa. El problema científico no se resuelve llamando «armonía» a la frase preferida. Requiere identificar qué relación se propone medir, con qué observaciones, en qué escala y contra qué alternativa.
+
+La tradición de Laban ofrece un vocabulario espacial y dinámico para describir la kinesfera, las direcciones, las trayectorias y las cualidades de acción. Su trabajo no equivale a un índice numérico contemporáneo de belleza o rendimiento: las ecuaciones de este artículo son **operacionalizaciones nuevas inspiradas en preguntas labanianas**. La documentación histórica distingue el trabajo sobre espacio de las cualidades de *Effort*, incluidas las dimensiones tiempo, peso, espacio y flujo [1, 2]. Por tanto, una velocidad calculada desde video no debe llamarse sin más «peso» labaniano, y un recorrido en un plano no agota una frase coreútica.
+
+HIT, tal como la formulan Fernández Méndez y Echániz, investiga si las proporciones entre procesos periódicos pueden organizar información y coordinación en diversos dominios [3]. Para este estudio resultan relevantes las hipótesis de estructura proporcional transmodal, eficiencia informacional y sensibilidad biológica. **La eficiencia de procesamiento postulada por HIT no es gasto metabólico**: se trata de variables, mecanismos y unidades diferentes. Aquí la extensión de HIT al movimiento es una predicción a evaluar, no una validación ya obtenida. El antecedente clásico de Haken, Kelso y Bunz muestra que la fase relativa describe patrones de coordinación bimanual y transiciones con la cadencia; ofrece un fundamento dinámico para medir fase, sin probar nuestra hipótesis estética [4].
+
+En danza hay evidencia de que la organización temporal influye en valoraciones visuales. Orlandi, Cross y Orgs manipularon el tiempo de secuencias con trayectorias comparables y hallaron versiones juzgadas más agradables y, a la vez, más esforzadas; velocidad y duración también cambiaban [5]. Este resultado vuelve refutable una equivalencia automática entre belleza y facilidad. Sirve para exigir comparadores de tempo, duración y variación de rapidez, no para transferir una magnitud a nuestro caso.
+
+La contribución del artículo es triple. Primero, hace explícita una familia de descriptores que separa **forma espacial, coordinación temporal y asociación espacio–tiempo**. Segundo, demuestra qué información pierden esos descriptores, evitando que una sonificación atribuya al cuerpo una propiedad que nunca fue observada. Tercero, presenta un diseño escalonado para contrastar relaciones con experiencia, estética y sonido sin usar la misma apreciación para definir y confirmar «consonancia».
+
+## 2. Marco teórico y alcance de cada fuente
+
+### 2.1. Laban: relaciones espaciales y cualidades del gesto
+
+La propuesta espacial de Laban concibe el movimiento como organización de recorridos en torno al cuerpo, con direcciones, planos y modelos poliédricos como referencias de exploración. La colección Bartenieff de la Universidad de Maryland documenta la kinesfera y el uso de icosaedro y otros modelos espaciales, además de distinguir históricamente *Space* y *Effort* [1]. La bibliografía de la International Council of Kinetography Laban sitúa *Choreutics* como edición de 1966 [2]. Lecturas contemporáneas de Longstaff insisten en no reducir una escala a una lista de puntos: importan la orientación de las líneas, la situación del recorrido y las transiciones [6].
+
+Desde allí formulamos una pregunta matemática propia: **¿qué propiedades de una curva corporal y de su secuencia de tramos pueden estimarse con incertidumbre conocida?** No postulamos que toda proximidad a un vértice del icosaedro sea bella, sana o eficiente. Tampoco postulamos que la armonía labaniana signifique mínima desviación: una frase puede organizar tensiones, cambios de plano y contrastes. El especialista en análisis labaniano debe revisar si nuestras categorías conservan alguna distinción relevante de la práctica; la coincidencia terminológica no basta.
+
+### 2.2. HIT: proporción como hipótesis relacional
+
+HIT sostiene que ciertas relaciones proporcionales pueden portar información más allá de las frecuencias absolutas [3]. En una tarea motriz, esto sugiere buscar relaciones entre procesos distinguibles —por ejemplo, ciclos de dos manos, torso y objeto— y estudiar su persistencia bajo variaciones ordinarias del gesto. No todo movimiento es oscilatorio, y un cociente simple no constituye por sí solo acoplamiento causal, belleza ni estado subjetivo. La relación debe demostrar capacidad explicativa adicional frente a cadencia, amplitud, regularidad individual, complejidad de tarea y entradas comunes como la música.
+
+De HIT extraemos una predicción **local y graduada**: cuando existe una tarea periódica definida, una relación de fase especificada antes del análisis podría predecir alguna respuesta externa mejor que descriptores convencionales. Una relación estable también puede ser antifásica y apropiada para la tarea. El supuesto de que la fase cero sea siempre superior no se sigue de HIT ni de la dinámica de coordinación. La teoría gana valor académico aquí al exponerse a resultados nulos y a tareas donde sus magnitudes no puedan identificarse.
+
+### 2.3. Kaparo y la experiencia en primera persona
+
+Risa F. Kaparo describe *Somatic Learning* como una práctica que atiende a respiración, sensación, movimiento y contacto [7]. Para el presente proyecto su aporte es metodológico: recordar que la experiencia del gesto se registra preguntando a quien se mueve, en un lenguaje que no induzca una respuesta. Facilidad, placer, atención, esfuerzo, conexión corporal y experiencias extraordinarias son dimensiones que pueden coexistir o divergir. El vocabulario de Kaparo no se tratará como escala psicométrica validada para este estudio ni sus afirmaciones terapéuticas como resultados. Una práctica somática previa a la toma sería una **intervención** que se documentaría, no una condición invisible de observación.
+
+### 2.4. Levin y la organización entre escalas
+
+Michael Levin analiza cómo redes bioeléctricas participan en la coordinación celular, la morfogénesis y la regulación a escalas superiores [8]. Su pregunta acerca de cómo componentes locales contribuyen a metas colectivas es una inspiración conceptual para estudiar relaciones centro–periferia y organismo–entorno. Pero la captura de movimiento no mide potenciales de membrana, un orden temporal pelvis→mano no identifica un origen causal del impulso, y una experiencia de presencia no demuestra un mecanismo bioeléctrico. El valor de Levin en este artículo es formular con precisión el **problema de la escala y la integración**, junto con la exigencia de no saltar de una descripción cinemática a un mecanismo celular.
+
+## 3. Formalización matemática propuesta
+
+### 3.1. Trayectorias, referencias y observabilidad
+
+Sea `p_j(t) ∈ ℝ³` la posición de un punto corporal `j` durante una frase, cuando un método tridimensional validado permite estimarla. Para comparación corporal definimos un origen `c(t)`, un marco ortonormal `B(t) ∈ SO(3)` y una longitud `ℓ > 0` fijada por sesión:
+
+`x_j(t) = B(t)ᵀ [p_j(t) − c(t)] / ℓ`. **(1)**
+
+La ecuación separa, como decisión analítica, desplazamiento relativo al cuerpo y movimiento global. Ese marco puede fallar durante giros u oclusiones; por ello las trayectorias en cámara/mundo, el marco estimado, sus errores y las ventanas inválidas deben preservarse. Si sólo hay pose 2D, `p_j` pertenece a una proyección en `ℝ²`: no se presentan planos corporales 3D como observados. Una figura plana en video puede provenir de recorridos tridimensionales distintos.
+
+También distinguimos tres vectores que suelen confundirse: (i) el eje anatómico entre punto proximal y distal de un miembro; (ii) la posición radial del extremo respecto de un centro; y (iii) su **dirección de desplazamiento** entre dos tiempos. La orientación de un brazo puede mantenerse mientras la persona entera se traslada. Una etiqueta de dirección debe especificar cuál de esas preguntas responde.
+
+### 3.2. Distribución espacial y pérdida de signo
+
+Para una trayectoria en el marco elegido tomamos tramos válidos `d_i = x(t_{i+1}) − x(t_i)`, longitud total `L = Σ_i ||d_i||`, dirección `u_i = d_i / ||d_i||` y pesos de arco `w_i = ||d_i|| / L`. Sean `n₁,n₂,n₃` las normales unitarias ortogonales de los tres planos de referencia. Proponemos el descriptor
+
+`Q_k = Σ_i w_i (n_k · u_i)²`, `k = 1,2,3`. **(2)**
+
+Entonces `Q_k ≥ 0` y `Σ_k Q_k = 1`. La alineación con cada plano sería `A_k = 1 − Q_k`; por la superposición de planos, `Σ_k A_k = 2`, de modo que `A` **no** constituye una partición porcentual del movimiento. Los pesos por arco describen la curva sin multiplicar artificialmente la importancia de una región atravesada despacio. Si interesa cuánto tiempo se ocupa allí, esa variable se calcula aparte con pesos temporales. `Q` es una fórmula de este proyecto, no una ecuación publicada por Laban ni una escala de bienestar.
+
+**Resultado analítico 1: espejo y orden no identificables desde `Q`.** Al elevar al cuadrado el producto, cambiar `u_i` por `−u_i` deja invariante cada `Q_k`. Al sumar por frase, permutar los tramos también deja invariante el vector. Dos frases con lateralidad u orden diferentes pueden recibir el mismo `Q`; ningún sonido basado únicamente en `Q` permitirá reconstruir esas diferencias. Para estudiar una escala orientada se deberán conservar direcciones **con signo**, eventos y transiciones. La igualdad se deduce de (2), sin datos de personas.
+
+### 3.3. Relación temporal y fase
+
+Para dos señales observadas de forma independiente y con ciclos interpretables, sean `φ_a(t)` y `φ_b(t)` sus fases, estimadas con reglas fijadas por tarea. Ante una relación candidata `p:q`, definimos
+
+`δ_{p:q}(t) = q φ_a(t) − p φ_b(t)  (mod 2π)`, **(3)**
+
+`R_{p:q} = |Σ_{m=1}^{M} v_m exp(i δ_{p:q}(t_m))| / Σ_{m=1}^{M} v_m`, `μ_{p:q} = arg Σ_m v_m exp(i δ_{p:q}(t_m))`. **(4)**
+
+Los pesos `v_m` y la unidad de muestreo se fijan de modo que miles de cuadros de los mismos pocos ciclos no simulen miles de observaciones independientes. `R` mide concentración circular y `μ` el desfase preferido. Se registran, además, relación candidata, duración, número de ciclos, variación de cadencia, error de reloj y cobertura. Una fase derivada dos veces del mismo evento no cuenta como dos señales independientes.
+
+**Resultado analítico 2: estabilidad no identifica «fase correcta».** Si `δ` es constante, `R=1` tanto para `δ=0` como para `δ=π`. La fase alta tampoco demuestra transferencia mecánica ni coordinación causada por un segmento: dos partes pueden seguir una misma consigna externa. Una pausa o transición sin ciclo definido debe quedar como «fase no aplicable» y no como «disonancia».
+
+### 3.4. Asociación situada entre espacio y tiempo
+
+Una curva puede conservar su distribución espacial mientras cambia **dónde** sucede un acento de rapidez o en qué fase se atraviesa una región. Para estudiar esa asociación proponemos dividir la trayectoria válida en regiones espaciales predefinidas `S ∈ {1,…,K}` y una fase de tarea, obtenida por eventos independientes, en intervalos `Φ ∈ {1,…,B}`. De la distribución conjunta ponderada `P(S=k,Φ=b)` obtenemos un descriptor de dependencia:
+
+`J_{S,Φ} = Σ_{k,b} P(k,b) log[P(k,b)/(P(k)P(b))]`. **(5)**
+
+`J` es información mutua: mide si región y fase coocurren de modo no independiente bajo la discretización elegida. **No indica si la asociación es deseable, bella o económica**, ni conserva por sí misma el orden completo. Por eso se archiva también la tabla `P(k,b)`, la secuencia de eventos y el modo de discretizar. La fase de tarea sólo aporta una nueva variable si no se ha construido tautológicamente a partir de la misma etiqueta espacial. El descriptor es una propuesta matemática nuestra; no se atribuye a Laban ni se declara teorema de HIT.
+
+**Resultado analítico 3: forma y ritmo no se sustituyen mutuamente.** Reparametrizar temporalmente una misma curva deja sin cambio su `Q` ponderado por arco, pero puede cambiar las relaciones de fase y `P(S,Φ)`. Cambiar la orientación espacial de una curva manteniendo los tiempos puede modificar `Q` sin modificar la fase relativa. Por construcción hacen falta al menos estas capas diferenciadas para preguntar si la organización conjunta aporta algo más que sus componentes. Que los descriptores sean separables matemáticamente no implica que lo sean en datos humanos.
+
+### 3.5. Consonancia como hipótesis compuesta, no etiqueta automática
+
+Ninguna de las ecuaciones (1)–(5) es un índice universal de consonancia. Llamaríamos **perfil relacional** al conjunto predefinido `{geometría, secuencia, fase, acople espacio–tiempo, incertidumbre}`. Una comparación ordinal «frase A más consonante que B» necesitaría una regla `H(profile)` fijada y evaluada **sin** usar los juicios de belleza o el relato que luego se pretende predecir. Por ahora resulta más sólido contrastar cada componente y sus interacciones. Esto permite que una frase regular pero rígida y otra variable pero expresiva obtengan perfiles distintos sin decidir de antemano cuál «gana».
+
+## 4. Hipótesis contrastables y resultados que las debilitarían
+
+**H1 — valor descriptivo espacial.** Los descriptores inspirados en Laban y las secuencias de dirección separarán frases con trayectorias conocidas y mostrarán acuerdo útil con observadores formados en el marco. Si el acuerdo es bajo o depende de una definición arbitraria de frente, la traducción geométrica deberá revisarse.
+
+**H2 — aporte temporal incremental de HIT.** En tareas cíclicas comparables, relaciones de fase especificadas antes de ver el resultado aportarán predicción fuera de muestra más allá de patrón, cadencia, amplitud, velocidad y suavidad. La ausencia de mejora debilitaría esta extensión de HIT a la tarea, aunque no toda la teoría.
+
+**H3 — estética y vivencia diferenciadas.** La geometría y el tiempo podrán relacionarse de modo distinto con belleza/sensualidad percibida, facilidad sentida y absorción. Un desacuerdo entre dimensiones refutaría la cadena simple «más consonancia ⇒ más belleza ⇒ más placer» como regla general local. La experiencia de conciencia extraordinaria, orgasmo o vivencia mística sólo entraría como relato espontáneo y como posible pregunta de un estudio posterior, nunca como diagnóstico por pose, rostro o audio.
+
+**H4 — economía fisiológica condicional.** Sólo si se agrega una medición fisiológica válida se contrastará si perfiles relacionales predicen un costo oxidativo por bloque, a tarea y producción comparables. Una reducción de esfuerzo aparente o de un proxy cinemático no cuenta como prueba de menor gasto metabólico. Aun con calorimetría, costo por unidad de tarea y costo total pueden divergir.
+
+**H5 — fidelidad y efecto de la sonificación.** Un mapeo explícito preservará al menos una diferencia relacional preseleccionada hasta el audio registrado y perceptible; después se contrastará si escuchar esa diferencia cambia el movimiento o la experiencia frente a controles acústicos. Si dos patrones que deberían diferenciarse producen controles o audios indistinguibles, falla la representación de ese contraste. Si el audio distingue patrones pero no cambia conducta o experiencia, falla la hipótesis de efecto bajo esas condiciones, no la matemática descriptiva.
+
+## 5. Experimento futuro propuesto
+
+### 5.1. Fase documental y definición de tareas
+
+Antes de captar nuevos movimientos se fijarán el repertorio, las unidades de análisis y el propósito de cada contraste. Un video de danza **autorizado** puede servir para ensayar lectura y anotación; un caso intensivo de rope flow permitiría después estudiar repetición, transiciones y variación dentro de una misma persona. Este manuscrito no utiliza ni analiza esas grabaciones. La revisión de textos originales de Laban y una persona con formación en análisis del movimiento son necesarias para comprobar la atribución histórica de categorías; HIT, Kaparo y Levin conservarán roles distintos en la interpretación.
+
+La unidad visual será el clip o frase; la fase se estimará sobre ciclos válidos dentro de la frase; el autoinforme se vinculará al bloque al que la persona puede referirse; el eventual metabolismo se resumirá en bloques compatibles con la respuesta del instrumento. Los cuadros no se tratarán como participantes independientes. El consentimiento cubrirá captura, acceso, conservación, usos de imagen y posibilidad de retirar una toma; el material identificable quedará fuera de repositorios públicos.
+
+### 5.2. Validez instrumental antes del contraste humano
+
+Un protocolo futuro deberá determinar qué componentes espaciales y temporales son observables con error acotado. No se declarará 3D por disponer de varias vistas ni «sincronía» porque los archivos tengan la misma hora de pared. Para cada descriptor se estimarán cobertura, error de referencias, estabilidad durante giros, fallos por oclusión y sensibilidad al filtrado. La pérdida de partes difíciles de una frase se documentará: excluir sólo los giros complejos podría sesgar precisamente la estética que se desea explicar. Si sólo resiste una proyección 2D, el artículo empírico posterior se limitará explícitamente a descriptores proyectados.
+
+### 5.3. Comparaciones y análisis
+
+El contraste primario propuesto es **incremental y fuera de muestra**. Sobre los mismos clips y días válidos se compararán:
+
+- `M₀`: tarea, tempo, duración, amplitud, velocidad y variabilidad de velocidad;
+- `M₁`: `M₀` más geometría espacial y secuencia de direcciones;
+- `M₂`: `M₁` más fase relativa y asociación situada espacio–tiempo.
+
+Las comparaciones se harán por sesiones o días reservados, no separando cuadros contiguos entre entrenamiento y prueba. Para estética se obtendrán valoraciones independientes de clips en orden equilibrado y sin mostrar métricas; belleza, sensualidad percibida, fluidez y esfuerzo aparente se preguntarán por separado. Para experiencia se pedirán respuestas breves tras bloques y relatos abiertos con lenguaje neutral. Una entrevista sobre un momento singular podrá añadirse como subestudio y no se convertirá retroactivamente en un continuo segundo a segundo. Se informarán diferencias de predicción, incertidumbre, cobertura y casos discordantes, incluidos clips juzgables cuya pose sea inválida.
+
+La comparación entre un perfil y una respuesta es **observacional**. Una relación positiva no identifica causa: entrenamiento, fatiga, música, familiaridad, expectativas, dificultad y el propio objeto pueden influir simultáneamente en movimiento y experiencia. Para estudiar metabolismo se necesita una extensión fisiológica con asesoría específica y tareas equiparables; no se fabricará una variable de «energía» a partir de velocidad 2D.
+
+### 5.4. Qué valor tendría un resultado nulo
+
+Si una categoría espacial no puede anotarse de manera reproducible, el resultado delimitaría el alcance de su operacionalización. Si la fase no añade predicción, mostraría que proporción/estabilidad, en la escala ensayada, no explican esa respuesta mejor que las variables convencionales. Si belleza y costo no se alinean, la intuición inicial deberá dividirse en mecanismos o condiciones más estrechas. Un artículo metodológico puede publicar estas delimitaciones con el mismo rigor que un hallazgo positivo.
+
+## 6. Harmonic Weaver y Beacon como instrumentos de exploración
+
+HarMoCAP desarrolla captura, estimación de pose y señales corporales 2D con estados de calidad y contrato de salida [9]. Harmonic Weaver, en el [repositorio de Nicolás Echániz](https://github.com/nicoechaniz/harmonic-weaver), es un router de modulación basado en manifiestos de fuentes, transformaciones e instrumentos [10]. Beacon proporciona un instrumento sonoro cuyos controles pueden ser destino de esa ruta [11]. Estas funciones componen una **arquitectura experimental**, no una inferencia científica automática desde video a conciencia.
+
+El valor académico de Weaver reside en la posibilidad de registrar exactamente **qué señal se usó, qué transformación recibió y qué control llegó al instrumento**. Eso permite producir comparaciones contrafactuales. Por ejemplo, dos trayectorias sintéticas podrían conservar geometría y variar fase; otras conservar fase y variar plano. En cada par se preguntaría primero si el descriptor cambia cuando debe y permanece igual cuando no debe. Después se comprobaría la ruta de controles, el audio aplicado y, por fin, si personas pueden percibir la diferencia sin recibir su etiqueta. La identidad de medios, versión del mapeo, rango de valores, estado de invalidez, latencia y audio grabado deben acompañar cada comparación.
+
+**Límite lógico de la sonificación.** Sea `z=f(x)` el descriptor de un movimiento `x`, y `a=g(z)` el control/audio producido por un mapeo determinista. Si `f(x₁)=f(x₂)`, entonces `g(f(x₁))=g(f(x₂))` bajo el mismo estado e entrada sonora. Ningún diseño tímbrico posterior puede recuperar de ese canal una lateralidad o un orden que `f` descartó. Esta propiedad obliga a declarar **qué diferencia se promete hacer audible** y a construir controles positivos y negativos antes de escuchar un ejemplo bonito.
+
+La documentación actual de Weaver describe un MVP cuyo transporte incorporado **registra envíos declarados**; los adaptadores OSC para instrumento y el audio real de extremo a extremo quedan fuera de ese límite [10]. La auditoría del equipo ha probado componentes con datos construidos, pero todavía no acredita la cadena completa desde video del caso principal hasta sonido oído. HarMoCAP aporta datos 2D; variables de investigación nuevas requieren una extensión de contrato y validación. El *feedback* en vivo se reservaría para un experimento posterior: una sonificación contingente puede modificar el gesto que pretendía observar. La literatura de sonificación muestra que la calidad de un mapeo debe evaluarse empíricamente y que sus efectos pueden depender de la tarea [12, 13].
+
+Un diseño de escucha posterior separaría tres condiciones: sonido ligado al movimiento actual, reproducción comparable pero no contingente y ausencia de sonificación. Se equilibraría orden y se incluiría una prueba sin sonido tras la práctica para distinguir efecto inmediato de aprendizaje. Un sonido agradable no se interpretaría como medición de belleza corporal; una respuesta emocional al audio no prueba que la fase medida causó esa respuesta. La transparencia de Weaver convierte la traducción en **objeto investigable**, y Beacon en un medio perceptivo de esa traducción.
+
+## 7. Discusión
+
+La principal fortaleza de este marco es que vuelve refutables intuiciones que, en lenguaje corriente, aparecen fundidas. «Conectividad» puede nombrar orden de eventos, coordinación bajo perturbación, transferencia mecánica o facilidad vivida; aquí cada una requiere una observación distinta. Del mismo modo, consonancia matemática, consonancia sonora y valoración estética no comparten automáticamente escala ni signo. La formalización espacial y de fase propuesta aporta una gramática para describirlas, mientras la entrevista somática conserva la posibilidad de que la persona narre una experiencia no prevista por esa gramática.
+
+La integración de Laban con HIT no consiste en atribuirle a Laban una ley de frecuencias. Su aporte es dar espesor espacial, direccional y expresivo a señales que HIT podría estudiar sólo como oscilaciones. HIT, a su vez, obliga a formular relaciones temporales específicas y controles de proporción en vez de denominar armónico a todo recorrido convincente. Kaparo impide que la vivencia quede reducida al juicio externo; Levin recuerda que una explicación entre escalas necesita un mecanismo, y que la analogía no equivale a medida bioeléctrica. Esta distribución de funciones es precisamente lo que permite discutir juntas tradiciones diferentes sin que una legitime indebidamente a otra.
+
+Las demostraciones algebraicas de este artículo son válidas para las fórmulas escritas, no para el cuerpo humano. Los descriptores dependen de marco, visibilidad, segmentación y referencia de fase. La belleza depende además de observadores, tarea, historia cultural y presentación del estímulo; la facilidad vivida tiene una temporalidad que no se deja leer directamente de una imagen. El diseño propuesto admite que una frase organizada espacialmente sea costosa, que una coordinación temporal fuerte sea antifásica, y que un momento expresivo requiera romper la regularidad. Esos casos no serían anomalías que deben borrarse: son pruebas de los límites de cualquier regla demasiado simple.
+
+## 8. Conclusión
+
+Proponemos estudiar el movimiento armónico como una **familia de relaciones observables y experiencias diferenciadas**, no como una etiqueta deducida de la belleza o de una señal acústica. La matemática aquí presentada separa recorrido, dirección, plano, fase y asociación situada, y muestra qué propiedades cada representación pierde. Un futuro estudio de danza y rope flow podrá contrastar si esas variables aportan información sobre juicio estético y experiencia; la economía fisiológica y el efecto de feedback son preguntas separadas. HarMoCAP, Harmonic Weaver y Beacon ofrecen una ruta para convertir la teoría en una prueba audiovisual trazable, cuyo último tramo todavía debe demostrarse. El resultado académico presente es un programa teórico-metodológico con límites explícitos, predicciones refutables y un instrumento de exploración cuyo mapeo también puede someterse a prueba.
+
+## Referencias
+
+1. University of Maryland, Michelle Smith Performing Arts Library. [*Laban theory* (archivo Irmgard Bartenieff)](https://exhibitions.lib.umd.edu/bartenieff/laban-theory). Fuente institucional sobre espacio, kinesfera y *Effort*.
+2. International Council of Kinetography Laban. [*Bibliography of Laban’s books*](https://ickl.org/resources/bibliography-of-labans-books/). Ficha bibliográfica de *Choreutics* (1966); el libro completo requiere cotejo antes de una atribución textual fina.
+3. Fernández Méndez, M., y Echániz, N. (2026). [*Harmonic Information Theory: Foundations*](https://hit.altermundi.net/). AlterMundi, primera edición digital, CC BY 4.0. Marco teórico propio del equipo; sus hipótesis sobre movimiento se contrastarán, no se tomarán como resultados previos de este estudio.
+4. Haken, H., Kelso, J. A. S., y Bunz, H. (1985). [*A theoretical model of phase transitions in human hand movements*](https://pubmed.ncbi.nlm.nih.gov/3978150/). *Biological Cybernetics*, 51, 347–356. DOI: 10.1007/BF00336922.
+5. Orlandi, A., Cross, E. S., y Orgs, G. (2020). [*Timing is everything: Dance aesthetics depend on the complexity of movement kinematics*](https://eprints.gla.ac.uk/227924/). *Cognition*, 205, 104446. DOI: 10.1016/j.cognition.2020.104446.
+6. Longstaff, J. S. (2001). [*Translating “Vector Symbols” from Laban’s (1926) Choreographie*](https://ickl.org/wp-content/uploads/2016/04/Proceedings_2001_TXT.pdf). Actas ICKL, pp. 70–86. Interpretación académica posterior, no fórmula original de Laban.
+7. Kaparo, R. F. [*Somatic Learning*](https://www.somaticlearning.com/); véase además la ficha editorial de [*Awakening Somatic Intelligence*](https://www.penguinrandomhouse.com/books/217434/awakening-somatic-intelligence-by-risa-f-kaparo-phd-foreword-by-rick-hanson-phd-and-james-oschman-phd/) (2012). Se usa como marco de atención en primera persona, no como escala validada para la tarea.
+8. Levin, M. (2023). [*Bioelectric networks: the cognitive glue enabling evolutionary scaling from physiology to mind*](https://link.springer.com/article/10.1007/s10071-023-01780-3). *Animal Cognition*, 26, 1865–1891. DOI: 10.1007/s10071-023-01780-3.
+9. [HarMoCAP, repositorio y documentación técnica](https://github.com/Mar-IA-no/HarMoCAP). Software experimental de captura y movimiento; sus contratos no validan por sí solos las hipótesis del artículo.
+10. [Echániz, N., *harmonic-weaver*, repositorio y README](https://github.com/nicoechaniz/harmonic-weaver). Router de modulación por manifiestos; documentación del alcance del MVP.
+11. [AlterMundi, *beacon-spatial*, repositorio de instrumento](https://github.com/AlterMundi/beacon-spatial). Destino de controles de audio propuesto para la cadena.
+12. Dubus, G., y Bresin, R. (2013). [*A systematic review of mapping strategies for the sonification of physical quantities*](https://pubmed.ncbi.nlm.nih.gov/24358192/). *PLOS ONE*, 8(12), e82491. DOI: 10.1371/journal.pone.0082491.
+13. Dyer, J. F., Stapleton, P., y Rodger, M. W. M. (2017). [*Transposing musical skill: sonification of movement as concurrent augmented feedback enhances learning in a bimanual task*](https://pubmed.ncbi.nlm.nih.gov/27233646/). *Psychological Research*, 81(4), 850–862. DOI: 10.1007/s00426-016-0775-0. Estudio de tarea bimanual; antecedente de feedback, no evidencia sobre danza o Beacon.
+
+## Nota de estado y transparencia
+
+Este manuscrito **no contiene una sección de resultados empíricos** porque no se realizaron aquí ensayos con cámaras, análisis del caso de rope flow ni pruebas de feedback. Los tres «resultados analíticos» son consecuencias de definiciones matemáticas explícitas. Las cantidades de muestra, instrumento fisiológico, escala subjetiva final, aprobación ética y reglas de preregistro del estudio futuro deberán fijarse antes de obtener sus datos. La autoría final y el destino editorial permanecen abiertos.

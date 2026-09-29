@@ -1,6 +1,6 @@
 # Contexto para agentes de IA
 
-Este repositorio privado documenta una **investigación propuesta**; no contiene resultados empíricos del caso principal. Leer `README.md`, `research/README.md`, `research/PROTOCOLO_PILOTO_V0.md` y la issue dueña antes de modificar algo. Las GitHub Issues son el estado canónico de tareas y bloqueos; no crear un tracker paralelo.
+Este repositorio público documenta una **investigación propuesta**; no contiene resultados empíricos del caso principal. Leer `README.md`, `research/README.md`, `research/PROTOCOLO_PILOTO_V0.md` y la issue dueña antes de modificar algo. Las GitHub Issues son el estado canónico de tareas y bloqueos; no crear un tracker paralelo.
 
 ## Jerarquía de evidencia
 
@@ -15,7 +15,7 @@ Este repositorio privado documenta una **investigación propuesta**; no contiene
 - `R` describe concentración de una relación de fase **entre señales independientes**. `R=1` también ocurre en antifase estable. Conservar ángulo medio, tarea, ventana, reloj, incertidumbre y procedencia.
 - Pose 2D, calorías inferidas desde video, audio asignado a 40/80/120 Hz y sensación de placer son variables distintas. No inferir metabolismo, vibraciones biológicas o conciencia desde pose o sonido.
 - Un fixture sintético sólo valida una propiedad construida del pipeline. Los contrastes humanos exigen cámaras probadas, consentimiento, referencias independientes y sesiones reservadas por día.
-- HarMoCAP, Harmonic Weaver y Beacon tienen contratos y repositorios propios. Un cambio de código se rastrea allí con su issue/PR; la issue privada aquí coordina el programa sin duplicar propiedad.
+- HarMoCAP, Harmonic Weaver y Beacon tienen contratos y repositorios propios. Un cambio de código se rastrea allí con su issue/PR; la issue general aquí coordina el programa sin duplicar propiedad.
 
 ## Datos y colaboración
 

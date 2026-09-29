@@ -67,7 +67,7 @@ Una escena versionada en Harmonic Weaver enviará esos dos canales a controles s
 4. **Paper 1:** método y factibilidad; posteriores artículos sólo si hay datos para asociaciones, metabolismo o efecto de Beacon.
 5. **Demo de sonificación:** primero archivo sintético y video de baile autorizado, después video del caso principal, finalmente intervención live con protocolo independiente.
 
-El [tablero privado de investigación](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/14) ya contiene trece issues para estas fases; su índice local está en `PLAN_GITHUB_INVESTIGACION.md`. Mantendremos datos personales, consentimientos y videos crudos fuera de GitHub; las futuras issues públicas de código contendrán sólo tareas técnicas y criterios de aceptación.
+El [programa de investigación](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/14) ya contiene trece issues para estas fases; su índice local está en `PLAN_GITHUB_INVESTIGACION.md`. Mantendremos datos personales, consentimientos y videos crudos fuera de GitHub; las futuras issues públicas de código contendrán sólo tareas técnicas y criterios de aceptación.
 
 ### Fuentes y documentación base
 
