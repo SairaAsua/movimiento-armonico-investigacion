@@ -22,6 +22,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
 
+[Frontera entre `Q`, tensor y subespacios](Q_TENSOR_SUBESPACIOS.md): un [contraejemplo reproducible](q_tensor_subespacios_sintetico.py) demuestra que tres recorridos pueden compartir `Q` aunque definan líneas ortogonales o un plano; orienta el cruce propuesto con Weaver sin atribuir planos 3D a video monocular.
+
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
 
 [Descomposición del marco móvil](MARCO_MOVIL_DESCOMPOSICION_C.md): identidad exacta y banco CMU para cuantificar cuánto del recorrido co-rotante proviene del cambio de ejes; fija una comprobación necesaria antes de sonificar `C`.
