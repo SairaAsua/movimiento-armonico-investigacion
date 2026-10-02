@@ -2,7 +2,8 @@
 """Generate a tiny synthetic MP4 and schema-shaped R08 test annotation.
 
 The video and points are programmatically constructed; method=manual is only
-the required R08 v1 schema token, never a claim of a human annotation.
+the required R08 v1 schema token, never a claim of a human annotation. The
+black gap tests unavailable support; it is not a physical occlusion model.
 """
 
 from __future__ import annotations

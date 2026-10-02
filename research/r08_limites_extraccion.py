@@ -85,7 +85,16 @@ def main() -> None:
     assert not bridged["supported"] and bridged["cause"] == "seed_outside_selected_component"
     print("20-px gap: two components; no supported path between sides")
 
-    print("Candidate support proves only a path in selected white pixels, not rope identity.")
+    # A visible line of a different color is missed by the white-mask setting.
+    red_line = np.zeros_like(rectangle)
+    red_line[538:542, 768:1152] = [255, 0, 0]
+    proposed = candidate(red_line, "visible red line:")
+    assert proposed["components_detected"] == 0
+    assert proposed["candidate_components"] == []
+    print("visible red line: no white candidate, although a line is visible")
+
+    print("Candidate support proves only a path in selected white pixels; "
+          "missing support does not prove absence of a line.")
 
 
 if __name__ == "__main__":
