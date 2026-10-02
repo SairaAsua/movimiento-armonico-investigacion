@@ -1,5 +1,9 @@
 # Rope flow, consonancia y experiencia corporal
 
+[Criba de videos públicos de danza](VIDEO_DANZA_PUBLICO_CRIBA.md): se inspeccionaron tres originales de Commons para la traza video→sonido; uno resultó ser una imagen fija, otro sirve como prueba de estrés por oclusiones y un ensayo escénico queda como candidato técnico condicionado. Ninguno sustituye el video consentido de Nico ni completa la issue #10.
+
+[Muestra privada de referencia 2D](REFERENCIA_POSE_VIDEO_PUBLICO.md): diseño reproducible de 40 cuadros y guía para dos anotaciones independientes de visibilidad, identidad y seis puntos corporales antes de interpretar las salidas de HarMoCAP.
+
 Archivo local de investigación preliminar, iniciado el 23 de septiembre y actualizado el 24 de septiembre de 2026. Responde a la propuesta de Saira de estudiar a Nico haciendo rope flow y relacionar movimiento, economía, belleza, sensualidad y conciencia con HIT. No constituye un paper de resultados ni un protocolo ya ejecutado.
 
 **Estado operativo:** Saira informó aproximadamente 4 Reolink, 4 «logicam» y 1 Moto G; faltan modelos, archivos originales y pruebas de tiempo/calibración. El [primer banco sin persona](PAQUETE_CAPTURA_NICO_V0.md) puede comparar una unidad de cada tipo antes de elegir montaje. El [estudio con Nico](PROTOCOLO_PILOTO_V0.md) todavía requiere repertorio real, consentimiento y determinación ética; metabolismo exige instrumentación propia. No hay captura, instalación live ni audio Beacon validados. La lectura integral de *Choreographie*/*Choreutics* continúa pendiente ([estado de fuentes](LABAN_ACCESO_OBRAS.md)).
