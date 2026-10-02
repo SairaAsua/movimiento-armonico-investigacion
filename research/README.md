@@ -20,6 +20,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Pérdida de información pitch–espacio](PITCH_ESPACIO_PERDIDA.md): [cálculo de grafo reproducible](pitch_espacio_grafo.py) que muestra qué relaciones no puede comunicar una nota cromática por vértice o un pitch dependiente sólo de altura en nuestra plantilla ideal; define una prueba perceptiva futura para Beacon.
 
+[Situación del recorrido frente a orientación](LABAN_SITUACION_RECORRIDO.md): [banco sintético 3D](situacion_recorrido_sintetica.py) donde trayectorias con el mismo `Q` pasan por regiones distintas respecto del centro. Define medidas continuas candidatas y su límite de error, sin adjudicar etiquetas Laban ni resultados humanos.
+
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
 
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
