@@ -37,6 +37,8 @@ La [formalización posterior de White (2020)](LABAN_SIMETRIAS_Y_ESCALAS.md) perm
 
 ## La geometría no es una tabla de vértices
 
+Para la soga, el [puente con el contrato R08 de Weaver](R08_PUENTE_SOGA_LABAN_HIT.md) separa los descriptores **proyectados** que podrían derivarse de polilíneas visibles de las categorías 3D y relaciones temporales que aún no son identificables. Una curva anotada en imagen no valida por sí sola un plano Laban, un punto material ni fase de tarea.
+
 El registro bibliográfico de *Choreutics* y la relectura de Longstaff muestran que las escalas tienen orden y forma de recorrido. Por eso una matriz de direcciones debe conservar tiempo, transición y orientación; una lista de posiciones de mano perdería justo lo que queremos investigar. Tampoco se puede asumir que un patrón de rope flow reproduzca una escala clásica: puede describirse en el mismo lenguaje sin ser esa escala.
 
 ## Orden de implementación experimental
