@@ -40,14 +40,9 @@ def main() -> None:
     assert fixture["media_sha256"] == media["media_sha256"]
     assert (fixture["width_px"], fixture["height_px"]) == (WIDTH, HEIGHT)
 
-    # These positions are supplied from the drawing recipe. An operator would
-    # have to select and independently review analogous seeds for real footage.
-    cases = (
-        (0, "horizontal", (770.5, 539.5), (1149.5, 539.5), 540.0),
-        (37, "unidentifiable", None, None, None),
-        (45, "vertical", (959.5, 350.5), (959.5, 729.5), 960.0),
-    )
-    for index, kind, start, stop, reference_axis in cases:
+    assert len(media["frame_times_s"]) == len(fixture["frames"]) == 75
+    candidates_by_frame = {}
+    for index in range(75):
         assert abs(media["frame_times_s"][index] - fixture["frames"][index]["time_s"]) < 1e-6
         rgb = np.asarray(Image.open(BytesIO(frame_png(
             video, index, media["media_sha256"]
@@ -56,6 +51,25 @@ def main() -> None:
             "target_rgb": [255, 255, 255], "distance_rgb": 40,
             "min_component_px": 100, "max_components": 4,
         })
+        expected_gap = 30 <= index < 45
+        assert candidates["components_detected"] == (0 if expected_gap else 1)
+        assert [component["area_px"] for component in candidates["candidate_components"]] == (
+            [] if expected_gap else [1536]
+        )
+        if index in (0, 37, 45):
+            candidates_by_frame[index] = candidates
+    print("75 decoded frames: 60 with one 1536-px white candidate; "
+          "15 gap frames with none")
+
+    # These positions are supplied from the drawing recipe. An operator would
+    # have to select and independently review analogous seeds for real footage.
+    cases = (
+        (0, "horizontal", (770.5, 539.5), (1149.5, 539.5), 540.0),
+        (37, "unidentifiable", None, None, None),
+        (45, "vertical", (959.5, 350.5), (959.5, 729.5), 960.0),
+    )
+    for index, kind, start, stop, reference_axis in cases:
+        candidates = candidates_by_frame[index]
         if kind == "unidentifiable":
             assert candidates["components_detected"] == 0
             assert candidates["candidate_components"] == []
