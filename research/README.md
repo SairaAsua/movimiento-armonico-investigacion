@@ -54,6 +54,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Mismo círculo en dos videos, distinto ritmo](VIDEO_CURVA_RITMO.md): un marcador sintético sigue la misma curva analítica con dos leyes temporales; píxeles y PTS recuperan la diferencia, y dos WAV diagnósticos hacen audible la rapidez medida. No es soga, audio de Beacon ni validación humana de HIT.
 
+[Dos marcadores en video: fase intracíclo audible](VIDEO_FASE_AUDIO_DIAGNOSTICO.md): reutiliza el banco visual `aligned/opposed` para traducir su diferencia de fase extraída desde píxeles a dos WAV de tono variable, con igual nivel y sin confundir `R` retrospectivo con señal live.
+
 [Acople espacio–tiempo](ACOPLE_ESPACIO_TIEMPO.md): misma curva y mismos marginales de rapidez/aceleración, pero acento en regiones corporales opuestas; incluye [control sintético](espacio_tiempo_acople_sintetico.py) y un descriptor condicional a validar antes del piloto.
 
 [Factibilidad del acople con cámaras](ACOPLE_CAMARA_FACTIBILIDAD.md): simulación proyectada con FPS, tamaño de gesto, ruido y pérdida de cuadros hipotéticos; incluye [script reproducible](acople_camara_sintetico.py) y criterios para el banco técnico real.
