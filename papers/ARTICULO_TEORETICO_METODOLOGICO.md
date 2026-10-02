@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.2, 2 de octubre de 2026
+**Versión:** 0.3, 2 de octubre de 2026
 
 ## Resumen
 
@@ -84,7 +84,9 @@ Una curva puede conservar su distribución espacial mientras cambia **dónde** s
 
 `J_{S,Φ} = Σ_{k,b} P(k,b) log[P(k,b)/(P(k)P(b))]`. **(5)**
 
-`J` es información mutua: mide si región y fase coocurren de modo no independiente bajo la discretización elegida. **No indica si la asociación es deseable, bella o económica**, ni conserva por sí misma el orden completo. Por eso se archiva también la tabla `P(k,b)`, la secuencia de eventos y el modo de discretizar. La fase de tarea sólo aporta una nueva variable si no se ha construido tautológicamente a partir de la misma etiqueta espacial. El descriptor es una propuesta matemática nuestra; no se atribuye a Laban ni se declara teorema de HIT.
+`J` es información mutua: mide si región y fase coocurren de modo no independiente bajo la discretización elegida. Antes de calcularla hay que fijar si `P(k,b)` pondera por **tiempo observado** o por **longitud de arco válida**, además de los cortes de fase y la unidad ciclo/frase/bloque; ambas medidas pueden dar valores distintos para una misma ejecución. **No indica si la asociación es deseable, bella o económica**, ni conserva por sí misma el orden completo. Por eso se archiva también la tabla `P(k,b)`, la secuencia de eventos, los pesos y el modo de discretizar.
+
+Hay un control nulo más fuerte que evitar copiar literalmente la etiqueta espacial para estimar fase. En una vuelta uniforme `q(t)=t`, con `0≤t≤1`, si `S=1{q(t)≥1/2}` y una fase de reloj medida aparte se divide como `Φ=1{t≥1/2}`, la tabla conjunta es `[[1/2,0],[0,1/2]]` y `J=ln 2`: asociación binaria máxima creada por el **avance común de la tarea**, sin acople especial demostrado. Un valor positivo debe compararse con esa progresión esperada, cadencia y entradas comunes antes de interpretarse como aporte temporal de HIT. La fase de tarea sólo aporta una variable no tautológica si no se ha construido desde la misma etiqueta espacial; incluso así, una causa temporal compartida puede explicar su asociación. El descriptor es una propuesta matemática nuestra; no se atribuye a Laban ni se declara teorema de HIT.
 
 **Resultado analítico 3: forma y ritmo no se sustituyen mutuamente.** Reparametrizar temporalmente una misma curva deja sin cambio su `Q` ponderado por arco, pero puede cambiar las relaciones de fase y `P(S,Φ)`. Cambiar la orientación espacial de una curva manteniendo los tiempos puede modificar `Q` sin modificar la fase relativa. Por construcción hacen falta al menos estas capas diferenciadas para preguntar si la organización conjunta aporta algo más que sus componentes. Que los descriptores sean separables matemáticamente no implica que lo sean en datos humanos.
 
