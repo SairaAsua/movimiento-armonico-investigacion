@@ -16,7 +16,7 @@
   ],
   "fps": 30,
   "video_sha256": "f835c10b5511617f4d399f5c42f9968e90bf62661f8d72fa875e3b93a9fad61e",
-  "annotation_sha256": "d4f5381376da8194fedd24e04b5558f62f34f67c450726d27e920b9c78151c86",
+  "annotation_sha256": "6b23db993682b33e1eb9ed36076b46c5e385549ced4a7bee14a63b25b5552f03",
   "annotation_provenance": "programmatic synthetic fixture; method=manual is R08 v1 schema token",
   "sample_rate_hz": 22050,
   "tone_hz": 220,

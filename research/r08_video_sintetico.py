@@ -48,8 +48,19 @@ def generate() -> tuple[Path, Path]:
     annotation["media_sha256"] = hashlib.sha256(VIDEO.read_bytes()).hexdigest()
     for frame, time_s in zip(annotation["frames"], times):
         frame["time_s"] = time_s
+    # Keep one decoded frame per line so a review does not bury the contract.
+    header = [
+        f"  {json.dumps(key)}: {json.dumps(value, ensure_ascii=False)}"
+        for key, value in annotation.items() if key != "frames"
+    ]
+    frame_lines = [
+        "    " + json.dumps(frame, ensure_ascii=False, sort_keys=True,
+                             separators=(",", ":"))
+        for frame in annotation["frames"]
+    ]
     ANNOTATION.write_text(
-        json.dumps(annotation, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        "{\n" + ",\n".join(header) + ',\n  "frames": [\n'
+        + ",\n".join(frame_lines) + "\n  ]\n}\n", encoding="utf-8"
     )
     return VIDEO, ANNOTATION
 
