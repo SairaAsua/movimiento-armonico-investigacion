@@ -40,6 +40,23 @@ def synthetic_frame(kind: str) -> dict:
     return {"state": "observed", "visible_segments": [points], "causes": []}
 
 
+def synthetic_annotation() -> dict:
+    """Schema-shaped test input; 'manual' and hash are synthetic sentinels."""
+    kinds = [kind for kind, count in SEGMENTS for _ in range(count)]
+    return {
+        "schema_version": 1,
+        "media_sha256": hashlib.sha256(b"SYNTHETIC_NO_MEDIA").hexdigest(),
+        "width_px": WIDTH,
+        "height_px": HEIGHT,
+        "method": "manual",  # Required by R08 v1; not human provenance here.
+        "coordinate_frame": "image_normalized",
+        "frames": [
+            {"frame_index": index, "time_s": index / FPS, **synthetic_frame(kind)}
+            for index, kind in enumerate(kinds)
+        ],
+    }
+
+
 def projected_tensor(frame: dict) -> dict | None:
     """Length-weighted, signless 2D line tensor on visible polylines only."""
     if frame["state"] in ("absent", "unidentifiable"):
@@ -102,8 +119,7 @@ def main() -> None:
     assert diagonal_result is not None
     assert abs(diagonal_result["m_xx"] - 192**2 / (192**2 + 108**2)) < 1e-12
 
-    frame_kinds = [kind for kind, count in SEGMENTS for _ in range(count)]
-    frames = [synthetic_frame(kind) for kind in frame_kinds]
+    frames = synthetic_annotation()["frames"]
     tensors = [projected_tensor(frame) for frame in frames]
     samples = bytearray()
     left_values: list[list[int]] = [[] for _ in SEGMENTS]
