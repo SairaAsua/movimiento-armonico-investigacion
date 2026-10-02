@@ -116,7 +116,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Puente R08 soga → Laban/HIT](R08_PUENTE_SOGA_LABAN_HIT.md): correspondencia entre curvas y extremos 2D de la rama de Nico, descriptores espaciales posibles, gates de reloj/calidad y variables que requieren 3D o eventos independientes.
 
-[Video y audio diagnósticos de curva de soga proyectada](R08_SONIDO_DIAGNOSTICO.md): MP4 sintético horizontal → ilegible → vertical ligado por hash/PTS a una anotación R08 de prueba, matriz direccional 2D y WAV estéreo con silencio en la oclusión; no es audio de Beacon ni movimiento de Nico.
+[Video y audio diagnósticos de curva de soga proyectada](R08_SONIDO_DIAGNOSTICO.md): MP4 sintético horizontal → ilegible → vertical ligado por hash/PTS a una anotación R08 de prueba, matriz direccional 2D y WAV estéreo con silencio en la oclusión; incluye un contraste separado de máscara/camino propuestos desde píxeles con extremos conocidos. No es audio de Beacon ni movimiento de Nico.
 
 [Prueba aislada del driver Weaver](WEAVER_DRIVER_PRUEBA_AISLADA.md): 12 pruebas del enlace con fixtures y control adverso de generación/contrato; sólo llega al transporte de registro, no al audio.
 
