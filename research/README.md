@@ -10,6 +10,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 **Fuente autoral impresa:** se leyó en alemán, mediante transcripción diplomática, [«Tanz und Musik» (1929)](LABAN_TANZ_UND_MUSIK_1929.md). Distingue frecuencia tonal y ángulo espacial, orientación central/periférica y desaconseja un mapeo pitch↔altura corporal; el facsímil no se cotejó y los libros completos siguen pendientes.
 
+**Composición y doble ritmo:** una [traducción japonesa institucional de «Tanzkomposition und Schrifttanz» (1928)](LABAN_TANZKOMPOSITION_1928.md) presenta los ritmos de espacio y tiempo en solos y grupos y la utilidad de conservar recorridos. El alemán original aún requiere cotejo; la división de descriptores Laban/HIT sigue siendo metodológica.
+
 [Reseña de Brandt (1927)](LABAN_RESEÑA_BRANDT_1927.md): recepción muy cercana a *Choreographie* que relaciona icosaedro, espacio, tiempo, fuerza y escritura del recorrido; leída por OCR, no sustituye el libro de Laban.
 
 [Auditoría de acuerdo LMA en datos públicos](LABAN_OSF_ACUERDO_REANALISIS.md): reanálisis descriptivo de respuestas originales de analistas certificados; límites de transferencia a rope flow.
