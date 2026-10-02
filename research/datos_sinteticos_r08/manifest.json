@@ -1,0 +1,76 @@
+{
+  "kind": "synthetic_projected_rope_audio_diagnostic",
+  "not": [
+    "human R08 annotation",
+    "geometric validation from pixels",
+    "HarMoCAP audio",
+    "Weaver audio",
+    "Beacon audio",
+    "human movement",
+    "Laban validation",
+    "HIT validation"
+  ],
+  "image_px": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "video_sha256": "f835c10b5511617f4d399f5c42f9968e90bf62661f8d72fa875e3b93a9fad61e",
+  "annotation_sha256": "6b23db993682b33e1eb9ed36076b46c5e385549ced4a7bee14a63b25b5552f03",
+  "annotation_provenance": "programmatic synthetic fixture; method=manual is R08 v1 schema token",
+  "sample_rate_hz": 22050,
+  "tone_hz": 220,
+  "mapping": "left_gain=m_xx; right_gain=m_yy; invalid=both_zero",
+  "segments": [
+    {
+      "kind": "horizontal",
+      "frames": 30,
+      "duration_s": 1.0,
+      "left_rms_pcm16": 6976.12383400641,
+      "right_rms_pcm16": 0.0
+    },
+    {
+      "kind": "invalid",
+      "frames": 15,
+      "duration_s": 0.5,
+      "left_rms_pcm16": 0.0,
+      "right_rms_pcm16": 0.0
+    },
+    {
+      "kind": "vertical",
+      "frames": 30,
+      "duration_s": 1.0,
+      "left_rms_pcm16": 0.0,
+      "right_rms_pcm16": 6976.12383400641
+    }
+  ],
+  "horizontal": {
+    "m_xx": 1.0,
+    "m_xy": 0.0,
+    "m_yy": 0.0,
+    "visible_length_px": 383.9999999999999,
+    "support": "observed"
+  },
+  "vertical": {
+    "m_xx": 0.0,
+    "m_xy": 0.0,
+    "m_yy": 1.0,
+    "visible_length_px": 384.00000000000006,
+    "support": "observed"
+  },
+  "partial_visible_only": {
+    "m_xx": 1.0,
+    "m_xy": 0.0,
+    "m_yy": 0.0,
+    "visible_length_px": 384.0000000000001,
+    "support": "partial"
+  },
+  "diagonal": {
+    "m_xx": 0.7596439169139465,
+    "m_xy": 0.427299703264095,
+    "m_yy": 0.2403560830860535,
+    "visible_length_px": 220.29071700822976,
+    "support": "observed"
+  },
+  "wav_sha256": "a44079781cae8e9deea54aace8cf19372e957f26db53f555d3d03126a89c1212"
+}

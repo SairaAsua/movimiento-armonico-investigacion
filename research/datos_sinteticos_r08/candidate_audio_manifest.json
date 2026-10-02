@@ -1,0 +1,44 @@
+{
+  "kind": "synthetic_pixel_candidate_audio_diagnostic",
+  "weaver_source_commit": "4308f07b2f05de5b87cdd5b8a2b8dab41a25ec06",
+  "video_sha256": "f835c10b5511617f4d399f5c42f9968e90bf62661f8d72fa875e3b93a9fad61e",
+  "pixel_mask": "RGB distance from white <=40; 4-connected; min 100 px",
+  "path": "user-seeded shortest path within selected component",
+  "seeds": "known endpoints from synthetic drawing recipe, not inferred",
+  "frames": 75,
+  "candidate_paths": 60,
+  "gap_frames_without_path": 15,
+  "visible_path_length_px": 379,
+  "segments": [
+    {
+      "kind": "horizontal",
+      "frames": 30,
+      "duration_s": 1.0,
+      "left_rms_pcm16": 6976.12383400641,
+      "right_rms_pcm16": 0.0
+    },
+    {
+      "kind": "invalid",
+      "frames": 15,
+      "duration_s": 0.5,
+      "left_rms_pcm16": 0.0,
+      "right_rms_pcm16": 0.0
+    },
+    {
+      "kind": "vertical",
+      "frames": 30,
+      "duration_s": 1.0,
+      "left_rms_pcm16": 0.0,
+      "right_rms_pcm16": 6976.12383400641
+    }
+  ],
+  "wav_sha256": "a44079781cae8e9deea54aace8cf19372e957f26db53f555d3d03126a89c1212",
+  "equals_annotation_fixture_wav_sha256": "a44079781cae8e9deea54aace8cf19372e957f26db53f555d3d03126a89c1212",
+  "not": [
+    "accepted R08 annotations",
+    "independent rope detection",
+    "human motion",
+    "Beacon audio",
+    "evidence for Laban or HIT"
+  ]
+}
