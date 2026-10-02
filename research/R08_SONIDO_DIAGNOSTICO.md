@@ -10,6 +10,16 @@ Un [segundo chequeo](r08_extraccion_smoke.py) sí decodifica los 75 cuadros del 
 
 El mismo chequeo renderiza un **segundo WAV diagnóstico desde los caminos propuestos**: izquierda durante los 30 cuadros horizontales, silencio digital en los 15 ilegibles y derecha durante los 30 verticales. Su SHA-256 coincide exactamente con el del WAV basado en la anotación fabricada junto con el video (`a4407978…89c1212`). Es un control de integración en una escena trivial diseñada para producir ese resultado, no una validación independiente de la geometría ni de una sonificación para personas. Ambos WAV usan el mismo renderizador de portadora fija; ninguno pasa por el motor de audio de Beacon.
 
+El [banco adversarial en imágenes sintéticas](r08_limites_extraccion.py) comprueba por qué una propuesta de píxeles aún requiere revisión:
+
+| Caso construido | Resultado del algoritmo fijado en `4308f07` | Consecuencia para el estudio |
+|---|---|---|
+| Rectángulo blanco sin soga, 18.000 px | La máscara devuelve una región y un camino sembrado dentro de ella da `M₂ xx=1`. | Una orientación y un sonido plausibles no prueban identidad de soga. |
+| Rectángulo distractor de 8.000 px y línea de 1.536 px | La región más grande es el distractor; elegirla con extremos de la línea devuelve `seed_outside_selected_component`. Elegir explícitamente la segunda sí produce camino. | Ordenar candidatos por área no decide qué objeto es la soga. |
+| Línea blanca con hueco negro de 20 px | La máscara entrega dos regiones de 728 px y no encuentra camino entre los extremos opuestos. | Mantener dos tramos visibles y declarar el hueco; no unirlos por continuidad supuesta. |
+
+Estos casos son controles de fallo, no estimaciones de sensibilidad/especificidad. En video humano, cada curva propuesta necesitará correspondencia con el objeto, cobertura y referencia independiente; una salida de máscara no bastará para habilitar `M₂`, fase o Beacon. Un cruce 2D puede además ocultar cuál tramo pasa por delante, aun cuando el camino de píxeles exista.
+
 | Intervalo | `M₂` diagonal | Control diagnóstico | Audio resultante |
 |---|---|---|---|
 | 0–1 s, horizontal | `(1,0)` | izquierda = `Mxx`, derecha = `Myy` | Tono de 220 Hz sólo a izquierda. |
@@ -27,3 +37,5 @@ Reproducir desde la raíz, con FFmpeg/FFprobe disponibles: `python research/r08_
 Con un checkout local de Weaver y sus dependencias, ejecutar `python research/r08_contrato_smoke.py /ruta/a/harmonic-weaver` para repetir el chequeo de contrato; no necesita medio ni arranca el laboratorio.
 
 Con el mismo checkout, `python research/r08_extraccion_smoke.py /ruta/a/harmonic-weaver` repite el contraste de píxeles y extremos preseleccionados, y regenera el WAV/manifiesto de candidatos. Requiere las dependencias de investigación de Weaver, incluidas NumPy, Pillow, Pydantic y SciPy; no inicia servicios ni usa cámaras. La siguiente prueba útil es separar la elección de extremos y la revisión geométrica de la receta generadora, primero en un video de baile autorizado y luego en los originales consentidos de Nico, con evaluación de cobertura, cruces, oclusiones y tiempo antes de escuchar el resultado.
+
+`python research/r08_limites_extraccion.py /ruta/a/harmonic-weaver` reproduce los tres controles adversariales en imágenes generadas en memoria; no modifica los WAV ni el video.
