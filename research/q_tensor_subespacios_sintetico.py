@@ -5,7 +5,7 @@ Ejecutar: python research/q_tensor_subespacios_sintetico.py
 """
 
 import json
-from math import isclose, sqrt
+from math import cos, isclose, radians, sin, sqrt
 
 
 def tensor(tramos):
@@ -34,6 +34,16 @@ def same(a, b, tolerance=1e-12):
 
 def same_matrix(a, b):
     return all(same(x, y) for x, y in zip(a, b))
+
+
+def norm_xy_difference(a, b):
+    """Norma espectral exacta del bloque simétrico 2x2; los ejemplos tienen z=0."""
+    x = a[0][0] - b[0][0]
+    y = a[0][1] - b[0][1]
+    z = a[1][1] - b[1][1]
+    center = (x + z) / 2
+    radius = sqrt(((x - z) / 2) ** 2 + y ** 2)
+    return max(abs(center + radius), abs(center - radius))
 
 
 def main():
@@ -70,6 +80,18 @@ def main():
     )
     assert same(q(tensor([rotated, rotated])), [1, 0, 0])
 
+    angle = radians(5)
+    angular_error = norm_xy_difference(
+        tensor([lateral]), tensor([(cos(angle), sin(angle), 0)]))
+    weight_error = norm_xy_difference(
+        tensor([(0.5, 0, 0), (0, 0.5, 0)]),
+        tensor([(0.6, 0, 0), (0, 0.4, 0)]))
+    missing_error = norm_xy_difference(
+        tensor([lateral]), tensor([(0.9, 0, 0), (0, 0.1, 0)]))
+    assert isclose(angular_error, sin(angle), rel_tol=0, abs_tol=1e-12)
+    assert isclose(weight_error, 0.1, rel_tol=0, abs_tol=1e-12)
+    assert isclose(missing_error, 0.1, rel_tol=0, abs_tol=1e-12)
+
     print(json.dumps({
         "Q_comun_LUA": q(pos),
         "M_linea_positiva": pos,
@@ -83,6 +105,9 @@ def main():
         "mismo_M_distinto_orden": same_matrix(grouped, alternating),
         "mismo_M_sentido_invertido": same_matrix(pos, reversed_path),
         "Q_tras_rotar_ejes_45_grados": q(tensor([rotated, rotated])),
+        "cota_angular_5_grados_alcanzada": angular_error,
+        "cota_TV_0_1_alcanzada": weight_error,
+        "cota_arco_oculto_0_1_alcanzada": missing_error,
         "tipo": "sintetico_sin_datos_humanos",
     }, indent=2, ensure_ascii=False))
 
