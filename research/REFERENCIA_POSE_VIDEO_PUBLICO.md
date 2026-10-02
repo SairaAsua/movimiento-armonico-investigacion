@@ -37,6 +37,19 @@ No se pide a estas personas que juzguen belleza, sensualidad, intención, estado
 
 La muestra aleatoria por bins sirve para una descripción de calidad 2D del **mismo video**. Primero informar acuerdo entre codificadores: estado de visibilidad por punto/persona/estrato y distancia entre coordenadas cuando ambas sean visibles. Después, una exportación privada de HarMoCAP sobre los **mismos índices fuente** se empareja con A/B por revisión de identidad; un `track_id` estable no es referencia por sí solo. Reportar omisiones, intercambios y error en píxeles por articulación, separado de la confianza del modelo. Un punto anatómicamente incorrecto con alta confianza cuenta como error.
 
+La [herramienta de diagnóstico](diagnosticar_pose_video_publico.py) puede emitir esa exportación en un directorio **privado y vacío fuera de Git**, mientras procesa los 550 cuadros consecutivos para mantener el estado temporal de ByteTrack. Sólo guarda poses de los 40 índices sorteados, con PTS original, índice fuente, ID efímero y seis coordenadas en píxeles por detección; coteja el SHA-256 del video con el manifiesto. Un `stride` mayor que uno se rechaza para este uso. Requiere el entorno aislado con HarMoCAP, el checkpoint y las dependencias indicadas en la [criba técnica](VIDEO_DANZA_PUBLICO_CRIBA.md):
+
+```bash
+python research/diagnosticar_pose_video_publico.py VIDEO_ORIGINAL.webm CHECKPOINT.pt \
+  --start-pts 152 --end-pts 174 --stride 1 \
+  --private-manifest DIRECTORIO_PRIVADO/manifest.json \
+  --private-out-dir OTRA_SALIDA_PRIVADA_VACIA
+```
+
+Este archivo derivado contiene posiciones de personas y tampoco se publica. **No** se asigna automáticamente el `track_id` a A/B por proximidad: eso usaría la referencia que se quiere evaluar para elegir la predicción más conveniente. Una revisión de correspondencia de identidad, conservando `unmatched` y cambios de ID, sigue pendiente antes de calcular error anatómico.
+
+**Ejecución técnica del 2 de octubre de 2026:** la exportación privada contiene los 40 `sample_id` esperados; cada índice, PTS y dimensión 852 × 480 coincidió con el manifiesto. El procesamiento continuo cubrió 550/550 cuadros y reprodujo el agregado anterior: 542 con dos detecciones, 8 con una y 3 IDs efímeros. Se verificó el SHA-256 del video y el del archivo derivado privado (`683558d8d667e234e8f305d493b4814847822fe7ddf633ad6bc0cf6038f6f495`). Ninguna posición individual entra a este repositorio. Este resultado certifica **alineación y reproducibilidad técnica**, no precisión de pose ni identidad de intérpretes.
+
 Para un resumen de cobertura de los 550 cuadros, cada cuadro sorteado representa su bin de 10, 17 o 18 cuadros; usar `design_weight_frames` del manifiesto y el denominador completo, no tratar 20/20 por estrato como si los estratos tuvieran igual tamaño. Esta muestra pequeña y temporalmente correlacionada es **piloto descriptivo**: sus 40 cuadros no son 40 personas ni justifican un intervalo de confianza ingenuo por cuadro. El error y la referencia se limitan a 2D proyectado; no validan orientación corporal 3D ni recorrido de soga. Las ocho ocasiones en que el detector produjo sólo una persona merecen una auditoría dirigida adicional, **separada** de esta muestra probabilística.
 
 Si la referencia confirma cobertura suficiente para un descriptor, fijar la regla de validez por señal antes de analizar un conjunto reservado. Si falla una muñeca o identidad, emitir `invalid` para la relación que la requiere; no suavizar una trayectoria a través de la pérdida y llamarla observada. La fase HIT requerirá además evento/ciclo y reloj verificables; el mapeo Weaver/Beacon requerirá controles aplicados y audio registrado. El caso principal de Nico necesitará su propio consentimiento, referencia y validación por día, sin transferir estos porcentajes desde la danza pública.

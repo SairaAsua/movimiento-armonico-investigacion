@@ -10,7 +10,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import statistics
 import subprocess
 from collections import Counter
 from pathlib import Path
@@ -28,6 +27,8 @@ GATES = {
     "torso_right_wrist": (5, 6, 10, 11, 12),
     "torso_both_wrists": (5, 6, 9, 10, 11, 12),
 }
+PUBLIC_CLIP_SHA256 = "573ac41a261d71fc59fbf890d129964061f3c9346bcf6fcf5b4cecb3217e05aa"
+REFERENCE_JOINTS = {j: name for j, name in JOINTS.items() if j in (5, 6, 9, 10, 11, 12)}
 
 
 def sha256(path: Path) -> str:
@@ -104,17 +105,43 @@ def main() -> None:
     ap.add_argument("--stride", type=int, default=5)
     ap.add_argument("--split-pts", type=float)
     ap.add_argument("--threads", type=int, default=4)
+    ap.add_argument("--private-manifest", type=Path,
+                    help="Manifiesto privado de referencia; requiere --private-out-dir y stride=1")
+    ap.add_argument("--private-out-dir", type=Path,
+                    help="Directorio vacío fuera de Git para poses de cuadros sorteados")
     args = ap.parse_args()
     if args.stride < 1 or args.end_pts <= args.start_pts:
         ap.error("stride positivo e intervalo temporal no vacío requeridos")
+    private = args.private_manifest is not None or args.private_out_dir is not None
+    sampled = {}
+    if private:
+        if args.private_manifest is None or args.private_out_dir is None or args.stride != 1:
+            ap.error("exportación privada exige manifiesto, salida y stride=1")
+        repo = Path(__file__).resolve().parents[1]
+        out = args.private_out_dir.resolve()
+        if out == repo or repo in out.parents or (out.exists() and any(out.iterdir())):
+            ap.error("la salida privada debe ser un directorio vacío fuera del repositorio")
+        manifest = json.loads(args.private_manifest.read_text())
+        if (manifest.get("protocol") != "reference_pose_public_video_v0.1"
+                or manifest.get("source_sha256") != PUBLIC_CLIP_SHA256
+                or manifest.get("source_dimensions_px") != [852, 480]):
+            ap.error("manifiesto de referencia incompatible")
+        sampled = {int(s["source_frame_index"]): s for s in manifest["samples"]}
+        if len(sampled) != 40:
+            ap.error("se requieren 40 índices fuente únicos")
 
     torch.set_num_threads(args.threads)
+    video_hash = sha256(args.video)
+    if private and video_hash != PUBLIC_CLIP_SHA256:
+        raise ValueError("SHA-256 del video no coincide con el manifiesto de referencia")
     pts = pts_originales(args.video)
     if len(pts) < 2 or not np.all(np.diff(pts) > 0):
         raise ValueError("PTS ausentes, repetidos o no monótonos")
     selected = np.flatnonzero((pts >= args.start_pts) & (pts < args.end_pts))
     if not len(selected) or selected[-1] - selected[0] + 1 != len(selected):
         raise ValueError("Intervalo sin cuadros o índices no contiguos")
+    if private and (set(sampled) - set(map(int, selected))):
+        raise ValueError("El intervalo no contiene todos los índices sorteados")
 
     cap = cv2.VideoCapture(str(args.video))
     if not cap.isOpened() or not cap.set(cv2.CAP_PROP_POS_FRAMES, int(selected[0])):
@@ -125,6 +152,7 @@ def main() -> None:
         conf=0.25, max_det=8, tracker="bytetrack.yaml",
     )
     rows = []
+    private_rows = []
     first_opencv_pos_s = None
     for idx in selected:
         ok, frame = cap.read()
@@ -135,6 +163,22 @@ def main() -> None:
         if first_opencv_pos_s is None:
             first_opencv_pos_s = float(cap.get(cv2.CAP_PROP_POS_MSEC) / 1000)
         dets, raw_boxes, _, _ = backend.track_frame(frame)
+        if private and int(idx) in sampled:
+            sample = sampled[int(idx)]
+            if abs(float(pts[idx]) - float(sample["pts_s"])) > 1e-6:
+                raise ValueError("PTS del manifiesto no coincide con el original")
+            h, w = frame.shape[:2]
+            private_rows.append({
+                "sample_id": sample["sample_id"], "source_frame_index": int(idx),
+                "pts_s": float(pts[idx]), "raw_detection_count": len(raw_boxes),
+                "detections": [
+                    {"track_id": d.track_id,
+                     "keypoints": {name: {"x_px": d.keypoints_iso[j][0] * h,
+                                           "y_px": d.keypoints_iso[j][1] * h,
+                                           "confidence": d.keypoints_iso[j][2]}
+                                   for j, name in REFERENCE_JOINTS.items()}}
+                    for d in dets], "dimensions_px": [w, h],
+            })
         rows.append({
             "pts": float(pts[idx]), "raw": len(raw_boxes), "tracked": len(dets),
             "ids": [d.track_id for d in dets],
@@ -143,7 +187,7 @@ def main() -> None:
     cap.release()
 
     result = {
-        "video_sha256": sha256(args.video),
+        "video_sha256": video_hash,
         "checkpoint_sha256": sha256(args.checkpoint),
         "method": "HarMoCAP PoseBackend, CPU, imgsz=640, conf=0.25, max_det=8, ByteTrack; stride declarado",
         "gate_definition": "Exploratorio: cada articulación requerida con confianza de modelo >=0.5; dos detecciones y dos tracks por cuadro; sin referencia anatómica ni garantía de identidad",
@@ -160,6 +204,24 @@ def main() -> None:
     if args.split_pts is not None:
         result["before_split"] = resumir([r for r in rows if r["pts"] < args.split_pts])
         result["after_split"] = resumir([r for r in rows if r["pts"] >= args.split_pts])
+    if private:
+        if len(private_rows) != 40:
+            raise ValueError("No se extrajeron las 40 muestras sorteadas")
+        out.mkdir(parents=True, exist_ok=True)
+        export = {
+            "protocol": "harmocap_public_video_reference_export_v0.1",
+            "source_sha256": video_hash,
+            "checkpoint_sha256": result["checkpoint_sha256"],
+            "backend": backend.info(), "source_interval_pts_s": [args.start_pts, args.end_pts],
+            "tracking_stride": args.stride, "samples": private_rows,
+        }
+        (out / "model_pose_private.json").write_text(
+            json.dumps(export, indent=2, ensure_ascii=False) + "\n")
+        (out / "README_PRIVATE.txt").write_text(
+            "Poses de personas derivadas de video público. Uso de desarrollo; no subir a Git.\n"
+            "Los track_id no demuestran identidad A/B y las confidencias no son exactitud.\n")
+        result["private_export"] = {"sampled_frames": len(private_rows),
+                                    "location": "private_out_dir"}
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
