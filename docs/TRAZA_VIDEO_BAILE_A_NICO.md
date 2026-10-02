@@ -2,6 +2,8 @@
 
 Versión 0.1, 24-09-2026. **Plan futuro**, sin video humano seleccionado ni ruta de audio Beacon ejecutada. Los cuatro WAV del [banco sintético](../research/REPORTE_SINTETICO_PRESENTACION.md) sólo prueban una traducción diagnóstica de curvas conocidas.
 
+**Actualización de arquitectura, 02-10-2026:** el [laboratorio de Weaver en PRs abiertas](../research/WEAVER_LABORATORIO_ESTADO_20261002.md) ya documenta reproducción de video con WAV renderizado por Shaper y herramientas R08/R09. Es una vía experimental para el escalón D, diferente del router de `main` hacia `beacon-spatial`. No convierte los escalones C–F en realizados ni sustituye sus pruebas de calidad, permiso y sincronía.
+
 | Escalón | Entrada | Salida que hay que conservar | Prueba de paso |
 |---|---|---|---|
 | A. Curva fabricada | CSV con trayectoria y fase verdaderas por construcción | `Q`, `R`, estados y cuatro WAV | Plano y fase distinguibles; caso opuesto no colapsa a `R=1` por usar sólo cierres. **Hecho en datos sintéticos.** |

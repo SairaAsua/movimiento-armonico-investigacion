@@ -114,6 +114,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Ruta HarMoCAP → Weaver → beacon-spatial](RUTA_HARMOCAP_WEAVER_BEACON.md): contratos y código público actual, límite del MVP sin audio live y alias `kinetic_energy` que no representa energía física.
 
+[Weaver como laboratorio exploratorio, revisión de ramas al 02-10-2026](WEAVER_LABORATORIO_ESTADO_20261002.md): distingue `main` del laboratorio de Nico en PRs abiertas, y ordena video de baile → sonificación offline → anotación de soga → contrato temporal R09 sin afirmar validación humana.
+
 [Prueba aislada del driver Weaver](WEAVER_DRIVER_PRUEBA_AISLADA.md): 12 pruebas del enlace con fixtures y control adverso de generación/contrato; sólo llega al transporte de registro, no al audio.
 
 [Contrato real de Beacon en Weaver, offline](WEAVER_BEACON_CONTRATO_OFFLINE.md): escena sintética HarMoCAP→`/beacon/gain/4` compilada con manifiesto auténtico, aún sin OSC/audio.
