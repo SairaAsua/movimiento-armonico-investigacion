@@ -12,4 +12,6 @@ Este índice reúne los textos largos del equipo de Harmonic Beacon sobre movimi
 
 El [dossier general](../docs/DOSSIER_MOVIMIENTO_ARMONICO.pdf) presenta la propuesta completa; su [versión Markdown](../docs/DOSSIER_MOVIMIENTO_ARMONICO.md) permite editarla. La [bibliografía comentada](../research/BIBLIOGRAPHY.md) distingue fuentes primarias, lecturas parciales y notas de diseño. Las definiciones detalladas de [matemática espacial](../research/LABAN_MATEMATICA.md), [puente Laban–HIT](../research/PUENTE_LABAN_HIT.md) y [ruta HarMoCAP–Weaver–Beacon](../research/RUTA_HARMOCAP_WEAVER_BEACON.md) acompañan el artículo principal.
 
+El PDF del artículo se genera desde su Markdown con `python papers/render_pdf.py` (requiere Python Markdown y Chrome/Chromium). El script conserva enlaces internos como vínculos al repositorio público; comprobar el PDF resultante antes de actualizarlo.
+
 La autoría académica final se acordará según contribuciones efectivas y revisión del manuscrito. Los videos y datos personales permanecerán fuera de este repositorio.
