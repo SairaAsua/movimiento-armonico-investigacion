@@ -22,6 +22,15 @@ python research/preparar_referencia_pose_publica.py VIDEO_ORIGINAL.webm DIRECTOR
 3. Si el cuadro aislado no permite seguir A/B, mira un contexto breve del original y registra que lo usó; si tampoco resuelve la identidad, marca `ambiguous_identity`. El contexto ayuda a identificar, pero la coordenada corresponde al cuadro indicado por PTS. Si hay un corte dentro de un intervalo de contexto, no propaga identidad a través de él sin evidencia.
 4. Se guardan las dos anotaciones originales antes de cualquier conversación. Las diferencias se revisan después, conservando originales y eventual adjudicación por separado. No se obliga un punto cuando el desacuerdo proviene de oclusión o de un píxel no distinguible.
 
+Una vez cerrados **dos CSV originales independientes**, el [validador de referencia](validar_referencia_pose_publica.py) comprueba el manifiesto y hashes de los PNG privados, todas las 480 claves por observador, estados, coordenadas dentro de 852 × 480 y ausencia de posiciones inventadas en puntos no visibles. Emite por pantalla sólo agregados de acuerdo de estado, distancia entre marcas cuando ambas son visibles y cobertura de torso/muñecas ponderada por los bins de 10/17/18 cuadros:
+
+```bash
+python research/validar_referencia_pose_publica.py \
+  DIRECTORIO_PRIVADO/manifest.json CODIFICADOR_1.csv CODIFICADOR_2.csv
+```
+
+Ejecutarlo localmente, sin redirigir a un archivo público. Los códigos de observador deben ser distintos; el script no puede demostrar que hayan trabajado a ciegas o de forma independiente, ni que una marca visible sea anatómicamente correcta. El acuerdo se informa **antes** de adjudicar desacuerdos. La cobertura ponderada estima la fracción de cuadros fuente donde cada codificador vio los puntos requeridos; no es cobertura validada de HarMoCAP y no lleva un umbral de aceptación automático.
+
 No se pide a estas personas que juzguen belleza, sensualidad, intención, estados internos, eficiencia ni autenticidad de la danza. La licencia publicada para el archivo es CC BY-SA 4.0; eso no transforma a las intérpretes en participantes consentidas de nuestro estudio. El uso de esta referencia queda limitado a desarrollo técnico y a la revisión ética/institucional que corresponda antes de publicar una evaluación de personas.
 
 ## Comparación prevista con HarMoCAP
