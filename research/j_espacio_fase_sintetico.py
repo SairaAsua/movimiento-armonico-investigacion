@@ -27,6 +27,12 @@ def q(t: float) -> float:
 
 
 def main() -> None:
+    # A single uniform lap and an external clock make both bins equal solely
+    # because they share the progress of the task. Maximal J is not evidence
+    # of special coordination or a HIT prediction.
+    uniform = [[0.5, 0.0], [0.0, 0.5]]
+    assert abs(mutual_information(uniform) - math.log(2)) < 1e-12
+
     # Spatial bin S is q(t)<1/2 vs >=1/2. Independent clock bin Φ is
     # t<1/2 vs >=1/2. q crosses the spatial boundary at t_cross.
     t_cross = (1.8 - math.sqrt(1.64)) / 1.6
@@ -53,6 +59,7 @@ def main() -> None:
     assert abs(mutual_information(pooled)) < 1e-12
 
     print(f"misma ejecución: J_t={j_time:.9f}, J_s={j_arc:.9f} nats")
+    print(f"vuelta uniforme y reloj común: J_t=J_s={mutual_information(uniform):.9f} nats")
     print(
         "dos ciclos: J_ciclo_1=J_ciclo_2="
         f"{math.log(2):.9f}, J_pooled={mutual_information(pooled):.9f} nats"
