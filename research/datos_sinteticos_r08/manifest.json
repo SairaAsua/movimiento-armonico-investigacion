@@ -1,10 +1,11 @@
 {
   "kind": "synthetic_projected_rope_audio_diagnostic",
   "not": [
-    "R08 media-bound annotation",
-    "HarMoCAP",
-    "Weaver",
-    "Beacon",
+    "human R08 annotation",
+    "geometric validation from pixels",
+    "HarMoCAP audio",
+    "Weaver audio",
+    "Beacon audio",
     "human movement",
     "Laban validation",
     "HIT validation"
@@ -14,6 +15,9 @@
     1080
   ],
   "fps": 30,
+  "video_sha256": "f835c10b5511617f4d399f5c42f9968e90bf62661f8d72fa875e3b93a9fad61e",
+  "annotation_sha256": "d4f5381376da8194fedd24e04b5558f62f34f67c450726d27e920b9c78151c86",
+  "annotation_provenance": "programmatic synthetic fixture; method=manual is R08 v1 schema token",
   "sample_rate_hz": 22050,
   "tone_hz": 220,
   "mapping": "left_gain=m_xx; right_gain=m_yy; invalid=both_zero",

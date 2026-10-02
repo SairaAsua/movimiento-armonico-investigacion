@@ -86,6 +86,13 @@ def rms(values: list[int]) -> float:
 
 
 def main() -> None:
+    # Generate and read the exact synthetic video-bound annotation before audio.
+    from r08_video_sintetico import generate
+
+    video_path, annotation_path = generate()
+    annotation = json.loads(annotation_path.read_text(encoding="utf-8"))
+    assert annotation["media_sha256"] == hashlib.sha256(video_path.read_bytes()).hexdigest()
+    assert (annotation["width_px"], annotation["height_px"]) == (WIDTH, HEIGHT)
     horizontal = projected_tensor(synthetic_frame("horizontal"))
     vertical = projected_tensor(synthetic_frame("vertical"))
     invalid = projected_tensor(synthetic_frame("invalid"))
@@ -119,7 +126,7 @@ def main() -> None:
     assert diagonal_result is not None
     assert abs(diagonal_result["m_xx"] - 192**2 / (192**2 + 108**2)) < 1e-12
 
-    frames = synthetic_annotation()["frames"]
+    frames = annotation["frames"]
     tensors = [projected_tensor(frame) for frame in frames]
     samples = bytearray()
     left_values: list[list[int]] = [[] for _ in SEGMENTS]
@@ -155,9 +162,13 @@ def main() -> None:
 
     manifest = {
         "kind": "synthetic_projected_rope_audio_diagnostic",
-        "not": ["R08 media-bound annotation", "HarMoCAP", "Weaver", "Beacon",
+        "not": ["human R08 annotation", "geometric validation from pixels",
+                "HarMoCAP audio", "Weaver audio", "Beacon audio",
                 "human movement", "Laban validation", "HIT validation"],
         "image_px": [WIDTH, HEIGHT], "fps": FPS,
+        "video_sha256": annotation["media_sha256"],
+        "annotation_sha256": hashlib.sha256(annotation_path.read_bytes()).hexdigest(),
+        "annotation_provenance": "programmatic synthetic fixture; method=manual is R08 v1 schema token",
         "sample_rate_hz": SAMPLE_RATE, "tone_hz": TONE_HZ,
         "mapping": "left_gain=m_xx; right_gain=m_yy; invalid=both_zero",
         "segments": [
