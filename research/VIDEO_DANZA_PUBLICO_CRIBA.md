@@ -28,7 +28,27 @@ Se revisó una cuadrícula de cuadros cada 10 s a lo largo del ensayo y, alreded
 
 Se leyó el código de `Mar-IA-no/HarMoCAP` en el commit [`bdeebbf`](https://github.com/Mar-IA-no/HarMoCAP/tree/bdeebbf5bef4f78d1dc6ff43feb8228e994feb49). Su [procesador web de archivos](https://github.com/Mar-IA-no/HarMoCAP/blob/bdeebbf5bef4f78d1dc6ff43feb8228e994feb49/src/harmocap/webapp/processing.py#L506) convierte inicio/fin a índices mediante FPS y asigna `t_us = (src_i - 1) / fps`, sin leer PTS del medio ni guardar el índice fuente en su JSONL. La [ruta `LatchingCamera`](https://github.com/Mar-IA-no/HarMoCAP/blob/bdeebbf5bef4f78d1dc6ff43feb8228e994feb49/src/harmocap/capture.py#L91) simula un archivo a 1/FPS, le asigna reloj monotónico de ejecución y puede descartar cuadros por *latest-frame*. Son rutas útiles para visualización o simulación en vivo, pero todavía no producen una cronología científica offline del archivo.
 
-En este original, `(25.967−1)/25 = 1038,640 s` difiere del último PTS `1039,547 s`; la diferencia incluye el origen `0,827 s` y al menos un hueco temporal. En el salto máximo observado, `120 ms` de medio se convertirían en `40 ms` por FPS; una derivada calculada a través de ese salto podría triplicarse artificialmente. El tramo 152–174 s no presenta ese hueco, pero aún necesita un enlace explícito entre cada detección y su PTS antes de usarse en una comparación de fase. Se abrió [HarMoCAP #3](https://github.com/Mar-IA-no/HarMoCAP/issues/3) para conservar PTS, procedencia y denominadores; el receptor Weaver tiene además [su issue #77](https://github.com/AlterMundi/harmonic-weaver/issues/77). No se ejecutó inferencia de pose con HarMoCAP ni se afirmó calidad de sus detecciones sobre este video.
+En este original, `(25.967−1)/25 = 1038,640 s` difiere del último PTS `1039,547 s`; la diferencia incluye el origen `0,827 s` y al menos un hueco temporal. En el salto máximo observado, `120 ms` de medio se convertirían en `40 ms` por FPS; una derivada calculada a través de ese salto podría triplicarse artificialmente. El tramo 152–174 s no presenta ese hueco, pero aún necesita un enlace explícito entre cada detección y su PTS antes de usarse en una comparación de fase. Se abrió [HarMoCAP #3](https://github.com/Mar-IA-no/HarMoCAP/issues/3) para conservar PTS, procedencia y denominadores; el receptor Weaver tiene además [su issue #77](https://github.com/AlterMundi/harmonic-weaver/issues/77).
+
+### Prueba local de percepción, sin validación anatómica
+
+Se ejecutó [este diagnóstico agregado](diagnosticar_pose_video_publico.py) con el `PoseBackend` del commit HarMoCAP `bdeebbf`, el checkpoint oficial `models-v1/harmocap-m-pose-ft2.pt` (SHA-256 `80eae9b99ab5710ec6c0bd366acefa0e116482e98c9bba3803b62bf984fc0bcc`), CPU, imagen de inferencia 640, `conf=0,25`, `max_det=8` y ByteTrack. Entorno local: Python 3.12.3, PyTorch 2.14.1+cpu, Ultralytics 8.4.99 y OpenCV 5.0.0.93. El script coteja índice decodificado con PTS obtenidos de `ffprobe` y **sólo imprime conteos y confianza agregados**. Comando, con rutas locales propias:
+
+```bash
+python research/diagnosticar_pose_video_publico.py VIDEO_ORIGINAL.webm CHECKPOINT.pt \
+  --start-pts 152 --end-pts 174 --stride 1 --split-pts 160
+```
+
+| Pasada | Cuadros procesados / denominador | 2 detecciones / 1 detección | Confianza de muñeca izquierda ≥ 0,5 entre detecciones |
+|---|---:|---:|---:|
+| Muestreo sistemático, 1 de cada 5 | 110 / 550 | 106 / 4 | 58,33 % de 216 detecciones |
+| Todos los cuadros | **550 / 550** | **542 / 8** | **59,07 % de 1092 detecciones** |
+| Todos, 152–160 s | 200 / 200 | 200 / 0 | 41,00 % de 400 detecciones |
+| Todos, 160–174 s | 350 / 350 | 342 / 8 | 69,51 % de 692 detecciones |
+
+En la pasada completa el modelo produjo tres IDs efímeros para una escena que las muestras visuales muestran con dos intérpretes: hay que auditar continuidad de identidad antes de derivar relaciones entre personas. La menor confianza de muñeca izquierda en 152–160 s coincide con las muestras donde hay mayor cruce, **sin probar que el cruce sea la causa**. Un umbral exploratorio de confianza `0,5` no es una probabilidad calibrada ni una referencia anatómica: dos detecciones no prueban que se hayan seguido correctamente dos cuerpos, y 550 cuadros procesados no implican 550 cuadros con muñecas utilizables. No se guardaron ni publicaron cuadros, poses o IDs por tiempo.
+
+La primera posición que informó OpenCV para esta ventana fue `152,000 s`, mientras que el PTS original del mismo índice fue `152,827 s`: **−0,827 s** de discrepancia de origen. Este diagnóstico de percepción no calcula velocidad, fase, `Q`, belleza ni audio. Para avanzar hará falta una anotación independiente de identidad/keypoints sobre una muestra predefinida, un gate por señal y la corrección de PTS de HarMoCAP #3. El diagnóstico usa ByteTrack sobre la secuencia completa o muestreada; no equivale a validar la configuración `duo` de la interfaz web ni el receptor Beacon.
 
 ## Reproducción y siguiente puerta
 
