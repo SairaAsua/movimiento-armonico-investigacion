@@ -8,6 +8,10 @@ from __future__ import annotations
 import math
 
 
+def binary_entropy(probability: float) -> float:
+    return -sum(p * math.log(p) for p in (probability, 1 - probability) if p > 0)
+
+
 def mutual_information(joint: list[list[float]]) -> float:
     total = sum(map(sum, joint))
     assert total > 0
@@ -24,6 +28,31 @@ def mutual_information(joint: list[list[float]]) -> float:
 def q(t: float) -> float:
     """Monotone one-lap temporal parameterization on 0 <= t <= 1."""
     return t + 0.8 * t * (1 - t)
+
+
+def task_joint(*, shared_residual: bool) -> list[list[list[float]]]:
+    """Exact P(T,S,Phi) with balanced T and Bernoulli(1/4) residuals."""
+    joint = [[[0.0 for _ in range(2)] for _ in range(2)] for _ in range(2)]
+    residual = [(0, 0.75), (1, 0.25)]
+    for task in range(2):
+        for error_s, weight_s in residual:
+            for error_phi, weight_phi in residual:
+                if shared_residual and error_s != error_phi:
+                    continue
+                weight = 0.5 * weight_s * (1 if shared_residual else weight_phi)
+                joint[task][task ^ error_s][task ^ error_phi] += weight
+    return joint
+
+
+def conditional_mutual_information(joint: list[list[list[float]]]) -> float:
+    return sum(
+        sum(map(sum, table)) * mutual_information(table)
+        for table in joint
+    )
+
+
+def pooled_task_joint(joint: list[list[list[float]]]) -> list[list[float]]:
+    return [[sum(joint[t][s][phi] for t in range(2)) for phi in range(2)] for s in range(2)]
 
 
 def main() -> None:
@@ -58,11 +87,30 @@ def main() -> None:
     assert abs(mutual_information(reversed_relation) - math.log(2)) < 1e-12
     assert abs(mutual_information(pooled)) < 1e-12
 
+    task_only = task_joint(shared_residual=False)
+    residual_link = task_joint(shared_residual=True)
+    expected_raw = math.log(2) - binary_entropy(0.375)
+    expected_conditional = binary_entropy(0.25)
+    assert abs(sum(sum(map(sum, table)) for table in task_only) - 1) < 1e-12
+    assert abs(sum(sum(map(sum, table)) for table in residual_link) - 1) < 1e-12
+    assert abs(mutual_information(pooled_task_joint(task_only)) - expected_raw) < 1e-12
+    assert abs(conditional_mutual_information(task_only)) < 1e-12
+    assert abs(mutual_information(pooled_task_joint(residual_link)) - math.log(2)) < 1e-12
+    assert abs(conditional_mutual_information(residual_link) - expected_conditional) < 1e-12
+
     print(f"misma ejecución: J_t={j_time:.9f}, J_s={j_arc:.9f} nats")
     print(f"vuelta uniforme y reloj común: J_t=J_s={mutual_information(uniform):.9f} nats")
     print(
         "dos ciclos: J_ciclo_1=J_ciclo_2="
         f"{math.log(2):.9f}, J_pooled={mutual_information(pooled):.9f} nats"
+    )
+    print(
+        "reloj común con errores independientes: "
+        f"I(S;Phi)={expected_raw:.9f}, I(S;Phi|T)=0.000000000 nats"
+    )
+    print(
+        "residuo compartido: "
+        f"I(S;Phi)={math.log(2):.9f}, I(S;Phi|T)={expected_conditional:.9f} nats"
     )
 
 
