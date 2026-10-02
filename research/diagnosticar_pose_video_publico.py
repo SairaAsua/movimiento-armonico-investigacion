@@ -23,6 +23,11 @@ from harmocap.perception import PoseBackend
 
 JOINTS = {5: "shoulder_l", 6: "shoulder_r", 9: "wrist_l", 10: "wrist_r",
           11: "hip_l", 12: "hip_r", 15: "ankle_l", 16: "ankle_r"}
+GATES = {
+    "torso": (5, 6, 11, 12),
+    "torso_right_wrist": (5, 6, 10, 11, 12),
+    "torso_both_wrists": (5, 6, 9, 10, 11, 12),
+}
 
 
 def sha256(path: Path) -> str:
@@ -44,11 +49,40 @@ def pts_originales(path: Path) -> np.ndarray:
 
 def resumir(rows: list[dict]) -> dict:
     confs = [p for row in rows for p in row["conf"]]
+    gates = {}
+    for name, joints in GATES.items():
+        valid = [
+            row["raw"] == 2 and row["tracked"] == 2
+            and len(row["conf"]) == 2
+            and all(all(person[j] >= 0.5 for j in joints) for person in row["conf"])
+            for row in rows
+        ]
+        best, current, best_span, run_start = 0, 0, 0.0, 0
+        for i, passed in enumerate(valid):
+            if passed:
+                if current == 0:
+                    run_start = i
+                current += 1
+                if current > best:
+                    best = current
+                    best_span = rows[i]["pts"] - rows[run_start]["pts"]
+            else:
+                current = 0
+        gates[name] = {
+            "person_detections_passing": sum(
+                all(person[j] >= 0.5 for j in joints) for person in confs),
+            "person_detections_denominator": len(confs),
+            "frames_with_two_detections_both_passing": sum(valid),
+            "frames_denominator": len(rows),
+            "longest_run_processed_samples": best,
+            "longest_run_pts_span_s": round(best_span, 3),
+        }
     return {
         "sampled_frames": len(rows),
         "raw_detection_count": dict(sorted(Counter(row["raw"] for row in rows).items())),
         "tracked_detection_count": dict(sorted(Counter(row["tracked"] for row in rows).items())),
         "distinct_ephemeral_track_ids": len({i for row in rows for i in row["ids"]}),
+        "exploratory_joint_confidence_gate_ge_0p5": gates,
         "joint_model_confidence": {
             name: {
                 "detections": len(confs),
@@ -111,7 +145,8 @@ def main() -> None:
     result = {
         "video_sha256": sha256(args.video),
         "checkpoint_sha256": sha256(args.checkpoint),
-        "method": "HarMoCAP PoseBackend, CPU, imgsz=640, conf=0.25, max_det=8, ByteTrack; cuadros muestreados",
+        "method": "HarMoCAP PoseBackend, CPU, imgsz=640, conf=0.25, max_det=8, ByteTrack; stride declarado",
+        "gate_definition": "Exploratorio: cada articulación requerida con confianza de modelo >=0.5; dos detecciones y dos tracks por cuadro; sin referencia anatómica ni garantía de identidad",
         "source_frames_in_interval": len(selected),
         "source_index_first": int(selected[0]),
         "source_index_last": int(selected[-1]),
