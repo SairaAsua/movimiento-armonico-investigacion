@@ -15,7 +15,9 @@ import sys
 from io import BytesIO
 from pathlib import Path
 
-from r08_sonido_diagnostico import HEIGHT, OUTPUT, WIDTH, projected_tensor
+from r08_sonido_diagnostico import (
+    HEIGHT, OUTPUT, WIDTH, projected_tensor, render_diagnostic_wav,
+)
 
 
 def main() -> None:
@@ -56,27 +58,29 @@ def main() -> None:
         assert [component["area_px"] for component in candidates["candidate_components"]] == (
             [] if expected_gap else [1536]
         )
-        if index in (0, 37, 45):
-            candidates_by_frame[index] = candidates
+        candidates_by_frame[index] = candidates
     print("75 decoded frames: 60 with one 1536-px white candidate; "
           "15 gap frames with none")
 
     # These positions are supplied from the drawing recipe. An operator would
     # have to select and independently review analogous seeds for real footage.
-    cases = (
-        (0, "horizontal", (770.5, 539.5), (1149.5, 539.5), 540.0),
-        (37, "unidentifiable", None, None, None),
-        (45, "vertical", (959.5, 350.5), (959.5, 729.5), 960.0),
-    )
-    for index, kind, start, stop, reference_axis in cases:
+    tensors: list[dict | None] = []
+    for index in range(75):
         candidates = candidates_by_frame[index]
-        if kind == "unidentifiable":
+        if 30 <= index < 45:
             assert candidates["components_detected"] == 0
             assert candidates["candidate_components"] == []
             assert projected_tensor(fixture["frames"][index]) is None
-            print(f"frame {index}: no white candidate; no curve or tensor")
+            tensors.append(None)
+            if index == 37:
+                print(f"frame {index}: no white candidate; no curve or tensor")
             continue
 
+        kind = "horizontal" if index < 30 else "vertical"
+        if kind == "horizontal":
+            start, stop, reference_axis = (770.5, 539.5), (1149.5, 539.5), 540.0
+        else:
+            start, stop, reference_axis = (959.5, 350.5), (959.5, 729.5), 960.0
         assert candidates["components_detected"] == 1
         component = candidates["candidate_components"][0]
         assert component["area_px"] == 1536
@@ -106,13 +110,43 @@ def main() -> None:
         assert abs(candidate_tensor["m_xx"] - expected_xx) < 1e-12
         assert abs(candidate_tensor["m_xy"]) < 1e-12
         assert abs(candidate_tensor["visible_length_px"] - 379.0) < 1e-9
-        print(f"frame {index}: one {component['area_px']}-px candidate; "
-              f"seeded path {len(xy)} points / 379 px; "
-              f"perpendicular error {max_perpendicular_error:.1f} px; "
-              f"M2 xx={candidate_tensor['m_xx']:.0f}")
+        tensors.append(candidate_tensor)
+        if index in (0, 45):
+            print(f"frame {index}: one {component['area_px']}-px candidate; "
+                  f"seeded path {len(xy)} points / 379 px; "
+                  f"perpendicular error {max_perpendicular_error:.1f} px; "
+                  f"M2 xx={candidate_tensor['m_xx']:.0f}")
 
-    print("Candidate paths require synthetic truth seeds and manual review; "
-          "the existing WAV is generated from the fixture annotation, not these paths.")
+    assert len(tensors) == 75
+    candidate_wav = OUTPUT / "curva_desde_pixeles_candidatos.wav"
+    segments = render_diagnostic_wav(tensors, candidate_wav)
+    original_wav = OUTPUT / "curva_proyectada_gap.wav"
+    candidate_hash = hashlib.sha256(candidate_wav.read_bytes()).hexdigest()
+    annotation_hash = hashlib.sha256(original_wav.read_bytes()).hexdigest()
+    assert candidate_hash == annotation_hash
+    manifest = {
+        "kind": "synthetic_pixel_candidate_audio_diagnostic",
+        "weaver_source_commit": "4308f07b2f05de5b87cdd5b8a2b8dab41a25ec06",
+        "video_sha256": media["media_sha256"],
+        "pixel_mask": "RGB distance from white <=40; 4-connected; min 100 px",
+        "path": "user-seeded shortest path within selected component",
+        "seeds": "known endpoints from synthetic drawing recipe, not inferred",
+        "frames": 75,
+        "candidate_paths": 60,
+        "gap_frames_without_path": 15,
+        "visible_path_length_px": 379,
+        "segments": segments,
+        "wav_sha256": candidate_hash,
+        "equals_annotation_fixture_wav_sha256": annotation_hash,
+        "not": ["accepted R08 annotations", "independent rope detection",
+                "human motion", "Beacon audio", "evidence for Laban or HIT"],
+    }
+    (OUTPUT / "candidate_audio_manifest.json").write_text(
+        json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    print("60 seeded pixel paths -> stereo diagnostic WAV; 15 gap frames -> zero RMS")
+    print("WAV matches the annotation-fixture WAV on this constructed case; "
+          "candidate paths still require independent review for human video.")
 
 
 if __name__ == "__main__":

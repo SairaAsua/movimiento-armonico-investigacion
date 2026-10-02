@@ -85,6 +85,51 @@ def rms(values: list[int]) -> float:
     return math.sqrt(sum(value * value for value in values) / len(values))
 
 
+def render_diagnostic_wav(tensors: list[dict | None], wav_path: Path) -> list[dict]:
+    """Render the fixed stereo M2 diagnostic; return RMS by synthetic segment.
+
+    The caller declares tensor provenance. This renderer does not validate an
+    R08 annotation or identify a rope, and its 220 Hz carrier is arbitrary.
+    """
+    assert len(tensors) == sum(count for _, count in SEGMENTS) == 75
+    samples = bytearray()
+    left_values: list[list[int]] = [[] for _ in SEGMENTS]
+    right_values: list[list[int]] = [[] for _ in SEGMENTS]
+    boundaries = (0, 30, 45, 75)
+    for sample_index in range(len(tensors) * SAMPLE_RATE // FPS):
+        frame_index = sample_index * FPS // SAMPLE_RATE
+        region = next(i for i in range(len(SEGMENTS)) if frame_index < boundaries[i + 1])
+        tensor = tensors[frame_index]
+        if tensor is None:
+            left = right = 0
+        else:
+            local_time = sample_index / SAMPLE_RATE - boundaries[region] / FPS
+            remaining = boundaries[region + 1] / FPS - sample_index / SAMPLE_RATE
+            fade = max(0.0, min(1.0, local_time / 0.02, remaining / 0.02))
+            carrier = math.sin(2 * math.pi * TONE_HZ * sample_index / SAMPLE_RATE)
+            left = round(PEAK * fade * tensor["m_xx"] * carrier)
+            right = round(PEAK * fade * tensor["m_yy"] * carrier)
+        left_values[region].append(left)
+        right_values[region].append(right)
+        samples.extend(struct.pack("<hh", left, right))
+
+    wav_path.parent.mkdir(exist_ok=True)
+    with wave.open(str(wav_path), "wb") as wav:
+        wav.setnchannels(2)
+        wav.setsampwidth(2)
+        wav.setframerate(SAMPLE_RATE)
+        wav.writeframes(samples)
+    assert rms(left_values[0]) > 6000 and rms(right_values[0]) == 0
+    assert rms(left_values[1]) == rms(right_values[1]) == 0
+    assert rms(left_values[2]) == 0 and rms(right_values[2]) > 6000
+    return [
+        {"kind": kind, "frames": count, "duration_s": count / FPS,
+         "left_rms_pcm16": rms(left_values[i]),
+         "right_rms_pcm16": rms(right_values[i])}
+        for i, (kind, count) in enumerate(SEGMENTS)
+    ]
+
+
 def main() -> None:
     # Generate and read the exact synthetic video-bound annotation before audio.
     from r08_video_sintetico import generate
@@ -128,37 +173,9 @@ def main() -> None:
 
     frames = annotation["frames"]
     tensors = [projected_tensor(frame) for frame in frames]
-    samples = bytearray()
-    left_values: list[list[int]] = [[] for _ in SEGMENTS]
-    right_values: list[list[int]] = [[] for _ in SEGMENTS]
-    boundaries = (0, 30, 45, 75)
-    for sample_index in range(len(frames) * SAMPLE_RATE // FPS):
-        frame_index = sample_index * FPS // SAMPLE_RATE
-        region = next(i for i in range(len(SEGMENTS)) if frame_index < boundaries[i + 1])
-        tensor = tensors[frame_index]
-        if tensor is None:
-            left = right = 0
-        else:
-            local_time = sample_index / SAMPLE_RATE - boundaries[region] / FPS
-            remaining = boundaries[region + 1] / FPS - sample_index / SAMPLE_RATE
-            fade = max(0.0, min(1.0, local_time / 0.02, remaining / 0.02))
-            carrier = math.sin(2 * math.pi * TONE_HZ * sample_index / SAMPLE_RATE)
-            left = round(PEAK * fade * tensor["m_xx"] * carrier)
-            right = round(PEAK * fade * tensor["m_yy"] * carrier)
-        left_values[region].append(left)
-        right_values[region].append(right)
-        samples.extend(struct.pack("<hh", left, right))
-
     OUTPUT.mkdir(exist_ok=True)
     wav_path = OUTPUT / "curva_proyectada_gap.wav"
-    with wave.open(str(wav_path), "wb") as wav:
-        wav.setnchannels(2)
-        wav.setsampwidth(2)
-        wav.setframerate(SAMPLE_RATE)
-        wav.writeframes(samples)
-    assert rms(left_values[0]) > 6000 and rms(right_values[0]) == 0
-    assert rms(left_values[1]) == rms(right_values[1]) == 0
-    assert rms(left_values[2]) == 0 and rms(right_values[2]) > 6000
+    segments = render_diagnostic_wav(tensors, wav_path)
 
     manifest = {
         "kind": "synthetic_projected_rope_audio_diagnostic",
@@ -171,13 +188,7 @@ def main() -> None:
         "annotation_provenance": "programmatic synthetic fixture; method=manual is R08 v1 schema token",
         "sample_rate_hz": SAMPLE_RATE, "tone_hz": TONE_HZ,
         "mapping": "left_gain=m_xx; right_gain=m_yy; invalid=both_zero",
-        "segments": [
-            {"kind": kind, "frames": count,
-             "duration_s": count / FPS,
-             "left_rms_pcm16": rms(left_values[i]),
-             "right_rms_pcm16": rms(right_values[i])}
-            for i, (kind, count) in enumerate(SEGMENTS)
-        ],
+        "segments": segments,
         "horizontal": horizontal, "vertical": vertical,
         "partial_visible_only": partial_result,
         "diagonal": diagonal_result,
