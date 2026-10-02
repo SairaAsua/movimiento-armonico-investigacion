@@ -52,7 +52,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Misma trayectoria, distinto ritmo](GEOMETRIA_VS_TIEMPO_TRAYECTORIA.md): diferencia entre ponderar por cuadros y por longitud de recorrido, con [contraejemplo sintético ejecutable](geometria_tiempo_sintetica.py) para separar geometría Laban y tiempo HIT.
 
-[Mismo círculo en dos videos, distinto ritmo](VIDEO_CURVA_RITMO.md): un marcador sintético sigue la misma curva analítica con dos leyes temporales; píxeles decodificados y PTS recuperan una ocupación temporal diferente y una fracción de recorrido cercana en ambos casos. No es soga ni validación humana de HIT.
+[Mismo círculo en dos videos, distinto ritmo](VIDEO_CURVA_RITMO.md): un marcador sintético sigue la misma curva analítica con dos leyes temporales; píxeles y PTS recuperan la diferencia, y dos WAV diagnósticos hacen audible la rapidez medida. No es soga, audio de Beacon ni validación humana de HIT.
 
 [Acople espacio–tiempo](ACOPLE_ESPACIO_TIEMPO.md): misma curva y mismos marginales de rapidez/aceleración, pero acento en regiones corporales opuestas; incluye [control sintético](espacio_tiempo_acople_sintetico.py) y un descriptor condicional a validar antes del piloto.
 

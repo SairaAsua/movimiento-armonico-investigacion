@@ -11,7 +11,10 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import statistics
+import struct
 import subprocess
+import wave
 from pathlib import Path
 
 from geometria_tiempo_sintetica import q
@@ -25,6 +28,8 @@ COUNT = 90
 CX = CY = 160
 RADIUS = 95
 MARKER_HALF_WIDTH = 3
+SAMPLE_RATE = 24000
+TONE_HZ = 220
 
 
 def run(command: list[str], *, data: bytes | None = None) -> bytes:
@@ -59,7 +64,7 @@ def build_video(kind: str) -> Path:
     return path
 
 
-def decoded_measurements(path: Path) -> dict:
+def decoded_measurements(path: Path) -> tuple[dict, list[float]]:
     info = json.loads(run([
         "ffprobe", "-v", "error", "-select_streams", "v:0", "-show_frames",
         "-show_entries", "frame=best_effort_timestamp_time", "-of", "json",
@@ -102,7 +107,7 @@ def decoded_measurements(path: Path) -> dict:
     arc_fraction = sum(ds for ds, selected in zip(lengths, in_first_half)
                        if selected) / sum(lengths)
     radial_errors = [math.hypot(x - CX, y - CY) - RADIUS for x, y in positions]
-    return {
+    summary = {
         "video_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         "frames": COUNT,
         "first_pts_s": pts[0],
@@ -115,14 +120,55 @@ def decoded_measurements(path: Path) -> dict:
         "first_semicircle_arc_fraction": arc_fraction,
         "phase_covered_rad_without_closure": phase[-1],
     }
+    speeds = [distance / duration for distance, duration in zip(lengths, durations)]
+    return summary, speeds
+
+
+def render_speed_audio(speeds: list[float], baseline_speed: float,
+                       output: Path) -> dict:
+    """Fixed-carrier amplitude from measured speed; last unsupported frame fades out."""
+    assert len(speeds) == COUNT - 1 and baseline_speed > 0
+    gains = [min(0.9, 0.45 * speed / baseline_speed) for speed in speeds] + [0.0]
+    samples = bytearray()
+    thirds: list[list[int]] = [[], [], []]
+    samples_per_frame = SAMPLE_RATE // FPS
+    ramp_samples = SAMPLE_RATE // 100  # 10 ms ramp after each frame boundary.
+    for sample_index in range(COUNT * samples_per_frame):
+        frame_index, frame_sample = divmod(sample_index, samples_per_frame)
+        current = gains[frame_index]
+        previous = gains[frame_index - 1] if frame_index else 0.0
+        ramp = min(1.0, frame_sample / ramp_samples)
+        gain = previous + (current - previous) * ramp
+        carrier = math.sin(2 * math.pi * TONE_HZ * sample_index / SAMPLE_RATE)
+        value = round(16000 * gain * carrier)
+        thirds[frame_index // 30].append(value)
+        samples.extend(struct.pack("<h", value))
+    with wave.open(str(output), "wb") as wav:
+        wav.setnchannels(1)
+        wav.setsampwidth(2)
+        wav.setframerate(SAMPLE_RATE)
+        wav.writeframes(samples)
+    rms = [math.sqrt(sum(value * value for value in third) / len(third))
+           for third in thirds]
+    return {
+        "wav_sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
+        "sample_rate_hz": SAMPLE_RATE,
+        "tone_hz": TONE_HZ,
+        "mapping": "gain=min(0.9,0.45*measured_speed/baseline_speed)",
+        "availability": "speed for interval i requires decoded frame i+1; offline alignment, not live output",
+        "boundary_ramp_ms": 10,
+        "last_frame": "no next observed position; target gain zero",
+        "rms_pcm16_by_second": rms,
+    }
 
 
 def main() -> None:
     OUTPUT.mkdir(exist_ok=True)
-    measurements = {
+    decoded = {
         kind: decoded_measurements(build_video(kind))
         for kind in ("uniforme", "reparametrizado")
     }
+    measurements = {kind: result[0] for kind, result in decoded.items()}
     a, b = measurements["uniforme"], measurements["reparametrizado"]
     assert a["radial_rmse_px"] < 0.5 and b["radial_rmse_px"] < 0.5
     assert abs(a["first_semicircle_time_fraction"] - 0.5) < 0.02
@@ -131,19 +177,34 @@ def main() -> None:
     assert abs(a["first_semicircle_arc_fraction"] - 0.5) < 0.03
     assert abs(b["first_semicircle_arc_fraction"] - 0.5) < 0.03
     assert abs(a["first_semicircle_arc_fraction"] - b["first_semicircle_arc_fraction"]) < 0.03
+    baseline_speed = statistics.median(decoded["uniforme"][1])
+    audio = {
+        kind: render_speed_audio(speeds, baseline_speed,
+                                 OUTPUT / f"sonido_rapidez_{kind}.wav")
+        for kind, (_, speeds) in decoded.items()
+    }
+    a_rms = audio["uniforme"]["rms_pcm16_by_second"]
+    b_rms = audio["reparametrizado"]["rms_pcm16_by_second"]
+    assert 0.9 < a_rms[0] / a_rms[2] < 1.1
+    assert b_rms[0] / b_rms[2] > 1.8
+    assert b_rms[0] > a_rms[0] and b_rms[2] < a_rms[2]
     manifest = {
         "kind": "synthetic_video_same_path_different_timing",
         "source": "generated point marker; no rope or human motion",
         "construction": "theta_A=2*pi*t; theta_B=2*pi*(t+0.8*t*(1-t))",
         "analysis": "decoded white-pixel centroid and source PTS; 89 observed intervals",
+        "audio": "offline diagnostic amplitude from frame speed; fixed carrier; not Beacon",
+        "baseline_speed_px_s": baseline_speed,
         "not": ["Laban category", "HIT validation", "rope tracking",
-                "energy or aesthetic measurement"],
+                "energy or aesthetic measurement", "Beacon audio"],
         "measurements": measurements,
+        "audio_measurements": audio,
     }
     (OUTPUT / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    print(json.dumps(measurements, ensure_ascii=False, indent=2))
+    print(json.dumps({"measurements": measurements,
+                      "audio_measurements": audio}, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
