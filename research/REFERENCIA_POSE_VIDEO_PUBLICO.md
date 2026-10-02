@@ -48,7 +48,23 @@ python research/diagnosticar_pose_video_publico.py VIDEO_ORIGINAL.webm CHECKPOIN
 
 Este archivo derivado contiene posiciones de personas y tampoco se publica. **No** se asigna automáticamente el `track_id` a A/B por proximidad: eso usaría la referencia que se quiere evaluar para elegir la predicción más conveniente. Una revisión de correspondencia de identidad, conservando `unmatched` y cambios de ID, sigue pendiente antes de calcular error anatómico.
 
+La [herramienta de comparación](comparar_pose_referencia_publica.py) prepara una plantilla privada de 80 filas (`sample_id` × A/B) y, opcionalmente, 40 vistas de revisión con los puntos y `track_id` sobre los PNG originales. Para dibujar vistas hay que ejecutar `prepare` con un Python que tenga OpenCV, como el entorno aislado de HarMoCAP; el cálculo de agregados usa sólo la biblioteca estándar de Python. **Cerrar y guardar primero las dos anotaciones ciegas**: la persona que revisa identidad después ve el video original y las predicciones, pero no las coordenadas de los codificadores. En cada fila marca `matched` con un `track_id` existente, `unmatched` si esa persona no tiene pose trackeada asignable, o `ambiguous` si no puede decidir; un mismo track no puede asignarse a A y B en un cuadro. `unmatched` no equivale necesariamente a ausencia de detección cruda: la salida compara poses **trackeadas**. Las imágenes con overlays y el CSV de identidad permanecen privados.
+
+```bash
+python research/comparar_pose_referencia_publica.py prepare \
+  DIRECTORIO_PRIVADO/manifest.json OTRA_SALIDA_PRIVADA_VACIA/model_pose_private.json \
+  IDENTIDAD_PRIVADA.csv --overlays-dir VISTAS_PRIVADAS
+
+python research/comparar_pose_referencia_publica.py compare \
+  DIRECTORIO_PRIVADO/manifest.json OTRA_SALIDA_PRIVADA_VACIA/model_pose_private.json \
+  CODIFICADOR_1.csv CODIFICADOR_2.csv IDENTIDAD_PRIVADA.csv
+```
+
+El informe de `compare` separa ambos codificadores, conserva el denominador de puntos visibles, los casos `unmatched`/`ambiguous`, el error en píxeles **condicionado** a identidad asignada y punto visible, el desglose por articulación y estrato, y el contraste exploratorio de confianza del modelo ≥0,5. Los pesos por bin estiman cobertura y media de error para el tramo fuente; la mediana y el percentil 95 se describen sobre las 40 muestras, sin fingir independencia de cuadros. Los cambios de ID sólo se cuentan entre muestras consecutivas que pudieron emparejarse, así que no detectan todos los intercambios del video. Se revisará cualquier desacuerdo fuerte entre codificadores antes de interpretar el error, conservando los originales.
+
 **Ejecución técnica del 2 de octubre de 2026:** la exportación privada contiene los 40 `sample_id` esperados; cada índice, PTS y dimensión 852 × 480 coincidió con el manifiesto. El procesamiento continuo cubrió 550/550 cuadros y reprodujo el agregado anterior: 542 con dos detecciones, 8 con una y 3 IDs efímeros. Se verificó el SHA-256 del video y el del archivo derivado privado (`683558d8d667e234e8f305d493b4814847822fe7ddf633ad6bc0cf6038f6f495`). Ninguna posición individual entra a este repositorio. Este resultado certifica **alineación y reproducibilidad técnica**, no precisión de pose ni identidad de intérpretes.
+
+También se generaron **privadamente** la plantilla de identidad de 80 filas y las 40 vistas con overlays para facilitar la revisión posterior. Sólo se comprobó el cálculo con referencias y correspondencias **sintéticas**, incluyendo rechazo de un track asignado a las dos personas; no existe aún una asignación A/B humana ni un resultado de error anatómico.
 
 Para un resumen de cobertura de los 550 cuadros, cada cuadro sorteado representa su bin de 10, 17 o 18 cuadros; usar `design_weight_frames` del manifiesto y el denominador completo, no tratar 20/20 por estrato como si los estratos tuvieran igual tamaño. Esta muestra pequeña y temporalmente correlacionada es **piloto descriptivo**: sus 40 cuadros no son 40 personas ni justifican un intervalo de confianza ingenuo por cuadro. El error y la referencia se limitan a 2D proyectado; no validan orientación corporal 3D ni recorrido de soga. Las ocho ocasiones en que el detector produjo sólo una persona merecen una auditoría dirigida adicional, **separada** de esta muestra probabilística.
 
