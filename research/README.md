@@ -54,6 +54,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Acople espacio–tiempo](ACOPLE_ESPACIO_TIEMPO.md): misma curva y mismos marginales de rapidez/aceleración, pero acento en regiones corporales opuestas; incluye [control sintético](espacio_tiempo_acople_sintetico.py) y un descriptor condicional a validar antes del piloto.
 
+[Información mutua espacio–fase](J_ESPACIO_FASE_PONDERACION.md): el [banco exacto](j_espacio_fase_sintetico.py) separa ponderación por tiempo o arco y muestra cómo agrupar ciclos puede borrar relaciones opuestas; `J` queda exploratorio hasta fijar esa medida y su unidad de análisis.
+
 [Factibilidad del acople con cámaras](ACOPLE_CAMARA_FACTIBILIDAD.md): simulación proyectada con FPS, tamaño de gesto, ruido y pérdida de cuadros hipotéticos; incluye [script reproducible](acople_camara_sintetico.py) y criterios para el banco técnico real.
 
 [AIST++ como banco externo](AIST_BENCHMARK_ALCANCE.md): fuente primaria y estudio de clasificación de géneros; precisa qué puede probar con articulaciones 3D, por qué sus 60 fps no certifican fase física y qué condiciones de acceso faltan antes de usar datos.
