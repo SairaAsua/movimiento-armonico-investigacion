@@ -1,0 +1,19 @@
+# Escuchar una curva proyectada: banco diagnóstico R08
+
+**Sólo datos sintéticos.** [Script reproducible](r08_sonido_diagnostico.py) · [WAV estéreo de 2,5 s](datos_sinteticos_r08/curva_proyectada_gap.wav) · [manifiesto](datos_sinteticos_r08/manifest.json). Coordina la preparación de [issue #11](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/11) sobre el caso de Nico, sin adelantar el video de baile autorizado de [issue #10](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/10). No contiene grabación humana ni un sonido de Beacon.
+
+El [puente R08→Laban/HIT](R08_PUENTE_SOGA_LABAN_HIT.md) propuso una matriz `M₂` de direcciones **de línea visible en imagen**, ponderada por longitud. Este banco ejecuta esa definición sobre cuadros fabricados con la forma básica de R08: `state`, `visible_segments` y `causes`. Convierte cada vértice normalizado a píxeles antes de medir. El primer segundo tiene una línea horizontal observada de 384 px; tras medio segundo `unidentifiable` por oclusión aparece una vertical observada de los mismos 384 px. Ningún cuadro se ata a un video: son fixtures de contrato, no anotaciones R08 verificadas contra medio original.
+
+| Intervalo | `M₂` diagonal | Control diagnóstico | Audio resultante |
+|---|---|---|---|
+| 0–1 s, horizontal | `(1,0)` | izquierda = `Mxx`, derecha = `Myy` | Tono de 220 Hz sólo a izquierda. |
+| 1–1,5 s, ilegible | sin tensor | ambas ganancias = 0 | Silencio digital en ambos canales. |
+| 1,5–2,5 s, vertical | `(0,1)` | misma regla | Mismo tono sólo a derecha. |
+
+Las dos líneas tienen longitud proyectada igual; la diferencia audible procede **sólo de la orientación de imagen declarada**. La amplitud se atenúa 20 ms en cada borde audible para evitar clics, sin interpolar la curva durante el hueco. El script también verifica que invertir el orden de los vértices deja `M₂` igual, que dos tramos `partial` se suman **sin puente oculto** y que una diagonal `(Δx,Δy)=(0,1;0,1)` en 1920×1080 se mide como `(192,108)` píxeles. El [manifiesto](datos_sinteticos_r08/manifest.json) guarda RMS por tramo y SHA-256 del WAV; el intervalo ilegible tiene RMS exactamente cero. La etiqueta `partial` queda fuera del audio de esta demo: su política de sonificación requiere un descriptor y umbral de cobertura fijados.
+
+Escuchar con auriculares permite comprobar que el mapeo diseñado distingue estos dos casos. **No demuestra que el oído identifique una orientación real**, que una línea horizontal sea más bella/armónica que otra ni que la soga de Nico siga esas curvas. `M₂` es 2D, pierde signo y orden, y no es el `Q` corporal 3D ni una escala de Laban. El tono de 220 Hz es una portadora arbitraria del archivo, no una frecuencia corporal o predicción HIT. El WAV se generó con Python estándar; no pasó por HarMoCAP, Weaver, Shaper, OSC ni `beacon-spatial`.
+
+Para pasar de esta prueba a una sonificación exploratoria de Nico habrá que: vincular anotaciones R08 a video autorizado y PTS originales; validar curvas y cobertura por patrón, giro y cruce contra referencias independientes; unir la pose corporal sólo con vista/marco/reloj declarados; calcular `M₂` con ventanas y edad válidas; fijar una escena de Weaver y el instrumento elegido; y registrar **controles aplicados y audio real** con prueba de reset en oclusiones. El [plan escalonado](../docs/TRAZA_VIDEO_BAILE_A_NICO.md) pone antes un video de baile autorizado. Ninguna de esas pruebas humanas o de extremo a extremo queda satisfecha por este WAV.
+
+Reproducir desde la raíz: `python research/r08_sonido_diagnostico.py`. No inicia servicios ni cámaras y produce siempre los mismos dos artefactos en `research/datos_sinteticos_r08/`.
