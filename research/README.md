@@ -32,6 +32,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Cotas de `R` ante fase oculta](FASE_COBERTURA_R.md): muestra con testigos sintéticos cuánto puede variar la concentración de fase completa cuando sólo se observan intervalos válidos; fija denominador temporal, incertidumbre e invalidez para HIT y Beacon.
 
+[Fase 2D en plano oblicuo](FASE_PROYECCION_OBLICUA.md): una órbita física uniforme puede parecer 16 veces más rápida en un sector que en otro y reducir `R` observado de dos señales físicamente sincrónicas; impide atribuir ese cambio a HIT antes de calibrar el plano.
+
 [Sensibilidad de `Q_live` al marco corporal](CMU_Q_MARCOS_LIVE.md): misma toma y ventana con recorrido co-rotante o desplazamiento relativo sin giro de ejes; cuantifica la diferencia antes de sonificar.
 
 [Replay causal de `Q_live` en CMU](CMU_Q_CAUSAL_PLANOS.md): cobertura de ventanas y diagnóstico de planitud local; muestra que alargar la ventana gana recorrido pero puede mezclar planos.
