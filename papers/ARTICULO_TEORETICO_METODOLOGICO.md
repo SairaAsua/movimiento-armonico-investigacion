@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.23, 3 de octubre de 2026
+**Versión:** 0.24, 3 de octubre de 2026
 
 ## Resumen
 
@@ -175,7 +175,9 @@ Las comparaciones se harán por sesiones o días reservados, no separando cuadro
 
 En `M₂`, el valor de `R` calculado sólo en tramos visibles se acompañará de la fracción temporal válida y de su intervalo de identificación bajo fase oculta; si el intervalo permite tanto una relación débil como una fuerte, la interpretación de HIT quedará indeterminada para esa frase. Se hará además sensibilidad al error del reloj común: una covariación residual explicable por ese error no se llamará interacción entre segmentos [24]. El modelo espacial y el temporal se compararán sobre **el mismo soporte** y con el mismo estado de plano/vista, para que una ganancia aparente no provenga de seleccionar sólo los giros fáciles o de confundir orientación espacial con fase de imagen.
 
-Como análisis **secundario**, si hay días y cobertura suficientes, una [ablación factorial predefinida](https://github.com/SairaAsua/movimiento-armonico-investigacion/pull/32) comparará `base`, `base+espacio`, `base+fase` y `base+espacio+fase` en las mismas unidades reservadas. El brazo `fase` incluirá relaciones temporales válidas, pero no `J`, que combina espacio y fase por definición. La pérdida se resumirá primero por día; su diferencia cruzada sólo describe complementariedad **predictiva** bajo esos modelos, no una interacción causal. Un quinto modelo podría añadir `J` o una interacción espacial×temporal fijada durante desarrollo, con evaluación separada. Si faltan días o señales comunes, se informarán las comparaciones factibles sin inferir complementariedad.
+Como análisis **secundario**, si hay días y cobertura suficientes, una [ablación factorial predefinida](https://github.com/SairaAsua/movimiento-armonico-investigacion/pull/32) comparará `base`, `base+espacio`, `base+fase` y `base+espacio+fase` en las mismas unidades reservadas. El brazo `fase` incluirá relaciones temporales válidas, pero no `J`, que combina espacio y fase por definición. La pérdida se resumirá primero por día.
+
+Su diferencia cruzada describe ganancias **predictivas** condicionadas en esos modelos; **no** prueba una interacción estadística ni causal: en un [contraejemplo aditivo exacto](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/a91960f/research/factorial_sin_interaccion_sintetico.py), `Y=L+H` da diferencia positiva sólo por correlación negativa de `L` y `H`. Un quinto modelo podría añadir `J` o una interacción espacial×temporal fijada durante desarrollo, con evaluación separada. Si faltan días o señales comunes, se informarán las comparaciones factibles sin inferir complementariedad.
 
 Los proxies `laban_*` de HarMoCAP no sustituyen automáticamente `Q` ni una anotación Laban. En particular, si se explora `laban_space_proxy`, su dependencia de la cadencia y de la ventana fija exige incluir tempo/duración en `M₀` y repetir el contraste espacial excluyéndolo. Una ventana expresada como fracción de ciclo podría reducir esa dependencia en el círculo ideal, pero requeriría un detector de ciclo independiente y congelado para no filtrar información de la fase HIT al bloque espacial.
 
