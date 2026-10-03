@@ -6,18 +6,25 @@ Times, event identities and certification flags are invented. It never reads vid
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
+
+
+@dataclass(frozen=True)
+class EventSupport:
+    event_id: str
+    basis: str  # observed_motion or constructed_geometry in this fixture
+    source_frame_ids: tuple[str, ...]
 
 
 @dataclass(frozen=True)
 class Adjudication:
     event_ids: tuple[str, ...]
+    event_support: tuple[EventSupport, ...]
     possible_words: tuple[str, ...]
     cross_leader_tie_possible: bool
     episodes_complete: bool
     continuity_verified: bool
     hard_bounds_audited: bool
-    physical_support_audited: bool  # no constructed closure as an observed episode
 
 
 @dataclass(frozen=True)
@@ -92,8 +99,15 @@ class PhraseHandoff:
         if message.state != "closed_valid":
             return out  # partial, aborted or superseded never becomes an audio value
         proof = message.adjudication
+        support_by_id = {item.event_id: item for item in proof.event_support}
+        physical_support_audited = (
+            len(support_by_id) == len(proof.event_support) == len(proof.event_ids)
+            and set(support_by_id) == set(proof.event_ids)
+            and all(item.basis == "observed_motion" and item.source_frame_ids
+                    and all(item.source_frame_ids) for item in proof.event_support)
+        )
         if (not proof.episodes_complete or not proof.continuity_verified
-                or not proof.hard_bounds_audited or not proof.physical_support_audited
+                or not proof.hard_bounds_audited or not physical_support_audited
                 or proof.cross_leader_tie_possible
                 or not proof.event_ids or len(set(proof.event_ids)) != len(proof.event_ids)
                 or len(proof.possible_words) != 1
@@ -116,10 +130,14 @@ def main() -> None:
           context: tuple[str, str, str, str] = ctx, fingerprint: str | None = None,
           possible_words: tuple[str, ...] | None = None, tie: bool = False,
           complete: bool = True, continuity: bool = True,
-          bounds_audited: bool = True, physical_support: bool = True) -> Phrase:
-        proof = Adjudication(tuple(f"e{i}" for i in range(len(word or ""))),
+          bounds_audited: bool = True, constructed_event: str | None = None) -> Phrase:
+        event_ids = tuple(f"e{i}" for i in range(len(word or "")))
+        support = tuple(EventSupport(event_id,
+                                     "constructed_geometry" if event_id == constructed_event else "observed_motion",
+                                     (f"frame_{event_id}",)) for event_id in event_ids)
+        proof = Adjudication(event_ids, support,
                              possible_words if possible_words is not None else ((word,) if word else ()),
-                             tie, complete, continuity, bounds_audited, physical_support)
+                             tie, complete, continuity, bounds_audited)
         return Phrase(phrase, rev, context, closed, available, expires, state, word, proof,
                       fingerprint or f"{phrase}:{rev}:{state}:{word}")
 
@@ -141,7 +159,13 @@ def main() -> None:
     assert gate.ingest(m("p4f", 1, bounds_audited=False), 165) == []
     # A source that filled a required episode with a drawn geometric link
     # cannot certify the word as a sequence of physical events.
-    assert gate.ingest(m("p4g", 1, physical_support=False), 166) == []
+    assert gate.ingest(m("p4g", 1, constructed_event="e3"), 166) == []
+    unlinked = m("p4h", 1)
+    unlinked_support = replace(unlinked.adjudication.event_support[0], source_frame_ids=())
+    unlinked = replace(unlinked, adjudication=replace(
+        unlinked.adjudication,
+        event_support=(unlinked_support,) + unlinked.adjudication.event_support[1:]))
+    assert gate.ingest(unlinked, 167) == []
 
     assert [a.kind for a in gate.ingest(m("p5", 1), 170)] == ["publish"]
     assert [a.reason for a in gate.ingest(m("p6", 1, available=180), 175)] == ["not_available"]
