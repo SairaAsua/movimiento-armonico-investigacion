@@ -8,6 +8,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Hoja autoral *The key to the space harmony of movement*](LABAN_KEY_SPACE_HARMONY_FACSIMIL.md): facsímil completo de Leipzig con texto y kinetogramas A/B; doce secuencias, siete anillos, centro corporal y simetría bilateral. Es una fuente primaria para orden y referencia, no una fórmula de `Q` ni doce clases listas para Nico.
 
+[Forma dinámica y contramovimiento en *Choreographie*](LABAN_FORMA_CONTRAMOVIMIENTO_1926.md): lectura de pp. 3–12 en traducción; las relaciones y el orden entre miembros importan, y un ejemplo armónico divide el espacio de forma desigual. Separa el programa histórico de una ecuación o resultado empírico.
+
 [Escalas de eje y ecuador de *Choreographie*](LABAN_ESCALAS_EJE_ECUADOR_1926.md): lectura de pp. 43–48 en traducción ilustrada; separa secuencias axiales, recorridos periféricos y signos añadidos/corregidos por los traductores antes de cualquier comparador para rope flow.
 
 [Volutas de *Choreographie*](LABAN_VOLUTAS_1926.md): lectura de pp. 49–50; una voluta es frase de dos inclinaciones, no sinónimo de espiral u ocho visible. Registra la corrección editorial del acento A/B y los requisitos de observación 3D.
