@@ -21,6 +21,22 @@ Nota de diseño del 23 de septiembre de 2026. Las cámaras de Saira aún no est�
 
 Con velocidad **ficticia** de 500 píxeles/s, exposición 1/60 s barre 8,33 px; 1/250 s, 2 px; 1/1000 s, 0,5 px. No hay afirmación de que la soga real tenga esa velocidad de imagen. La [calculadora](presupuesto_camara.py) imprime también escenarios a 1 y 3 Hz. La diferencia entre 30 y 60 fps sólo importa si la pregunta requiere resolver un desfase menor que el error total y si visibilidad, calibración y cobertura se mantienen.
 
+## Presupuesto para decidir quién inició un episodio
+
+El [contrato de intervalos de eventos](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/a3241c6/research/ORDEN_EVENTOS_INTERVALOS.md) permite trasladar este presupuesto al orden de manos. Si un evento A tiene estimación central `m_A` y una **cota dura validada** `e_A`, su soporte es `[m_A−e_A,m_A+e_A]`; análogamente para B. Sólo se puede afirmar `A antes que B` cuando `m_B−m_A > e_A+e_B`. La igualdad no basta para orden estricto. Con soportes asimétricos u oclusión, usar directamente `b_A<a_B`, no forzar una cota simétrica. Los errores de un mismo reloj pueden estar correlacionados; una suma conservadora sigue siendo suficiente, aunque pueda abstenerse más de lo necesario. Una desviación estándar o el error medio no son cotas duras.
+
+En el escenario **idealizado** de dos eventos visibles fechados por el cuadro más cercano, sin error de detección, exposición ni sincronía, `e_A=e_B=500/FPS` ms. Se necesitaría por tanto una separación entre **centros estimados** mayor que `1000/FPS` ms para certificar el orden con esa regla. No es una garantía para dos eventos físicos separados por esa cantidad: según dónde caigan en los intervalos de cuadro, sus centros pueden coincidir; faltan además tamaño aparente, blur, PTS reales, identidad y posible ocultamiento de la soga.
+
+| FPS uniforme ficticio | Cota de un evento `±500/FPS` | Separación estricta de centros sin otros errores | Si cada soporte añade `±5 ms` hipotéticos |
+|---:|---:|---:|---:|
+| 30 | ±16,67 ms | >33,33 ms | >43,33 ms |
+| 60 | ±8,33 ms | >16,67 ms | >26,67 ms |
+| 120 | ±4,17 ms | >8,33 ms | >18,33 ms |
+
+Los `5 ms` son un ejemplo aritmético, **no** una tolerancia medida en Reolink, «logicam», Moto G ni Nico. En multivista habrá que transformar ambos soportes a un reloj común con error de sincronía y deriva medidos; exposición y obturador rodante pueden ensancharlos de modo desigual. Dentro de una misma vista, no sumar dos veces un desplazamiento de reloj común que cancela en la diferencia, pero sí conservar errores independientes de localización de cada evento. Dos inicios dentro del mismo hueco entre cuadros siguen sin orden identificable aunque un algoritmo interpole una curva convincente. El orden de cuadros no es automáticamente el orden físico de comienzos.
+
+Para decidir **si comprar** una cámara o sensor adicional, primero fijar durante desarrollo una diferencia mínima de retardo `Δ*` que importaría en una figura habitual y medir en los archivos actuales la cobertura y anchura de intervalos de eventos de **mano y soga** en cruces, giros y tramos rápidos. Una opción nueva sólo es pertinente si su referencia dinámica y su reloj muestran que separa `Δ*` donde el equipo actual se abstiene, sin perder visibilidad o alterar el gesto. Si ninguna figura real ofrece dos variantes comparables de liderazgo, esta compra no resuelve la pregunta experimental. Esta regla es de **identificabilidad instrumental**, no de estética, economía ni armonía de Laban.
+
 ## Resolver el movimiento dentro de la vuelta es otra pregunta
 
 Los errores de arriba corresponden principalmente a **fechar un evento**. Para observar cómo se reparte la rapidez dentro de un ciclo de frecuencia `f`, el número de cuadros disponibles por vuelta es aproximadamente `FPS/f`, antes de pérdidas y huecos. Si una variación relevante ocupa una fracción `α` del ciclo, hay `α FPS/f` cuadros en ese tramo. A `f=2 Hz` **ficticios**, una variación del 10 % dura 50 ms: 30/60/120 fps ofrecen respectivamente 1,5/3/6 intervalos de cuadro en ese tiempo. Los valores fraccionarios son densidad media, no garantía de que el evento caiga en igual número de imágenes observables. Tres muestras tampoco bastan por sí solas para validar una curva de velocidad o aceleración.
