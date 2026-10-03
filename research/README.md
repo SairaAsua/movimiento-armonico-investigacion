@@ -148,6 +148,8 @@ La misma nota añade un [banco de giro firmado](q_giro_orden_sintetico.py): `W` 
 
 [MovingCables como benchmark externo](SOGA_MOVINGCABLES_BENCHMARK.md): lectura de métodos y discusión y plan de evaluación 2D de cable desplazado; la manguera grabada no se autocruza ni sufre la oclusión corporal relevante para Nico. Dataset aún no ejecutado.
 
+[MCor 2025: imagen más acción conocida](SOGA_MCOR_CORRELACION_2025.md): identificación retrospectiva de un cable agarrado mediante flujo y posición de pinza; distingue correlación de movimiento de fase HIT y documenta por qué no equivale a feedback live de Nico.
+
 [Procedencia de fases y circularidad](FASE_PROCEDENCIA_CIRCULAR.md): evita que dos copias del reloj de soga produzcan una falsa relación HIT perfecta.
 
 [Balance energético de la soga](ENERGIA_SOGA_BALANCE.md): distingue energía de la curva, trabajo de los agarres y metabolismo; decide cuándo haría falta fuerza instrumentada.
