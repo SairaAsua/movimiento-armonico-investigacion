@@ -125,6 +125,8 @@ La ficha de archivo propuesta conserva `episode_id`, persona/stream, mano u obje
 
 Si se ensaya una **escucha retrospectiva**, la ruta hacia Weaver recibiría sólo un evento nuevo y versionado por `(episode_id, revision)`, con estado, `available_at`, vencimiento y referencia a esa ficha. `line_rejected` y `line_compatible` pueden mapearse a dos sonidos distinguibles como prueba de transmisión de información; `indeterminate` debe producir un estado neutral de instrumento, nunca un juicio de «disonancia». El audio se registraría y cotejaría con la ficha y el reloj de aplicación. Este evento y ese mapeo **no existen todavía** en HarMoCAP, Weaver o Beacon; requieren Issue de implementación en el repositorio dueño y validación de video/pose antes de uso con Nico. El resultado retrospectivo tampoco equivale a feedback causal durante el mismo gesto.
 
+El [fixture de orden y correcciones del laboratorio vigente](WEAVER_LAB_MAIN_RECONCILIACION_20261003.md#orden-de-episodios-y-correcciones-todavía-como-contrato-propuesto) agrega `stream_epoch` y `episode_seq` al sobre futuro: una revisión tardía de un episodio anterior actualiza el archivo, pero no reemplaza el sonido de una frase posterior. Una revisión activa `indeterminate` retira la capa, y el vencimiento impide resucitarla con un reenvío. Estas son reglas de aceptación a probar, no comportamientos observados del software actual.
+
 ## Gates de implementación y prueba
 
 1. **Congelar análisis offline.** Recuperar trazas y ciclos desde medios originales con versiones, error y exclusiones. Si el descriptor 3D o fase no supera el piloto, no entra al feedback con nombre científico.
