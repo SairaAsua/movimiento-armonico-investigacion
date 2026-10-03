@@ -26,6 +26,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Presupuesto de error de situación](PRESUPUESTO_ERROR_SITUACION.md): intervalos con error duro de posición/origen/escala y cota para variación radial, con [banco sintético](situacion_error_sintetico.py) que expone cuándo la cota se vuelve trivial. No estima el error de las cámaras reales.
 
+[Escala instrumental de la cota `V_r` en danza CMU](CMU_SITUACION_PRECISION_VR.md): el [cálculo reproducible](cmu_situacion_precision_vr.py) aplica la desigualdad a nueve ventanas de muñecas con grillas derivadas de 120/30/24 Hz. Es un ejercicio de diseño, no una especificación de cámaras para Nico.
+
 [Validación propuesta de situación frente a Laban y HIT](VALIDACION_SITUACION_LABAN_HIT.md): separa exactitud 3D, acuerdo experto, aporte de `rho_min/V_r` sobre `Q` y alcance, y valor incremental de fase en los mismos días y frases. Requiere humanos y originales consentidos; todavía no contiene resultados.
 
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
