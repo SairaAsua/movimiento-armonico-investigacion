@@ -136,6 +136,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Predicción HIT sin fugas](HIT_PREDICCION_SIN_FUGAS.md): fija corte temporal y sesiones reservadas, distingue ganancia de representación de información sensorial nueva e incluye un [banco sintético](prediccion_relacional_sintetica.py).
 
+[Mejora por error de medición compartido](HIT_MEJORA_POR_ERROR_COMPARTIDO.md): testigo algebraico con [script exacto](hit_error_compartido_sintetico.py) en que un candidato temporal sin señal corporal propia mejora la predicción al corregir un descriptor espacial ruidoso; delimita la interpretación de `Δ_H` y `S`.
+
 [Identificabilidad de 2D/3D](IDENTIFICABILIDAD_2D_3D.md): dos recorridos 3D diferentes con la misma imagen, reglas para llamar proyectada a una variable y requisitos de multivista. Incluye un [contraejemplo ejecutable](proyeccion_2d_ambigua.py) sin datos humanos.
 
 [Presupuesto de error de cámaras](PRESUPUESTO_ERROR_CAMARAS.md): cuantización de evento por cuadro, desfase de reloj y barrido por exposición como errores distintos; incluye una [calculadora de escenarios](presupuesto_camara.py).
