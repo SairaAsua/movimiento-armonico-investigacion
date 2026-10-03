@@ -20,15 +20,15 @@ OUTPUT = HERE / "ARTICULO_TEORETICO_METODOLOGICO.pdf"
 BASE = "https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/main/papers/"
 
 CSS = """
-@page { size: A4; margin: 14mm 19mm 14mm 19mm; }
+@page { size: A4; margin: 13mm 19mm 13mm 19mm; }
 body { font-family: Georgia, "Noto Serif", serif; font-size: 9.8pt;
-       line-height: 1.29; color: #172d35; }
+       line-height: 1.28; color: #172d35; }
 h1, h2, h3 { font-family: Arial, sans-serif; color: #173f4b;
              line-height: 1.18; break-after: avoid; }
 h1 { font-size: 21pt; margin: 0 0 20pt; }
 h2 { font-size: 14pt; margin: 19pt 0 8pt; }
 h3 { font-size: 11.8pt; margin: 15pt 0 7pt; }
-p { margin: 0 0 8pt; orphans: 3; widows: 3; }
+p { margin: 0 0 7.5pt; orphans: 3; widows: 3; }
 a { color: #126379; text-decoration: none; }
 strong { color: #143946; }
 code { font-family: "DejaVu Sans Mono", monospace; font-size: 9pt;
@@ -41,7 +41,7 @@ th, td { border: 1px solid #b6c8c9; padding: 5pt; vertical-align: top; }
 th { background: #e4eeee; }
 tr { break-inside: avoid; }
 ul, ol { padding-left: 17pt; margin: 5pt 0 10pt; }
-li { margin: 0 0 5pt; }
+li { margin: 0 0 4pt; }
 blockquote { border-left: 3px solid #6ca5a5; padding-left: 10pt;
              color: #425b62; }
 hr { border: 0; border-top: 1px solid #a5c1c2; margin: 18pt 0; }
