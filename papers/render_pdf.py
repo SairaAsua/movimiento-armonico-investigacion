@@ -20,7 +20,7 @@ OUTPUT = HERE / "ARTICULO_TEORETICO_METODOLOGICO.pdf"
 BASE = "https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/main/papers/"
 
 CSS = """
-@page { size: A4; margin: 19mm 19mm 18mm 19mm; }
+@page { size: A4; margin: 17mm 19mm 17mm 19mm; }
 body { font-family: Georgia, "Noto Serif", serif; font-size: 10.2pt;
        line-height: 1.36; color: #172d35; }
 h1, h2, h3 { font-family: Arial, sans-serif; color: #173f4b;
@@ -28,7 +28,7 @@ h1, h2, h3 { font-family: Arial, sans-serif; color: #173f4b;
 h1 { font-size: 21pt; margin: 0 0 20pt; }
 h2 { font-size: 14pt; margin: 19pt 0 8pt; }
 h3 { font-size: 11.8pt; margin: 15pt 0 7pt; }
-p { margin: 0 0 9pt; orphans: 3; widows: 3; }
+p { margin: 0 0 8pt; orphans: 3; widows: 3; }
 a { color: #126379; text-decoration: none; }
 strong { color: #143946; }
 code { font-family: "DejaVu Sans Mono", monospace; font-size: 9pt;
