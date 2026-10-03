@@ -34,6 +34,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Fase 2D en plano oblicuo](FASE_PROYECCION_OBLICUA.md): una órbita física uniforme puede parecer 16 veces más rápida en un sector que en otro y reducir `R` observado de dos señales físicamente sincrónicas; incluye MP4, dos WAV y manifiesto para escuchar el sesgo de proyección antes de calibrar el plano.
 
+[Giro local frente a fase y tiempo de entrega](GIRO_LOCAL_FASE_RELOJ.md): [banco sintético](giro_fase_reloj_sintetico.py) muestra que asignar un giro de tres puntos al tiempo en que se entrega, en vez del vértice central, puede fabricar desfase y alterar `R`; separa esa convención de un evento físico y de la latencia de audio.
+
 [Sensibilidad de `Q_live` al marco corporal](CMU_Q_MARCOS_LIVE.md): misma toma y ventana con recorrido co-rotante o desplazamiento relativo sin giro de ejes; cuantifica la diferencia antes de sonificar.
 
 [Replay causal de `Q_live` en CMU](CMU_Q_CAUSAL_PLANOS.md): cobertura de ventanas y diagnóstico de planitud local; muestra que alargar la ventana gana recorrido pero puede mezclar planos.

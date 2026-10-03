@@ -74,4 +74,6 @@ El producto de esta fase no es un único «ratio del cuerpo»: es un diccionario
 
 El [banco sintético ejecutable](FASE_BANCO_SINTETICO.md) comprueba casos simples de doble conteo, intervalo inválido, relación p:q, desfase alternado y sesgo por reloj. Son controles de coherencia matemática que anteceden la comparación de estimadores y la captura real.
 
+Si se compara fase con un giro local de tres puntos de una trayectoria proyectada, su tiempo de análisis es el del vértice **central por convención**, mientras que el cálculo sólo se dispone tras recibir el tercer punto. La [nota de giro, fase y reloj](GIRO_LOCAL_FASE_RELOJ.md) reproduce un desfase espurio de `90°` al unir por tiempo de entrega una fase construida de `1 Hz`, y delimita qué significa el retardo para HIT y una escucha futura. Conservar `feature_time`, `available_at`, fuente de fase y reloj; no tratar el giro discretizado como evento físico instantáneo ni como segunda señal independiente si la fase usa la misma trayectoria.
+
 La [cota de concentración con fase faltante](FASE_COBERTURA_R.md) obliga a publicar soporte y masa temporal oculta junto a cualquier `R` calculado sólo sobre válidos. Con 75 % de cobertura, incluso `R_valid_only=1` permite `R_full` entre 0,5 y 1 bajo fases ocultas arbitrarias; una transición sin fase definida requiere segmentar la tarea en vez de completar ese intervalo.
