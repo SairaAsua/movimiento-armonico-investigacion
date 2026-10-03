@@ -40,6 +40,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Factorial Laban–HIT en PCM Shaper](WEAVER_LABAN_HIT_PCM_FACTORIAL.md): el [script](weaver_laban_hit_pcm_factorial.py) lleva cuatro pares `Q/R` sintéticos al renderer offline real de Weaver/Shaper y cuantifica que las capas del WAV final tienen una pequeña mezcla aun cuando los controles son separados. Es replay retrospectivo, no sonificación causal de un gesto.
 
+[Fase de video sintético al PCM de Shaper](WEAVER_VIDEO_FASE_PCM.md): el [script](weaver_video_fase_pcm.py) recupera fase desde los MP4 del banco #26 y sus PTS, la entrega por cuadro al renderer offline y prueba un intervalo de invalidez inyectada con silencio verificable. Es una cadena de software, no una captura humana ni el Beacon live.
+
 ## Plan de punta a punta
 
 [Sesgo de concentración de fase](FASE_SESGO_MUESTRAL.md): lectura primaria de Vinck et al. (2010), identidad de `PPC` y [contraejemplo ejecutable](fase_sesgo_muestral_sintetico.py) que muestra por qué copiar cuadros o subir FPS no agrega ciclos independientes.
