@@ -97,8 +97,17 @@ def main() -> None:
     assert classify(dc, 0.01, 0.01) == "geometry_different"
     shifted = [(x + MARGIN, y, z) for x, y, z in c]
     assert classify(max_sampled_distance(c, shifted), 0.02, 0.02) == "geometry_indeterminate"
-    assert classify(0.0, 0.01, 0.01, full_support=False) == "geometry_indeterminate"
+    # The chord closes an open observed route in the drawing only. Comparing
+    # two copies would give zero distance if the invented samples were used;
+    # it still cannot establish full observed support for a required return.
+    open_route = [(0.0, 0.0, 0.0), (1.0, 0.0, 0.0), (1.0, 1.0, 0.0)]
+    drawn_closed_route = open_route + [open_route[0]]
+    assert drawn_closed_route[0] == drawn_closed_route[-1]
+    assert classify(max_sampled_distance(drawn_closed_route, drawn_closed_route),
+                    0.01, 0.01, full_support=False) == "geometry_indeterminate"
     assert classify(0.0, None, 0.01) == "geometry_indeterminate"
+    # If one return is actually observed and the other execution omits it,
+    # their predeclared discrete motif structures differ.
     assert classify(0.0, 0.01, 0.01, same_discrete_structure=False) == "geometry_different"
     print("OK: same Q / different curve; same curve / different time law; comparable, different, indeterminate")
     print(f"Q_circle={qc}; Q_diamond={qd}; sampled_max_distance={dc:.6f}; margin={MARGIN}")
