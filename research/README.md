@@ -32,7 +32,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Mismo `Q`, distinto cruce del recorrido](Q_CRUCES_ORDEN.md): [contraejemplo ejecutable](q_cruces_orden_sintetico.py) con idénticos tramos y largo, pero distinto orden/autocruce de una trayectoria puntual; no es topología de soga en 3D.
 
-La misma nota añade un [banco de giro firmado](q_giro_orden_sintetico.py): `W` de una poligonal cerrada distingue el par con igual `Q`, cambia con reversa/espejo y no equivale al número de cruces. Es una representación exploratoria de orden, no una categoría histórica de Laban.
+La misma nota añade un [banco de giro firmado](q_giro_orden_sintetico.py): `W` de una poligonal cerrada distingue el par con igual `Q`, cambia con reversa/espejo y no equivale al número de cruces. Un [contraejemplo 3D de dos vistas](q_giro_proyeccion_sintetica.py) muestra `W=1` en `xy` y `W=0` en `xz` para la misma trayectoria no plana. Es una representación exploratoria de orden **por vista**, no una categoría histórica de Laban.
 
 [Incertidumbre de un cruce de trayectoria 2D](CRUCE_TRAYECTORIA_INCERTIDUMBRE.md): [certificado geométrico ejecutable](cruce_trayectoria_incertidumbre.py) bajo error acotado de vértices; [contraejemplo entre cuadros](cruce_entre_cuadros_sintetico.py) con igual pose puntual muestreada y distinto autocruce; y [envolvente de alcanzabilidad](cruce_envolvente_rapidez_sintetica.py) que sí descarta cruces entre intervalos separados cuando sus regiones posibles no se tocan. Ninguno valida la soga.
 
