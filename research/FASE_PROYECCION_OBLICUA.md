@@ -2,6 +2,8 @@
 
 **Contraejemplo geométrico reproducible del 3 de octubre de 2026**, con [script](fase_proyeccion_oblicua_sintetica.py). No usa video humano, cámara física ni el software de HarMoCAP. Precisa el alcance de la advertencia sobre `atan2` de píxeles en el [banco de fase intracíclo](BANCO_FASE_INTRACICLO_CAMARAS.md).
 
+**Prueba adicional desde archivo decodificado:** [video MP4 sintético](datos_sinteticos_video_ritmo/fase_plano_oblicuo.mp4) · [WAV de fase 2D cruda](datos_sinteticos_video_ritmo/fase_plano_oblicuo_cruda.wav) · [WAV de fase rectificada](datos_sinteticos_video_ritmo/fase_plano_oblicuo_rectificada.wav) · [manifiesto con hashes](datos_sinteticos_video_ritmo/fase_plano_oblicuo_manifest.json) · [generador y analizador](video_fase_plano_oblicuo.py). Los dos puntos usan el mismo reloj físico construido: rojo frontal y azul con `y` multiplicada por `0,25`; ninguna cámara interviene.
+
 Sea una mano ideal que describe una circunferencia con fase física `θ(t)=ωt` a rapidez angular **constante**. Bajo proyección ortográfica de un plano inclinado, su imagen centrada puede ser `x=cos θ`, `y=c sin θ`, con `c=cos(inclinación)` y `0<c≤1`. El ángulo medido directamente en píxeles es `ψ=atan2(c sin θ, cos θ)`, no `θ`. Su derivada, tras desenvolver la vuelta, es
 
 `dψ/dt = ω c/(cos² θ+c² sin² θ)`.
@@ -17,6 +19,8 @@ Para mostrar la consecuencia relacional, suponemos dos puntos con **la misma fas
 | 0,25 | 0,902780 | 0,25–4,00 |
 
 El número `0,902780` no indica coordinación biológica imperfecta: es el resultado de aplicar `atan2` a dos proyecciones distintas. La hipótesis ortográfica y los centros conocidos hacen el ejemplo **más favorable** que un video real; perspectiva, centro móvil, oclusión y error de pose añaden otras dependencias. Tampoco significa que una homografía corrija cualquier mano 3D: sólo rectifica un **plano físico fijo** si su geometría y calibración se verifican.
+
+En el MP4 generado se localizan ambos puntos desde **píxeles decodificados** y se verifica el PTS de los 240 cuadros a 30 fps. La fase cruda de imagen da `R=0,904818` y un tono diagnóstico entre `207,42` y `232,58 Hz`; dividir la coordenada vertical azul por el factor **conocido del generador** antes de `atan2` da `R=0,999898` y `219,31–220,69 Hz`. La diferencia respecto del `0,902780` continuo procede de muestreo y redondeo a píxeles. Ambos WAV duran ocho segundos y tienen RMS PCM16 prácticamente igual (`7065,06` frente a `7065,13`); el cambio audible proviene de la regla de frecuencia, no de nivel medio. Esta rectificación es un control de software con verdad sintética, **no** una calibración recuperada de video de Nico. El mismo archivo de imagen podría corresponder también a una elipse física frontal: sin información geométrica independiente, el factor `0,25` no se infiere únicamente de los píxeles.
 
 ## Consecuencia de diseño para Laban, HIT y Beacon
 
