@@ -48,6 +48,8 @@ La misma nota añade un [banco de giro firmado](q_giro_orden_sintetico.py): `W` 
 
 [Excursiones entre cuadros](MUESTREO_SITUACION_ENTRE_CUADROS.md): [contraejemplo y cota sintéticos](situacion_entre_cuadros_sintetico.py) distinguen el mínimo de la polilínea muestreada del mínimo del gesto continuo; el segundo sólo puede acotarse con un límite de rapidez relativa independiente.
 
+[Rectitud de un episodio entre cuadros](LINEA_RECORRIDO_ENTRE_CUADROS.md): cota inferior por arco observado y dos cotas superiores alternativas, basadas en rapidez o aceleración continuas validadas independientemente. El ejemplo exacto alcanza el límite de aceleración y muestra que dos cuadros de extremos idénticos no prueban un recorrido recto.
+
 [Escala instrumental de la cota `V_r` en danza CMU](CMU_SITUACION_PRECISION_VR.md): el [cálculo reproducible](cmu_situacion_precision_vr.py) aplica la desigualdad a nueve ventanas de muñecas con grillas derivadas de 120/30/24 Hz. Es un ejercicio de diseño, no una especificación de cámaras para Nico.
 
 [Estructura temporal del error en `V_r`](CMU_SITUACION_ERROR_TEMPORAL.md): [perturbaciones sintéticas sobre CMU](cmu_situacion_error_temporal.py) con igual norma de error por cuadro muestran respuestas distintas ante sesgo, deriva y jitter. No describen errores medidos de nuestras cámaras.
