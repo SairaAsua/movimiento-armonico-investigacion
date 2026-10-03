@@ -86,6 +86,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Prueba aislada del kit HarMoCAP](HARMOCAP_KIT_PRUEBA_AISLADA.md): replay/codec/handshake/UDP sintético verificados sobre el commit auditado; delimita qué sigue sin probar en Beacon, cámaras y geometría.
 
+[Coordenadas de muñeca en modo bandas de HarMoCAP](HARMOCAP_BANDS_COORDENADAS.md): auditoría del `main` posterior que detecta un cambio de semántica en el blob OSC no distinguido por contrato/configuración; fija cómo excluir esa salida de un análisis espacial hasta comprobarla.
+
 [Gating del receptor de referencia](HARMOCAP_GATING_CONTRATO.md): [regresión reproducible](probar_gating_harmocap.py) que detectó aceptación de frames con generación o contrato no coincidentes pese al handshake previo; criterio pendiente para el receptor Beacon real.
 
 [Protocolo piloto 0.1](PROTOCOLO_PILOTO_V0.md): primer estudio instrumental centrado en Laban, etapas sin datos humanos/observación/evaluación reservada, referencias por descriptor y reglas de paso. Es un borrador para revisión, aún no preregistrado.
