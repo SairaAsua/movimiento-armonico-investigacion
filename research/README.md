@@ -36,6 +36,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Cronología documental CND: ensayos de 1926 y cinétografía de 1928](LABAN_CND_NOTACION_1926_1928.md): síntesis institucional de tres páginas y figura 17 del catálogo de exposición de 2006, un recorte de signos de *Choreographie* sin página original identificable ni escala descifrada. Separa esa evidencia parcial de nuestras ecuaciones para rope flow.
 
+[Escalas A/B y planos en reproducciones húngaras](LABAN_SZITT_FIGURAS_HUNGARAS.md): cuatro figuras de *Koreográfia* (2008) vistas en una tesis universitaria de 2024, con páginas de procedencia. Orientan el cotejo visual futuro; la tesis y las imágenes estáticas no sustituyen el impreso alemán ni muestran un retorno corporal ejecutado.
+
 **Preparación práctica sin captura nueva:** [montaje, lista de compras e inventario inicial de videos de Nico](MONTAJE_COMPRAS_Y_VIDEOS_NICO.md). Se identificaron episodios editados de contexto, pero todavía ningún original confirmado de Nico haciendo rope flow.
 
 **Nueva fuente autoral mediada:** se leyó una traducción web de [ocho notas de Laban sobre ritmo](LABAN_NOTAS_RITMO.md). Permite fundamentar que su marco relaciona espacio, tiempo y fuerza; no proporciona una ecuación de eficiencia corporal ni reemplaza los libros pendientes.

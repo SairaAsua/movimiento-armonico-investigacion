@@ -1,0 +1,14 @@
+# Cuatro figuras de *Koreográfia* reproducidas en una tesis húngara
+
+**Cotejo visual secundario, 03-10-2026; Issue [#1](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/1).** Se descargó y examinó el PDF institucional de la tesis DLA de **Szitt Melinda**, *Tér-képzelet: A mozgás mint téralakítás a társadalom és a képzőművészet tükrében* (Magyar Képzőművészeti Egyetem, portada fechada 2024): [archivo de la universidad](https://www.mke.hu/res/mke_dla_ertekezes_2025_szit_melinda.pdf). Tiene 181 páginas PDF. Las páginas impresas **72–73 coinciden con las páginas 72–73 del PDF**; se inspeccionaron las imágenes, sus pies y la tabla de procedencia de figuras al final. No se leyó la traducción húngara íntegra ni el impreso alemán de 1926. No se redistribuyen las imágenes en este repositorio.
+
+| Figura de Szitt | Visible en | Procedencia que declara la tabla final de su tesis | Qué puede cotejarse aquí |
+|---|---|---|---|
+| 44, escala de movimiento B | p. 72 | *Koreográfia* (L'Harmattan, 2008), pp. 45–46 | Dibujo de cuerpo, trazos curvos y puntos numerados/rotulados; no da una trayectoria medida ni reloj. |
+| 45, escala de movimiento A | p. 72 | Misma edición, pp. 45–46 | Dibujo distinto con números y curvas; el pie identifica A, no un movimiento de Nico. |
+| 46, direcciones dimensionales y planos | p. 73 | Misma edición, p. 35, figura 15 | Esquemas de direcciones y tres planos; no convierte una imagen 2D en reconstrucción corporal 3D. |
+| 47, direcciones diagonales | p. 73 | Misma edición, p. 36, figura 17 | Esquema de cuerpo y direcciones rotuladas; no fija por sí solo una clase computable de 24. |
+
+La bibliografía de imágenes de la tesis identifica la traducción húngara de Nagy Borbála y menciona la edición/revisión de Fügedi János. La prosa de Szitt en pp. 72–73 interpreta escalas A/B, secuencias e inclinaciones; **es exposición de la tesista**, no cita directa del libro alemán. En particular, su frase sobre un tercer tramo que vuelve al inicio de una espiral es compatible con un **cierre de la construcción**, pero una ilustración estática y una exposición secundaria no prueban que ese retorno se ejecutara físicamente. Sigue vigente la [separación entre enlace construido y retorno observado](LABAN_VOLUTAS_1926.md). Tampoco se toman sus analogías mayor/menor, masculino/femenino como frecuencias acústicas, etiquetas estéticas ni hechos fisiológicos.
+
+Esta fuente aporta una **ruta visual y bibliográfica concreta** para pedir la edición húngara o comparar sus láminas con la traducción ilustrada inglesa. No resuelve si la traducción inglesa corrigió signos del original, la paginación alemana, la lectura completa de A/B ni la pertinencia de esas figuras para la soga de Nico. Antes de fijar una plantilla histórica en el análisis, cotejar original alemán y traducciones con una persona especialista y conservar variantes editoriales.
