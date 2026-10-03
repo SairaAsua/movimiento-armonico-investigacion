@@ -8,6 +8,14 @@ R09 conserva `source_id`, `subject_slot`, reloj afín, cuadros ordenados, `sourc
 
 En el [banco sintético de selección por visibilidad](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/research/j-espacio-fase-pesos/research/J_COBERTURA_SELECTIVA.md), región `S` y fase `Φ` son realmente independientes: `J=0`. Observar toda la diagonal y la mitad de las celdas fuera de ella deja cobertura total de `0,75` **y `0,75` en cada bin de fase**, pero da `J` de casos visibles `0,056633` nats. La misma tabla visible permite completaciones de `J=0` y `0,130812` nats. Son probabilidades construidas, no tasas de una cámara. Demuestran por qué incluso cobertura **por fase** puede resultar insuficiente si la ausencia depende de región × fase.
 
+## Ejecución aislada del adaptador publicado
+
+El [banco reproducible `r09_cobertura_fase_sintetica.py`](r09_cobertura_fase_sintetica.py) importó `spatial_adapter.convert` real de Weaver, primero en el merge R09 `7ce7fa3` y luego en el `main` `cc5fb57` del 3 de octubre UTC. Fija el SHA-256 de `spatial_adapter.py` y `spatial_observations.py` para rechazar una versión no auditada; sólo requiere un checkout de Weaver y Pydantic v2. No inició servicios ni procesó video. Invocación desde la raíz de esta investigación: `python research/r09_cobertura_fase_sintetica.py --weaver-repo /ruta/al/checkout/de/harmonic-weaver`.
+
+Construye ocho cuadros con 17 articulaciones por cuadro. La articulación `joint-0` está ausente en los cuatro cuadros de la fase 0 **o** en los cuatro de la fase 1; `joint-1` tiene una muestra `held` idéntica en ambos casos. La fase binaria es una **anotación externa fabricada**, no un campo ni un estimador de R09. Ambos resultados devuelven exactamente `coverage={observed:131, held:1, inferred:0, missing:4}` sobre 136 puntos. Sin embargo, al cruzar los estados por `joint-0 × fase`, los casos invierten su soporte: `0/4` frente a `4/4` cuadros observados en cada fase. El adaptador **sí conserva** los estados individuales y los tiempos, de modo que un análisis externo puede distinguir los casos; el resumen global por sí solo **no** puede hacerlo.
+
+Este fixture prueba comportamiento de transporte y agregación para entradas construidas, no exactitud de cámara, fase de soga, cobertura real de Nico ni asociación `J`. Las ocho marcas temporales son uniformes por diseño; con PTS variables hay que ponderar duración y tratar gaps según el protocolo. `held` sigue siendo una posición retenida, no una observación nueva. Para un `J_t` real hacen falta además región/origen válidos, fase de tarea identificada por señal independiente, denominador de todos los intentos y regla de ventana congelada.
+
 ## Cruce para un archivo científico de prueba
 
 | Información | Procedencia aceptable | Uso y decisión pendiente |
@@ -24,7 +32,7 @@ Para `J_t`, el peso de un intervalo puede venir de su tiempo respaldado aun cuan
 ## Criterios de aceptación antes de un contraste HIT
 
 1. Exportar una tabla auditable por `session_id`, `phrase_id`, `cycle_id`, `source_id`, `subject_slot`, etiqueta y vista, con duración total intentada, duración válida, `held`, `inferred`, `missing`, fase desconocida y causa; conservar originales/PTS y generaciones por hash fuera de GitHub público.
-2. Reproducir el contraejemplo exacto anterior: el reporte debe mostrar cobertura global y por fase `0,75`, `J_valid_only≈0,056633` nats y sensibilidad que incluya `0` y `0,130812` nats como completaciones posibles. No presentar estas dos completaciones como límites universales.
+2. Reproducir el contraejemplo exacto anterior: el reporte debe mostrar cobertura global y por fase `0,75`, `J_valid_only≈0,056633` nats y sensibilidad que incluya `0` y `0,130812` nats. Bajo fase conocida y región binaria como única ausencia, son los [extremos exactos de **ese** fixture](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/research/j-espacio-fase-pesos/research/J_COBERTURA_SELECTIVA.md); no son límites universales para otros datos, fase ausente o arco oculto.
 3. Añadir fixtures adversos con una muñeca `held` durante un cruce, persona ausente, soga ilegible, hueco temporal, cambio de slot y región 2D ambigua. Ninguno puede aumentar el numerador de observaciones nuevas ni convertirse en región periférica. Los controles base y Laban/HIT deben usar las mismas filas válidas y reportar lo excluido.
 4. Congelar región, umbral, bins, marco, estimador de fase, medida temporal o de arco y política de exclusión en desarrollo antes de mirar días reservados o juicios estéticos. Demostrar error/cobertura con cámaras reales y referencia apropiada antes de inferir algo sobre Nico.
 
