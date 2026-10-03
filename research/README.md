@@ -146,6 +146,8 @@ La misma nota añade un [banco de giro firmado](q_giro_orden_sintetico.py): `W` 
 
 [Seguimiento de soga flexible, fuentes DLO y DOT](SOGA_VISION_DLO_FUENTES.md): separa reconstrucción de figura, topología e identidad de puntos materiales; examina la estructura documentada del dataset DOT y propone un benchmark externo de dos/cuatro vistas, seguido del banco técnico propio antes de incorporar `rope_3d_curve` o `rope_material_track`.
 
+[MovingCables como benchmark externo](SOGA_MOVINGCABLES_BENCHMARK.md): fuente con RGB, etiquetas y flujo de cables en movimiento para evaluar extracción 2D; se delimita la transferencia a una soga humana y no se afirma prueba ejecutada.
+
 [Procedencia de fases y circularidad](FASE_PROCEDENCIA_CIRCULAR.md): evita que dos copias del reloj de soga produzcan una falsa relación HIT perfecta.
 
 [Balance energético de la soga](ENERGIA_SOGA_BALANCE.md): distingue energía de la curva, trabajo de los agarres y metabolismo; decide cuándo haría falta fuerza instrumentada.
