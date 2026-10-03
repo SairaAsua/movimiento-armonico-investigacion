@@ -44,6 +44,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Factorial de geometría proyectada × fase en video y Shaper](WEAVER_VIDEO_QR_FACTORIAL.md): cuatro MP4 sintéticos permiten recuperar `Q_xy` y `R` desde píxeles, medir su error frente a la animación y renderizar cuatro WAV con controles espaciales y temporales separados. Es 2D proyectado y replay offline; no valida planos 3D de Laban ni feedback humano.
 
+[Submuestreo del factorial en MP4](VIDEO_QR_SUBMUESTREO.md): al retener menos cuadros del mismo video, los rangos de `Q_x` se amplían; a 3 fps el `R` modular puede seguir valiendo 1 aunque el avance continuo no se recupere. El [script](video_qr_submuestreo.py) comprueba todos los inicios de retícula, sin pretender validar las cámaras reales.
+
 ## Plan de punta a punta
 
 [Sesgo de concentración de fase](FASE_SESGO_MUESTRAL.md): lectura primaria de Vinck et al. (2010), identidad de `PPC` y [contraejemplo ejecutable](fase_sesgo_muestral_sintetico.py) que muestra por qué copiar cuadros o subir FPS no agrega ciclos independientes.
