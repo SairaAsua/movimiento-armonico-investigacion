@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.24, 3 de octubre de 2026
+**Versión:** 0.25, 3 de octubre de 2026
 
 ## Resumen
 
@@ -21,6 +21,8 @@ La tradición de Laban ofrece un vocabulario espacial y dinámico para describir
 HIT, tal como la formulan Fernández Méndez y Echániz, investiga si las proporciones entre procesos periódicos pueden organizar información y coordinación en diversos dominios [3]. Para este estudio resultan relevantes las hipótesis de estructura proporcional transmodal, eficiencia informacional y sensibilidad biológica. **La eficiencia de procesamiento postulada por HIT no es gasto metabólico**: se trata de variables, mecanismos y unidades diferentes. Aquí la extensión de HIT al movimiento es una predicción a evaluar, no una validación ya obtenida. El antecedente clásico de Haken, Kelso y Bunz muestra que la fase relativa describe patrones de coordinación bimanual y transiciones con la cadencia; ofrece un fundamento dinámico para medir fase, sin probar nuestra hipótesis estética [4].
 
 En danza hay evidencia de que la organización temporal influye en valoraciones visuales. Orlandi, Cross y Orgs manipularon el tiempo de secuencias con trayectorias comparables y hallaron versiones juzgadas más agradables y, a la vez, más esforzadas; velocidad y duración también cambiaban [5]. Este resultado vuelve refutable una equivalencia automática entre belleza y facilidad. Sirve para exigir comparadores de tempo, duración y variación de rapidez, no para transferir una magnitud a nuestro caso.
+
+Un antecedente fisiológico reciente combina cinemática 3D y calorimetría en caminata técnica de tango: Torres y colaboradores observaron mayor costo neto de transporte que en caminata habitual, sin diferencia estadísticamente detectada de velocidad media ni de trabajo mecánico total [31]. El gas se resumió por bloques, mientras la captura 3D cubrió fragmentos; cinco de 17 bailarines quedaron fuera del análisis conjunto por problemas ópticos. El estudio **no recogió valoraciones de belleza** y la condición tango incluyó música ausente en la referencia. Por eso muestra un diseño de medición y una dirección adversa plausible para la economía, pero no prueba que un movimiento más bello consuma más ni menos. En rope flow habrá que controlar tarea, música, cobertura y unidad de análisis por separado.
 
 La contribución del artículo es triple. Primero, hace explícita una familia de descriptores que separa **forma espacial, coordinación temporal y asociación espacio–tiempo**. Segundo, demuestra qué información pierden esos descriptores, evitando que una sonificación atribuya al cuerpo una propiedad que nunca fue observada. Tercero, presenta un diseño escalonado para contrastar relaciones con experiencia, estética y sonido sin usar la misma apreciación para definir y confirmar «consonancia».
 
@@ -255,6 +257,7 @@ Proponemos estudiar el movimiento armónico como una **familia de relaciones obs
 28. Equipo Harmonic Beacon (2026). [*Giro firmado, dependencia de vista y cierre aproximado*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/7728412/research/Q_CRUCES_ORDEN.md); [banco de dos vistas](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/7728412/research/q_giro_proyeccion_sintetica.py) y [contraejemplo de tres cierres](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/7728412/research/W_CIERRE_APROXIMADO.md). Geometría sintética de un punto proyectado; no mide rope flow ni soga 3D.
 29. Equipo Harmonic Beacon (2026). [*Cuándo se puede comparar un giro espacial con una fase HIT*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/f7abc49/research/GIRO_LOCAL_FASE_RELOJ.md). Derivación y [banco de tiempos lógicos](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/f7abc49/research/giro_fase_reloj_sintetico.py); no mide latencia ni audio real.
 30. Music Intelligence Lab, American University of Beirut (consultado el 3 de octubre de 2026). [*Rope Flow Music*](https://musicintelligencelab.com/). Descripción autoral de un prototipo musical con IMU en el mango y clasificación de ciclos; página de proyecto, no estudio de validación del movimiento, la fase ni la experiencia.
+31. Torres, C., Minetti, A. E., Biancardi, C. M. y Fábrica, G. (2026). [*Energetics, kinematics, and physiologic aspects of tango walking in the leader role*](https://doi.org/10.7717/peerj.21581). *PeerJ* 14:e21581. Captura 3D y gas en bloques de caminata, no valoración estética; [lectura de método y límites](https://github.com/SairaAsua/movimiento-armonico-investigacion/pull/33).
 
 ## Nota de estado y transparencia
 
