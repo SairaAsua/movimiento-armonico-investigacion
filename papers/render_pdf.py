@@ -42,6 +42,7 @@ th { background: #e4eeee; }
 tr { break-inside: avoid; }
 ul, ol { padding-left: 17pt; margin: 5pt 0 10pt; }
 li { margin: 0 0 4pt; }
+ol li { margin-bottom: 2pt; }
 blockquote { border-left: 3px solid #6ca5a5; padding-left: 10pt;
              color: #425b62; }
 hr { border: 0; border-top: 1px solid #a5c1c2; margin: 18pt 0; }
