@@ -56,6 +56,18 @@ def pooled_task_joint(joint: list[list[list[float]]]) -> list[list[float]]:
 
 
 def main() -> None:
+    # Same deterministic binary relationship can carry different raw J when
+    # the spatial occupancy differs. These are abstract tables, not measured
+    # phases; the .625/.125 marginals match a separate synthetic geometry bank.
+    occupancy_inner = 0.625
+    occupancy_outer = 0.125
+    j_inner = mutual_information([[occupancy_inner, 0.0], [0.0, 1 - occupancy_inner]])
+    j_outer = mutual_information([[occupancy_outer, 0.0], [0.0, 1 - occupancy_outer]])
+    assert abs(j_inner - binary_entropy(occupancy_inner)) < 1e-12
+    assert abs(j_outer - binary_entropy(occupancy_outer)) < 1e-12
+    assert abs(j_inner - 0.6615632381579821) < 1e-12
+    assert abs(j_outer - 0.37677016125643675) < 1e-12
+
     # A single uniform lap and an external clock make both bins equal solely
     # because they share the progress of the task. Maximal J is not evidence
     # of special coordination or a HIT prediction.
@@ -112,6 +124,8 @@ def main() -> None:
         "residuo compartido: "
         f"I(S;Phi)={math.log(2):.9f}, I(S;Phi|T)={expected_conditional:.9f} nats"
     )
+    print(f"ocupación radial distinta, correspondencia perfecta: "
+          f"J_inner={j_inner:.9f}, J_outer={j_outer:.9f} nats")
 
 
 if __name__ == "__main__":
