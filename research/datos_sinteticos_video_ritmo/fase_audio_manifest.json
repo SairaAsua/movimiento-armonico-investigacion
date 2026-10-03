@@ -1,0 +1,54 @@
+{
+  "kind": "synthetic_video_intracycle_phase_audio_diagnostic",
+  "source_bank": "ejecutar_banco_fase_archivo.py; matched-marginal aligned/opposed",
+  "review_videos": "lossless MP4 copies of generated FFV1 files; metrics recomputed on published MP4 pixels",
+  "mapping": "mono pitch=220+20*(unwrapped right_phase-left_phase) Hz",
+  "availability": "current decoded frame after capture/decode; no measured live latency",
+  "not": [
+    "Beacon audio",
+    "rope flow",
+    "human phase",
+    "HIT validation",
+    "beauty or physiological consonance"
+  ],
+  "results": {
+    "aligned": {
+      "video_sha256": "3072c5c77e68103ff593704fcde06cb32a481a7175019a9c52c431bf39bf5097",
+      "decoded_pixel_sha256": "3aa8ba73781aa9222b43dcb0c235ae9ab31ff9be26d613732ed19e17b8e1bd37",
+      "frames": 240,
+      "q_projected_xy": [
+        0.5010318269971498,
+        0.4989681730028496
+      ],
+      "r_event_only": 1.0,
+      "wav_sha256": "583e28f84102be2ab2fd76eee5ea7793d999c1a0cdd002ef5a421715333d97dc",
+      "duration_s": 8,
+      "sample_rate_hz": 24000,
+      "r_continuous_from_pixels": 1.0,
+      "mean_resultant_angle_rad": 0.0,
+      "mean_angle_note": "resultant direction becomes unstable as R approaches zero; no human threshold set",
+      "pitch_min_hz": 220.0,
+      "pitch_max_hz": 220.0,
+      "rms_pcm16": 7065.141848257543
+    },
+    "opposed": {
+      "video_sha256": "6133f081883f295a0ecf358688faab3b0ea1da4800d417795c3de27022102040",
+      "decoded_pixel_sha256": "c73339d5655ae2e8a20cb44b086384704d233d282c8a266858571609056528f1",
+      "frames": 240,
+      "q_projected_xy": [
+        0.5007770934889118,
+        0.49922290651108775
+      ],
+      "r_event_only": 1.0,
+      "wav_sha256": "4ccaf47ce8c96c58b44e3dfb0efd6f54833f41f0cc311bfb49fa9ae4d7414ef4",
+      "duration_s": 8,
+      "sample_rate_hz": 24000,
+      "r_continuous_from_pixels": 0.07692010139759527,
+      "mean_resultant_angle_rad": 3.141592653589771,
+      "mean_angle_note": "resultant direction becomes unstable as R approaches zero; no human threshold set",
+      "pitch_min_hz": 148.09619300604822,
+      "pitch_max_hz": 291.9038069939512,
+      "rms_pcm16": 7065.104483876267
+    }
+  }
+}

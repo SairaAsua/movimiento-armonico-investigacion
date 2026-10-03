@@ -1,0 +1,73 @@
+{
+  "kind": "synthetic_video_same_path_different_timing",
+  "source": "generated point marker; no rope or human motion",
+  "construction": "theta_A=2*pi*t; theta_B=2*pi*(t+0.8*t*(1-t))",
+  "analysis": "decoded white-pixel centroid and source PTS; 89 observed intervals",
+  "audio": "offline diagnostic amplitude from frame speed; fixed carrier; not Beacon",
+  "baseline_speed_px_s": 201.24209313311857,
+  "not": [
+    "Laban category",
+    "HIT validation",
+    "rope tracking",
+    "energy or aesthetic measurement",
+    "Beacon audio"
+  ],
+  "measurements": {
+    "uniforme": {
+      "video_sha256": "6b0f4b81b76210db88b525be99bfe713582bcac6dc710c534425d9aaaff4cd80",
+      "frames": 90,
+      "first_pts_s": 0.0,
+      "last_pts_s": 2.966667,
+      "nominal_duration_s": 3.0,
+      "decoded_marker_pixels_per_frame": 49,
+      "radial_rmse_px": 0.2850442097585,
+      "observed_path_length_px": 591.1122199843587,
+      "first_semicircle_time_fraction": 0.5056179207170876,
+      "first_semicircle_arc_fraction": 0.5059210415242179,
+      "phase_covered_rad_without_closure": 6.209634016691046
+    },
+    "reparametrizado": {
+      "video_sha256": "2f6c8ae828f1f02ecfbc4215f076ceb1ba6b4d43db4f002ec85f41f3cd2db4a8",
+      "frames": 90,
+      "first_pts_s": 0.0,
+      "last_pts_s": 2.966667,
+      "nominal_duration_s": 3.0,
+      "decoded_marker_pixels_per_frame": 49,
+      "radial_rmse_px": 0.24868659135401378,
+      "observed_path_length_px": 597.0072363447149,
+      "first_semicircle_time_fraction": 0.3258427723772166,
+      "first_semicircle_arc_fraction": 0.4968911585957424,
+      "phase_covered_rad_without_closure": 6.272659380147861
+    }
+  },
+  "audio_measurements": {
+    "uniforme": {
+      "wav_sha256": "4ecc8cdf331a9fab9064965261a00d5050c1320af6bb01b83fb52dba8cf80c36",
+      "sample_rate_hz": 24000,
+      "tone_hz": 220,
+      "mapping": "gain=min(0.9,0.45*measured_speed/baseline_speed)",
+      "availability": "speed for interval i requires decoded frame i+1; offline alignment, not live output",
+      "boundary_ramp_ms": 10,
+      "last_frame": "no next observed position; target gain zero",
+      "rms_pcm16_by_second": [
+        5033.098643057773,
+        5049.737295262662,
+        4981.025431303445
+      ]
+    },
+    "reparametrizado": {
+      "wav_sha256": "30c83ed257e2f3955d2a0a5959af91fc82bb06cc5d3fbfc02bb94c10a035e3c5",
+      "sample_rate_hz": 24000,
+      "tone_hz": 220,
+      "mapping": "gain=min(0.9,0.45*measured_speed/baseline_speed)",
+      "availability": "speed for interval i requires decoded frame i+1; offline alignment, not live output",
+      "boundary_ramp_ms": 10,
+      "last_frame": "no next observed position; target gain zero",
+      "rms_pcm16_by_second": [
+        7748.916041792555,
+        5107.675232056818,
+        2517.596043922654
+      ]
+    }
+  }
+}

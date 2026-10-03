@@ -30,6 +30,14 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Control factorial Laban–HIT](LABAN_HIT_FACTORIAL.md): trayectorias sintéticas separan plano, marginales de velocidad y relación de fase antes de una predicción o sonificación. [Banco de fase intracíclo para cámaras](BANCO_FASE_INTRACICLO_CAMARAS.md): prueba sin personas para ver si los archivos reales conservan la diferencia que una fase calculada sólo entre cierres de vuelta pierde.
 
+[Cotas de `R` ante fase oculta y error angular](FASE_COBERTURA_R.md): muestra con testigos sintéticos cuánto puede variar la concentración de fase completa cuando sólo se observan intervalos válidos; propaga además el error de cada fase según la relación p:q, con [cálculo reproducible](fase_error_pq_sintetico.py). Fija denominador temporal, incertidumbre e invalidez para HIT y Beacon.
+
+[Fase 2D en plano oblicuo](FASE_PROYECCION_OBLICUA.md): una órbita física uniforme puede parecer 16 veces más rápida en un sector que en otro y reducir `R` observado de dos señales físicamente sincrónicas; incluye MP4, dos WAV y manifiesto para escuchar el sesgo de proyección antes de calibrar el plano.
+
+[Coordenada de fase y `R` no invariante](FASE_COORDENADA_NO_INVARIANTE.md): una reparametrización monótona con idénticos cierres de ciclo reduce `R` de 1 a ≈0,808 sin alterar la sincronía construida; [banco ejecutable](fase_coordenada_sintetica.py). Distingue protophase geométrica, fase de eventos y fase dinámica antes del contraste HIT o del control Beacon.
+
+[Giro local frente a fase y tiempo de entrega](GIRO_LOCAL_FASE_RELOJ.md): [banco sintético](giro_fase_reloj_sintetico.py) muestra que asignar un giro de tres puntos al tiempo en que se entrega, en vez del vértice central, puede fabricar desfase y alterar `R`; separa esa convención de un evento físico y de la latencia de audio.
+
 [Sensibilidad de `Q_live` al marco corporal](CMU_Q_MARCOS_LIVE.md): misma toma y ventana con recorrido co-rotante o desplazamiento relativo sin giro de ejes; cuantifica la diferencia antes de sonificar.
 
 [Replay causal de `Q_live` en CMU](CMU_Q_CAUSAL_PLANOS.md): cobertura de ventanas y diagnóstico de planitud local; muestra que alargar la ventana gana recorrido pero puede mezclar planos.
@@ -42,6 +50,20 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Plan metodológico centrado en Laban](PLAN_INVESTIGACION.md): lectura, geometría, sensores, validación, estudio, HarMoCAP, Beacon y paper. [Primera matriz Laban → mediciones](LABAN_MATRIZ.md): fuente, observación, descriptor propuesto y prueba de validez. [Matemática experimental](LABAN_MATEMATICA.md): coordenadas, recorridos, planos, poliedros, fases y validación. [Lectura crítica de Longstaff](LABAN_LECTURA_LONGSTAFF.md): secciones pertinentes del volumen I, experimentos y resultado nulo relevante. [Dirección y redes en Laban](LABAN_RED_Y_VECTOR.md): movimiento frente a ubicación y cuboctaedro frente a icosaedro. [Puente Laban–HIT](PUENTE_LABAN_HIT.md): hipótesis, frecuencias, fases y contrastes. [Fase de rope flow](FASE_ROPEFLOW.md): eventos de ciclo, métodos de fase, relaciones p:q y sus límites. [Búsqueda rope flow y vecinos](BUSQUEDA_ROPEFLOW_ADYACENCIAS.md): consultas reproducibles, falsos positivos y transferencia limitada desde poi. [Preparación de cámaras](CAMARAS_PREPARACION.md): inventario y criterios para decidir 2D/3D. [Decisión de sensores](SENSORES_DECISION.md): qué se puede afirmar con cámaras y qué exige IMU, calorimetría u otros instrumentos. [Piloto de validación de video](PILOTO_VALIDACION_VIDEO.md): errores, sincronización, oclusiones y decisiones por descriptor. [Tareas de rope flow](ROPEFLOW_TAREAS.md): vocabulario, frases y ciclos candidatos, pendientes de observar en Nico. [Experiencia y estética](EXPERIENCIA_ESTETICA.md): autoinformes de Nico, valoraciones visuales y contraste con cinemática/metabolismo sin fusionar constructos. [Integración HarMoCAP–Beacon](INTEGRACION_HARMOCAP_BEACON.md): archivo científico, contrato 1.4, extensión futura y pruebas hasta el audio. Incorpora cámaras disponibles, ausencia de instalación y especialistas aún por incorporar.
 
+[Fase angular y marco rotante](FASE_MARCO_ROTANTE_PQ.md): derivación y control sintético de por qué un giro común se cancela en 1:1 pero modifica relaciones p:q con `p≠q`; fija la procedencia del marco para contrastes HIT y futuras capas sonoras.
+
+[Fase mano–soga y base mecánica](FASE_MANO_SOGA_BASE_MECANICA.md): antecedente experimental de manipulación robótica con soga flexible y contraejemplos de retardo a cadencia constante o cambiante; distingue seguimiento físico del objeto, coordinación corporal incremental y resultados externos del estudio.
+
+[Salto con soga de Zhou et al. (2025): transferencia instrumental](SALTO_SOGA_ZHOU_2025_TRANSFERENCIA.md): lectura del método completo; separa las mediciones de cuerpo, agarres y soga de su evento de salto, cinco ciclos centrales y proxy de punto medio por dos marcas.
+
+[Soga compartida y ritmo multimodal de Yonekura et al. (2012)](CUERDA_RITMO_MULTIMODAL_YONEKURA_2012.md): experimento original con señales auditivas, visuales y de fuerza; separa error de frecuencia de fase HIT y orienta controles de contingencia para Beacon.
+
+[Soga girada por humano y robot con visión, Yamasaki et al. (2025)](CUERDA_ROBOT_VISION_YAMASAKI_2025.md): lectura del experimento original y de dos límites de sus indicadores; orienta controles de longitud, pulso común, fase intracíclo y calidad de mano para Nico y Beacon.
+
+[Cuerda periódica y estado latente, Kobayashi et al. (2022)](CUERDA_MODELO_LATENTE_KOBAYASHI_2022.md): separa predicción de movimiento corporal bajo una consigna robótica de la fase física independiente y de los resultados estéticos o fisiológicos que querríamos estudiar.
+
+[Reloj común medido con error](HIT_RELOJ_COMUN_CON_ERROR.md): [contraejemplo ejecutable](reloj_comun_error_sintetico.py) muestra que residualizar dos manos frente al mismo pulso imperfecto puede fabricar asociación y que reemparejar frases puede aparentar confirmarla; también muestra que la diferencia angular directa 1:1 cancela el reloj idéntico. El [presupuesto sintético](reloj_comun_sensibilidad.py) calcula la precisión necesaria bajo ese modelo, sin establecer umbrales de cámara. No hay estimación de fase desde video ni datos humanos.
+
 [Esqueleto del primer paper](ESQUELETO_PAIPER.md): alcance publicable, preguntas por unidad de análisis, secciones redactables, figuras/tablas sin resultados ficticios y guías de reporte pertinentes.
 
 [Ficha de congelamiento del primer estudio](FICHA_CONGELAMIENTO_ESTUDIO.md): decisiones y evidencia que se fijarán tras el piloto, antes de abrir días reservados; todavía es plantilla, no prerregistro.
@@ -51,6 +73,10 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [Cobertura y selección del video](COBERTURA_SELECCION_VIDEO.md): registro de todos los intentos, validez por descriptor y análisis del sesgo posible cuando giros y cruces quedan fuera de los clips reconstruibles.
 
 [Misma trayectoria, distinto ritmo](GEOMETRIA_VS_TIEMPO_TRAYECTORIA.md): diferencia entre ponderar por cuadros y por longitud de recorrido, con [contraejemplo sintético ejecutable](geometria_tiempo_sintetica.py) para separar geometría Laban y tiempo HIT.
+
+[Mismo círculo en dos videos, distinto ritmo](VIDEO_CURVA_RITMO.md): un marcador sintético sigue la misma curva analítica con dos leyes temporales; píxeles y PTS recuperan la diferencia, y dos WAV diagnósticos hacen audible la rapidez medida. No es soga, audio de Beacon ni validación humana de HIT.
+
+[Dos marcadores en video: fase intracíclo audible](VIDEO_FASE_AUDIO_DIAGNOSTICO.md): reutiliza el banco visual `aligned/opposed` para traducir su diferencia de fase extraída desde píxeles a dos WAV de tono variable, con igual nivel y sin confundir `R` retrospectivo con señal live.
 
 [Acople espacio–tiempo](ACOPLE_ESPACIO_TIEMPO.md): misma curva y mismos marginales de rapidez/aceleración, pero acento en regiones corporales opuestas; incluye [control sintético](espacio_tiempo_acople_sintetico.py) y un descriptor condicional a validar antes del piloto.
 
@@ -155,6 +181,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [Banco sintético de fase](FASE_BANCO_SINTETICO.md): doble conteo de rapidez, transiciones sin fase, relaciones 2:1 y 1:1, y sesgo por retardo; incluye [script ejecutable](fase_sintetica.py), sin datos humanos.
 
 [Estimadores de fase con perturbaciones](FASE_ESTIMADORES_BANCO.md): [comparación ejecutable](fase_estimadores_sinteticos.py) entre Hilbert offline y posición–velocidad causal con cambio de cadencia, forma asimétrica, ruido, amplitud baja, hueco y un control explícito de fuga futura.
+
+[Fase de torso bajo error](FASE_TORSO_AMPLITUD_NO_IDENTIFICABLE.md): [contraejemplo ejecutable](fase_torso_amplitud_sintetica.py) con `R̂₁:₁=1` y dos historias verdaderas compatibles con la misma orientación observada, una de ellas con `R₁:₁=0`. Fija el requisito de amplitud frente a error antes de una relación HIT torso–mano.
 
 [Longstaff 2001, texto completo](LABAN_VECTOR_LONGSTAFF_2001.md): figuras de símbolos de vector, contraste línea/posición, situación central/periférica/transversal e implicaciones operacionales. [Acceso a las obras originales](LABAN_ACCESO_OBRAS.md): ediciones y páginas de Laban aún por cotejar.
 

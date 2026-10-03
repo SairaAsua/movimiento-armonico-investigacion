@@ -1,0 +1,40 @@
+{
+  "kind": "synthetic_oblique_projection_phase_audio_diagnostic",
+  "video_sha256": "ac95ad76c9c4c6e2f642b4d13cdd1ad10d2991ddfc5e8c667002fcda9430d689",
+  "frames": 240,
+  "fps": 30,
+  "max_pts_grid_error_ms": 0.000333333333379926,
+  "geometry": "left circle frontoparallel, right identical physical phase projected with y factor 0.25",
+  "correction": "right image y divided by known synthetic factor 0.25 before atan2",
+  "mapping": "mono pitch=220+20*(right-left unwrapped image phase) Hz",
+  "availability": "offline after frame decode; no measured live latency",
+  "not": [
+    "physical camera",
+    "generic homography validation",
+    "Beacon audio",
+    "Nico movement",
+    "human HIT result"
+  ],
+  "raw": {
+    "wav_sha256": "7dacfddd4411072dd26011b7ab345f29f81068c0d6ee918b9e883881b6655c28",
+    "duration_s": 8,
+    "sample_rate_hz": 24000,
+    "r_continuous_from_pixels": 0.9048184557500725,
+    "mean_resultant_angle_rad": -2.177434891234056e-15,
+    "mean_angle_note": "resultant direction becomes unstable as R approaches zero; no human threshold set",
+    "pitch_min_hz": 207.42407427169064,
+    "pitch_max_hz": 232.57592572830987,
+    "rms_pcm16": 7065.064758287561
+  },
+  "corrected": {
+    "wav_sha256": "45f70f434ccf0c66c659e9a8dcfd0d09b1bf0c59b75d2fc05a087d6977be70d4",
+    "duration_s": 8,
+    "sample_rate_hz": 24000,
+    "r_continuous_from_pixels": 0.9998975598344563,
+    "mean_resultant_angle_rad": 6.000763014038925e-15,
+    "mean_angle_note": "resultant direction becomes unstable as R approaches zero; no human threshold set",
+    "pitch_min_hz": 219.3119350692406,
+    "pitch_max_hz": 220.68806493075968,
+    "rms_pcm16": 7065.126502146535
+  }
+}
