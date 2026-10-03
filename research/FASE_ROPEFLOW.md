@@ -66,4 +66,6 @@ La [lectura de Vinck et al. y el contraejemplo de cuadros copiados](FASE_SESGO_M
 
 El producto de esta fase no es un único «ratio del cuerpo»: es un diccionario de señales, eventos, estimadores, incertidumbres y condiciones en las que cada relación tiene significado. Sólo las relaciones identificables pueden entrar en el contraste HIT o gobernar feedback de Beacon.
 
+Una [IMU en el mango](SENSORES_DECISION.md#regla-de-paso-para-una-imu-en-el-mango) podría aportar **eventos de tarea** bajo oclusión sólo después de validarse frente a soga visible en originales independientes. No transforma automáticamente esos hitos en fase continua intracíclo, forma 3D de soga o una segunda señal corporal independiente. Conservar por evento fuente, reloj, incertidumbre y disponibilidad para que un contraste offline no se confunda con feedback causal.
+
 El [banco sintético ejecutable](FASE_BANCO_SINTETICO.md) comprueba casos simples de doble conteo, intervalo inválido, relación p:q, desfase alternado y sesgo por reloj. Son controles de coherencia matemática que anteceden la comparación de estimadores y la captura real.
