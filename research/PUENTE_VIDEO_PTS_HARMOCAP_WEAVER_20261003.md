@@ -60,6 +60,8 @@ y cotejar el tiempo sobre un mismo video; las 24 features de HarMoCAP pueden
 compararse como **segunda ruta**, sin afirmar que sean la matemática original
 de Laban ni mediciones de energía metabólica.
 
+**La coincidencia PTS no garantiza coincidencia espacial.** En el [banco de rotación con cuatro cuadros](VIDEO_ROTACION_BACKENDS.md), HarMoCAP conservó PTS y OpenCV 5.0.0 entregó píxeles autorrotados, mientras el probe R08 de anotación de soga rechazó el mismo MP4 con matriz de giro. La pose R09 tiene una rotación explícita en código, pero PyAV no se ejecutó en ese banco. Un estudio mano–soga necesitará comparar **píxeles orientados y PTS** entre rutas, o versionar un derivado con giro incorporado y mapeo verificable de original→derivado.
+
 ## Gates antes del video autorizado
 
 1. Con un **fixture sintético** CFR desplazado y otro VFR, producir inventario
