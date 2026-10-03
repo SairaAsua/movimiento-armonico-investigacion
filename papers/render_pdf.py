@@ -42,7 +42,7 @@ th { background: #e4eeee; }
 tr { break-inside: avoid; }
 ul, ol { padding-left: 17pt; margin: 5pt 0 10pt; }
 li { margin: 0 0 4pt; }
-ol li { font-size: 8pt; line-height: 0.93; margin-bottom: 0; break-inside: avoid; }
+ol li { font-size: 7.9pt; line-height: 0.92; margin-bottom: 0; break-inside: avoid; }
 ol li p { margin: 0; }
 blockquote { border-left: 3px solid #6ca5a5; padding-left: 10pt;
              color: #425b62; }
