@@ -170,7 +170,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Longstaff 2001, texto completo](LABAN_VECTOR_LONGSTAFF_2001.md): figuras de símbolos de vector, contraste línea/posición, situación central/periférica/transversal e implicaciones operacionales. [Acceso a las obras originales](LABAN_ACCESO_OBRAS.md): ediciones y páginas de Laban aún por cotejar.
 
-[Longstaff 1996, apéndice XVI](LONGSTAFF_TAXONOMIA_RECORRIDOS.md): taxonomía exploratoria de recorridos corporales, con ochos de reversión y de ciclo continuo; separa mecanismo articular, silueta proyectada y fase periódica HIT.
+[Longstaff 1996, apéndice XVI](LONGSTAFF_TAXONOMIA_RECORRIDOS.md): taxonomía exploratoria de recorridos corporales, con ochos de reversión y de ciclo continuo; separa mecanismo articular, silueta proyectada y fase periódica HIT. Incluye un [contraejemplo sintético](ocho_cinematica_ambigua.py) de dos configuraciones articulares con la misma mano en ocho.
 
 [Longstaff 1996, apéndices IX–X](LONGSTAFF_1996_VECTORES_ANGULOS.md): lectura de símbolos vectoriales y secciones poliédricas; coteja la razón áurea del icosaedro y señala una discrepancia aritmética en la razón impresa para el dodecaedro.
 

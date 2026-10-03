@@ -17,6 +17,8 @@ En su clasificación, un ciclo vuelve a su punto inicial; transiciones solapadas
 
 La diferencia tiene dos niveles que **no se identifican entre sí**: geometría observada de la mano y coordinación que la produjo. La misma silueta proyectada no prueba que Nico haya ejecutado alguno de los mecanismos de las tablas. La soga flexible agrega una tercera trayectoria: mano, curva de soga e identidad de un punto material de la soga tampoco son intercambiables ([límite de identificabilidad](SOGA_IDENTIFICABILIDAD.md)).
 
+El [contraejemplo ejecutable](ocho_cinematica_ambigua.py) refuerza una versión más exigente del límite: un brazo plano ideal de dos segmentos recorre **exactamente el mismo ocho de mano con los mismos tiempos** mediante dos ramas de cinemática inversa, codo a un lado o al otro. Sus codos y ángulos difieren en todos los cuadros mientras la trayectoria de mano coincide. Las áreas firmadas de los dos lóbulos son opuestas en ambas ramas. Esto prueba sólo que **la mano 2D, y aun la mano 3D si ambas acciones son coplanares, no identifica por sí sola la configuración articular**. No modela músculos, activación, torsión 3D ni las dos clases de Longstaff; por tanto no demuestra que ambos mecanismos taxonómicos produzcan la misma trayectoria exacta.
+
 ## Operacionalización candidata, todavía sin datos de Nico
 
 1. Definir el punto seguido (`hand`, `rope_curve` o `rope_material_point`), marco (`camera`, `body` o `world`), plano de proyección y calidad temporal. Guardar ambas manos por separado.
