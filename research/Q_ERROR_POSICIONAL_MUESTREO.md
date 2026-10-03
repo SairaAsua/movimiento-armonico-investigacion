@@ -10,7 +10,7 @@ La función `f_k(d)=d_k²/||d||`, con `f_k(0)=0`, es globalmente Lipschitz con c
 
 `|Q_k−Q̂_k| ≤ min{1, [(2/√3)+Q̂_k] E/(L̂−E)}`.
 
-La cota compara **dos poligonales con los mismos tiempos**; no limita el arco continuo entre cuadros. Tampoco cubre error de orientación/escala del marco, identidad de mano equivocada, oclusión, proyección 2D, ni incertidumbre estadística: se necesitan presupuestos separados. Una desviación estándar de pose no es automáticamente una cota máxima `σ_i`. Si `L̂≤E`, esta prueba no certifica nada más estrecho que `Q_k∈[0,1]`. Para clasificar eje dominante, exigir que el límite inferior de un componente supere los superiores de los otros; si no, informar `indeterminado`. Los intervalos por componente son conservadores y sus extremos no ocurren necesariamente a la vez.
+La cota compara **dos poligonales con los mismos tiempos**; no limita el arco continuo entre cuadros. Un [contraejemplo y una cota separada por curvatura](Q_ARCO_ENTRE_CUADROS.md) cuantifican esa segunda diferencia bajo supuestos explícitos. Tampoco cubre error de orientación/escala del marco, identidad de mano equivocada, oclusión, proyección 2D, ni incertidumbre estadística: se necesitan presupuestos separados. Una desviación estándar de pose no es automáticamente una cota máxima `σ_i`. Si `L̂≤E`, esta prueba no certifica nada más estrecho que `Q_k∈[0,1]`. Para clasificar eje dominante, exigir que el límite inferior de un componente supere los superiores de los otros; si no, informar `indeterminado`. Los intervalos por componente son conservadores y sus extremos no ocurren necesariamente a la vez.
 
 ## Más cuadros pueden empeorar una trayectoria sin filtrar
 
