@@ -38,6 +38,8 @@ La misma nota añade un [banco de giro firmado](q_giro_orden_sintetico.py): `W` 
 
 [Cierre aproximado y giro total](W_CIERRE_APROXIMADO.md): un [banco sintético](w_cierre_aproximado_sintetico.py) completa el mismo recorrido abierto de tres maneras dentro de una tolerancia espacial y obtiene `W=0,1,2`; obliga a declarar si se midió un cierre o se agregó una cuerda por convención.
 
+[Cierre y `W` en danza pública CMU](CMU_W_CIERRE_MUESTREO.md): el [script auditado](cmu_w_cierre_muestreo.py) lee un C3D externo sin subirlo a Git; en 18 ventanas arbitrarias con cuerda recta artificial, 9 cambian `W` al descartar cuadros. No son ciclos de Nico ni una validación del giro continuo.
+
 [Incertidumbre de un cruce de trayectoria 2D](CRUCE_TRAYECTORIA_INCERTIDUMBRE.md): [certificado geométrico ejecutable](cruce_trayectoria_incertidumbre.py) bajo error acotado de vértices; [contraejemplo entre cuadros](cruce_entre_cuadros_sintetico.py) con igual pose puntual muestreada y distinto autocruce; y [envolvente de alcanzabilidad](cruce_envolvente_rapidez_sintetica.py) que sí descarta cruces entre intervalos separados cuando sus regiones posibles no se tocan. Ninguno valida la soga.
 
 [Sobre sintético de situación del recorrido](CONTRATO_SITUACION_V0.md): [fixture JSONL](research_path_situation.synthetic.jsonl) y [validador](validar_research_path_situation.py) conservan origen, marco, escala, ventana, reloj e invalidez para una futura rama científica HarMoCAP–Weaver–Beacon. Sólo comprueban estructura y aritmética de un ejemplo ideal, no precisión espacial ni audio.

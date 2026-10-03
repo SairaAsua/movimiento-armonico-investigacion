@@ -41,6 +41,8 @@ Para rope flow, `W` sería como máximo un **descriptor exploratorio de trayecto
 
 El [contraejemplo de cierre aproximado](W_CIERRE_APROXIMADO.md) muestra que un ciclo de tarea con extremos espaciales cercanos no da automáticamente un `W` del movimiento continuo: la cuerda recta agregada y dos lazos no observados, todos dentro de la tolerancia de cierre, producen `W=1`, `2` y `0`. La política de cierre debe quedar explícita antes de calcular un resumen de ciclo.
 
+En la [toma pública CMU 05_02](CMU_W_CIERRE_MUESTREO.md), este `W` con cuerda recta artificial cambió al descartar cuadros en 9 de 18 ventanas fijas de un segundo; incluso 2 de las 3 ventanas con extremos a menos de 0,1 anchos de hombros cambiaron entre 120/30/15 Hz. Son ventanas de danza sin soga ni referencia de `W` físico: sirven para exigir sensibilidad al muestreo antes de proponerlo como descriptor de Nico.
+
 El [banco de disponibilidad temporal](W_GIRO_TIEMPO_BEACON.md) separa explícitamente este `W` retrospectivo de los giros locales calculables con tres puntos ya recibidos. Esa distinción y el reset tras un hueco son requisitos previos si alguna de las dos señales llega a sonificarse; no constituyen una implementación de Beacon.
 
 ### Una misma ruta 3D cambia de `W` al cambiar de vista
