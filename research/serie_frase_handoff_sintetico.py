@@ -10,6 +10,16 @@ from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
+class Adjudication:
+    event_ids: tuple[str, ...]
+    possible_words: tuple[str, ...]
+    cross_leader_tie_possible: bool
+    episodes_complete: bool
+    continuity_verified: bool
+    hard_bounds_audited: bool
+
+
+@dataclass(frozen=True)
 class Phrase:
     phrase_id: str
     revision: int
@@ -19,6 +29,7 @@ class Phrase:
     expires_at_us: int
     state: str
     certified_word: str | None
+    adjudication: Adjudication
     fingerprint: str  # stable digest of the scientific source record
 
 
@@ -77,10 +88,18 @@ class PhraseHandoff:
             else:
                 out += self._clear(received_at_us, "superseded")
 
-        if message.state != "closed_valid" or message.certified_word is None:
+        if message.state != "closed_valid":
             return out  # partial, aborted or superseded never becomes an audio value
-        if not message.certified_word or set(message.certified_word) - {"D", "I"}:
-            return out + self._clear(received_at_us, "invalid_word")
+        proof = message.adjudication
+        if (not proof.episodes_complete or not proof.continuity_verified
+                or not proof.hard_bounds_audited or proof.cross_leader_tie_possible
+                or not proof.event_ids or len(set(proof.event_ids)) != len(proof.event_ids)
+                or len(proof.possible_words) != 1
+                or message.certified_word != proof.possible_words[0]
+                or not message.certified_word
+                or set(message.certified_word) - {"D", "I"}
+                or len(message.certified_word) != len(proof.event_ids)):
+            return out + self._clear(received_at_us, "adjudication_not_certified")
         self.active = message
         out.append(Action("publish", message.phrase_id, message.revision, "retrospective", received_at_us))
         return out
@@ -92,8 +111,14 @@ def main() -> None:
 
     def m(phrase: str, rev: int, state: str = "closed_valid", word: str | None = "DDII",
           closed: int = 100, available: int = 110, expires: int = 200,
-          context: tuple[str, str, str, str] = ctx, fingerprint: str | None = None) -> Phrase:
-        return Phrase(phrase, rev, context, closed, available, expires, state, word,
+          context: tuple[str, str, str, str] = ctx, fingerprint: str | None = None,
+          possible_words: tuple[str, ...] | None = None, tie: bool = False,
+          complete: bool = True, continuity: bool = True,
+          bounds_audited: bool = True) -> Phrase:
+        proof = Adjudication(tuple(f"e{i}" for i in range(len(word or ""))),
+                             possible_words if possible_words is not None else ((word,) if word else ()),
+                             tie, complete, continuity, bounds_audited)
+        return Phrase(phrase, rev, context, closed, available, expires, state, word, proof,
                       fingerprint or f"{phrase}:{rev}:{state}:{word}")
 
     assert [a.kind for a in gate.ingest(m("p1", 1), 120)] == ["publish"]
@@ -107,6 +132,11 @@ def main() -> None:
     assert gate.active is None
     assert gate.ingest(m("p3", 1, state="closed_partial", word=None), 150) == []  # cross-hand tie
     assert gate.ingest(m("p4", 1, state="aborted", word=None), 160) == []  # hidden episode
+    assert gate.ingest(m("p4b", 1, tie=True), 161) == []  # a false closed_valid does not publish
+    assert gate.ingest(m("p4c", 1, possible_words=("DDII", "DIDI")), 162) == []
+    assert gate.ingest(m("p4d", 1, complete=False), 163) == []
+    assert gate.ingest(m("p4e", 1, continuity=False), 164) == []
+    assert gate.ingest(m("p4f", 1, bounds_audited=False), 165) == []
 
     assert [a.kind for a in gate.ingest(m("p5", 1), 170)] == ["publish"]
     assert [a.reason for a in gate.ingest(m("p6", 1, available=180), 175)] == ["not_available"]
@@ -129,7 +159,7 @@ def main() -> None:
     assert [a.reason for a in gate.ingest(m("p12", 1, state="closed_partial", word=None,
                                            context=other), 198)] == ["new_context_or_phrase"]
     assert gate.active is None
-    print("OK: retrospective publish, idempotence, partial/aborted, correction, availability, expiry, context reset")
+    print("OK: retrospective publish, adjudication gate, idempotence, partial/aborted, correction, availability, expiry, context reset")
 
 
 if __name__ == "__main__":
