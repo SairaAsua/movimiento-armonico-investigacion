@@ -30,6 +30,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Control factorial Laban–HIT](LABAN_HIT_FACTORIAL.md): trayectorias sintéticas separan plano, marginales de velocidad y relación de fase antes de una predicción o sonificación. [Banco de fase intracíclo para cámaras](BANCO_FASE_INTRACICLO_CAMARAS.md): prueba sin personas para ver si los archivos reales conservan la diferencia que una fase calculada sólo entre cierres de vuelta pierde.
 
+[Cotas por visibilidad selectiva para la asociación espacio–fase](J_COBERTURA_SELECTIVA.md): bajo fase conocida y región binaria oculta, deriva el rango agudo de `J` compatible con todas las completaciones y ofrece un [script 2×2 reproducible](j_cobertura_cotas_2x2.py). Son masas sintéticas exactas, no intervalos estadísticos ni datos de Nico.
+
 [Sensibilidad de `Q_live` al marco corporal](CMU_Q_MARCOS_LIVE.md): misma toma y ventana con recorrido co-rotante o desplazamiento relativo sin giro de ejes; cuantifica la diferencia antes de sonificar.
 
 [Replay causal de `Q_live` en CMU](CMU_Q_CAUSAL_PLANOS.md): cobertura de ventanas y diagnóstico de planitud local; muestra que alargar la ventana gana recorrido pero puede mezclar planos.
@@ -39,6 +41,10 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 ## Plan de punta a punta
 
 [Sesgo de concentración de fase](FASE_SESGO_MUESTRAL.md): lectura primaria de Vinck et al. (2010), identidad de `PPC` y [contraejemplo ejecutable](fase_sesgo_muestral_sintetico.py) que muestra por qué copiar cuadros o subir FPS no agrega ciclos independientes.
+
+[Búsqueda de razones `p:q`](FASE_BUSQUEDA_RAZONES.md): banco sintético de selección del mayor `R` entre once candidatos; fija por qué una relación descubierta exige calibrar toda la búsqueda y nuevas sesiones.
+
+[Fase en ventanas cortas](FASE_DESAJUSTE_VENTANA.md): fórmula y cuadratura sintética de dos ritmos próximos sin acoplamiento que producen `R` alta antes de acumular suficiente deriva.
 
 [Plan metodológico centrado en Laban](PLAN_INVESTIGACION.md): lectura, geometría, sensores, validación, estudio, HarMoCAP, Beacon y paper. [Primera matriz Laban → mediciones](LABAN_MATRIZ.md): fuente, observación, descriptor propuesto y prueba de validez. [Matemática experimental](LABAN_MATEMATICA.md): coordenadas, recorridos, planos, poliedros, fases y validación. [Lectura crítica de Longstaff](LABAN_LECTURA_LONGSTAFF.md): secciones pertinentes del volumen I, experimentos y resultado nulo relevante. [Dirección y redes en Laban](LABAN_RED_Y_VECTOR.md): movimiento frente a ubicación y cuboctaedro frente a icosaedro. [Puente Laban–HIT](PUENTE_LABAN_HIT.md): hipótesis, frecuencias, fases y contrastes. [Fase de rope flow](FASE_ROPEFLOW.md): eventos de ciclo, métodos de fase, relaciones p:q y sus límites. [Búsqueda rope flow y vecinos](BUSQUEDA_ROPEFLOW_ADYACENCIAS.md): consultas reproducibles, falsos positivos y transferencia limitada desde poi. [Preparación de cámaras](CAMARAS_PREPARACION.md): inventario y criterios para decidir 2D/3D. [Decisión de sensores](SENSORES_DECISION.md): qué se puede afirmar con cámaras y qué exige IMU, calorimetría u otros instrumentos. [Piloto de validación de video](PILOTO_VALIDACION_VIDEO.md): errores, sincronización, oclusiones y decisiones por descriptor. [Tareas de rope flow](ROPEFLOW_TAREAS.md): vocabulario, frases y ciclos candidatos, pendientes de observar en Nico. [Experiencia y estética](EXPERIENCIA_ESTETICA.md): autoinformes de Nico, valoraciones visuales y contraste con cinemática/metabolismo sin fusionar constructos. [Integración HarMoCAP–Beacon](INTEGRACION_HARMOCAP_BEACON.md): archivo científico, contrato 1.4, extensión futura y pruebas hasta el audio. Incorpora cámaras disponibles, ausencia de instalación y especialistas aún por incorporar.
 
@@ -53,6 +59,10 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [Misma trayectoria, distinto ritmo](GEOMETRIA_VS_TIEMPO_TRAYECTORIA.md): diferencia entre ponderar por cuadros y por longitud de recorrido, con [contraejemplo sintético ejecutable](geometria_tiempo_sintetica.py) para separar geometría Laban y tiempo HIT.
 
 [Acople espacio–tiempo](ACOPLE_ESPACIO_TIEMPO.md): misma curva y mismos marginales de rapidez/aceleración, pero acento en regiones corporales opuestas; incluye [control sintético](espacio_tiempo_acople_sintetico.py) y un descriptor condicional a validar antes del piloto.
+
+[Información mutua espacio–fase](J_ESPACIO_FASE_PONDERACION.md): el [banco exacto](j_espacio_fase_sintetico.py) separa ponderación por tiempo o arco, muestra cómo agrupar ciclos puede borrar relaciones opuestas y demuestra que distinta ocupación radial cambia el techo de `J`. La nota distingue cruces radiales de la polilínea y tiempos entre cuadros; `J` permanece exploratorio hasta fijar medida, región y unidad de análisis.
+
+[Selección por visibilidad en `J`](J_COBERTURA_SELECTIVA.md): un [banco probabilístico sintético](j_cobertura_fase_sintetica.py) muestra `J` espurio por oclusión dependiente de región × fase aun con cobertura igual en cada bin de fase; exige reportar denominadores y sensibilidad de tramos desconocidos.
 
 [Factibilidad del acople con cámaras](ACOPLE_CAMARA_FACTIBILIDAD.md): simulación proyectada con FPS, tamaño de gesto, ruido y pérdida de cuadros hipotéticos; incluye [script reproducible](acople_camara_sintetico.py) y criterios para el banco técnico real.
 
@@ -93,6 +103,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [Sincronía multivista](SINCRONIA_MULTICAMARA.md): lectura de un método primario con destellos y obturador rodante, ajuste limitado de desfase/deriva y criterios para no llamar fase confiable a videos mal alineados. Incluye [ajustador de eventos](ajustar_relojes.py) probado con datos sintéticos, sin cámaras reales.
 
 [Estimandos y contrastes por fase](ESTIMANDOS_Y_CONTRASTES.md): qué compara cada unidad, secuencia predictiva base → Laban → HIT, prueba metabólica condicionada y resultados que no apoyarían la hipótesis.
+
+[Proyección compartida entre `Q` y fase](HIT_Q_FASE_PROYECCION_COMPARTIDA.md): banco sintético donde un indicador temporal mejora la predicción sólo porque identifica la inclinación de cámara que distorsionó el descriptor espacial.
 
 [Effort, estabilidad y economía](EFFORT_ECONOMIA_CONTRASTES.md): distingue cualidad de movimiento en Laban, esfuerzo percibido y costo metabólico; tres experimentos de coordinación muestran por qué no se pueden equiparar.
 
