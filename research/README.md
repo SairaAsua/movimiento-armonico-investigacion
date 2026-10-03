@@ -14,6 +14,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Forma inicial, series y apoyo en *Choreographie*](LABAN_SERIES_NOTACION_1926.md): lectura visual selectiva de pp. 89–99; una frase continua requiere transiciones y estado inicial, y el apéndice distingue apoyo/contacto y maneras de anotar un paso. Delimita por qué el control anterior de episodios separados no prueba factibilidad de una frase de soga.
 
+[Tres componentes y columnas rítmicas en *Choreographie*](LABAN_GUIA_ESCRITURA_1926.md): lectura visual de pp. 100–103 de la traducción; distingue organización de miembros, situación espacial, progreso y signos temporales en columna aparte. La traducción de `Gliedersatz` y los signos requieren cotejo alemán y revisión experta antes de una codificación automática.
+
 [Relación espacial entre miembros](RELACION_ESPACIAL_MIEMBROS.md): [banco sintético reproducible](relacion_espacial_miembros_sintetica.py) con igual `Q`, rapidez individual y fase, pero distinta separación 3D entre manos; delimita un descriptor relacional y su error antes de usarlo con Nico.
 
 [Escalas de eje y ecuador de *Choreographie*](LABAN_ESCALAS_EJE_ECUADOR_1926.md): lectura de pp. 43–48 en traducción ilustrada; separa secuencias axiales, recorridos periféricos y signos añadidos/corregidos por los traductores antes de cualquier comparador para rope flow.
