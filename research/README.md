@@ -172,6 +172,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Longstaff 1996, apéndice XVI](LONGSTAFF_TAXONOMIA_RECORRIDOS.md): taxonomía exploratoria de recorridos corporales, con ochos de reversión y de ciclo continuo; separa mecanismo articular, silueta proyectada y fase periódica HIT. Incluye un [contraejemplo sintético](ocho_cinematica_ambigua.py) de dos configuraciones articulares con la misma mano en ocho.
 
+[Contrato sintético de ochos proyectados](CONTRATO_OCHO_PROYECTADO_V0.md): [ejemplo JSON](ocho_medicion_ejemplo_sintetico.json) y [validador estructural](validar_ocho_proyectado.py) para dos lóbulos y tres tiempos de cruce, separados de la anotación humana; aún no mide video.
+
 [Longstaff 1996, apéndices IX–X](LONGSTAFF_1996_VECTORES_ANGULOS.md): lectura de símbolos vectoriales y secciones poliédricas; coteja la razón áurea del icosaedro y señala una discrepancia aritmética en la razón impresa para el dodecaedro.
 
 [*The Laban Sourcebook*, vista previa](LABAN_SOURCEBOOK_VISTA_PREVIA.md): introducción y figuras de 1926 reproducidas por McCaw, con distinción entre palabra autoral mediada e interpretación editorial; los capítulos de *Choreography*, *Choreutics* y *The Harmony of Movement* no están en la muestra.
