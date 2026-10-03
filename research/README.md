@@ -22,9 +22,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Escalas de eje y ecuador de *Choreographie*](LABAN_ESCALAS_EJE_ECUADOR_1926.md): lectura de pp. 43–48 en traducción ilustrada; separa secuencias axiales, recorridos periféricos y signos añadidos/corregidos por los traductores antes de cualquier comparador para rope flow.
 
-[Volutas y anillos transversales de *Choreographie*](LABAN_VOLUTAS_1926.md): pp. 49–53 en traducción; la voluta es una relación ordenada entre dos inclinaciones y las láminas 12/24/48 son partituras no descifradas con modificaciones editoriales, no una regla de frecuencias o una plantilla de clasificación ya validada.
-
-[Volutas de *Choreographie*](LABAN_VOLUTAS_1926.md): lectura de pp. 49–50; una voluta es frase de dos inclinaciones, no sinónimo de espiral u ocho visible. Registra la corrección editorial del acento A/B y los requisitos de observación 3D.
+[Volutas y anillos transversales de *Choreographie*](LABAN_VOLUTAS_1926.md): pp. 49–53 en traducción; la voluta es una relación ordenada entre dos inclinaciones y las láminas 12/24/48 son partituras no descifradas con modificaciones editoriales. Incluye cotas propuestas para el ángulo entre tramos y la desviación de la trayectoria respecto de su cuerda; no son umbrales históricos, una regla de frecuencias ni una plantilla de clasificación validada.
 
 [Giros en *Choreographie*](LABAN_GIROS_1926.md): lectura de pp. 70–72; separa el anillo de tres lados y su eje construido del giro corporal, del recorrido de mano y de la torsión de soga. Propone controles de identificabilidad para rope flow.
 
