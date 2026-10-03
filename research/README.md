@@ -8,6 +8,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Hoja autoral *The key to the space harmony of movement*](LABAN_KEY_SPACE_HARMONY_FACSIMIL.md): facsímil completo de Leipzig con texto y kinetogramas A/B; doce secuencias, siete anillos, centro corporal y simetría bilateral. Es una fuente primaria para orden y referencia, no una fórmula de `Q` ni doce clases listas para Nico.
 
+[Escalas de eje y ecuador de *Choreographie*](LABAN_ESCALAS_EJE_ECUADOR_1926.md): lectura de pp. 43–48 en traducción ilustrada; separa secuencias axiales, recorridos periféricos y signos añadidos/corregidos por los traductores antes de cualquier comparador para rope flow.
+
 [«Vom Geist des Tanzes» (enero de 1926)](LABAN_VOM_GEIST_1926_FACSIMIL.md): tres páginas autorales en facsímil de Leipzig sobre movimiento, ritmo, armonía, placer, esfuerzo y analogía entre vista y oído. Es teoría estética con contexto histórico problemático, no una prueba fisiológica ni la matemática de *Choreographie*.
 
 [Dos artículos autorales de *Der Tanz* (1927 y fascículo 1928/29)](LABAN_DER_TANZ_1927_1928.md): seis páginas cotejadas en facsímil sobre forma, contraste, movimiento grupal y experiencia. El archivo rotula «1/1929» al segundo número, pero lo fecha noviembre de 1928; no se extrae de estas páginas una fórmula de energía o conciencia.
