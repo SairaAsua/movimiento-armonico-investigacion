@@ -22,7 +22,21 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
 
+[Gate de dos fuentes para distancia espacial live](PAR_ESPACIAL_LIVE_CONTRATO.md): [fixture lógico](par_espacial_live_sintetico.py) de pareja de observaciones nuevas, cota de desfase, expiración propia, `held` y cambio de calibración. El [replay aislado del motor Weaver](replay_par_espacial_weaver.py) verifica cuatro controles y cuatro resets en su transporte de grabación; no equivale a OSC, Beacon ni audio.
+
+[Auditoría de contratos del par de muñecas](PAR_ESPACIAL_FRONTERA_CONTRATOS.md): localiza la pérdida actual de ID/tiempo entre el bundle HarMoCAP y el callback Weaver, distingue la separación 2D mono-cámara del futuro 3D multifuente y explicita el choque de relojes monotónico/pared.
+
+[Orden temporal de dos eventos con incertidumbre](ORDEN_EVENTOS_INTERVALOS.md): [fixture sintético](orden_eventos_intervalos_sintetico.py) de intervalos de soporte, mapa de reloj y decisión `antes/después/indeterminado`. Define cuándo una sucesión inspirada en la pregunta de Laban podría afirmarse sin inventar orden entre cuadros o fuentes.
+
+[Contrato propuesto de frase ordenada hacia Beacon](SERIE_FRASE_CONTRATO_BEACON.md): separa archivo científico de mensaje sonoro retrospectivo, palabra de líderes identificable de orden individual, y reset ante frase parcial, revisión o vencimiento. El [banco sintético de handoff](serie_frase_handoff_sintetico.py) comprueba la entrega lógica y sus resets; no es un endpoint implementado ni una prueba de audio.
+
+[Reconciliación con el laboratorio actual de Weaver](WEAVER_LAB_MAIN_RECONCILIACION_20261003.md): distingue las pruebas del driver antiguo de la ruta video/cámara → `MotionFrame`/`FeatureFrame` → Shaper publicada en `main` `cc5fb57`; separa el comparador R09 de streams de nuestra regla retrospectiva entre dos frases. Delimita qué contrato y pruebas faltarían antes de hacer audible esa comparación.
+
+[Cotas alternativas para el contrato `Q_live`](Q_CONTRATO_COTAS_ALTERNATIVAS.md): un tramo angularmente incierto puede hacer trivial la cota v0 aunque una cota global por error de posición sea informativa; documenta la futura decisión de versión sin atribuir precisión a cámaras reales.
+
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
+
+[Puente temporal de video HarMoCAP–Weaver](PUENTE_VIDEO_PTS_HARMOCAP_WEAVER_20261003.md): cotejo de contratos offline, origen PTS, diferencia entre features y pose, y gates para el primer archivo autorizado; distingue esta ruta de los PRs OSC en vivo.
 
 [Descomposición del marco móvil](MARCO_MOVIL_DESCOMPOSICION_C.md): identidad exacta y banco CMU para cuantificar cuánto del recorrido co-rotante proviene del cambio de ejes; fija una comprobación necesaria antes de sonificar `C`.
 
@@ -30,11 +44,37 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Control factorial Laban–HIT](LABAN_HIT_FACTORIAL.md): trayectorias sintéticas separan plano, marginales de velocidad y relación de fase antes de una predicción o sonificación. [Banco de fase intracíclo para cámaras](BANCO_FASE_INTRACICLO_CAMARAS.md): prueba sin personas para ver si los archivos reales conservan la diferencia que una fase calculada sólo entre cierres de vuelta pierde.
 
+[Proyección oblicua → PCM offline Weaver/Shaper](WEAVER_VIDEO_PROYECCION_PCM.md): el mismo MP4 sintético da controles y WAV distintos al usar fase de imagen cruda o rectificada con el factor del generador; fija la frontera entre sonido diagnóstico y calibración física.
+
+[Rotación de MP4 entre HarMoCAP y Weaver](VIDEO_ROTACION_BACKENDS.md): fixture de cuatro cuadros muestra PTS iguales y píxeles autorrotados en OpenCV, mientras R08 rechaza ese medio hasta un adaptador explícito; especifica el gate de coordenadas para combinar pose y soga. El [control VFR](VIDEO_ROTACION_VFR.md) demuestra que recodificar sin política de FPS puede duplicar cuadros aunque R08 acepte el derivado; `-fps_mode vfr` conservó cuadro y PTS en ese archivo construido. El [auditor local](auditar_derivado_video.py) compara original→derivado en PTS racionales, píxeles visibles y conteo, y rechaza los dos fallos adversos sintéticos. Para derivados con pérdida, la [nota geométrica](DERIVADO_CON_PERDIDA_GATE_GEOMETRICO.md) explica por qué PSNR alto no garantiza dirección o `Q` y propone un gate por descriptor.
+
+[Auditoría del proxy espacial de HarMoCAP](LABAN_PROXY_VENTANA_TIEMPO.md): misma circunferencia a dos cadencias deja `Q` por arco igual y cambia `laban_space_proxy` de 0,858 a 0,505 por su ventana de 300 ms; fija una sensibilidad necesaria antes de atribuir aportes separados a Laban y HIT.
+
+[Ventana temporal de `Q_live` y cadencia](Q_LIVE_VENTANA_CADENCIA.md): una misma vuelta terminada en la misma fase da distinto `Q` si la ventana retrospectiva fija contiene diferente porción de arco. Compara una ventana temporal ilustrativa de 300 ms con el último 30 % de arco y explicita qué tendría que prometer Beacon.
+
 [Sensibilidad de `Q_live` al marco corporal](CMU_Q_MARCOS_LIVE.md): misma toma y ventana con recorrido co-rotante o desplazamiento relativo sin giro de ejes; cuantifica la diferencia antes de sonificar.
 
 [Replay causal de `Q_live` en CMU](CMU_Q_CAUSAL_PLANOS.md): cobertura de ventanas y diagnóstico de planitud local; muestra que alargar la ventana gana recorrido pero puede mezclar planos.
 
 [Mapeo diagnóstico al contrato Beacon](BEACON_FACTORIAL_CONTROLES.md): cuatro pares `Q/R` generan vectores de ganancias distintos dentro de rangos reales de `beacon-spatial`; es prueba offline numérica, todavía sin ruta aplicada ni audio.
+
+[Control sintético del audio offline Weaver/Shaper](WEAVER_PCM_CONTROL_SINTETICO.md): cuatro renders con silencio, repetición y cambio de una frecuencia prueban que el control llega de forma reproducible al WAV con motor y entorno fijados. No parte de video ni valida movimiento; el [script](weaver_pcm_control_sintetico.py) permite repetirlo sin iniciar servicios.
+
+[Factorial Laban–HIT en PCM Shaper](WEAVER_LABAN_HIT_PCM_FACTORIAL.md): el [script](weaver_laban_hit_pcm_factorial.py) lleva cuatro pares `Q/R` sintéticos al renderer offline real de Weaver/Shaper y cuantifica que las capas del WAV final tienen una pequeña mezcla aun cuando los controles son separados. Es replay retrospectivo, no sonificación causal de un gesto.
+
+[Situación espacial en PCM Shaper](WEAVER_SITUACION_PCM_FACTORIAL.md): el [script](weaver_situacion_pcm_factorial.py) lleva ocho controles `Q/R/rho_min/V_r` al renderer offline y mide qué cambia en los WAV al trasladar una curva sin cambiar plano ni fase. Shaper no equivale al audio OSC de Beacon; los valores siguen siendo sintéticos y nominales.
+
+[Par de escucha de situación con RMS igualado](PAR_SITUACION_PCM_NIVEL.md): [preparador](preparar_par_situacion_pcm.py) verifica fuentes y emite dos WAV PCM24 byte-reproducibles sin diferencia de nivel RMS; queda pendiente la prueba ciega de audibilidad y significado espacial.
+
+[Ablación de las dos capas espaciales en PCM](ABLACION_SITUACION_PCM.md): [script](weaver_situacion_ablacion_pcm.py) cruza contrafácticamente las ganancias de `rho_min` y `V_r`, iguala RMS y mide sus efectos espectrales separados. Las combinaciones híbridas son controles del instrumento, no trayectorias humanas.
+
+[Preparación ABX de situación](PROTOCOLO_ABX_SITUACION_PCM.md): [script](preparar_abx_situacion.py) verifica los cuatro WAV de la ablación y produce localmente una lista de escucha ciega equilibrada y una clave separada. No hay participantes ni resultados de audibilidad.
+
+[Fase de video sintético al PCM de Shaper](WEAVER_VIDEO_FASE_PCM.md): el [script](weaver_video_fase_pcm.py) recupera fase desde los MP4 del banco #26 y sus PTS, la entrega por cuadro al renderer offline y prueba un intervalo de invalidez inyectada con silencio verificable. Es una cadena de software, no una captura humana ni el Beacon live.
+
+[Factorial de geometría proyectada × fase en video y Shaper](WEAVER_VIDEO_QR_FACTORIAL.md): cuatro MP4 sintéticos permiten recuperar `Q_xy` y `R` desde píxeles, medir su error frente a la animación y renderizar cuatro WAV con controles espaciales y temporales separados. Es 2D proyectado y replay offline; no valida planos 3D de Laban ni feedback humano.
+
+[Submuestreo del factorial en MP4](VIDEO_QR_SUBMUESTREO.md): al retener menos cuadros del mismo video, los rangos de `Q_x` se amplían; a 3 fps el `R` modular puede seguir valiendo 1 aunque el avance continuo no se recupere. El [script](video_qr_submuestreo.py) comprueba todos los inicios de retícula, sin pretender validar las cámaras reales.
 
 ## Plan de punta a punta
 
@@ -113,6 +153,13 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [Moore y la armonía como analogía](MOORE_ARMONIA_ANALOGICA.md): delimita lo que una investigadora de manuscritos de Laban afirma en la presentación de su libro y evita equiparar literalmente coreútica, frecuencia corporal y HIT.
 
 [Ruta HarMoCAP → Weaver → beacon-spatial](RUTA_HARMOCAP_WEAVER_BEACON.md): contratos y código público actual, límite del MVP sin audio live y alias `kinetic_energy` que no representa energía física.
+
+[Weaver como laboratorio exploratorio, estado revalidado tras fusión de R09](WEAVER_LABORATORIO_ESTADO_20261002.md): distingue el laboratorio offline ya integrado en `main` del driver live aún pendiente de procedencia. Ordena video de baile → sonificación offline → anotación de soga sin afirmar validación humana.
+Incluye la lectura de la PR multivista R09 #121, todavía abierta: un contraejemplo sintético de correspondencia equivocada muestra por qué baja reproyección no alcanza para declarar 3D corporal válido.
+
+[Cruce de contratos R09 → situación del recorrido](R09_SITUACION_CRUCE_CONTRATOS.md): mapea campos y límites de observaciones espaciales por cuadro al sobre derivado de frase; fija gates de 3D, reloj, origen, calidad y disponibilidad antes de una futura implementación, sin atribuir validación física al laboratorio.
+
+[Cruce R09 → cobertura por fase de tarea](R09_FASE_COBERTURA_CRUCE.md): especifica el denominador y los estados por señal/fase para evitar que una oclusión fabrique asociación espacio–fase `J`; incluye un [banco sintético del adaptador real en Weaver `main`](r09_cobertura_fase_sintetica.py) y el contraejemplo de la #7, sin atribuirlos a Nico.
 
 [Prueba aislada del driver Weaver](WEAVER_DRIVER_PRUEBA_AISLADA.md): 12 pruebas del enlace con fixtures y control adverso de generación/contrato; sólo llega al transporte de registro, no al audio.
 

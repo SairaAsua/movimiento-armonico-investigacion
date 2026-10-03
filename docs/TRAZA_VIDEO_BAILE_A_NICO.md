@@ -2,6 +2,8 @@
 
 Versión 0.1, 24-09-2026. **Plan futuro**, sin video humano seleccionado ni ruta de audio Beacon ejecutada. Los cuatro WAV del [banco sintético](../research/REPORTE_SINTETICO_PRESENTACION.md) sólo prueban una traducción diagnóstica de curvas conocidas.
 
+**Actualización de arquitectura, 03-10-2026 UTC:** el [laboratorio de Weaver integrado en `main`](../research/WEAVER_LABORATORIO_ESTADO_20261002.md) documenta reproducción de video con WAV renderizado por Shaper y herramientas R08/R09. Es una vía experimental para el escalón D, diferente del router histórico también presente en `main` hacia `beacon-spatial`. Su integración no convierte los escalones C–F en realizados ni sustituye sus pruebas de calidad, permiso y sincronía.
+
 | Escalón | Entrada | Salida que hay que conservar | Prueba de paso |
 |---|---|---|---|
 | A. Curva fabricada | CSV con trayectoria y fase verdaderas por construcción | `Q`, `R`, estados y cuatro WAV | Plano y fase distinguibles; caso opuesto no colapsa a `R=1` por usar sólo cierres. **Hecho en datos sintéticos.** |
@@ -12,6 +14,10 @@ Versión 0.1, 24-09-2026. **Plan futuro**, sin video humano seleccionado ni ruta
 | F. Feedback vivo a la persona participante | Cámara sincronizada, derivación causal, instrumento verificado | Audio realmente oído, latencia y condiciones de comparación | Comparar sonido contingente/control/silencio y retención en un estudio aparte. Pendiente. |
 
 **Arquitectura:** video original → marcas temporales y calibración → pose/curva con calidad → descriptores espaciales inspirados en Laban y relaciones HIT → canales versionados con unidad/ventana/edad/estado → Harmonic Weaver (escena declarativa) → controles nativos de Beacon → registro del audio. En paralelo se guarda un **archivo científico** con originales y derivaciones; la transmisión live puede descartar cuadros y no sustituye ese archivo.
+
+Como paso instrumental intermedio, un [banco sintético de fase desde MP4 hasta el PCM offline de Weaver/Shaper](../research/WEAVER_VIDEO_FASE_PCM.md) ya conserva PTS, traza de controles y un reset construido. No convierte la etapa D en cumplida: no hay señales espaciales validadas de una persona, audio de `beacon-spatial` ni video de Nico.
+
+Otro [factorial en cuatro MP4 sintéticos](../research/WEAVER_VIDEO_QR_FACTORIAL.md) recupera geometría `Q_xy` proyectada y fase `R` desde píxeles, cuantifica error frente a la animación y las lleva a Shaper. Su geometría 2D tampoco acredita un plano de Laban en el cuerpo ni calidad de pose humana.
 
 Antes de D, el driver HarMoCAP de Weaver debe preservar `captured_frame_id` y `captured_at_us` y evitar que dos bundles del mismo cuadro dupliquen la muestra de una persona. El MVP actual tiene transporte de registro, no salida OSC/audio live verificada. Antes de E, se necesita un video original de rope flow de la persona participante: los episodios editados localizados hasta ahora no contienen su movimiento corporal medible. Antes de F, `Q`/`R` offline no se pueden adelantar al reloj live; la señal causal requiere su propia prueba de latencia y datos faltantes.
 
