@@ -67,3 +67,5 @@ La [lectura de Vinck et al. y el contraejemplo de cuadros copiados](FASE_SESGO_M
 El producto de esta fase no es un único «ratio del cuerpo»: es un diccionario de señales, eventos, estimadores, incertidumbres y condiciones en las que cada relación tiene significado. Sólo las relaciones identificables pueden entrar en el contraste HIT o gobernar feedback de Beacon.
 
 El [banco sintético ejecutable](FASE_BANCO_SINTETICO.md) comprueba casos simples de doble conteo, intervalo inválido, relación p:q, desfase alternado y sesgo por reloj. Son controles de coherencia matemática que anteceden la comparación de estimadores y la captura real.
+
+La [cota de concentración con fase faltante](FASE_COBERTURA_R.md) obliga a publicar soporte y masa temporal oculta junto a cualquier `R` calculado sólo sobre válidos. Con 75 % de cobertura, incluso `R_valid_only=1` permite `R_full` entre 0,5 y 1 bajo fases ocultas arbitrarias; una transición sin fase definida requiere segmentar la tarea en vez de completar ese intervalo.
