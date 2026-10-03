@@ -28,6 +28,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Ocupación radial por longitud de arco](SITUACION_OCUPACION_ARCO.md): [banco sintético](situacion_ocupacion_arco_sintetica.py) donde `Q`, extremos, `V_r`, longitud y extremos inicial/final coinciden, pero la fracción del recorrido cerca del centro difiere. Propone una familia descriptiva rival para desarrollo, sin etiqueta Laban ni nueva señal Beacon validada.
 
+[Incertidumbre de ocupación radial](SITUACION_OCUPACION_INCERTIDUMBRE.md): deriva una banda condicional para `F_arc` bajo error 3D acotado y muestra con un [banco sintético](situacion_ocupacion_incertidumbre_sintetica.py) que una curva cercana al umbral puede cambiar de ocupación 1 a 0; sin cotas físicas medidas no se usa como señal validada.
+
 [Sobre sintético de situación del recorrido](CONTRATO_SITUACION_V0.md): [fixture JSONL](research_path_situation.synthetic.jsonl) y [validador](validar_research_path_situation.py) conservan origen, marco, escala, ventana, reloj e invalidez para una futura rama científica HarMoCAP–Weaver–Beacon. Sólo comprueban estructura y aritmética de un ejemplo ideal, no precisión espacial ni audio.
 
 [Presupuesto de error de situación](PRESUPUESTO_ERROR_SITUACION.md): intervalos con error duro de posición/origen/escala y cota para variación radial, con [banco sintético](situacion_error_sintetico.py) que expone cuándo la cota se vuelve trivial. No estima el error de las cámaras reales.
