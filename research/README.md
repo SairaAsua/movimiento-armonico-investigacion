@@ -130,6 +130,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Prueba aislada del kit HarMoCAP](HARMOCAP_KIT_PRUEBA_AISLADA.md): replay/codec/handshake/UDP sintético verificados sobre el commit auditado; delimita qué sigue sin probar en Beacon, cámaras y geometría.
 
+[Coordenadas de muñeca en modo bandas de HarMoCAP](HARMOCAP_BANDS_COORDENADAS.md): auditoría del `main` posterior y [fixture aislado reproducible](verificar_harmocap_bands_osc.py) que confirman un cambio de semántica en el blob OSC no distinguido por contrato/configuración; fija cómo excluir esa salida de un análisis espacial.
+
 [Gating del receptor de referencia](HARMOCAP_GATING_CONTRATO.md): [regresión reproducible](probar_gating_harmocap.py) que detectó aceptación de frames con generación o contrato no coincidentes pese al handshake previo; criterio pendiente para el receptor Beacon real.
 
 [Protocolo piloto 0.1](PROTOCOLO_PILOTO_V0.md): primer estudio instrumental centrado en Laban, etapas sin datos humanos/observación/evaluación reservada, referencias por descriptor y reglas de paso. Es un borrador para revisión, aún no preregistrado.
@@ -189,6 +191,10 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [Presupuesto espacial estéreo](PRESUPUESTO_ESPACIAL_ESTEREO.md): relación entre línea base, focal, distancia y error de profundidad/dirección, con [simulación reproducible](estereo_sintetico.py) y reglas para ensayar el montaje físico.
 
 [Presupuesto de error de `Q`](PRESUPUESTO_ERROR_Q.md): cotas separadas para ángulo del recorrido/marco, pesos por longitud y recorrido oculto; decide cuándo una diferencia entre bloques queda determinada sin convertir `Q` en escala de consonancia.
+
+[Ruido y muestreo de `Q`](Q_RUIDO_MUESTREO.md): [recta 3D sintética](q_ruido_muestreo.py) muestra el sesgo por exceso de cuadros ruidosos; [curva 3D anidada](q_muestreo_compromiso.py) agrega la pérdida de curvatura por pocos cuadros. Juntos fijan un gate de estabilidad instrumental antes del contraste Laban–HIT.
+
+[Propagación de ruido de `Q` a controles Beacon](Q_RUIDO_BEACON_CONTROLES.md): derivación retrospectiva con el mapeo diagnóstico de bandas 4–6; muestra que ganancias en rango y suma constante pueden representar una geometría falsa cuando el descriptor se estimó con ruido. No hay OSC ni audio.
 
 [Contraste geométrico de redes](REDES_CONTRASTE_GEOMETRICO.md): marcos espaciales, sesgos basales de cuboctaedro/icosaedro y reglas de comparación; incluye un [script reproducible de comprobación](redes_sanity.py) sin datos humanos.
 
