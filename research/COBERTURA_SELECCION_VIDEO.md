@@ -14,6 +14,15 @@ Sea `S=1` si un bloque cumple la calidad requerida para un descriptor. El promed
 
 La primera pregunta publicable es **instrumental**: de todos los bloques intentados, ¿qué proporción permite estimar cada descriptor con error aceptable? La segunda es **sustantiva**: entre bloques donde ese descriptor es medible, ¿predice la valoración/experiencia? La segunda debe decir explícitamente a qué subconjunto se aplica. Un modelo de belleza no puede recibir una predicción HIT en clips donde la fase no existe o no se midió; tampoco debe tratar esa ausencia como «disonancia».
 
+**Contraejemplo sintético de no identificabilidad.** Supongamos cuatro clips de una misma tarea, con valoración visual `Y` disponible para todos y un rasgo relacional binario `X` que sólo se mide en los dos primeros. En los clips válidos observamos `(X,Y)=(0,0)` y `(1,1)`: allí la diferencia de medias `E[Y|X=1,S=1]−E[Y|X=0,S=1]` vale `+1`. Los otros clips tienen `Y=4` y `Y=1`, pero `X` falta. Dos mundos son compatibles con **exactamente esos mismos datos observados**:
+
+| Valor verdadero de `X` en los clips con `Y=4;1` | Media de `Y` en `X=0` entre los cuatro | Media de `Y` en `X=1` entre los cuatro | Diferencia global |
+|---|---:|---:|---:|
+| `0;1` | `(0+4)/2=2` | `(1+1)/2=1` | `−1` |
+| `1;0` | `(0+1)/2=0,5` | `(1+4)/2=2,5` | `+2` |
+
+El primer mundo **invierte** el signo observado entre casos completos; el segundo lo conserva. `X` es una verdad estipulada por el ejemplo, no un valor que podamos conocer para una fase no identificable en Nico. El cálculo no representa datos humanos ni estima la frecuencia de ese problema. Prueba que igualar filas en `base → Laban → HIT` hace justa la **comparación de predicciones en `S=1`**, pero no identifica por sí solo la asociación HIT–juicio en todos los intentos. Tampoco una ponderación por covariables observadas resuelve estos dos mundos sin supuestos adicionales sobre el mecanismo de pérdida. Conservar el denominador, los resultados visuales observables de `S=0` y una referencia independiente donde sea posible permite evaluar el alcance de esos supuestos; si no, la conclusión se restringe al soporte válido.
+
 ## Registro mínimo desde la primera captura
 
 1. Crear un ID y una fila para **cada intento** antes de aplicar filtros de calidad. Guardar sesión, patrón, inicio/fin, cámaras previstas, estado de calibración y motivo de aborto o repetición. Los intentos repetidos conservan nuevos IDs y enlace con el original.
