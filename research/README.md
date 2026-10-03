@@ -176,6 +176,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Estimadores de fase con perturbaciones](FASE_ESTIMADORES_BANCO.md): [comparación ejecutable](fase_estimadores_sinteticos.py) entre Hilbert offline y posición–velocidad causal con cambio de cadencia, forma asimétrica, ruido, amplitud baja, hueco y un control explícito de fuga futura.
 
+[Fase de torso bajo error](FASE_TORSO_AMPLITUD_NO_IDENTIFICABLE.md): [contraejemplo ejecutable](fase_torso_amplitud_sintetica.py) con `R̂₁:₁=1` y dos historias verdaderas compatibles con la misma orientación observada, una de ellas con `R₁:₁=0`. Fija el requisito de amplitud frente a error antes de una relación HIT torso–mano.
+
 [Longstaff 2001, texto completo](LABAN_VECTOR_LONGSTAFF_2001.md): figuras de símbolos de vector, contraste línea/posición, situación central/periférica/transversal e implicaciones operacionales. [Acceso a las obras originales](LABAN_ACCESO_OBRAS.md): ediciones y páginas de Laban aún por cotejar.
 
 [*The Laban Sourcebook*, vista previa](LABAN_SOURCEBOOK_VISTA_PREVIA.md): introducción y figuras de 1926 reproducidas por McCaw, con distinción entre palabra autoral mediada e interpretación editorial; los capítulos de *Choreography*, *Choreutics* y *The Harmony of Movement* no están en la muestra.
