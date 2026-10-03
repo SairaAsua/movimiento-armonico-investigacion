@@ -78,6 +78,44 @@ def fixed_orthographic_views(delta, scale_mm, lateral0, up0, front0):
     }
 
 
+def fixed_view_q_windows(path, scale_mm, lateral0, up0, front0):
+    """One-second arc-weighted Q_up of the same relative wrist path in four views."""
+    steps = np.diff(path, axis=0)
+    window_segments = 119  # 120 recorded points at 120 Hz; no invented endpoint.
+    gate_l = 0.5  # Illustrative observed projected arc in shoulder widths.
+    summaries = []
+    q_views = []
+    eligible_views = []
+    for yaw_deg in (0, 45, 90, 135):
+        yaw = radians(yaw_deg)
+        horizontal = cos(yaw) * lateral0 + sin(yaw) * front0
+        dh = steps @ horizontal
+        dv = steps @ up0
+        ds = np.hypot(dh, dv)
+        vertical_contribution = np.divide(dv * dv, ds, out=np.zeros_like(ds), where=ds > 0)
+        arc = np.convolve(ds, np.ones(window_segments), mode="valid") / scale_mm
+        vertical_arc = np.convolve(vertical_contribution, np.ones(window_segments), mode="valid") / scale_mm
+        eligible = arc >= gate_l
+        q = np.divide(vertical_arc, arc, out=np.full_like(arc, np.nan), where=eligible)
+        assert np.all((q[eligible] >= 0) & (q[eligible] <= 1 + 1e-12))
+        q_views.append(q)
+        eligible_views.append(eligible)
+        summaries.append({"fixed_camera_yaw_deg": yaw_deg,
+                          "eligible_windows": int(np.sum(eligible)),
+                          "q_up_p05_p50_p95_on_eligible": [
+                              round(float(x), 6) for x in np.quantile(q[eligible], [.05, .5, .95])
+                          ]})
+    common = np.logical_and.reduce(eligible_views)
+    q_common = np.stack(q_views)[:, common]
+    ranges = np.ptp(q_common, axis=0)
+    return {"window_points": window_segments + 1, "projected_arc_gate_L": gate_l,
+            "windows_total": len(q_views[0]), "per_view": summaries,
+            "common_eligible_windows": int(np.sum(common)),
+            "same_window_q_up_four_view_range_p50_p90_p95_max": [
+                round(float(x), 6) for x in np.quantile(ranges, [.5, .9, .95, 1])
+            ]}
+
+
 def main():
     raw = SOURCE.read_bytes()
     assert hashlib.sha256(raw).hexdigest() == EXPECTED_SHA256
@@ -143,6 +181,9 @@ def main():
         ],
         "fixed_orthographic_views": fixed_orthographic_views(
             delta, scale_mm, lateral[0], up[0], front[0]
+        ),
+        "fixed_view_q_windows": fixed_view_q_windows(
+            right - shoulder_mid, scale_mm, lateral[0], up[0], front[0]
         ),
     }
     print(json.dumps(report, ensure_ascii=False, sort_keys=True))
