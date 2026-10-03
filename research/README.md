@@ -22,6 +22,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
 
+[Cotas alternativas para el contrato `Q_live`](Q_CONTRATO_COTAS_ALTERNATIVAS.md): un tramo angularmente incierto puede hacer trivial la cota v0 aunque una cota global por error de posición sea informativa; documenta la futura decisión de versión sin atribuir precisión a cámaras reales.
+
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
 
 [Puente temporal de video HarMoCAP–Weaver](PUENTE_VIDEO_PTS_HARMOCAP_WEAVER_20261003.md): cotejo de contratos offline, origen PTS, diferencia entre features y pose, y gates para el primer archivo autorizado; distingue esta ruta de los PRs OSC en vivo.
