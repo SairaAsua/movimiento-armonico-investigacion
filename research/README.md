@@ -34,6 +34,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Fase 2D en plano oblicuo](FASE_PROYECCION_OBLICUA.md): una órbita física uniforme puede parecer 16 veces más rápida en un sector que en otro y reducir `R` observado de dos señales físicamente sincrónicas; incluye MP4, dos WAV y manifiesto para escuchar el sesgo de proyección antes de calibrar el plano.
 
+[Coordenada de fase y `R` no invariante](FASE_COORDENADA_NO_INVARIANTE.md): una reparametrización monótona con idénticos cierres de ciclo reduce `R` de 1 a ≈0,808 sin alterar la sincronía construida; [banco ejecutable](fase_coordenada_sintetica.py). Distingue protophase geométrica, fase de eventos y fase dinámica antes del contraste HIT o del control Beacon.
+
 [Giro local frente a fase y tiempo de entrega](GIRO_LOCAL_FASE_RELOJ.md): [banco sintético](giro_fase_reloj_sintetico.py) muestra que asignar un giro de tres puntos al tiempo en que se entrega, en vez del vértice central, puede fabricar desfase y alterar `R`; separa esa convención de un evento físico y de la latencia de audio.
 
 [Sensibilidad de `Q_live` al marco corporal](CMU_Q_MARCOS_LIVE.md): misma toma y ventana con recorrido co-rotante o desplazamiento relativo sin giro de ejes; cuantifica la diferencia antes de sonificar.
