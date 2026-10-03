@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.54, 3 de octubre de 2026
+**Versión:** 0.55, 3 de octubre de 2026
 
 ## Resumen
 
@@ -188,7 +188,7 @@ Dos controles impiden interpretar `J` alto como armonía. En una vuelta uniforme
 
 ### 3.6. Consonancia como hipótesis compuesta, no etiqueta automática
 
-Ninguna de las ecuaciones (1)–(5), incluida (2a), es un índice universal de consonancia. Llamaríamos **perfil relacional** al conjunto predefinido `{geometría, situación, secuencia, fase, acople espacio–tiempo, incertidumbre}`. Una comparación ordinal «frase A más consonante que B» necesitaría una regla `H(profile)` fijada y evaluada **sin** usar los juicios de belleza o el relato que luego se pretende predecir. Por ahora resulta más sólido contrastar cada componente y sus interacciones. Esto permite que una frase regular pero rígida y otra variable pero expresiva obtengan perfiles distintos sin decidir de antemano cuál «gana».
+Ninguna de las ecuaciones (1)–(5), incluida (2a), es un índice universal de consonancia. El **perfil relacional** predefinido conserva geometría, secuencia, fase, acople e incertidumbre. Un [orden candidato específico de tarea](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/40a0435/research/CADENA_CONSONANCIA_BELLEZA_ECONOMIA.md) compararía bloques de **la misma figura** contra referencias espaciales y temporales acordadas en desarrollo con Nico y especialistas, sin consultar belleza, vivencia ni gases. Sólo ordenaría `i` sobre `j` si ningún componente válido empeora y al menos uno mejora más allá de su error y margen prefijado; pares mixtos o inciertos quedarían sin orden. La regla requiere validación experta y entre días: aún no define «consonancia» en rope flow ni prueba belleza, placer o economía. Si no se logran referencias y pares ordenables, la cadena fuerte no es contrastable con este montaje; se analizarán los componentes por separado.
 
 ## 4. Hipótesis contrastables y resultados que las debilitarían
 
