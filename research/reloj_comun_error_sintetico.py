@@ -21,6 +21,11 @@ def correlation(a, b):
     return covariance / math.sqrt(va * vb)
 
 
+def circular_resultant(angles):
+    n = len(angles)
+    return math.hypot(sum(math.cos(x) for x in angles), sum(math.sin(x) for x in angles)) / n
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--phrases", type=int, default=400)
@@ -38,6 +43,7 @@ def main():
     corrected_a, corrected_b = [], []
     naive_a, naive_b = [], []
     perfect_a, perfect_b = [], []
+    direct_phase_difference, common_clock_phase_difference = [], []
     for _ in range(args.phrases):
         one_corrected_a, one_corrected_b = [], []
         one_naive_a, one_naive_b = [], []
@@ -50,6 +56,8 @@ def main():
             observed_clock = drive + clock_error
             hand_a = drive + hand_a_error
             hand_b = drive + hand_b_error
+            direct_phase_difference.append(hand_a - hand_b)
+            common_clock_phase_difference.append((hand_a - observed_clock) - (hand_b - observed_clock))
             one_corrected_a.append(hand_a - lam * observed_clock)
             one_corrected_b.append(hand_b - lam * observed_clock)
             one_naive_a.append(hand_a - observed_clock)
@@ -67,7 +75,7 @@ def main():
     shifted_b = corrected_b[1:] + corrected_b[:1]
     conditional_variance = variance_drive * variance_clock / (variance_drive + variance_clock)
     report = {
-        "scope": "synthetic_linear_timing_residuals_not_circular_phase_or_people",
+        "scope": "synthetic_timing_offsets_with_circular_transform_not_phase_estimator_or_people",
         "phrases": args.phrases,
         "cycles_per_phrase": args.cycles,
         "seed": args.seed,
@@ -78,10 +86,14 @@ def main():
         "theoretical_corrected_residual_covariance": conditional_variance,
         "theoretical_corrected_residual_correlation": conditional_variance / (conditional_variance + variance_hand),
         "theoretical_naive_subtraction_correlation": variance_clock / (variance_clock + variance_hand),
+        "theoretical_direct_pairwise_resultant": math.exp(-variance_hand),
         "sample_corrected_residual_correlation": correlation(flatten(corrected_a), flatten(corrected_b)),
         "sample_cross_phrase_pairing_correlation": correlation(flatten(corrected_a), flatten(shifted_b)),
         "sample_naive_subtraction_correlation": correlation(flatten(naive_a), flatten(naive_b)),
         "sample_perfect_clock_correlation": correlation(flatten(perfect_a), flatten(perfect_b)),
+        "sample_direct_pairwise_resultant": circular_resultant(direct_phase_difference),
+        "sample_common_clock_pairwise_resultant": circular_resultant(common_clock_phase_difference),
+        "max_pairwise_difference_change_after_common_clock": max(abs(a - b) for a, b in zip(direct_phase_difference, common_clock_phase_difference)),
     }
     print(json.dumps(report, indent=2, sort_keys=True))
 

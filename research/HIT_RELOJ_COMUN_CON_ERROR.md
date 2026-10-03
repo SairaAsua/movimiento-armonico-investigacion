@@ -1,6 +1,6 @@
 # Un reloj de tarea imperfecto puede fabricar asociación residual entre manos
 
-**Contraejemplo algebraico y banco sintético, 3 de octubre de 2026.** Complementa el [control de ritmo común](CONTROLES_RITMO_COMUN.md) y la [auditoría de procedencia de fases](FASE_PROCEDENCIA_CIRCULAR.md). No hay datos de Nico, cámara, fase circular ni prueba de acoplamiento fisiológico. El modelo representa **residuos locales de tiempo** en torno a un ciclo; una estimación angular real necesita tratamiento propio de envoltura y error de eventos.
+**Contraejemplo algebraico y banco sintético, 3 de octubre de 2026.** Complementa el [control de ritmo común](CONTROLES_RITMO_COMUN.md) y la [auditoría de procedencia de fases](FASE_PROCEDENCIA_CIRCULAR.md). No hay datos de Nico, cámara, estimación de fase desde video ni prueba de acoplamiento fisiológico. El modelo representa **residuos locales de tiempo** en torno a un ciclo; transformarlos en ángulos para un control algebraico no equivale a extraer fase real, que requiere tratamiento propio de envoltura y error de eventos.
 
 ## Problema de identificación
 
@@ -11,6 +11,8 @@ Si se resta de cada mano el mismo reloj observado, `A−W=ε_A−ν` y `B−W=ε
 `Cov(r_A,r_B)=τ²σ_w²/(τ²+σ_w²)>0` si el pulso y su error tienen varianza positiva.
 
 Condicionar por el reloj **verdadero** `U` daría `ε_A` y `ε_B`, con covarianza cero. Condicionar por `W` deja incertidumbre sobre `U`; por eso una asociación residual positiva no demuestra organización mano–mano adicional. Tampoco basta reemparejar frases: esa operación separa dos series que compartían tanto el pulso verdadero como **el error del mismo reloj**, de modo que puede reducir la correlación incluso bajo el mundo sin interacción.
+
+**Límite de este contraejemplo:** para la diferencia angular directa **1:1** de dos fases medidas independientemente y corregidas con *exactamente el mismo* reloj por muestra, `[(A−W)−(B−W)] mod 2π = (A−B) mod 2π`. El error de `W` se cancela algebraicamente, por lo que no cambia el `R₁:₁` par a par. En el generador, la concentración esperada es `exp(−σ_h²)` bajo errores gaussianos angulares independientes, aunque `A` y `B` sólo compartan `U`: un `R` alto puede describir seguimiento de la tarea sin interacción mano→mano. La cancelación no autoriza inferir causalidad; tampoco se traslada sin más a relojes distintos por señal, tiempos mal alineados ni relaciones `p:q` con `p≠q`, donde queda un término de referencia. El artefacto demostrado aquí corresponde a **covariación de residuos condicionados al reloj imperfecto**, una pregunta distinta de la concentración 1:1 directa.
 
 ## Banco reproducible
 
@@ -23,7 +25,9 @@ El [script](reloj_comun_error_sintetico.py) genera 400 frases de 32 ciclos, con 
 | Resta directa del mismo `W` en ambas manos | `0,735294` | `0,735955` |
 | Resta del pulso verdadero `U` | `0` | `−0,003972` |
 
-Dos ejecuciones entregaron JSON idéntico byte a byte (SHA-256 `530123bee4d487a9102266bf7ef0c70af8e36617701b09a140e7a406260db66a`). Los valores simulados se compararon con la derivación y el caso de reloj perfecto; no hay inferencia estadística sobre personas. Un reemparejamiento que «rompe» la covariación observada puede ser un **falso indicador de coordinación residual** si la referencia compartida era ruidosa.
+Como control de alcance, el script aplica también `|mean exp(iδ)|` a las diferencias construidas. La fase relativa 1:1 directa y la obtenida tras restar el mismo `W` dan ambas `R=0,913907` (esperado `0,913931`); sus diferencias muestra a muestra son menores que `2,3×10⁻¹⁶` radianes por redondeo. Ese cálculo no estima fase de una grabación ni valida `R` sobre rope flow.
+
+Dos ejecuciones entregaron JSON idéntico byte a byte (SHA-256 `8151a590839da8d6ae53fd671a35c2a60b985182eb8180998bc9c3f239a9ef44`). Los valores simulados se compararon con la derivación y el caso de reloj perfecto; no hay inferencia estadística sobre personas. Un reemparejamiento que «rompe» la covariación observada puede ser un **falso indicador de coordinación residual** si la referencia compartida era ruidosa.
 
 ## Decisión para la prueba HIT
 
