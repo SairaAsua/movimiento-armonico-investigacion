@@ -148,6 +148,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Ruido y muestreo de `Q`](Q_RUIDO_MUESTREO.md): [recta 3D sintética](q_ruido_muestreo.py) muestra el sesgo por exceso de cuadros ruidosos; [curva 3D anidada](q_muestreo_compromiso.py) agrega la pérdida de curvatura por pocos cuadros. Juntos fijan un gate de estabilidad instrumental antes del contraste Laban–HIT.
 
+[Propagación de ruido de `Q` a controles Beacon](Q_RUIDO_BEACON_CONTROLES.md): derivación retrospectiva con el mapeo diagnóstico de bandas 4–6; muestra que ganancias en rango y suma constante pueden representar una geometría falsa cuando el descriptor se estimó con ruido. No hay OSC ni audio.
+
 [Contraste geométrico de redes](REDES_CONTRASTE_GEOMETRICO.md): marcos espaciales, sesgos basales de cuboctaedro/icosaedro y reglas de comparación; incluye un [script reproducible de comprobación](redes_sanity.py) sin datos humanos.
 
 [Control nulo circular](REDES_NULO_CIRCULAR.md): círculos sintéticos muestran que cercanía a vértices y ventaja de una red pueden aparecer sin una escala coreútica, y cuantifican el optimismo de girar plantillas por clip; incluye [script](redes_circulos_nulos.py).

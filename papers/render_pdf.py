@@ -21,8 +21,8 @@ BASE = "https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/main
 
 CSS = """
 @page { size: A4; margin: 13mm 19mm 13mm 19mm; }
-body { font-family: Georgia, "Noto Serif", serif; font-size: 9.8pt;
-       line-height: 1.28; color: #172d35; }
+body { font-family: Georgia, "Noto Serif", serif; font-size: 9.7pt;
+       line-height: 1.27; color: #172d35; }
 h1, h2, h3 { font-family: Arial, sans-serif; color: #173f4b;
              line-height: 1.18; break-after: avoid; }
 h1 { font-size: 21pt; margin: 0 0 20pt; }
