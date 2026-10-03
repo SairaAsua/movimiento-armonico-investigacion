@@ -1,0 +1,22 @@
+# Una ventana temporal de `Q_live` mezcla forma y cadencia
+
+**Banco sintético, 03-10-2026.** La [propuesta de integración](INTEGRACION_HARMOCAP_BEACON.md) define `Q_live` con tramos de una ventana **temporal** cuyo ancho aún debe elegirse. Esta nota prueba una consecuencia de esa decisión, usando [código reproducible](q_live_ventana_cadencia_sintetico.py). Los **300 ms son sólo un ejemplo**; el proxy `laban_space_proxy` de HarMoCAP sí tiene hoy una ventana de 300 ms, pero es otra señal y otra fórmula ([auditoría](LABAN_PROXY_VENTANA_TIEMPO.md)). No se probó el productor, Weaver, Beacon ni una cámara.
+
+## Par adverso
+
+Dos puntos ideales recorren la **misma circunferencia unitaria** una vez, en el mismo sentido, con rapidez uniforme. Uno tarda 1 s (1 Hz) y el otro 0,5 s (2 Hz). Ambos se observan exactamente al final de la vuelta, en la misma posición y fase geométrica. En una ventana retrospectiva de `w=0,3 s`, el primero aporta el último 30 % de la curva y el segundo el último 60 %. Por definición, `Q_x=Σ(ds·u_x²)/Σds` y `Q_y=1−Q_x`; para una fracción final `a` de una circunferencia ideal, `Q_x(a)=1/2−sin(4πa)/(8πa)`.
+
+| Cadencia | Arco contenido en 300 ms | `Q_x` por ventana temporal | `Q_x` por último 30 % de arco | Ganancia `g_x=0,2+0,4Q_x` temporal |
+|---|---:|---:|---:|---:|
+| 1 Hz | 30 % | 0,577958 | 0,577958 | 0,431183 |
+| 2 Hz | 60 % | 0,436930 | 0,577959 | 0,374772 |
+
+El script discretiza a 1200 cuadros/s ideales, coteja con la integral continua y comprueba que la diferencia temporal de `Q_x` supera `0,14` mientras la diferencia de ventana por arco es menor que `0,00002`. El mapeo propuesto a una banda Beacon produciría controles separados por `0,056411` aun cuando la **curva entera y el punto final** sean iguales. Eso demuestra contenido diferente en el control, **no** que el audio real sea distinguible ni que 2 Hz sea mejor o peor. En 3D, el tercer componente de este ejemplo planar sería cero; no se ensayó una reconstrucción multivista.
+
+## Consecuencia para el contrato y el contraste Laban–HIT
+
+Una ventana temporal de `Q_live` describe la **distribución direccional del tramo reciente en tiempo**, que depende tanto de forma como de cadencia y posición dentro de la frase. Un `Q` de curva completa ponderado por arco es invariante ante reparametrización temporal positiva de esa misma curva, pero no es necesariamente causal durante la vuelta. Una ventana causal de **longitud de arco fijada** puede conservar esa invariancia para el tramo final, a cambio de una duración retrospectiva variable y de depender de escala física, cobertura y estimación fiable de arco. Debe tener además un límite de edad para no mantener un tramo antiguo como si fuese actual. Una fracción de ciclo sólo se conoce sin fuga si existe un período/longitud de referencia válido de ciclos **anteriores**; no puede rellenarse retrospectivamente con el final del ciclo actual.
+
+Para el estudio observacional, conservar ambos significados con nombres y `path_definition`/`window_definition` distintos; no presentar `Q_live` de tiempo fijo como geometría independiente de ritmo al comparar `base → +Laban → +HIT`. El [acople espacio–tiempo](ACOPLE_ESPACIO_TIEMPO.md) es una pregunta legítima, pero debe ser un contraste deliberado y separado de forma por arco y fase HIT. La distinción histórica entre forma/dirección primaria y matices de intensidad secundarios en [*Choreographie*, pp. 74–77](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/8e08b84/research/LABAN_CHOREOGRAPHIE_TRADUCCION_2011.md), motiva registrar ambas capas; **no** suministra esta fórmula ni demuestra que una modulación sea armónica, bella o eficiente.
+
+Antes de sonificar Nico, comparar las dos ventanas en desarrollo con movimientos de la **misma figura** a distintas cadencias, error/cobertura medidos y reglas de invalidez. Elegir la ventana según el mensaje que Beacon prometa transmitir, congelarla antes de la evaluación reservada y ensayar pares de audio con entrada y nivel controlados. `held` y `invalid` no añaden longitud ni rejuvenecen un arco antiguo. Este banco no fija el ancho óptimo ni valida una señal humana.

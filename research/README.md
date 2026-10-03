@@ -40,6 +40,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Auditoría del proxy espacial de HarMoCAP](LABAN_PROXY_VENTANA_TIEMPO.md): misma circunferencia a dos cadencias deja `Q` por arco igual y cambia `laban_space_proxy` de 0,858 a 0,505 por su ventana de 300 ms; fija una sensibilidad necesaria antes de atribuir aportes separados a Laban y HIT.
 
+[Ventana temporal de `Q_live` y cadencia](Q_LIVE_VENTANA_CADENCIA.md): una misma vuelta terminada en la misma fase da distinto `Q` si la ventana retrospectiva fija contiene diferente porción de arco. Compara una ventana temporal ilustrativa de 300 ms con el último 30 % de arco y explicita qué tendría que prometer Beacon.
+
 [Sensibilidad de `Q_live` al marco corporal](CMU_Q_MARCOS_LIVE.md): misma toma y ventana con recorrido co-rotante o desplazamiento relativo sin giro de ejes; cuantifica la diferencia antes de sonificar.
 
 [Replay causal de `Q_live` en CMU](CMU_Q_CAUSAL_PLANOS.md): cobertura de ventanas y diagnóstico de planitud local; muestra que alargar la ventana gana recorrido pero puede mezclar planos.
