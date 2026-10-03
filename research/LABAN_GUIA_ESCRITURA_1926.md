@@ -1,0 +1,26 @@
+# Tres componentes y columnas rítmicas en *Choreographie* (1926)
+
+**Lectura mediada, 03-10-2026.** Se inspeccionaron visualmente los ocho lienzos `31-01` a `31-07` y la nota `31-08n` del [apéndice II, pp. 100–103, de la traducción ilustrada de Zierach y Longstaff](http://www.laban-analyses.org/jeffrey/2011-Rudolf-Laban-1926-Choreographie/chapter-31/Appx-2-Guidelines-for-writing-pg100.htm). El OCR sólo ayudó a localizar texto. La traducción es un borrador editorial y **no se cotejó con el impreso alemán**. Esta nota parafrasea la fuente sin reproducir láminas ni descifrar la notación completa.
+
+## Qué distingue el apéndice
+
+En p. 100, la escritura del movimiento requiere aclarar **tres componentes**: `Gliedersatz`, traducido aquí como *limb-sequencing*; la situación espacial; y el progreso en el espacio. La nota editorial `31-08n`, punto 2, reconoce que `Gliedersatz` no tiene equivalente inglés exacto y que *sequencing* es una elección interpretativa. Maletic (1987), citada en el punto 1 de esa nota, lo traduce como división de los miembros. No resolveremos esa diferencia convirtiendo la palabra en una variable computacional unívoca. La página divide el cuerpo en cuartos derecho/izquierdo y superior/inferior, sitúa miembros que oscilan o sostienen en una cruz y reserva el centro para una tensión propia del torso.
+
+Entre pp. 100–101 se ofrecen **distintas escrituras de una dirección**: letras según el orden de componentes dimensionales, signos de diagonal con desviaciones, posiciones antiguas de ballet y números de escalas armónicas. Un mismo nombre de dirección puede aparecer en varios sistemas de signos; no se infiere de ello una equivalencia automática entre sus gramáticas, ni un vector 3D listo para el software. La p. 101 admite abreviar una secuencia de una escala mediante puntos inicial y final, y representar un anillo de tres lados por un triángulo con su inclinación inicial; el signo de inversión altera la lectura. Una abreviatura sólo es interpretable con la escala y convención declaradas: los extremos por sí solos no describen todos los tramos de una curva observada.
+
+En p. 102, el camino sobre el suelo puede darse como planta, pero el autor considera que a menudo bastan signos de camino y número de pasos junto con la escritura corporal. Esa economía de notación **no demuestra** que un recorrido global de la persona equivalga al recorrido de una mano o de una soga. En pp. 102–103 se enumeran signos de ritmo, corriente secundaria, intensidad y desviación. Los signos rítmicos subdividen el tiempo y se escriben en una **segunda columna** junto a la principal; la página muestra alternativas de notas musicales y prosodia, sin imponer que el movimiento tenga una frecuencia acústica literal. Los signos de corriente secundaria se escriben en la columna principal porque, según el texto, afectan la línea del movimiento; la tabla distingue lento/rápido, fuerte/débil, ancho/estrecho y estable/lábil. La tabla se relaciona con signos vectoriales de p. 78, según la nota editorial 7. Signos de intensidad creciente/decreciente, conexión, pausa y variantes de una misma dirección aparecen después. El signo de pausa es **convención de escritura**: no convierte todo silencio gráfico en una medida de velocidad cero.
+
+## Traducción metodológica propuesta para rope flow
+
+| Pregunta histórica delimitada | Registro experimental nuestro | Error de interpretación que se evita |
+|---|---|---|
+| ¿Qué miembros intervienen y cómo se relacionan? | Identidad anatómica, apoyo, torso, orden/solapamiento de eventos, calidad por segmento. | Llamar `core_initiated` a un mero desfase o inferir causalidad desde una partitura. |
+| ¿En qué situación espacial sucede el gesto? | Marco y origen declarados, orientación y recorrido corporal/soga por separado, incertidumbre de pose. | Tomar un signo o punto terminal como trayectoria 3D observada. |
+| ¿Cómo progresa la frase? | Forma inicial, transición, camino continuo, contacto, estado final y tiempos de evento con soporte temporal. | Reconstruir una escala desde sólo dos extremos o un histograma de direcciones. |
+| ¿Cómo varían tiempo y cualidad? | Duración y perfiles cinemáticos medidos; calidad expresiva sólo por anotación experta independiente. | Convertir signos *rápido/fuerte/estable* directamente en velocidad, newtons o metabolismo. |
+
+La separación de columnas es un **antecedente de representación multicapas**, no una demostración de que los canales sean causal o estadísticamente independientes. `Q` espacial, fase `R`, secuencia de eventos y vivencia son descriptores modernos distintos. Su combinación podrá probarse en un diseño empírico, pero ningún signo de este apéndice valida por sí solo belleza, sensualidad, eficiencia o conciencia. Para escuchar esas capas en Weaver/Beacon habrá que declarar qué observación controla cada sonido, preservar incertidumbre y probar perceptibilidad por separado.
+
+## Pendientes para atribución y uso
+
+Faltan el cotejo del alemán de pp. 100–103, lectura experta de tablas y signos, y decidir si el repertorio real de Nico admite alguna de las convenciones de escala; la guía no se aplicará automáticamente a una figura de rope flow. En especial, la ambigüedad de `Gliedersatz` y las abreviaturas impiden afirmar que esta lectura ya proporcione una taxonomía ejecutable o una fórmula de eficiencia corporal.
