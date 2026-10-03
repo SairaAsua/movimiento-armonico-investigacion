@@ -67,6 +67,8 @@ Para cada descriptor se decidirá: **usable**, **usable sólo en subdominio pred
 
 Para `Q`, el [presupuesto de error por componente](PRESUPUESTO_ERROR_Q.md) vincula error angular del recorrido y del marco, error de ponderación por longitud y longitud perdida por oclusión. La cobertura en cuadros no acota por sí sola la longitud oculta. Una diferencia entre bloques menor que la suma de sus márgenes queda indeterminada, aunque cada `Q` parezca numéricamente preciso; ese contraste geométrico tampoco crea un orden de «consonancia».
 
+La [prueba sintética de ruido y muestreo de `Q`](Q_RUIDO_MUESTREO.md) agrega un control para el banco **sin personas**: separar error común de traslación, error de frente/marco y error que cambia entre cuadros. Registrar dispersión de posición y dispersión de **desplazamientos**, autocorrelación, retardo de filtrado y sesgo en rectas/curvas conocidas a varias velocidades, no sólo reproyección estática y FPS nominal. Un sesgo común puede cancelarse en `Q` y permanecer en la situación radial si el origen es independiente; una rotación del marco puede cambiar `Q` sin cambiar la distancia radial. El montaje se decidirá por descriptor y por referencia de origen/ejes.
+
 Un piloto puede concluir que cámaras y HarMoCAP sirven para factibilidad, ciclo y trayectoria 2D, mientras una hipótesis sobre planos 3D o muñeca requiere otra configuración. Ese resultado delimita un paper honesto y orienta si vale la pena incorporar IMU o captura de laboratorio. No justifica llamar “energía”, “armonía” o “estado de conciencia” al porcentaje de puntos detectados.
 
 ### Bifurcación predefinida del primer paper según señal recuperable
