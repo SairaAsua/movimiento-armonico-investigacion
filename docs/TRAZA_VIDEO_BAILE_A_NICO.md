@@ -17,6 +17,8 @@ Versión 0.1, 24-09-2026. **Plan futuro**, sin video humano seleccionado ni ruta
 
 Como paso instrumental intermedio, un [banco sintético de fase desde MP4 hasta el PCM offline de Weaver/Shaper](../research/WEAVER_VIDEO_FASE_PCM.md) ya conserva PTS, traza de controles y un reset construido. No convierte la etapa D en cumplida: no hay señales espaciales validadas de una persona, audio de `beacon-spatial` ni video de Nico.
 
+Otro [factorial en cuatro MP4 sintéticos](../research/WEAVER_VIDEO_QR_FACTORIAL.md) recupera geometría `Q_xy` proyectada y fase `R` desde píxeles, cuantifica error frente a la animación y las lleva a Shaper. Su geometría 2D tampoco acredita un plano de Laban en el cuerpo ni calidad de pose humana.
+
 Antes de D, el driver HarMoCAP de Weaver debe preservar `captured_frame_id` y `captured_at_us` y evitar que dos bundles del mismo cuadro dupliquen la muestra de una persona. El MVP actual tiene transporte de registro, no salida OSC/audio live verificada. Antes de E, se necesita un video original de rope flow de la persona participante: los episodios editados localizados hasta ahora no contienen su movimiento corporal medible. Antes de F, `Q`/`R` offline no se pueden adelantar al reloj live; la señal causal requiere su propia prueba de latencia y datos faltantes.
 
 **Criterio editorial:** el título de cada demo dirá exactamente qué representa: «sonificación de trayectoria sintética», «sonificación offline de video de baile» o «feedback vivo de Nico». Nunca «sonido de la verdad del cuerpo» ni «frecuencia biológica de 40 Hz» sin una medición que lo sostenga.

@@ -42,6 +42,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Fase de video sintético al PCM de Shaper](WEAVER_VIDEO_FASE_PCM.md): el [script](weaver_video_fase_pcm.py) recupera fase desde los MP4 del banco #26 y sus PTS, la entrega por cuadro al renderer offline y prueba un intervalo de invalidez inyectada con silencio verificable. Es una cadena de software, no una captura humana ni el Beacon live.
 
+[Factorial de geometría proyectada × fase en video y Shaper](WEAVER_VIDEO_QR_FACTORIAL.md): cuatro MP4 sintéticos permiten recuperar `Q_xy` y `R` desde píxeles, medir su error frente a la animación y renderizar cuatro WAV con controles espaciales y temporales separados. Es 2D proyectado y replay offline; no valida planos 3D de Laban ni feedback humano.
+
 ## Plan de punta a punta
 
 [Sesgo de concentración de fase](FASE_SESGO_MUESTRAL.md): lectura primaria de Vinck et al. (2010), identidad de `PPC` y [contraejemplo ejecutable](fase_sesgo_muestral_sintetico.py) que muestra por qué copiar cuadros o subir FPS no agrega ciclos independientes.
