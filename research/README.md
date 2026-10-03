@@ -160,7 +160,7 @@ La misma nota añade un [banco de giro firmado](q_giro_orden_sintetico.py): `W` 
 
 [Bandas de Beacon y frecuencias corporales](BEACON_BANDAS_NO_FRECUENCIAS_CORPORALES.md): verifica que 40/80/120 Hz son centros de filtros de un audio de entrada, no tonos ni vibraciones corporales garantizadas.
 
-[Guía piloto de anotación Laban](ANOTACION_LABAN_PILOTO.md): capas de observación y lectura experta para rope flow, reglas de codificación, cegamiento, acuerdo entre especialistas y límites de las cámaras. Es diseño pendiente de revisión humana, no una validación realizada.
+[Guía piloto de anotación Laban](ANOTACION_LABAN_PILOTO.md): capas de observación y lectura experta para rope flow, reglas de codificación, cegamiento, acuerdo entre especialistas y límites de las cámaras. Su [sidecar de soportes de eventos](soportes_eventos_ejemplo_sintetico.csv) y [validador](validar_soportes_eventos.py) separan instante nominal de intervalo físico alegado para evaluar orden; son sintéticos y no certifican cámaras. Es diseño pendiente de revisión humana, no una validación realizada.
 
 [Validador de linaje](validar_linaje.py) y [manifiesto sintético](manifiesto_ejemplo_sintetico.json): comprueban la unión estructural anotación→clip→bundle→vistas originales y rango de reloj. El ejemplo no contiene medios reales; pasar el validador no prueba la integridad física de un video ni validez de su geometría.
 

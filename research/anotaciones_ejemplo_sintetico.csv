@@ -5,3 +5,5 @@ a03,act_s01,clip_s01,bundle_s01,C1|C2,coder_demo,0.1,segment,arm_R,1000000,20000
 a04,,clip_s01,bundle_s01,C1,coder_demo,0.1,event,rope,1500000,1500000,20000,camera,0,visibility,no_codable,unknown,occlusion,instant,Cruce sintetico oculto en C1
 a05,act_s01,clip_s01,bundle_s01,C1|C2,coder_demo,0.1,segment,arm_R,1000000,2000000,10000,body,1,limb_arrival_direction,right,medium,,arrival,La etiqueta describe solo el destino al final
 a06,act_s02,clip_s01,bundle_s01,C1|C2,coder_demo,0.1,segment,arm_L,1200000,1900000,10000,body,1,limb_arrival_direction,left,medium,,arrival,Accion simultanea con otro identificador
+a07,,clip_s01,bundle_s01,C1,coder_demo,0.1,event,rope,1700000,1700000,10000,camera,1,cycle_marker,visible,high,,instant,Hito de soga inventado
+a08,,clip_s01,bundle_s01,C1,coder_demo,0.1,event,hand_R,1750000,1750000,10000,camera,1,directional_onset,right,high,,instant,Inicio de mano inventado

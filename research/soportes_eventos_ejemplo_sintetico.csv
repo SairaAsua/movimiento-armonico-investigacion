@@ -1,0 +1,3 @@
+annotation_id,earliest_us,latest_us,available_at_us,clock_domain,source_frame_ids,bound_kind,bound_basis
+a07,1690000,1710000,1715000,session,media_s01_C1:50|media_s01_C1:51,claimed_hard,fixture de evento anterior y posterior inventados
+a08,1740000,1760000,1765000,session,media_s01_C1:52|media_s01_C1:53,claimed_hard,fixture de evento anterior y posterior inventados
