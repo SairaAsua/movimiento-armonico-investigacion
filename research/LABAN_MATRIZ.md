@@ -14,6 +14,8 @@ La [consulta del archivo digital de Leipzig](LABAN_ARCHIVO_LEIPZIG.md) añadió 
 
 La [formalización posterior de White (2020)](LABAN_SIMETRIAS_Y_ESCALAS.md) permite usar reflejos y cambios de signo para verificar la coherencia geométrica de nuestros descriptores. Sus figuras 3–6 permiten reconstruir **una secuencia candidata concreta** de doce direcciones: el chequeo geométrico confirma pasos por aristas y vértices opuestos a seis pasos. El grupo de simetrías y la aritmética `Z₁₂` son herramientas **analíticas**: numerar doce direcciones no demuestra que una trayectoria de rope flow siga la escala de Laban. La atribución histórica de esa secuencia sigue pendiente de cotejo con *Choreutics* y especialistas.
 
+El [mecanoscrito «Tanz und Musik» de Laban](LABAN_TANZ_UND_MUSIK_MANUSCRITO.md), leído en facsímil, nombra doce inclinaciones espaciales y distingue la misma orientación cuando pasa por el centro o por la periferia del cuerpo. Esta evidencia autoral refuerza que **orientación y situación** son observaciones diferentes. No identifica esas doce inclinaciones con los doce vértices de White ni ofrece una regla para clasificar video, una relación de fase HIT o una asignación de tonos Beacon.
+
 **Regla de atribución:** “Laban” nombra el marco conceptual histórico; “descriptor Laban inspirado” nombra una medida creada en este proyecto. Sólo una comparación formal con lectura experta y validación permite decir que una medida representa una categoría observacional.
 
 ## Matriz inicial

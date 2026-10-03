@@ -1,5 +1,7 @@
 # Laban, «Tanz und Musik» (1929): la armonía espacial no es una tabla de tonos
 
+**Cotejo complementario, 03-10-2026:** ahora se inspeccionaron las cuatro páginas de un [borrador mecanografiado autoral de igual título conservado en Leipzig](LABAN_TANZ_UND_MUSIK_MANUSCRITO.md). Sus imágenes confirman visualmente, en esa versión, la tabla de analogías y la objeción al mapeo ingenuo tono agudo↔altura espacial. El impreso de 1929 sigue sin cotejo facsimilar y contiene pasajes adicionales; no se presume que las dos versiones sean idénticas.
+
 Lectura de fuente **autoral impresa en alemán**, 24 de septiembre de 2026. Rudolf von Laban, [«Tanz und Musik», *Internationale Revue i 10*, año II, n.º 19, 15 de febrero de 1929, pp. 132–135](https://www.dbnl.org/tekst/_int001inte01_01/_int001inte01_01_0176.php). [DBNL identifica el número y la paginación](https://www.dbnl.org/tekst/_int001inte01_01/colofon.php) y describe su texto digital como transcripción diplomática de una reimpresión fotomecánica catalogada como 1979 (el pie editorial transcrito también imprime 1978) del periódico de 1927–1929. Se leyó el artículo completo en esa transcripción; **no** se consiguió cotejar el facsímil PDF, por un fallo de descarga de red en este entorno. Algunas grafías de la página digital parecen errores de transcripción, por lo que las paráfrasis no dependen de una letra dudosa. No se reproduce el artículo completo ni se presenta como lectura de *Choreographie* o *Choreutics*.
 
 ## Qué afirma efectivamente el artículo

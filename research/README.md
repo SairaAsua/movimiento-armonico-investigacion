@@ -4,6 +4,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 **Estado operativo:** Saira informó aproximadamente 4 Reolink, 4 «logicam» y 1 Moto G; faltan modelos, archivos originales y pruebas de tiempo/calibración. El [primer banco sin persona](PAQUETE_CAPTURA_NICO_V0.md) puede comparar una unidad de cada tipo antes de elegir montaje. El [estudio con Nico](PROTOCOLO_PILOTO_V0.md) todavía requiere repertorio real, consentimiento y determinación ética; metabolismo exige instrumentación propia. No hay captura, instalación live ni audio Beacon validados. La lectura integral de *Choreographie*/*Choreutics* continúa pendiente ([estado de fuentes](LABAN_ACCESO_OBRAS.md)).
 
+[Mecanoscrito «Tanz und Musik» de Laban](LABAN_TANZ_UND_MUSIK_MANUSCRITO.md): cuatro páginas autorales inspeccionadas en facsímil Leipzig; cotejan doce inclinaciones, centro/periferia y la objeción a equiparar tono agudo con gesto alto, sin autorizar una fórmula acústica para Beacon.
+
 [Cronología documental CND: ensayos de 1926 y cinétografía de 1928](LABAN_CND_NOTACION_1926_1928.md): lectura de una síntesis institucional de tres páginas y registro de una figura de 1926 aún no accesible; separa ambas tradiciones de nuestras ecuaciones para rope flow.
 
 **Preparación práctica sin captura nueva:** [montaje, lista de compras e inventario inicial de videos de Nico](MONTAJE_COMPRAS_Y_VIDEOS_NICO.md). Se identificaron episodios editados de contexto, pero todavía ningún original confirmado de Nico haciendo rope flow.
