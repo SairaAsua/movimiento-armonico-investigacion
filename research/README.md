@@ -26,6 +26,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Presupuesto de error de situación](PRESUPUESTO_ERROR_SITUACION.md): intervalos con error duro de posición/origen/escala y cota para variación radial, con [banco sintético](situacion_error_sintetico.py) que expone cuándo la cota se vuelve trivial. No estima el error de las cámaras reales.
 
+[Excursiones entre cuadros](MUESTREO_SITUACION_ENTRE_CUADROS.md): [contraejemplo y cota sintéticos](situacion_entre_cuadros_sintetico.py) distinguen el mínimo de la polilínea muestreada del mínimo del gesto continuo; el segundo sólo puede acotarse con un límite de rapidez relativa independiente.
+
 [Escala instrumental de la cota `V_r` en danza CMU](CMU_SITUACION_PRECISION_VR.md): el [cálculo reproducible](cmu_situacion_precision_vr.py) aplica la desigualdad a nueve ventanas de muñecas con grillas derivadas de 120/30/24 Hz. Es un ejercicio de diseño, no una especificación de cámaras para Nico.
 
 [Estructura temporal del error en `V_r`](CMU_SITUACION_ERROR_TEMPORAL.md): [perturbaciones sintéticas sobre CMU](cmu_situacion_error_temporal.py) con igual norma de error por cuadro muestran respuestas distintas ante sesgo, deriva y jitter. No describen errores medidos de nuestras cámaras.

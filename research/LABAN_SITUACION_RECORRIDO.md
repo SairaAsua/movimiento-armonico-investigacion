@@ -19,6 +19,8 @@ Sea `p₀,…,pₙ` una trayectoria **3D válida** de un punto corporal respecto
 
 Para un segmento de extremos relativos `a,b`, `rho_min` proyecta el origen a `a+t(b−a)` con `t=clip(−a·(b−a)/‖b−a‖²,0,1)`; si el segmento tiene longitud cero, usa `‖a‖`. Esto evita llamar «central» a un trecho que no llega al centro sólo porque su **recta extendida** sí pasaría por él. Si `L=0`, `Q` y `V_r` son inválidos; no se rellenan con cero.
 
+La recta entre cuadros es una **definición de la trayectoria muestreada**, no prueba de que la mano siguió esa recta. El [contraejemplo entre cuadros](MUESTREO_SITUACION_ENTRE_CUADROS.md) muestra dos gestos continuos con muestras idénticas y distintos `rho_min/V_r`; sólo para mínimos y máximos puede añadirse una cota condicional si existe un límite independiente de rapidez relativa.
+
 ## Contraejemplos ejecutados
 
 `python research/situacion_recorrido_sintetica.py` produce estos valores con origen `(0,0,0)` y `R=1,5` unidades arbitrarias; todos los puntos están dentro de ese radio. Son figuras matemáticas, no posturas observadas:

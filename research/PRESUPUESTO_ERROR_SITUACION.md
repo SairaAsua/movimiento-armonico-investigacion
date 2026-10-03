@@ -14,6 +14,8 @@ max(0, d̂−δ)/(R̂+ε_R) ≤ d/R ≤ (d̂+δ)/(R̂−ε_R).
 
 Con `ε_R=0`, esto recupera `|rho_min verdadero−rho_min observado|≤δ/R` y da la misma forma para `rho_max`. Si `R̂≤ε_R`, no hay denominador inferior positivo y **no se emite un intervalo finito**. Dos intervalos de condiciones cuya diferencia sea menor que su incertidumbre conjunta no autorizan afirmar que una situación es más central. Un error de definición del origen se explora por sensibilidad, no se esconde en `ε_o`.
 
+**Esta cota compara polilíneas en una misma malla temporal.** El [problema de lo que ocurre entre cuadros](MUESTREO_SITUACION_ENTRE_CUADROS.md) añade otra cota condicional `v_max h_max/2` para mínimos/máximos del gesto continuo; no puede deducirse `v_max` de la rapidez aparente entre los mismos cuadros. La incertidumbre del movimiento continuo no desaparece porque las muestras visibles tengan posición exacta.
+
 ## Por qué `V_r` exige mucho más
 
 Para cada segmento, sea `N_i=r_i+r_{i+1}−2m_i` su variación radial; `N=ΣN_i`, `L=Σ‖q_{i+1}−q_i‖` y `V_r=N/L`. Cada radio extremo y cada mínimo de segmento cambian como máximo `δ`, así que `|N̂−N|≤4nδ`. Cada longitud de segmento cambia como máximo `2δ`, de donde `|L̂−L|≤2nδ`. Como la distancia al origen es 1-Lipschitz sobre cada segmento, `0≤N≤L` y `0≤N̂≤L̂`. Para `L,L̂>0`, dos formas simétricas de la desigualdad triangular dan:
