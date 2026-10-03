@@ -24,6 +24,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Sobre sintético de situación del recorrido](CONTRATO_SITUACION_V0.md): [fixture JSONL](research_path_situation.synthetic.jsonl) y [validador](validar_research_path_situation.py) conservan origen, marco, escala, ventana, reloj e invalidez para una futura rama científica HarMoCAP–Weaver–Beacon. Sólo comprueban estructura y aritmética de un ejemplo ideal, no precisión espacial ni audio.
 
+[Presupuesto de error de situación](PRESUPUESTO_ERROR_SITUACION.md): intervalos con error duro de posición/origen/escala y cota para variación radial, con [banco sintético](situacion_error_sintetico.py) que expone cuándo la cota se vuelve trivial. No estima el error de las cámaras reales.
+
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
 
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
