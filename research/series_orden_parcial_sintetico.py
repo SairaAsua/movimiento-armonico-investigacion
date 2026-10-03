@@ -42,10 +42,20 @@ def summary(events: tuple[Event, ...]) -> dict:
     sequences = possible_label_sequences(events)
     counts = sorted({sum(a != b for a, b in zip(seq, seq[1:]))
                      for seq in sequences})
+    # Closed supports that intersect admit a tie. Strict permutations omit ties;
+    # a D/I tie is a cluster, not an ordered switch, even if every artificial
+    # strict permutation happens to have the same number of switches.
+    cross_leader_tie_possible = any(
+        max(a.start, b.start) <= min(a.end, b.end)
+        and any(x != y for x in a.leaders for y in b.leaders)
+        for i, a in enumerate(events) for b in events[i + 1:]
+    )
     return {"label_sequences": sorted(sequences),
-            "switch_counts": counts,
+            "switch_counts_in_strict_extensions": counts,
+            "cross_leader_tie_possible": cross_leader_tie_possible,
             "label_sequence_invariant": len(sequences) == 1,
-            "switch_count_invariant": len(counts) == 1}
+            "strict_label_sequence_supported": len(sequences) == 1 and not cross_leader_tie_possible,
+            "strict_switch_count_supported": len(counts) == 1 and not cross_leader_tie_possible}
 
 
 def main():
@@ -62,13 +72,18 @@ def main():
     touching = summary((Event("a", 0, 1, ("D",)),
                         Event("b", 1, 2, ("I",))))
     assert same_leader_overlap == {
-        "label_sequences": ["DDI"], "switch_counts": [1],
-        "label_sequence_invariant": True, "switch_count_invariant": True}
+        "label_sequences": ["DDI"], "switch_counts_in_strict_extensions": [1],
+        "cross_leader_tie_possible": False, "label_sequence_invariant": True,
+        "strict_label_sequence_supported": True, "strict_switch_count_supported": True}
     assert different_leader_overlap["label_sequences"] == ["DID", "IDD"]
-    assert different_leader_overlap["switch_counts"] == [1, 2]
+    assert different_leader_overlap["switch_counts_in_strict_extensions"] == [1, 2]
+    assert different_leader_overlap["cross_leader_tie_possible"]
     assert uncertain_label["label_sequences"] == ["DDDI", "DIDI"]
-    assert uncertain_label["switch_counts"] == [1, 3]
+    assert uncertain_label["switch_counts_in_strict_extensions"] == [1, 3]
     assert touching["label_sequences"] == ["DI", "ID"]
+    assert touching["switch_counts_in_strict_extensions"] == [1]
+    assert touching["cross_leader_tie_possible"]
+    assert not touching["strict_switch_count_supported"]
     print(json.dumps({"same_leader_overlap": same_leader_overlap,
                       "different_leader_overlap": different_leader_overlap,
                       "uncertain_label": uncertain_label,
