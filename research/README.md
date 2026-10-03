@@ -48,6 +48,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Mapeo diagnóstico al contrato Beacon](BEACON_FACTORIAL_CONTROLES.md): cuatro pares `Q/R` generan vectores de ganancias distintos dentro de rangos reales de `beacon-spatial`; es prueba offline numérica, todavía sin ruta aplicada ni audio.
 
+[Mapeo numérico de situación hacia Beacon](BEACON_SITUACION_MAPEO_OFFLINE.md): [ocho casos sintéticos](beacon_situacion_controles.py) conservan bandas Q/R y añaden dos controles para `rho_min/V_r`, con reset separado. Es un diseño de escucha retrospectiva, sin OSC ni audio producido.
+
 ## Plan de punta a punta
 
 [Sesgo de concentración de fase](FASE_SESGO_MUESTRAL.md): lectura primaria de Vinck et al. (2010), identidad de `PPC` y [contraejemplo ejecutable](fase_sesgo_muestral_sintetico.py) que muestra por qué copiar cuadros o subir FPS no agrega ciclos independientes.
