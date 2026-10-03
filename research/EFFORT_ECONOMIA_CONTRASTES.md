@@ -18,6 +18,8 @@ Nota de lectura, 23 de septiembre de 2026. Esta distinción importa para la tesi
 
 Estos resultados hacen plausible investigar una **relación contingente**, pero ofrecen un contraejemplo directo a la equivalencia universal «máxima consonancia/fase estable = mínimo gasto». «Consonancia» aún exige definición propia: correspondencia con red/direcciones Laban, estabilidad de fase y belleza percibida no se colapsarán en un número. La disonancia o el contraste podrían ser recursos expresivos valiosos; ver [lectura histórica](LABAN_ARMONIA_HISTORICA.md) y [contraste estructurado](CONTRASTE_ESTRUCTURADO.md).
 
+Un [estudio de caminata de tango de Torres y colaboradores (2026), leído en texto completo](TANGO_CINEMATICA_COSTO_2026.md), combina captura 3D y VO₂ en bloques de cinco minutos. A velocidad media comparable halló mayor costo de transporte en la condición tango; **no** recogió juicios de belleza y cambió técnica y música a la vez. Su transferencia es de método y de cautela ante la identidad estética=economía, no una prueba de la hipótesis de Nico.
+
 ## Traducción al experimento de Nico
 
 La primera captura puede probar si las trayectorias y ciclos son observables. Para estudiar economía, comparar **bloques del mismo patrón de rope flow** con soga, cadencia, amplitud y duración registradas, y con intercambio gaseoso interpretable. Registrar por separado: (a) distancia a una red/dirección o secuencia espacial propuesta, (b) estabilidad y relación de fase, (c) Effort anotado, (d) belleza/sensualidad valoradas por jueces, (e) facilidad/absorción autoinformadas por Nico y (f) costo metabólico neto por tiempo y ciclo cuando exista equipo. Controlar día y práctica; las mejoras a través de sesiones podrían ocurrir sin que cambie un descriptor Laban.
