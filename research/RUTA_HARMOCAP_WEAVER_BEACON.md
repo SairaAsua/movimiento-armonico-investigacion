@@ -4,6 +4,8 @@ Auditoría dirigida de código público, 23-09-2026. Se examinaron los repositor
 
 Saira señaló además [el repositorio de Nico `nicoechaniz/harmonic-weaver`](https://github.com/nicoechaniz/harmonic-weaver). Se verificó el 24-09-2026 que su `main` apunta al mismo commit `a4ca91e3145ce950d4e96f6ae44fd93fd987a4d1` auditado aquí. Por tanto la ruta y sus límites corresponden también a ese enlace; no es una implementación adicional ni una prueba nueva de audio.
 
+**Estado posterior, 2-10-2026:** el `main` de Nico permanece en `a4ca91e3`, mientras el `main` de AlterMundi avanzó a `726f3bf` con [dos commits de portabilidad de tests](https://github.com/AlterMundi/harmonic-weaver/compare/a4ca91e3145ce950d4e96f6ae44fd93fd987a4d1...726f3bf899ed384cc3bb16768a501ff655ca6758). Sólo cambiaron dos archivos de pruebas, sin alterar los módulos de runtime auditados en esta nota. Ya no son espejos de commit exactos; para reproducir un ensayo se deben fijar **repositorio y SHA**, además de manifiestos. La [nota de laboratorio](WEAVER_LABORATORIO_ESTADO_20261002.md) separa ese `main` del PR #76 de video/pose/sonido con Shaper. HarMoCAP y `beacon-spatial` permanecen en los SHAs de la tabla al recomprobarlos; ninguna de estas verificaciones ejecutó OSC ni audio.
+
 ## Qué existe y qué falta
 
 | Etapa | Código/contrato comprobado | Alcance verificable de esta revisión |
