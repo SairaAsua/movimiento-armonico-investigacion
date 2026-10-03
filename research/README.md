@@ -16,6 +16,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Tres componentes y columnas rítmicas en *Choreographie*](LABAN_GUIA_ESCRITURA_1926.md): lectura visual de pp. 100–103 de la traducción; distingue organización de miembros, situación espacial, progreso y signos temporales en columna aparte. La traducción de `Gliedersatz` y los signos requieren cotejo alemán y revisión experta antes de una codificación automática.
 
+[Minueto, forma y ritmo en *Choreographie*](LABAN_MINUETO_BAILE_1926.md): lectura mediada de pp. 54–64; un motivo de paso admite variantes rítmicas y la comparación histórica reclama describir el cuerpo entero. La nota editorial señala deuda textual con Klemm; no se toma el ejemplo como un control experimental de geometría constante.
+
 [Relación espacial entre miembros](RELACION_ESPACIAL_MIEMBROS.md): [banco sintético reproducible](relacion_espacial_miembros_sintetica.py) con igual `Q`, rapidez individual y fase, pero distinta separación 3D entre manos; delimita un descriptor relacional y su error antes de usarlo con Nico.
 
 [Escalas de eje y ecuador de *Choreographie*](LABAN_ESCALAS_EJE_ECUADOR_1926.md): lectura de pp. 43–48 en traducción ilustrada; separa secuencias axiales, recorridos periféricos y signos añadidos/corregidos por los traductores antes de cualquier comparador para rope flow.
