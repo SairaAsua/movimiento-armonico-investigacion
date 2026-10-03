@@ -26,9 +26,9 @@ body { font-family: Georgia, "Noto Serif", serif; font-size: 9.2pt;
 h1, h2, h3 { font-family: Arial, sans-serif; color: #173f4b;
              line-height: 1.18; break-after: avoid; }
 h1 { font-size: 21pt; margin: 0 0 20pt; }
-h2 { font-size: 14pt; margin: 16pt 0 8pt; }
+h2 { font-size: 14pt; margin: 15pt 0 8pt; }
 h3 { font-size: 11.8pt; margin: 13pt 0 7pt; }
-p { margin: 0 0 5.5pt; orphans: 3; widows: 3; }
+p { margin: 0 0 5pt; orphans: 3; widows: 3; }
 a { color: #126379; text-decoration: none; }
 strong { color: #143946; }
 code { font-family: "DejaVu Sans Mono", monospace; font-size: 9pt;
@@ -42,7 +42,7 @@ th { background: #e4eeee; }
 tr { break-inside: avoid; }
 ul, ol { padding-left: 17pt; margin: 5pt 0 10pt; }
 li { margin: 0 0 4pt; }
-ol li { margin-bottom: 2pt; }
+ol li { margin-bottom: 1.5pt; }
 blockquote { border-left: 3px solid #6ca5a5; padding-left: 10pt;
              color: #425b62; }
 hr { border: 0; border-top: 1px solid #a5c1c2; margin: 18pt 0; }
