@@ -60,6 +60,19 @@ En la ventana izquierda 480–600 (4–5 s), por ejemplo, `rho_min` pasa de `1,4
 
 Este contraste **no estima error instrumental**: cambia deliberadamente el objeto matemático. Muestra que declarar “cercanía al centro” sin fijar qué centro se usa puede producir una diferencia del mismo orden que la medida. La futura guía experta debe escoger el origen según la pregunta, no según cuál resultado parezca más armónico; el banco técnico de Nico deberá medir además la incertidumbre del origen elegido.
 
+## Control factorial con `Q` y fase HIT
+
+El [factorial Laban–HIT anterior](LABAN_HIT_FACTORIAL.md) cruzaba plano `Q` y relación temporal `R₁:₁`. El [nuevo banco 2×2×2](laban_hit_situacion_factorial.py) añade **situación radial**: toma la misma curva circular ideal de la segunda mano y la traslada `0,6` unidades a lo largo del eje lateral, conservando exactamente cada desplazamiento y rapidez cuadro a cuadro. Usa origen fijo `(0,0,0)` y normalizador geométrico `R=2`, que **no** representa alcance humano. La primera mano es el reloj matemático de referencia del banco anterior; las fases son conocidas por construcción, no estimadas de sensores independientes.
+
+| Factor cambiado | `Q` | `rho_min` | `R₁:₁` | Lo que comprueba |
+|---|---:|---:|---:|---|
+| Círculo sin traslado → trasladado, plano lateral–anterior, tiempo `locked` | `(0,5; 0,5; 0)` en ambos | `0,499998 → 0,199999` | `1 → 1` | Situación distinta con orientación, longitud, rapidez y fase iguales. |
+| Círculo sin traslado → trasladado, mismo plano, tiempo `drift` | `(0,5; 0,5; 0)` en ambos | `0,499996 → 0,199997` | `0,472001 → 0,472001` | La separación también persiste con fase variable. |
+| Plano lateral–anterior → lateral–vertical, mismo traslado y tiempo | `(0,5; 0,5; 0) → (0,5; 0; 0,5)` | Igual hasta `0,001` por muestreo | Igual | El cambio de plano altera `Q`, no exige cambiar situación o fase. |
+| Tiempo `locked` → `drift`, mismo plano y traslado | Igual hasta `0,0001` | Igual hasta `0,001` por muestreo | `1 → 0,472001` | El cambio temporal altera `R`, no exige cambiar geometría continua. |
+
+Los ocho casos y las verificaciones numéricas están en el script. `V_r` también separa el círculo sin traslado (`≈0,0016`, residuo de cuerda) del trasladado (`≈0,382`). El largo analítico es idéntico; el largo poligonal cambia unas millonésimas al muestrear distinta velocidad. El banco prueba que un canal de situación **podría aportar información ausente de `Q/R`** en la representación. No prueba independencia estadística de esas variables en cuerpos, ni que una persona pueda trasladar la figura sin cambiar esfuerzo, intención o tarea. En un Beacon futuro, un mapeo que sólo reciba `Q/R` no podrá hacer audibles estos dos círculos como situaciones distintas; agregar un control requiere antes 3D, origen y escala fijados, validez frente a referencia y una prueba perceptiva del audio producido.
+
 ## Condición de medición para el piloto
 
 1. Declarar **qué** trayectoria se mide: mano, codo o curva de soga no son intercambiables. Definir origen, ejes, escala `R`, intervalo de frase, vista y si el marco acompaña la pelvis o conserva orientación de sala. Una base que gira puede producir componentes de desplazamiento aunque el punto esté quieto respecto del cuerpo; la [descomposición del marco móvil](MARCO_MOVIL_DESCOMPOSICION_C.md) hace visible ese problema. Probar sensibilidad a marcos alternativos antes de interpretar `Q` o `V_r`.

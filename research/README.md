@@ -20,7 +20,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Pérdida de información pitch–espacio](PITCH_ESPACIO_PERDIDA.md): [cálculo de grafo reproducible](pitch_espacio_grafo.py) que muestra qué relaciones no puede comunicar una nota cromática por vértice o un pitch dependiente sólo de altura en nuestra plantilla ideal; define una prueba perceptiva futura para Beacon.
 
-[Situación del recorrido frente a orientación](LABAN_SITUACION_RECORRIDO.md): [banco sintético 3D](situacion_recorrido_sintetica.py) donde trayectorias con el mismo `Q` pasan por regiones distintas respecto del centro, más sensibilidades en CMU al [marco de ejes](cmu_situacion_marcos.py) y al [origen corporal](cmu_situacion_origen.py). Define medidas continuas candidatas y su límite de error, sin adjudicar etiquetas Laban ni resultados sobre Nico.
+[Situación del recorrido frente a orientación](LABAN_SITUACION_RECORRIDO.md): [banco sintético 3D](situacion_recorrido_sintetica.py) donde trayectorias con el mismo `Q` pasan por regiones distintas respecto del centro; [factorial `Q`–situación–`R`](laban_hit_situacion_factorial.py); y sensibilidades en CMU al [marco de ejes](cmu_situacion_marcos.py) y al [origen corporal](cmu_situacion_origen.py). Define medidas continuas candidatas y su límite de error, sin adjudicar etiquetas Laban ni resultados sobre Nico.
 
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
 

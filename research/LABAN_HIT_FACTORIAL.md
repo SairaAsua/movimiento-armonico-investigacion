@@ -19,6 +19,8 @@ Como fixture de integración, una futura extracción Laban/HIT debe devolver el 
 
 La [prueba de controles offline](BEACON_FACTORIAL_CONTROLES.md) aplica estos cuatro pares a ganancias de bandas que existen en el contrato real de `beacon-spatial`. Comprueba distinción **numérica** y deja explícito que `Q/R` de todo el bloque no son señales live y que la audibilidad aún requiere la cadena completa.
 
+Un [control posterior de situación del recorrido](LABAN_SITUACION_RECORRIDO.md#control-factorial-con-q-y-fase-hit) agrega un tercer factor geométrico: traslada un círculo sin alterar sus desplazamientos ni su fase, de modo que `Q/R` permanecen iguales mientras `rho_min` cambia. Es un fixture de separabilidad de definiciones, no una condición humana ni un canal Beacon validado.
+
 ## Control adicional: marginales temporales igualados
 
 El factorial anterior modifica la velocidad instantánea de la segunda mano cuando pasa de `locked` a `drift`; por ello una diferencia externa podría deberse a **cómo se movió esa mano por separado**, no a la relación entre manos. El [segundo banco sintético](laban_hit_marginales_igualados.py) hace ocho vueltas idénticas por mano y plano. En cada ciclo usa `θ(t)=2πt+a_k sin²(πu)`, donde `u` es el tiempo dentro del ciclo y `a_k` alterna `+1,8/−1,8` radianes. En `aligned`, ambas manos usan el mismo `a_k`; en `opposed`, la derecha usa el signo contrario, equivalente a desplazar su secuencia de modulaciones **un ciclo completo** respecto de la izquierda. La derivada de fase es positiva en todos los instantes y vale `2π` en ambos lados de cada unión: el recorrido y la velocidad son continuos incluso cuando cambia el signo de `a_k`. La aceleración no tiene por qué ser continua allí; sigue siendo una idealización.
