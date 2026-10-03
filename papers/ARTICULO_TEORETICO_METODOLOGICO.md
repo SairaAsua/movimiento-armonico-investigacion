@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.27, 3 de octubre de 2026
+**Versión:** 0.28, 3 de octubre de 2026
 
 ## Resumen
 
@@ -111,6 +111,8 @@ Para dos señales observadas de forma independiente y con ciclos interpretables,
 Los pesos `v_m` y la unidad de muestreo se fijan de modo que miles de cuadros de los mismos pocos ciclos no simulen miles de observaciones independientes. `R` mide concentración circular y `μ` el desfase preferido. Se registran, además, relación candidata, duración, número de ciclos, variación de cadencia, error de reloj y cobertura. Una fase derivada dos veces del mismo evento no cuenta como dos señales independientes.
 
 El ocho ideal exhibe otra forma de duplicación: con `x(t)=sin θ(t)` y `y(t)=sin 2θ(t)`, las fases matemáticas de los dos ejes cumplen `2φ_x−φ_y=0` y, por (4), `R₁:₂=1` **por construcción**. Los ejes son componentes de una sola trayectoria; su cociente 2:1 describe esa geometría parametrizada, pero no constituye una observación confirmatoria de coordinación HIT entre segmentos [35]. Si se informa como descriptor intratrayectoria, se conservarán vista, marco, método de fase y origen compartido. Para H2 se requieren señales corporales u objeto–cuerpo distinguibles, además de controles de cadencia y tarea común; tener sensores distintos tampoco basta para inferir causalidad.
+
+La soga, además, **responde físicamente** a la mano. En un modelo restringido de manipulación robótica muy rápida, tramos de soga se aproximaron como copias retardadas del extremo que los mueve [37]. Si `h(t)=cos(ωt)` y `s(t)=h(t−τ)`, entonces `φ_h−φ_s=ωτ` y `R₁:₁=1` incluso con dos canales físicos medidos por separado. Este contraejemplo no afirma que la soga de Nico obedezca ese modelo; demuestra que una fase mano–soga estable puede ser el seguimiento mecánico esperable, sin implicar belleza, ahorro energético o coordinación corporal adicional. Se distinguirá la descripción de seguimiento, el aporte predictivo respecto de la historia pasada de mano y condiciones observables, y la asociación con resultados externos independientes. Una señal de soga imputada desde mano no sirve para este contraste ([decisión metodológica](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/research/video-misma-curva-ritmo/research/FASE_MANO_SOGA_BASE_MECANICA.md)).
 
 **Resultado analítico 3: estabilidad no identifica «fase correcta».** Si `δ` es constante, `R=1` tanto para `δ=0` como para `δ=π`. La fase alta tampoco demuestra transferencia mecánica ni coordinación causada por un segmento: dos partes pueden seguir una misma consigna externa. Una pausa o transición sin ciclo definido debe quedar como «fase no aplicable» y no como «disonancia».
 
@@ -273,6 +275,7 @@ Proponemos estudiar el movimiento armónico como una **familia de relaciones obs
 34. Equipo Harmonic Beacon (2026). [*Mismo ocho de mano, distinta configuración articular*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/cb23362/research/ocho_cinematica_ambigua.py). Contraejemplo de cinemática inversa con brazo plano ideal de dos segmentos; no representa músculos, soga ni movimiento humano observado.
 35. Bengoetxea, A., Dan, B., Leurs, F., Cebolla, A. M., De Saedeleer, C., Gillis, P. y Cheron, G. (2010). [*Rhythmic muscular activation pattern for fast figure-eight movement*](https://orbi.umons.ac.be/bitstream/20.500.12907/11468/1/Rhythmic%20activation%20figure-eight%20%28Bengoetxea%20et%20al.2010%29a.pdf). *Clinical Neurophysiology*, 121, 754–765. DOI: 10.1016/j.clinph.2009.12.021. Cuatro participantes, cinemática y EMG de brazo extendido; no rope flow. [Lectura y límites de transferencia](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/research/laban-ritmos-1928/research/OCHOS_KINEMATICA_EMG_2010_2015.md).
 36. Bengoetxea, A., Leurs, F., Hoellinger, T., Cebolla, A. M., Dan, B., Cheron, G. y McIntyre, J. (publicado 2015). [*Physiological modules for generating discrete and rhythmic movements: component analysis of EMG signals*](https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2014.00169/full). *Frontiers in Computational Neuroscience*, 8 (volumen 2014), 169. DOI: 10.3389/fncom.2014.00169. Siete participantes utilizables; parte de los datos se reutiliza de [35].
+37. Yamakawa, Y., Namiki, A. e Ishikawa, M. (2013). [*Dynamic High-Speed Knotting of a Rope by a Manipulator*](https://journals.sagepub.com/doi/10.5772/56783). *International Journal of Advanced Robotic Systems*, 10(10). DOI: 10.5772/56783. Modelo y ensayos de soga flexible con manipulador robótico rápido; el retardo del modelo es un contraejemplo metodológico, no una validación para rope flow humano.
 
 ## Nota de estado y transparencia
 
