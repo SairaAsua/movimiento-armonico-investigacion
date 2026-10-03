@@ -16,6 +16,8 @@ La fase de **figura/tarea** (retorno a una configuración visible) y la fase de 
 
 Una [auditoría de procedencia](FASE_PROCEDENCIA_CIRCULAR.md) añade una condición previa a cualquier `Rₚ:q`: dos fases construidas copiando esos mismos eventos de soga pueden dar `R=1` por definición, sin medición de dos segmentos. Registrar observación, anclajes y estimador por fase, y excluir relaciones tautológicas antes de controlar el ritmo común real.
 
+Si además se pregunta por **covariación de residuos** de dos segmentos después de ajustar ambos al pulso de tarea, el [presupuesto de reloj compartido](HIT_RELOJ_COMUN_CON_ERROR.md) exige acotar error del evento con referencias independientes. Ese artefacto afecta la interpretación de residuos condicionados; una diferencia angular directa 1:1 calculada con exactamente el mismo reloj sustraído de ambas señales cancela dicho reloj, aunque un pulso común real todavía pueda explicar su `R`.
+
 Esa `θ(t)` **sólo está disponible retrospectivamente**, después del evento `tₖ₊₁`. La [nota de fase causal para Beacon](FASE_CAUSAL_BEACON.md) propone un estimador separado basado en el período anterior y prueba sintéticamente un error de −36° cuando el siguiente ciclo se acelera. El archivo y la sonificación deben conservar nombres, disponibilidad y estados distintos para ambas fases.
 
 Un ejemplo matemático muestra por qué esto importa: si la posición de una mano sigue x(t)=sin(2πft), su **rapidez** |dx/dt| tiene dos máximos por vuelta. Un detector que cuenta máximos de rapidez devolvería 2f como frecuencia de evento aunque la configuración completa repita a f. El `beat_phase` de HarMoCAP procede de un pulso de movimiento agregado y debe evaluarse como señal musical, no equipararse a fase de una mano o de la soga.

@@ -29,6 +29,24 @@ Como control de alcance, el script aplica también `|mean exp(iδ)|` a las difer
 
 Dos ejecuciones entregaron JSON idéntico byte a byte (SHA-256 `8151a590839da8d6ae53fd671a35c2a60b985182eb8180998bc9c3f239a9ef44`). Los valores simulados se compararon con la derivación y el caso de reloj perfecto; no hay inferencia estadística sobre personas. Un reemparejamiento que «rompe» la covariación observada puede ser un **falso indicador de coordinación residual** si la referencia compartida era ruidosa.
 
+## Presupuesto de error para diseñar el contraste
+
+En el mismo modelo poblacional, la covarianza espuria máxima que puede explicar un límite superior `S` de varianza del reloj es `c_max=τ²S/(τ²+S)`; con varianza propia de error de cada mano `σ_h²`, la correlación fabricada sería `ρ_artefacto=c_max/(c_max+σ_h²)`. Para exigir que esa correlación no supere un umbral **elegido para el diseño** `r`, se necesita `c_max≤c_r=σ_h²r/(1−r)`. Si `c_r<τ²`, la condición equivale a `S≤τ²c_r/(τ²−c_r)`; si no, el modelo ya queda bajo `r` incluso con reloj arbitrariamente malo. Se compararía una cota **con incertidumbre** del reloj con esta condición, no un valor puntual elegido para que pase.
+
+El [calculador reproducible](reloj_comun_sensibilidad.py) aplica esas identidades a los parámetros construidos del banco (`τ²=1`, `σ_h²=0,09`). No hay unidades de segundos ni especificación de cámaras aquí:
+
+| Varianza hipotética del reloj `σ_w²` | Covarianza residual atribuible al reloj | Correlación residual atribuible al reloj |
+|---:|---:|---:|
+| `0` | `0` | `0` |
+| `0,01` | `0,009901` | `0,099108` |
+| `0,05` | `0,047619` | `0,346021` |
+| `0,25` | `0,2` | `0,689655` |
+| `1` | `0,5` | `0,847458` |
+
+Para que el artefacto sea menor o igual que `0,1` **en este fixture**, el límite de varianza del reloj sería `0,010101` y el de desviación estándar `0,100504` en unidades de offset construido. Dos ejecuciones del calculador dieron el mismo JSON (SHA-256 `438eb0e13c5386903412745fa69f320db21ed65b0a22387d2a4e186b22e8e778`). Es un ejemplo de dimensionamiento, **no** un umbral de FPS, milisegundos o aceptación para Nico. Si se observan varianzas residuales `V_A,V_B` distintas, un límite `c_max` se traduce en correlación espuria máxima `min(1,c_max/√(V_A V_B))` bajo los supuestos declarados; conviene contrastar primero covarianza en unidades temporales.
+
+Para estimar `S` harán falta referencias del **mismo evento de tarea** con errores caracterizados por vías de adquisición suficientemente independientes. Dos anotadores del mismo cuadro sólo miden parte del desacuerdo de anotación: comparten exposición, cuantización temporal y posibles cuadros perdidos. Si existieran dos relojes `W₁=U+ν₁`, `W₂=U+ν₂` con errores realmente independientes entre sí y de `U`, `Cov(W₁,W₂)=τ²` y `Var(ν_i)=Var(W_i)−Cov(W₁,W₂)`; ésa es una posibilidad de identificación **condicional a esos supuestos**, no una garantía del montaje. Aplicar el presupuesto al contraste de manos exige además que los errores de reloj sean independientes de los errores manuales bajo el nulo. Un pulso de música y un cruce de soga no son réplicas del mismo evento sin una relación física demostrada. Los destellos para sincronizar cámaras fijan correspondencia entre relojes de grabación, pero no validan por sí solos la marca de la vuelta de soga. Si no se puede acotar `S` con evidencia adecuada, la covariación residual no identifica interacción adicional.
+
 ## Decisión para la prueba HIT
 
 Antes de llamar «ajuste entre segmentos más allá del ritmo común» a una covariación residual, estimar error, retardo y procedencia de los eventos del reloj de tarea mediante referencia independiente en el subdominio estudiado. Si se usan dos anotadores sobre el mismo video, distinguir desacuerdo humano de un sesgo compartido del propio archivo; dos algoritmos que heredan el mismo evento tampoco constituyen referencias independientes. Hacer una sensibilidad de error de reloj: cuánto de la covariación residual podría explicarse por la incertidumbre de `U` dada `W`. Si el intervalo plausible incluye toda la asociación, reportar **no identificable** bajo ese montaje. Un modelo explícito de variable latente o de errores de medición puede ser útil si sus supuestos y referencias son defendibles; no se corrige el problema eligiendo a posteriori el ajuste que deja el residuo deseado.
