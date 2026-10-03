@@ -172,6 +172,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Contraejemplo de centro y trayectoria](CENTRO_TRAYECTORIA_CONTRAEJEMPLO.md): dos realizaciones sintéticas tienen la misma mano en sala y respecto del torso, pero distinta traslación y rotación torácica. Obliga a medir torso aparte antes de hablar de participación corporal; no identifica energía ni calidad estética.
 
+[Cota de cambio neto de torso](TORSO_CAMBIO_RESOLUBLE.md): desigualdades conservadoras para decidir si traslación o giro observados entre dos eventos exceden error de pose y una diferencia mínima predefinida. No certifica movimiento continuo, trabajo ni causalidad.
+
 [Longstaff 1996, apéndice XVI](LONGSTAFF_TAXONOMIA_RECORRIDOS.md): taxonomía exploratoria de recorridos corporales, con ochos de reversión y de ciclo continuo; separa mecanismo articular, silueta proyectada y fase periódica HIT. Incluye un [contraejemplo sintético](ocho_cinematica_ambigua.py) de dos configuraciones articulares con la misma mano en ocho.
 
 [Ochos humanos rápidos y EMG (2010/2015)](OCHOS_KINEMATICA_EMG_2010_2015.md): dos estudios originales de brazo extendido, sus sensores y límites de transferencia; el 2:1 entre ejes de un solo ocho queda como propiedad intratrayectoria, no evidencia HIT entre segmentos.
