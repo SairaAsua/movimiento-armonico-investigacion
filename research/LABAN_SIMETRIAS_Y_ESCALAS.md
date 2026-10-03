@@ -2,6 +2,8 @@
 
 Nota de investigación, 23-09-2026. Fuente principal leída completa en su [versión HTML: Ashley Walls White, *Group Theory and Modern Dance Composition* (2020)](https://arxiv.org/html/2005.11642v1), [ficha del preprint](https://arxiv.org/abs/2005.11642). White formaliza **su propia interpretación matemática** de figuras y recursos coreográficos asociados a Laban; no es el texto original de *Choreutics*, ni una validación empírica de movimiento, economía o belleza. Su figura 5 presenta una escala primaria de doce direcciones y su figura 6 la rotula como un reloj de doce posiciones. Falta cotejar el orden concreto con *Choreutics* completo y con un especialista antes de usarlo como escala histórica de referencia.
 
+El [cotejo parcial de *Choreographie* pp. 36–42 en traducción](LABAN_CHOREOGRAPHIE_TRADUCCION_2011.md) encuentra anillos de cuatro lados y de tres lados, y una figura titulada como mitad superior de un icosaedro. **No son automáticamente el ciclo de doce aristas que se reconstruye abajo desde White.** Anillo, escala A/B, signo de inclinación y vértice son unidades distintas; la correspondencia exacta entre estas páginas de 1926 y la formalización de White de 2020 necesita cotejar las partituras y *Choreutics*, no equiparar dibujos por su sólido.
+
 ## Transformaciones definibles sin fingir que son fisiología
 
 Con `x=lateral`, `y=anterior`, `z=superior` en un marco corporal derecho, definimos reflejos algebraicos sobre una trayectoria espacial `p(t)`:
