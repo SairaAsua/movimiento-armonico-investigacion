@@ -54,6 +54,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Ablación de las dos capas espaciales en PCM](ABLACION_SITUACION_PCM.md): [script](weaver_situacion_ablacion_pcm.py) cruza contrafácticamente las ganancias de `rho_min` y `V_r`, iguala RMS y mide sus efectos espectrales separados. Las combinaciones híbridas son controles del instrumento, no trayectorias humanas.
 
+[Preparación ABX de situación](PROTOCOLO_ABX_SITUACION_PCM.md): [script](preparar_abx_situacion.py) verifica los cuatro WAV de la ablación y produce localmente una lista de escucha ciega equilibrada y una clave separada. No hay participantes ni resultados de audibilidad.
+
 [Fase de video sintético al PCM de Shaper](WEAVER_VIDEO_FASE_PCM.md): el [script](weaver_video_fase_pcm.py) recupera fase desde los MP4 del banco #26 y sus PTS, la entrega por cuadro al renderer offline y prueba un intervalo de invalidez inyectada con silencio verificable. Es una cadena de software, no una captura humana ni el Beacon live.
 
 [Factorial de geometría proyectada × fase en video y Shaper](WEAVER_VIDEO_QR_FACTORIAL.md): cuatro MP4 sintéticos permiten recuperar `Q_xy` y `R` desde píxeles, medir su error frente a la animación y renderizar cuatro WAV con controles espaciales y temporales separados. Es 2D proyectado y replay offline; no valida planos 3D de Laban ni feedback humano.
