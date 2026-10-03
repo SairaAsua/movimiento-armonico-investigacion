@@ -52,7 +52,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Fase angular y marco rotante](FASE_MARCO_ROTANTE_PQ.md): derivación y control sintético de por qué un giro común se cancela en 1:1 pero modifica relaciones p:q con `p≠q`; fija la procedencia del marco para contrastes HIT y futuras capas sonoras.
 
-[Fase mano–soga y base mecánica](FASE_MANO_SOGA_BASE_MECANICA.md): antecedente experimental de manipulación robótica con soga flexible y contraejemplo analítico de retardo constante; distingue seguimiento físico del objeto, coordinación corporal incremental y resultados externos del estudio.
+[Fase mano–soga y base mecánica](FASE_MANO_SOGA_BASE_MECANICA.md): antecedente experimental de manipulación robótica con soga flexible y contraejemplos de retardo a cadencia constante o cambiante; distingue seguimiento físico del objeto, coordinación corporal incremental y resultados externos del estudio.
 
 [Salto con soga de Zhou et al. (2025): transferencia instrumental](SALTO_SOGA_ZHOU_2025_TRANSFERENCIA.md): lectura del método completo; separa las mediciones de cuerpo, agarres y soga de su evento de salto, cinco ciclos centrales y proxy de punto medio por dos marcas.
 
