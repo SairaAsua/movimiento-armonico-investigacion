@@ -98,6 +98,8 @@ La misma nota añade un [banco de giro firmado](q_giro_orden_sintetico.py): `W` 
 
 [CMU danza moderna, banco humano externo](CMU_DANZA_BANCO_REAL.md): una toma C3D oficial de 1.123 cuadros a 120 Hz procesada con [script auditable](cmu_danza_05_02_audit.py); prueba marco corporal, recorrido de marcadores y sensibilidad del contraste a la definición de «muñeca», sin extrapolar a Nico.
 
+[Relación espacial entre proxies de muñeca en CMU](CMU_RELACION_MANOS.md): [script reproducible](cmu_relacion_manos.py) de distancia 3D, proyección con profundidad omitida y sensibilidad a la elección de punto en la misma toma pública. Es factibilidad descriptiva, sin referencia de exactitud ni rope flow.
+
 [Replay causal del acople en CMU](ACOPLE_CAUSAL_REPLAY.md): [script reproducible](cmu_causal_c_replay.py) con escala fijada al primer segundo, ventanas retrospectivas y estados sin valor cuando falta una región; cuantifica cobertura y verifica que truncar el futuro no cambia el pasado, sin reclamar audio live.
 
 [Contraste `C` según el marco de movimiento](CMU_MARCOS_C_CONTRASTE.md): con las mismas regiones delante/detrás, la toma CMU invierte el signo izquierdo si se compara recorrido co-rotante con recorrido centrado en cintura; obliga a predefinir marco y a medir error de orientación.
