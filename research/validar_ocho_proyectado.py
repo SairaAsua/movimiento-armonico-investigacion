@@ -14,7 +14,7 @@ FIELDS = {
     "schema_version", "material", "clip_id", "media_bundle_id", "view_id",
     "media_id", "track_id", "target", "coordinate_convention",
     "image_transform_id", "clock_map_id", "crossing_times_us",
-    "uncertainty_method_id", "lobes",
+    "uncertainty_method_id", "vertex_error_bound", "lobes",
 }
 LOBE_FIELDS = {
     "lobe_id", "start_us", "end_us", "signed_area", "area_error_bound",
@@ -42,6 +42,9 @@ def validate(record):
             and isinstance(record["uncertainty_method_id"], str)
             and record["uncertainty_method_id"].startswith("synthetic_")):
         errors.append("incertidumbre sintética no sirve para video humano")
+    vertex_bound = record["vertex_error_bound"]
+    if type(vertex_bound) not in {int, float} or not math.isfinite(vertex_bound) or vertex_bound < 0:
+        errors.append("vertex_error_bound debe ser cota no negativa y finita")
     crossings = record["crossing_times_us"]
     if (not isinstance(crossings, list) or len(crossings) != 3
             or any(type(t) is not int or t < 0 for t in crossings)):

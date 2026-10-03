@@ -11,14 +11,15 @@
   "image_transform_id": "identity_synthetic",
   "clock_map_id": "identity_synthetic",
   "crossing_times_us": [0, 500000, 1000000],
-  "uncertainty_method_id": "synthetic_roundoff",
+  "uncertainty_method_id": "synthetic_vertex_bound",
+  "vertex_error_bound": 0.005,
   "lobes": [
     {
       "lobe_id": 1,
       "start_us": 0,
       "end_us": 500000,
       "signed_area": -0.03999968269048994,
-      "area_error_bound": 1e-12,
+      "area_error_bound": 0.012846765358645922,
       "orientation": "clockwise"
     },
     {
@@ -26,7 +27,7 @@
       "start_us": 500000,
       "end_us": 1000000,
       "signed_area": 0.03999968269048979,
-      "area_error_bound": 1e-12,
+      "area_error_bound": 0.012846765358645922,
       "orientation": "counterclockwise"
     }
   ]
