@@ -11,6 +11,7 @@ import tempfile
 
 import numpy as np
 
+from auditar_derivado_video import audit
 from video_rotacion_pts_sintetico import capture, decode_cv
 
 
@@ -39,6 +40,7 @@ def main() -> None:
         rotated = directory / "rotation_vfr.mp4"
         default = directory / "baked_default.mp4"
         preserved = directory / "baked_vfr.mp4"
+        changed_pixels = directory / "baked_vfr_changed_pixels.mp4"
         capture(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo",
                  "-pixel_format", "rgb24", "-video_size", f"{width}x{height}",
                  "-framerate", "10", "-i", "pipe:0", "-c:v", "libx264rgb",
@@ -64,6 +66,11 @@ def main() -> None:
 
         bake(default, None)
         bake(preserved, "vfr")
+        capture(["ffmpeg", "-y", "-v", "error", "-i", str(preserved),
+                 "-vf", "drawbox=x=0:y=0:w=4:h=4:color=white:t=fill",
+                 "-fps_mode", "vfr", "-c:v", "libx264rgb", "-crf", "0",
+                 "-pix_fmt", "rgb24", "-video_track_timescale", "10240",
+                 str(changed_pixels)])
 
         src_time = probe_video_timeline(source)
         rotated_time = probe_video_timeline(rotated)
@@ -84,6 +91,18 @@ def main() -> None:
         assert preserved_rotation == 0
         assert rope_probe(default)["frame_times_s"] == [tick / 10240 for tick in default_time.ticks]
         assert rope_probe(preserved)["frame_times_s"] == [0.0, 0.1, 0.3, 0.6]
+        default_audit = audit(rotated, default, probe_video_timeline)
+        preserved_audit = audit(rotated, preserved, probe_video_timeline)
+        assert not default_audit["exact_match"]
+        assert default_audit["first_pts_mismatch_index"] == 2
+        assert default_audit["first_pixel_mismatch_index"] == 2
+        assert preserved_audit["exact_match"]
+        assert preserved_audit["source_pts_count"] == 4
+        assert preserved_audit["derived_pts_count"] == 4
+        changed_audit = audit(rotated, changed_pixels, probe_video_timeline)
+        assert not changed_audit["exact_match"]
+        assert changed_audit["first_pts_mismatch_index"] is None
+        assert changed_audit["first_pixel_mismatch_index"] == 0
 
         print(json.dumps({
             "fixture": "four asymmetric frames with VFR PTS and 90-degree display matrix",
@@ -96,6 +115,12 @@ def main() -> None:
             "vfr_baked_pts_ticks": list(preserved_time.ticks),
             "vfr_baked_pixels_equal_rotated_display_all_frames": True,
             "r08_accepts_both_baked_files": True,
+            "lineage_audit_default_exact_match": default_audit["exact_match"],
+            "lineage_audit_default_first_pts_mismatch_index": default_audit["first_pts_mismatch_index"],
+            "lineage_audit_default_first_pixel_mismatch_index": default_audit["first_pixel_mismatch_index"],
+            "lineage_audit_vfr_exact_match": preserved_audit["exact_match"],
+            "lineage_audit_changed_pixels_pts_match": changed_audit["first_pts_mismatch_index"] is None,
+            "lineage_audit_changed_pixels_first_mismatch_index": changed_audit["first_pixel_mismatch_index"],
             "not": ["camera timestamp fidelity", "PyAV runtime", "human video", "Beacon audio"],
         }, ensure_ascii=False, indent=2))
 
