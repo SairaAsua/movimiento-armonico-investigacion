@@ -60,6 +60,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Mapeo numérico de situación hacia Beacon](BEACON_SITUACION_MAPEO_OFFLINE.md): [ocho casos sintéticos](beacon_situacion_controles.py) conservan bandas Q/R y añaden dos controles para `rho_min/V_r`, con reset separado. Es un diseño de escucha retrospectiva, sin OSC ni audio producido.
 
+[Incertidumbre de las ganancias de situación](BEACON_SITUACION_INCERTIDUMBRE.md): [propagación ejecutable](beacon_situacion_incertidumbre.py) de cotas geométricas hipotéticas a bandas 7/8; separa diferencia nominal, separación garantizada del control y audibilidad todavía no probada.
+
 ## Plan de punta a punta
 
 [Sesgo de concentración de fase](FASE_SESGO_MUESTRAL.md): lectura primaria de Vinck et al. (2010), identidad de `PPC` y [contraejemplo ejecutable](fase_sesgo_muestral_sintetico.py) que muestra por qué copiar cuadros o subir FPS no agrega ciclos independientes.
