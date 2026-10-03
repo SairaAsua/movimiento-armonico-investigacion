@@ -24,6 +24,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Ambigüedad de situación con pose 2D idéntica](SITUACION_PROYECCION_2D.md): [contraejemplo pinhole ejecutable](situacion_proyeccion_ambigua.py) con igual mano y origen proyectados, pero distintos `rho_min` y `V_r` 3D. Delimita lo que HarMoCAP 2D puede transmitir a una futura sonificación.
 
+[Dependencia de extremos radiales con la duración de frase](SITUACION_VENTANA_EXTREMOS.md): un mínimo puede bajar por tener más ciclos observados. Fija ventanas comparables y análisis por ciclo antes de atribuir esa diferencia a situación o HIT.
+
 [Sobre sintético de situación del recorrido](CONTRATO_SITUACION_V0.md): [fixture JSONL](research_path_situation.synthetic.jsonl) y [validador](validar_research_path_situation.py) conservan origen, marco, escala, ventana, reloj e invalidez para una futura rama científica HarMoCAP–Weaver–Beacon. Sólo comprueban estructura y aritmética de un ejemplo ideal, no precisión espacial ni audio.
 
 [Presupuesto de error de situación](PRESUPUESTO_ERROR_SITUACION.md): intervalos con error duro de posición/origen/escala y cota para variación radial, con [banco sintético](situacion_error_sintetico.py) que expone cuándo la cota se vuelve trivial. No estima el error de las cámaras reales.
