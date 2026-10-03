@@ -114,9 +114,11 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Ruta HarMoCAP → Weaver → beacon-spatial](RUTA_HARMOCAP_WEAVER_BEACON.md): contratos y código público actual, límite del MVP sin audio live y alias `kinetic_energy` que no representa energía física.
 
-[Weaver como laboratorio exploratorio, revisión de ramas al 02-10-2026](WEAVER_LABORATORIO_ESTADO_20261002.md): distingue `main` del laboratorio de Nico en PRs abiertas; audita R09 actualizado con ajuste/aplicación de reloj offline y el driver live aún pendiente de procedencia. Ordena video de baile → sonificación offline → anotación de soga sin afirmar validación humana.
+[Weaver como laboratorio exploratorio, estado revalidado tras fusión de R09](WEAVER_LABORATORIO_ESTADO_20261002.md): distingue el laboratorio offline ya integrado en `main` del driver live aún pendiente de procedencia. Ordena video de baile → sonificación offline → anotación de soga sin afirmar validación humana.
 
 [Cruce de contratos R09 → situación del recorrido](R09_SITUACION_CRUCE_CONTRATOS.md): mapea campos y límites de observaciones espaciales por cuadro al sobre derivado de frase; fija gates de 3D, reloj, origen, calidad y disponibilidad antes de una futura implementación, sin atribuir validación física al laboratorio.
+
+[Cruce R09 → cobertura por fase de tarea](R09_FASE_COBERTURA_CRUCE.md): especifica el denominador y los estados por señal/fase para evitar que una oclusión fabrique asociación espacio–fase `J`; usa el contraejemplo sintético de la #7 sin atribuirlo a Nico.
 
 [Prueba aislada del driver Weaver](WEAVER_DRIVER_PRUEBA_AISLADA.md): 12 pruebas del enlace con fixtures y control adverso de generación/contrato; sólo llega al transporte de registro, no al audio.
 
