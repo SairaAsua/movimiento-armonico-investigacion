@@ -7,6 +7,7 @@ The official C3D stays in the ignored local research/sources/cmu_mocap directory
 
 import hashlib
 import json
+from math import cos, radians, sin
 from pathlib import Path
 
 import ezc3d
@@ -40,6 +41,40 @@ def shifted_pair_error(left, right, scale_mm, shift):
         "common_support_frames": len(error),
         "absolute_distance_error_L_p50_p95_max": [round(float(x), 6) for x in np.quantile(error, [.5, .95, 1])],
         "absolute_error_over_0p1L_frames": int(np.sum(error > .1)),
+    }
+
+
+def fixed_orthographic_views(delta, scale_mm, lateral0, up0, front0):
+    """Four fixed virtual image planes, all viewing the same 3D motion."""
+    norm_3d = np.linalg.norm(delta, axis=1) / scale_mm
+    projections = []
+    summaries = []
+    for yaw_deg in (0, 45, 90, 135):
+        yaw = radians(yaw_deg)
+        horizontal = cos(yaw) * lateral0 + sin(yaw) * front0
+        line_of_sight = -sin(yaw) * lateral0 + cos(yaw) * front0
+        projected = np.hypot(delta @ horizontal, delta @ up0) / scale_mm
+        assert np.max(np.abs(projected**2 - (norm_3d**2 - (delta @ line_of_sight / scale_mm)**2))) < 1e-11
+        loss = norm_3d - projected
+        assert np.min(loss) > -1e-12
+        projections.append(projected)
+        summaries.append({
+            "fixed_camera_yaw_deg": yaw_deg,
+            "projected_distance_L_p05_p50_p95": [
+                round(float(x), 6) for x in np.quantile(projected, [.05, .5, .95])
+            ],
+            "projection_loss_L_p50_p95": [
+                round(float(x), 6) for x in np.quantile(loss, [.5, .95])
+            ],
+            "loss_over_0p1L_frames": int(np.sum(loss > .1)),
+        })
+    per_frame_view_range = np.ptp(np.stack(projections), axis=0)
+    return {
+        "fixed_view_summary": summaries,
+        "same_frame_four_view_range_L_p50_p95_max": [
+            round(float(x), 6) for x in np.quantile(per_frame_view_range, [.5, .95, 1])
+        ],
+        "same_frame_view_range_over_0p1L_frames": int(np.sum(per_frame_view_range > .1)),
     }
 
 
@@ -106,6 +141,9 @@ def main():
             shifted_pair_error(left, right, scale_mm, shift)
             for shift in (1, -1, 2, -2, 4, -4, 8, -8)
         ],
+        "fixed_orthographic_views": fixed_orthographic_views(
+            delta, scale_mm, lateral[0], up[0], front[0]
+        ),
     }
     print(json.dumps(report, ensure_ascii=False, sort_keys=True))
 

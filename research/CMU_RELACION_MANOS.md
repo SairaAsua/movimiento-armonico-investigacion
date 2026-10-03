@@ -17,6 +17,21 @@ El vector `Δp(t)=p_R(t)−p_L(t)` se expresa en sala y en ejes corporales deriv
 
 La proyección reduce la distancia en más de `0,1 L` en **283/1123 cuadros (25,2 %)**. Esto comprueba que la profundidad de esta toma puede importar para ese descriptor; no estima el error de ninguna cámara propia. `LWR0/RWR0` son **otros puntos del mismo archivo**, posiblemente derivados (sus residuales son exactamente cero en todos los cuadros), no una verdad externa. La discrepancia mediana entre elecciones de proxy, `0,185 L` (~56 mm), demuestra sensibilidad a la definición operacional de «muñeca», **no** error anatómico ni sesgo del primer proxy. Los cuantiles por cuadro son descripciones de una sola toma autocorrelacionada, no intervalos de confianza ni 1.123 personas independientes.
 
+## Misma toma, cuatro vistas ortográficas fijas
+
+La proyección anterior usa ejes que **siguen al cuerpo**, no una cámara quieta. Para acercar el análisis al problema de una toma monocular, fijamos los ejes lateral, vertical y frontal del **primer cuadro** como base de sala y construimos cuatro planos de imagen virtuales separados por giros azimutales de 45°. Para un eje de visión unitario `n`, la identidad geométrica es `D_proj²=D_3D²−(n·Δp)²`; cambiar `n` altera `D_proj` sin cambiar el vector corporal 3D. No se usa pinhole, óptica, detector, oclusión ni las cámaras disponibles: son proyecciones ortográficas del **mismo** archivo de marcadores.
+
+| Azimut virtual fijo | Mediana de `D_proj/L` | Mediana de pérdida `D_3D−D_proj` en `L` | Cuadros con pérdida `>0,1 L` |
+|---:|---:|---:|---:|
+| 0° | 1,972262 | 0,046318 | 470/1123 |
+| 45° | 1,358088 | 0,595251 | 986/1123 |
+| 90° | 0,621071 | 1,569135 | 1082/1123 |
+| 135° | 1,404485 | 0,452333 | 966/1123 |
+
+Dentro de **cada mismo cuadro**, el rango de las cuatro distancias proyectadas tiene mediana `1,597231 L`, P95 `2,708326 L` y máximo `3,374422 L`; supera el umbral ilustrativo `0,1 L` en **1112/1123 cuadros**. Es un barrido deliberadamente amplio de vistas, no la variación esperable entre las Reolink disponibles. La diferencia `283` frente a `470` cuadros para la primera proyección tampoco mide error: la primera rota con el cuerpo, la segunda permanece fija. Los cuatro ángulos no son cuatro muestras humanas independientes, y las diferencias de sus medianas no sustituyen el contraste cuadro a cuadro.
+
+Para comparar dos frases o estados de Nico a partir de una sola vista, hay que mantener cámara, encuadre y escala, describir orientación del torso respecto de ella y comprobar si esa orientación cambió entre condiciones. Una diferencia de `D_proj` puede surgir de profundidad o giro sin cambio de `D_3D`; tampoco puede corregirse de forma universal con la fórmula anterior si `n·Δp` es desconocido. El piloto deberá contrastar `D_proj` con referencia 3D/dinámica si pretende una relación espacial corporal; si sólo hay 2D, el resultado se mantiene como **descriptor de imagen dependiente de vista**. Para la lectura inspirada en Laban, distancia escalar proyectada tampoco conserva quién pasó delante, arriba o primero.
+
 ## Desfase artificial entre señales
 
 El mismo script conserva **intactas** las dos trayectorias 3D y compara `D(t)=||R(t)−L(t)||` con `D_k(t)=||R(t+k/120)−L(t)||` sobre el soporte temporal común. Repite el desplazamiento hacia adelante y hacia atrás; `k` es una perturbación **impuesta**, no un residual medido de cámaras ni una triangulación multivista. En cada pareja se verifica `|D_k−D|≤||R(t+k/120)−R(t)||` por desigualdad triangular.
