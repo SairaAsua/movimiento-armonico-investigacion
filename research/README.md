@@ -38,6 +38,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Control sintético del audio offline Weaver/Shaper](WEAVER_PCM_CONTROL_SINTETICO.md): cuatro renders con silencio, repetición y cambio de una frecuencia prueban que el control llega de forma reproducible al WAV con motor y entorno fijados. No parte de video ni valida movimiento; el [script](weaver_pcm_control_sintetico.py) permite repetirlo sin iniciar servicios.
 
+[Factorial Laban–HIT en PCM Shaper](WEAVER_LABAN_HIT_PCM_FACTORIAL.md): el [script](weaver_laban_hit_pcm_factorial.py) lleva cuatro pares `Q/R` sintéticos al renderer offline real de Weaver/Shaper y cuantifica que las capas del WAV final tienen una pequeña mezcla aun cuando los controles son separados. Es replay retrospectivo, no sonificación causal de un gesto.
+
 ## Plan de punta a punta
 
 [Sesgo de concentración de fase](FASE_SESGO_MUESTRAL.md): lectura primaria de Vinck et al. (2010), identidad de `PPC` y [contraejemplo ejecutable](fase_sesgo_muestral_sintetico.py) que muestra por qué copiar cuadros o subir FPS no agrega ciclos independientes.
