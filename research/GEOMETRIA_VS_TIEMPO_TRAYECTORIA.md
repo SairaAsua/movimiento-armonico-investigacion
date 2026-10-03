@@ -36,3 +36,5 @@ La decisión para el piloto es registrar, además del recorrido por longitud, el
 5. **Transiciones:** curvas abiertas, reversas y cambios de patrón se segmentan con reglas previas. Una reversa puede visitar dos veces la misma línea; una variable de ocupación espacial y una de secuencia/sentido deben conservarlo.
 
 Estas son operacionalizaciones matemáticas nuestras, no fórmulas históricas atribuidas a Laban. Se conectan con [matemática Laban](LABAN_MATEMATICA.md), [contraste de redes](REDES_CONTRASTE_GEOMETRICO.md), [hipótesis de contraste estructurado](CONTRASTE_ESTRUCTURADO.md) y [estimandos](ESTIMANDOS_Y_CONTRASTES.md).
+
+Para seleccionar **pares reales** que intenten aproximar el contraejemplo ideal «misma curva, otro ritmo», usar la [regla prospectiva de comparabilidad geométrica](EQUIVALENCIA_GEOMETRICA_MOTIVO.md): mismo motivo y orden de frase, trayectoria espacial con error acotado, margen práctico fijado antes de resultados externos y estado indeterminado cuando no se pueda demostrar semejanza suficiente. Compartir nombre de figura o `Q` no satisface esa regla.

@@ -52,6 +52,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Misma trayectoria, distinto ritmo](GEOMETRIA_VS_TIEMPO_TRAYECTORIA.md): diferencia entre ponderar por cuadros y por longitud de recorrido, con [contraejemplo sintético ejecutable](geometria_tiempo_sintetica.py) para separar geometría Laban y tiempo HIT.
 
+[Comparabilidad geométrica entre dos motivos](EQUIVALENCIA_GEOMETRICA_MOTIVO.md): regla prospectiva de tres estados con orden de frase, curvas registradas, margen práctico y error instrumental; evita tratar una diferencia no detectada o un `Q` igual como prueba de «misma geometría» antes del contraste con HIT.
+
 [Acople espacio–tiempo](ACOPLE_ESPACIO_TIEMPO.md): misma curva y mismos marginales de rapidez/aceleración, pero acento en regiones corporales opuestas; incluye [control sintético](espacio_tiempo_acople_sintetico.py) y un descriptor condicional a validar antes del piloto.
 
 [Factibilidad del acople con cámaras](ACOPLE_CAMARA_FACTIBILIDAD.md): simulación proyectada con FPS, tamaño de gesto, ruido y pérdida de cuadros hipotéticos; incluye [script reproducible](acople_camara_sintetico.py) y criterios para el banco técnico real.
