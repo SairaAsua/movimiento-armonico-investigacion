@@ -30,7 +30,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Control factorial Laban–HIT](LABAN_HIT_FACTORIAL.md): trayectorias sintéticas separan plano, marginales de velocidad y relación de fase antes de una predicción o sonificación. [Banco de fase intracíclo para cámaras](BANCO_FASE_INTRACICLO_CAMARAS.md): prueba sin personas para ver si los archivos reales conservan la diferencia que una fase calculada sólo entre cierres de vuelta pierde.
 
-[Cotas de `R` ante fase oculta](FASE_COBERTURA_R.md): muestra con testigos sintéticos cuánto puede variar la concentración de fase completa cuando sólo se observan intervalos válidos; fija denominador temporal, incertidumbre e invalidez para HIT y Beacon.
+[Cotas de `R` ante fase oculta y error angular](FASE_COBERTURA_R.md): muestra con testigos sintéticos cuánto puede variar la concentración de fase completa cuando sólo se observan intervalos válidos; propaga además el error de cada fase según la relación p:q, con [cálculo reproducible](fase_error_pq_sintetico.py). Fija denominador temporal, incertidumbre e invalidez para HIT y Beacon.
 
 [Fase 2D en plano oblicuo](FASE_PROYECCION_OBLICUA.md): una órbita física uniforme puede parecer 16 veces más rápida en un sector que en otro y reducir `R` observado de dos señales físicamente sincrónicas; incluye MP4, dos WAV y manifiesto para escuchar el sesgo de proyección antes de calibrar el plano.
 
