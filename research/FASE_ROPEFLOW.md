@@ -44,6 +44,8 @@ No buscar docenas de p:q y anunciar el máximo como hallazgo. Para cada tarea, f
 
 El [control sintético de búsqueda de razones](FASE_BUSQUEDA_RAZONES.md) cuantifica el problema: con fases independientes y 11 relaciones `p:q` candidatas, usar para el **máximo** el percentil 95 de la sola relación `1:1` lo supera en 42–45 % de 10 000 réplicas según la cantidad construida de ciclos. Es un nulo ideal de software, no una tasa esperada de rope flow; obliga a calibrar la búsqueda completa y a reservar sesiones nuevas para una razón descubierta.
 
+Incluso con la razón prefijada, una [ventana corta de tasas próximas](FASE_DESAJUSTE_VENTANA.md) puede dar `R` alta sin acoplamiento: para `Δf=0,02 Hz`, el modelo ideal da `R≈0,935` en diez segundos y cero al completar 50 s. Registrar duración, ciclos y deriva de fase, y predefinir sensibilidad de ventanas; no llamar estabilidad persistente al valor de un solo intervalo breve.
+
 El promedio de muestras tₙ no debe dejar que clips más largos o FPS más altos aparenten más evidencia independiente. Resumir primero por ciclo y bloque, informar cantidad y duración válidas, luego comparar bloques/sesiones. Calcular R también en segmentos de control que preserven cadencia y amplitud aproximadas pero rompan la alineación temporal; el desplazamiento circular arbitrario puede conservar una sincronía periódica espuria y no constituye siempre un nulo independiente. La comparación principal para HIT seguirá siendo el valor predictivo adicional sobre un modelo base con tarea, cadencia, amplitud y suavidad, en sesiones separadas.
 
 ### Dos estimandos de concentración cuando la duración de ciclo varía
