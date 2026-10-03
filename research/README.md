@@ -26,6 +26,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Auditoría de contratos del par de muñecas](PAR_ESPACIAL_FRONTERA_CONTRATOS.md): localiza la pérdida actual de ID/tiempo entre el bundle HarMoCAP y el callback Weaver, distingue la separación 2D mono-cámara del futuro 3D multifuente y explicita el choque de relojes monotónico/pared.
 
+[Orden temporal de dos eventos con incertidumbre](ORDEN_EVENTOS_INTERVALOS.md): [fixture sintético](orden_eventos_intervalos_sintetico.py) de intervalos de soporte, mapa de reloj y decisión `antes/después/indeterminado`. Define cuándo una sucesión inspirada en la pregunta de Laban podría afirmarse sin inventar orden entre cuadros o fuentes.
+
 [Cotas alternativas para el contrato `Q_live`](Q_CONTRATO_COTAS_ALTERNATIVAS.md): un tramo angularmente incierto puede hacer trivial la cota v0 aunque una cota global por error de posición sea informativa; documenta la futura decisión de versión sin atribuir precisión a cámaras reales.
 
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
