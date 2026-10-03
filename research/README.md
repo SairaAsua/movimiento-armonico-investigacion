@@ -10,7 +10,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Forma dinámica y contramovimiento en *Choreographie*](LABAN_FORMA_CONTRAMOVIMIENTO_1926.md): lectura de pp. 3–12 en traducción; las relaciones y el orden entre miembros importan, y un ejemplo armónico divide el espacio de forma desigual. Separa el programa histórico de una ecuación o resultado empírico.
 
-[Forma, canon y correlaciones espaciales en *Choreographie*](LABAN_CORRELACIONES_1926.md): lectura de pp. 80–88 en traducción ilustrada; distingue dirección, camino, equilibrio, miembros y sucesión frente a simultaneidad. Propone estudiar orden de eventos por separado de `Q` y fase HIT, sin tomar la «armonía» histórica como medida fisiológica.
+[Forma, canon y correlaciones espaciales en *Choreographie*](LABAN_CORRELACIONES_1926.md): lectura de pp. 80–88 en traducción ilustrada; distingue dirección, camino, equilibrio, miembros y sucesión frente a simultaneidad. El [control matemático](canon_fase_orden_sintetico.py) conserva `Q`, `R`, ángulo medio y distribución de fases, pero cambia el orden de liderazgo entre episodios. No toma la «armonía» histórica como medida fisiológica.
 
 [Relación espacial entre miembros](RELACION_ESPACIAL_MIEMBROS.md): [banco sintético reproducible](relacion_espacial_miembros_sintetica.py) con igual `Q`, rapidez individual y fase, pero distinta separación 3D entre manos; delimita un descriptor relacional y su error antes de usarlo con Nico.
 
