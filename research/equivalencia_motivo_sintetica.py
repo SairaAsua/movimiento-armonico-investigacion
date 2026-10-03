@@ -94,6 +94,22 @@ def main() -> None:
     # Registration by known arc fraction recovers circle(u) for both time laws.
     assert classify(max_sampled_distance(c, sampled(circle)), 0.01, 0.01) == "geometry_comparable"
 
+    # At three fixed video times, the *same* arched path can seem more or
+    # less straight solely because its time law changes which point was seen.
+    def arched_path(u: float) -> tuple[float, float, float]:
+        return u, 0.0, 0.5 * sin(pi * u)
+
+    video_times = (0.0, 0.5, 1.0)
+    observed_a = [arched_path(t) for t in video_times]
+    observed_b = [arched_path(fast_then_slow(t)) for t in video_times]
+    residual_a = max(abs(point[2]) for point in observed_a)  # common x-axis chord
+    residual_b = max(abs(point[2]) for point in observed_b)
+    assert abs(residual_a - 0.5) < 1e-12
+    assert abs(residual_b - 0.4045084971874737) < 1e-12
+    assert abs(residual_a - residual_b) > 0.09
+    # The continuous geometric residual is 0.5 for both; these video samples
+    # do not justify treating the 0.0955 gap as a spatial difference.
+
     assert classify(dc, 0.01, 0.01) == "geometry_different"
     shifted = [(x + MARGIN, y, z) for x, y, z in c]
     assert classify(max_sampled_distance(c, shifted), 0.02, 0.02) == "geometry_indeterminate"
@@ -109,8 +125,9 @@ def main() -> None:
     # If one return is actually observed and the other execution omits it,
     # their predeclared discrete motif structures differ.
     assert classify(0.0, 0.01, 0.01, same_discrete_structure=False) == "geometry_different"
-    print("OK: same Q / different curve; same curve / different time law; comparable, different, indeterminate")
+    print("OK: same Q / different curve; same curve / different time law; sampling alias; comparable, different, indeterminate")
     print(f"Q_circle={qc}; Q_diamond={qd}; sampled_max_distance={dc:.6f}; margin={MARGIN}")
+    print(f"arched_path_sampled_residuals={residual_a:.6f},{residual_b:.6f}; true_continuous=0.5")
 
 
 if __name__ == "__main__":
