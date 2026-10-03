@@ -2,6 +2,8 @@
 
 **Fuente autoral mediada y parcial; consulta del HTML/PDF indexado de la editorial, 2 de octubre de 2026.** [Dick McCaw, «An introduction to extracts from Rudolf Laban’s Dance and Gymnastics», *Theatre, Dance and Performance Training* 16(2), 2025, pp. 193–209, DOI 10.1080/19443927.2025.2491198](https://doi.org/10.1080/19443927.2025.2491198) presenta una introducción de McCaw y **extractos traducidos** de *Gymnastik und Tanz* (Oldenburg, Stalling, 1926). Las secciones de capítulo 1 están atribuidas a Nadia Convery y las de capítulos 4–5 a Pat Lehner. El editor marca el artículo como acceso abierto. En este entorno la apertura directa de Taylor & Francis devolvió 403; se leyeron los pasajes indexados por el buscador en la [página oficial del artículo](https://www.tandfonline.com/doi/full/10.1080/19443927.2025.2491198) y su [PDF oficial](https://www.tandfonline.com/doi/pdf/10.1080/19443927.2025.2491198), **no** el libro alemán completo ni la totalidad verificable del artículo. Las traducciones, el recorte editorial y la paginación del original deben cotejarse antes de citas textuales finas.
 
+**Verificación bibliográfica independiente, 03-10-2026:** la [ficha institucional de Royal Holloway](https://pure.royalholloway.ac.uk/en/publications/an-introduction-to-extracts-from-rudolf-labans-dance-and-gymnasti/) confirma volumen 16(2), pp. 193–209, DOI y acceso abierto con licencia CC BY-NC-ND; no aloja en esa ficha el texto original alemán ni amplía el alcance de lectura anterior.
+
 ## Qué aportan los pasajes disponibles
 
 | Capa y localización | Lectura restringida a los pasajes visibles | Consecuencia para esta investigación |

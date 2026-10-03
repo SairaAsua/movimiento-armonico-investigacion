@@ -58,6 +58,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Economía en *Effort* (1947)](LABAN_EFFORT_ECONOMIA_1947.md): cotejo bibliográfico e histórico de Laban/Lawrence y Franco para no confundir eficiencia de tarea, facilidad vivida y gasto metabólico.
 
+[Extractos de *Gymnastik und Tanz* (1926) en traducción académica de 2025](LABAN_GYMNASTIK_TANZ_EXTRACTOS_2025.md): armonía y disarmonía como relaciones expresivas, coro de movimiento y frontera entre formación/experiencia y medición fisiológica. Lectura parcial de contenido editorial indexado; no sustituye *Choreographie* ni el alemán original.
+
 [Lectura de Quirarte Rojas (UNAM, 2017)](LABAN_QUIRARTE_UNAM_2017.md): tesis mexicana que cita la traducción de *Coreografía* y reúne láminas de geometría; guía el cotejo pendiente del libro sin reemplazarlo.
 
 [Pérdida de información pitch–espacio](PITCH_ESPACIO_PERDIDA.md): [cálculo de grafo reproducible](pitch_espacio_grafo.py) que muestra qué relaciones no puede comunicar una nota cromática por vértice o un pitch dependiente sólo de altura en nuestra plantilla ideal; define una prueba perceptiva futura para Beacon.
