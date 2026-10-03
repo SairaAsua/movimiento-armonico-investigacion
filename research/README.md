@@ -30,6 +30,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Incertidumbre de ocupación radial](SITUACION_OCUPACION_INCERTIDUMBRE.md): deriva una banda condicional para `F_arc` bajo error 3D acotado y muestra con un [banco sintético](situacion_ocupacion_incertidumbre_sintetica.py) que una curva cercana al umbral puede cambiar de ocupación 1 a 0; sin cotas físicas medidas no se usa como señal validada.
 
+[Mismo `Q`, distinto cruce del recorrido](Q_CRUCES_ORDEN.md): [contraejemplo ejecutable](q_cruces_orden_sintetico.py) con idénticos tramos y largo, pero distinto orden/autocruce de una trayectoria puntual; no es topología de soga en 3D.
+
 [Sobre sintético de situación del recorrido](CONTRATO_SITUACION_V0.md): [fixture JSONL](research_path_situation.synthetic.jsonl) y [validador](validar_research_path_situation.py) conservan origen, marco, escala, ventana, reloj e invalidez para una futura rama científica HarMoCAP–Weaver–Beacon. Sólo comprueban estructura y aritmética de un ejemplo ideal, no precisión espacial ni audio.
 
 [Presupuesto de error de situación](PRESUPUESTO_ERROR_SITUACION.md): intervalos con error duro de posición/origen/escala y cota para variación radial, con [banco sintético](situacion_error_sintetico.py) que expone cuándo la cota se vuelve trivial. No estima el error de las cámaras reales.
