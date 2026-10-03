@@ -19,11 +19,15 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--harmocap-repo", type=Path, required=True)
     parser.add_argument("--weaver-repo", type=Path, required=True)
+    parser.add_argument("--check-r09", action="store_true",
+                        help="ejecutar file_frames() real; requiere PyAV en el entorno")
     args = parser.parse_args()
     sys.path[:0] = [str(args.harmocap_repo.resolve() / "src"),
                     str(args.weaver_repo.resolve() / "src")]
     from harmocap.webapp.offline_time import probe_video_timeline
     from harmonic_weaver.lab.research.rope_media import probe as rope_probe
+    if args.check_r09:
+        from harmonic_weaver.lab.perception_worker import file_frames
 
     width, height = 64, 32
     frames = []
@@ -104,6 +108,32 @@ def main() -> None:
         assert changed_audit["first_pts_mismatch_index"] is None
         assert changed_audit["first_pixel_mismatch_index"] == 0
 
+        r09_report = {"checked": False}
+        if args.check_r09:
+            import av
+
+            def check_r09(path: Path, expected_frames: list[np.ndarray], ticks: tuple[int, ...]) -> None:
+                decoded = list(file_frames(path))
+                assert len(decoded) == len(expected_frames) == len(ticks)
+                for (bgr, timing), rgb, tick in zip(decoded, expected_frames, ticks):
+                    assert np.array_equal(bgr[:, :, ::-1], rgb)
+                    assert timing["source_pts"] == tick
+                    assert (timing["time_base_num"], timing["time_base_den"]) == (1, 10240)
+                    assert timing["source_time_s"] == tick / 10240
+                    assert timing["timestamp_origin"] == "pts"
+
+            check_r09(rotated, shown, rotated_time.ticks)
+            check_r09(default, default_frames, default_time.ticks)
+            check_r09(preserved, preserved_frames, preserved_time.ticks)
+            r09_report = {
+                "checked": True,
+                "pyav_version": av.__version__,
+                "rotated_frames": len(shown),
+                "default_baked_frames": len(default_frames),
+                "vfr_baked_frames": len(preserved_frames),
+                "all_display_pixels_and_pts_equal_opencv_ffprobe": True,
+            }
+
         print(json.dumps({
             "fixture": "four asymmetric frames with VFR PTS and 90-degree display matrix",
             "source_sha256": src_time.source_sha256,
@@ -121,7 +151,8 @@ def main() -> None:
             "lineage_audit_vfr_exact_match": preserved_audit["exact_match"],
             "lineage_audit_changed_pixels_pts_match": changed_audit["first_pts_mismatch_index"] is None,
             "lineage_audit_changed_pixels_first_mismatch_index": changed_audit["first_pixel_mismatch_index"],
-            "not": ["camera timestamp fidelity", "PyAV runtime", "human video", "Beacon audio"],
+            "r09_file_frames": r09_report,
+            "not": ["camera timestamp fidelity", "pose inference", "human video", "Beacon audio"],
         }, ensure_ascii=False, indent=2))
 
 
