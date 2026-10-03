@@ -32,6 +32,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Mismo `Q`, distinto cruce del recorrido](Q_CRUCES_ORDEN.md): [contraejemplo ejecutable](q_cruces_orden_sintetico.py) con idénticos tramos y largo, pero distinto orden/autocruce de una trayectoria puntual; no es topología de soga en 3D.
 
+[Incertidumbre de un cruce de trayectoria 2D](CRUCE_TRAYECTORIA_INCERTIDUMBRE.md): [certificado geométrico ejecutable](cruce_trayectoria_incertidumbre.py) bajo error acotado de vértices y un contacto cercano cuyo cruce cambia con perturbaciones permitidas; no valida la soga ni el movimiento entre cuadros.
+
 [Sobre sintético de situación del recorrido](CONTRATO_SITUACION_V0.md): [fixture JSONL](research_path_situation.synthetic.jsonl) y [validador](validar_research_path_situation.py) conservan origen, marco, escala, ventana, reloj e invalidez para una futura rama científica HarMoCAP–Weaver–Beacon. Sólo comprueban estructura y aritmética de un ejemplo ideal, no precisión espacial ni audio.
 
 [Presupuesto de error de situación](PRESUPUESTO_ERROR_SITUACION.md): intervalos con error duro de posición/origen/escala y cota para variación radial, con [banco sintético](situacion_error_sintetico.py) que expone cuándo la cota se vuelve trivial. No estima el error de las cámaras reales.
