@@ -10,6 +10,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Forma dinámica y contramovimiento en *Choreographie*](LABAN_FORMA_CONTRAMOVIMIENTO_1926.md): lectura de pp. 3–12 en traducción; las relaciones y el orden entre miembros importan, y un ejemplo armónico divide el espacio de forma desigual. Separa el programa histórico de una ecuación o resultado empírico.
 
+[Relación espacial entre miembros](RELACION_ESPACIAL_MIEMBROS.md): [banco sintético reproducible](relacion_espacial_miembros_sintetica.py) con igual `Q`, rapidez individual y fase, pero distinta separación 3D entre manos; delimita un descriptor relacional y su error antes de usarlo con Nico.
+
 [Escalas de eje y ecuador de *Choreographie*](LABAN_ESCALAS_EJE_ECUADOR_1926.md): lectura de pp. 43–48 en traducción ilustrada; separa secuencias axiales, recorridos periféricos y signos añadidos/corregidos por los traductores antes de cualquier comparador para rope flow.
 
 [Volutas de *Choreographie*](LABAN_VOLUTAS_1926.md): lectura de pp. 49–50; una voluta es frase de dos inclinaciones, no sinónimo de espiral u ocho visible. Registra la corrección editorial del acento A/B y los requisitos de observación 3D.
