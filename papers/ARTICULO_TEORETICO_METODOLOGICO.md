@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.15, 3 de octubre de 2026
+**Versión:** 0.16, 3 de octubre de 2026
 
 ## Resumen
 
@@ -65,6 +65,8 @@ Para una trayectoria en el marco elegido tomamos tramos válidos `d_i = x(t_{i+1
 `Q_k = Σ_i w_i (n_k · u_i)²`, `k = 1,2,3`. **(2)**
 
 Entonces `Q_k ≥ 0` y `Σ_k Q_k = 1`. La alineación con cada plano sería `A_k = 1 − Q_k`; por la superposición de planos, `Σ_k A_k = 2`, de modo que `A` **no** constituye una partición porcentual del movimiento. Los pesos por arco describen la curva sin multiplicar artificialmente la importancia de una región atravesada despacio. Si interesa cuánto tiempo se ocupa allí, esa variable se calcula aparte con pesos temporales. `Q` es una fórmula de este proyecto, no una ecuación publicada por Laban ni una escala de bienestar.
+
+El **recorrido elegido** importa incluso con posiciones perfectas. Si `r_i=[p_i−c_i]/ℓ` y `x_i=B_iᵀr_i`, la diferencia usada en (2) se descompone exactamente como `d_i=B_iᵀ(r_i−r_{i−1})+(B_iᵀ−B_{i−1}ᵀ)r_{i−1}`. El primer término expresa el desplazamiento mano–centro en los ejes del cuadro de llegada; el segundo procede del cambio de ejes, que puede ser giro corporal real o error de orientación. Si mano y centro permanecen fijos en sala pero los ejes giran 90°, el primer término es cero y `Q` co-rotante puede valer `(1/2;1/2;0)` en un solo tramo; `Q` del recorrido relativo en sala queda inválido por longitud cero. Los primeros términos tampoco forman por sí solos una trayectoria en un marco fijo único. Se conservará `path_definition` y se decidirá qué pregunta —gesto respecto del torso, desplazamiento relativo o recorrido en sala— es primaria antes de asociar `Q` con HIT o sonificarlo ([derivación y comparación metodológica](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/b051515/research/CMU_Q_MARCOS_LIVE.md)).
 
 Esta elección de pesos también separa `Q` de un proxy que ya produce HarMoCAP: [`laban_space_proxy`](https://github.com/Mar-IA-no/HarMoCAP/blob/bdeebbf5bef4f78d1dc6ff43feb8228e994feb49/src/harmocap/features.py) es desplazamiento neto/longitud de la trayectoria de muñecas en una ventana causal fija de 300 ms, no una lectura experta de Effort Space. Para una circunferencia recorrida a frecuencia `f`, ese cociente ideal vale `D(w,f)=|sin(πfw)|/(πfw)`. En un banco sintético con **una vuelta del mismo círculo** a 1 y 2 Hz, `Q` proyectado permanece `(0,5;0,5)`, pero `D(0,3 s,f)` cambia de 0,858 a 0,505; el `FeatureExtractor` real produjo 0,858 y 0,505 a 120 cuadros/s ideales. El proxy responde a geometría **y** cadencia por la ventana elegida. Es una señal cinemática útil si se declara así, pero no debe entrar inadvertidamente en un bloque de «geometría Laban» independiente del tiempo. El banco y su código están [documentados en la investigación](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/research/weaver-laboratorio-20261002/research/LABAN_PROXY_VENTANA_TIEMPO.md); no son datos de rope flow humano.
 
