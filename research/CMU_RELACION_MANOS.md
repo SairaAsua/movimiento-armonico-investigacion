@@ -17,6 +17,19 @@ El vector `Δp(t)=p_R(t)−p_L(t)` se expresa en sala y en ejes corporales deriv
 
 La proyección reduce la distancia en más de `0,1 L` en **283/1123 cuadros (25,2 %)**. Esto comprueba que la profundidad de esta toma puede importar para ese descriptor; no estima el error de ninguna cámara propia. `LWR0/RWR0` son **otros puntos del mismo archivo**, posiblemente derivados (sus residuales son exactamente cero en todos los cuadros), no una verdad externa. La discrepancia mediana entre elecciones de proxy, `0,185 L` (~56 mm), demuestra sensibilidad a la definición operacional de «muñeca», **no** error anatómico ni sesgo del primer proxy. Los cuantiles por cuadro son descripciones de una sola toma autocorrelacionada, no intervalos de confianza ni 1.123 personas independientes.
 
+## Desfase artificial entre señales
+
+El mismo script conserva **intactas** las dos trayectorias 3D y compara `D(t)=||R(t)−L(t)||` con `D_k(t)=||R(t+k/120)−L(t)||` sobre el soporte temporal común. Repite el desplazamiento hacia adelante y hacia atrás; `k` es una perturbación **impuesta**, no un residual medido de cámaras ni una triangulación multivista. En cada pareja se verifica `|D_k−D|≤||R(t+k/120)−R(t)||` por desigualdad triangular.
+
+| Desfase impuesto a derecha | Cuadros comparables | P95 de `|D_k−D|` en `L`, adelante / atrás | Cuadros con error `>0,1 L`, adelante / atrás |
+|---:|---:|---:|---:|
+| 1 cuadro = 8,33 ms | 1.122 | 0,030930 / 0,031291 | 0 / 0 |
+| 2 cuadros = 16,67 ms | 1.121 | 0,062242 / 0,062941 | 12 / 13 |
+| 4 cuadros = 33,33 ms | 1.119 | 0,122875 / 0,127590 | 118 / 132 |
+| 8 cuadros = 66,67 ms | 1.115 | 0,241249 / 0,256246 | 322 / 389 |
+
+El umbral `0,1 L` es **ilustrativo** y los cuadros vecinos no son réplicas independientes. Para esta toma, un desplazamiento de cuatro cuadros ya cambia la distancia en más de ese umbral en parte del recorrido; no establece que 33 ms sean tolerables o intolerables para Nico. El error de cámaras incluye otros mecanismos: dos vistas desfasadas pueden reconstruir **mal cada punto 3D** antes de emparejar las manos. Este ensayo sólo aísla el error de **emparejar dos trayectorias 3D ya dadas** en tiempos distintos. En el banco propio habrá que medir instantes de exposición/sincronía, error dinámico de reconstrucción y la diferencia mínima que el contraste quiera resolver; la rapidez observada entre cuadros no certifica una cota física de rapidez continua.
+
 ## Decisión para el estudio y Beacon
 
 Conservar `Δp` firmado y `D=||Δp||` **por par nombrado**, marco, escala, reloj y estado de calidad. La distancia permite una comprobación de invariancia al marco rígido; su resumen escalar pierde quién pasó arriba, adelante o primero. Si el piloto sólo recupera una proyección, publicar `D_proj` con vista y unidades, sin renombrarlo `D_3d`. Si se quiere medir el orden vertical o contramovimiento histórico, hará falta además profundidad y orientación corporal validadas, tarea definida y acuerdo con especialista Laban.

@@ -22,6 +22,27 @@ def quantiles(values):
     return [round(float(x), 6) for x in np.quantile(values, [0, .05, .5, .95, 1])]
 
 
+def shifted_pair_error(left, right, scale_mm, shift):
+    """Pair different times only; each 3D marker path remains unchanged."""
+    k = abs(shift)
+    if shift > 0:
+        l_ref, r_ref, r_shift = left[:-k], right[:-k], right[k:]
+    else:
+        l_ref, r_ref, r_shift = left[k:], right[k:], right[:-k]
+    synchronous = np.linalg.norm(r_ref - l_ref, axis=1) / scale_mm
+    asynchronous = np.linalg.norm(r_shift - l_ref, axis=1) / scale_mm
+    error = np.abs(asynchronous - synchronous)
+    shifted_displacement = np.linalg.norm(r_shift - r_ref, axis=1) / scale_mm
+    assert np.max(error - shifted_displacement) < 1e-12
+    return {
+        "shift_frames": shift,
+        "shift_ms": round(1000 * shift / 120, 6),
+        "common_support_frames": len(error),
+        "absolute_distance_error_L_p50_p95_max": [round(float(x), 6) for x in np.quantile(error, [.5, .95, 1])],
+        "absolute_error_over_0p1L_frames": int(np.sum(error > .1)),
+    }
+
+
 def main():
     raw = SOURCE.read_bytes()
     assert hashlib.sha256(raw).hexdigest() == EXPECTED_SHA256
@@ -81,6 +102,10 @@ def main():
         "projection_loss_over_0p1L_frames": int(np.sum(projection_loss > .1)),
         "alternate_LWR0_RWR0_abs_gap_L_min_p05_p50_p95_max": quantiles(proxy_gap),
         "max_world_body_distance_discrepancy_L": round(float(np.max(np.abs(np.linalg.norm(body_delta, axis=1) - distance_l))), 12),
+        "artificial_right_signal_time_shifts": [
+            shifted_pair_error(left, right, scale_mm, shift)
+            for shift in (1, -1, 2, -2, 4, -4, 8, -8)
+        ],
     }
     print(json.dumps(report, ensure_ascii=False, sort_keys=True))
 
