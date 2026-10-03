@@ -86,6 +86,7 @@ def fixed_view_q_windows(path, scale_mm, lateral0, up0, front0):
     summaries = []
     q_views = []
     eligible_views = []
+    arc_views = []
     for yaw_deg in (0, 45, 90, 135):
         yaw = radians(yaw_deg)
         horizontal = cos(yaw) * lateral0 + sin(yaw) * front0
@@ -96,10 +97,11 @@ def fixed_view_q_windows(path, scale_mm, lateral0, up0, front0):
         arc = np.convolve(ds, np.ones(window_segments), mode="valid") / scale_mm
         vertical_arc = np.convolve(vertical_contribution, np.ones(window_segments), mode="valid") / scale_mm
         eligible = arc >= gate_l
-        q = np.divide(vertical_arc, arc, out=np.full_like(arc, np.nan), where=eligible)
+        q = np.divide(vertical_arc, arc, out=np.full_like(arc, np.nan), where=arc > 0)
         assert np.all((q[eligible] >= 0) & (q[eligible] <= 1 + 1e-12))
         q_views.append(q)
         eligible_views.append(eligible)
+        arc_views.append(arc)
         summaries.append({"fixed_camera_yaw_deg": yaw_deg,
                           "eligible_windows": int(np.sum(eligible)),
                           "q_up_p05_p50_p95_on_eligible": [
@@ -108,9 +110,27 @@ def fixed_view_q_windows(path, scale_mm, lateral0, up0, front0):
     common = np.logical_and.reduce(eligible_views)
     q_common = np.stack(q_views)[:, common]
     ranges = np.ptp(q_common, axis=0)
+    all_arcs = np.stack(arc_views)
+    all_q = np.stack(q_views)
+    gate_sensitivity = []
+    for candidate_gate in (0.25, 0.5, 0.75, 1.0):
+        candidate_common = np.all(all_arcs >= candidate_gate, axis=0)
+        candidate_ranges = np.ptp(all_q[:, candidate_common], axis=0)
+        gate_sensitivity.append({
+            "projected_arc_gate_L": candidate_gate,
+            "common_eligible_windows": int(np.sum(candidate_common)),
+            "same_window_q_range_p50_p95": [
+                round(float(x), 6) for x in np.quantile(candidate_ranges, [.5, .95])
+            ],
+        })
+    assert gate_sensitivity[1]["common_eligible_windows"] == int(np.sum(common))
+    assert gate_sensitivity[1]["same_window_q_range_p50_p95"] == [
+        round(float(x), 6) for x in np.quantile(ranges, [.5, .95])
+    ]
     return {"window_points": window_segments + 1, "projected_arc_gate_L": gate_l,
             "windows_total": len(q_views[0]), "per_view": summaries,
             "common_eligible_windows": int(np.sum(common)),
+            "projected_arc_gate_sensitivity": gate_sensitivity,
             "same_window_q_up_four_view_range_p50_p90_p95_max": [
                 round(float(x), 6) for x in np.quantile(ranges, [.5, .9, .95, 1])
             ]}

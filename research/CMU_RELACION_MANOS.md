@@ -38,6 +38,17 @@ Sobre el **mismo recorrido 3D** de la muñeca derecha relativa al centro de homb
 
 De 1.004 ventanas posibles, las vistas 0°, 45°, 90° y 135° pasan el gate en 854, 800, 800 y 901; **800** ventanas lo pasan en todas. En esas mismas 800 ventanas, el rango entre los cuatro valores `Q_up` tiene mediana **0,131133**, P90 **0,247701**, P95 **0,273287** y máximo **0,355188** (escala de `Q`: 0–1). Son ventanas superpuestas de una única toma, no 800 gestos independientes. La proyección cambia tanto el cociente como qué ventanas son elegibles; comparar sólo medianas marginales por vista mezclaría ambos efectos. La ruta 3D y su organización temporal no se tocaron.
 
+**Sensibilidad al gate elegido.** Para evaluar la elección ilustrativa de `0,5 L`, calculamos el mismo rango dentro del soporte común para cuatro umbrales de arco proyectado, aplicados idénticamente a las cuatro vistas:
+
+| Arco mínimo por vista | Ventanas comunes / 1.004 | Mediana / P95 del rango entre `Q_up` |
+|---:|---:|---:|
+| `0,25 L` | 849 | 0,140334 / 0,325229 |
+| `0,50 L` | 800 | 0,131133 / 0,273287 |
+| `0,75 L` | 742 | 0,129433 / 0,279706 |
+| `1,00 L` | 726 | 0,125212 / 0,283625 |
+
+La sensibilidad de `Q` a la vista **persiste** en esta toma al endurecer el gate, pero cambian tanto el conjunto elegible como los cuantiles; no corresponde presentar `0,131` como constante del movimiento. El umbral del piloto deberá relacionarse con error de pose y longitud mínima que permita resolver una dirección, y fijarse con datos de desarrollo **antes** del contraste HIT/estética en sesiones reservadas. Conservar cuántas ventanas quedaron fuera por vista y por tarea permite detectar si el gate elimina precisamente los cruces o giros que interesan.
+
 Por ello, un contraste `base + Q` frente a `base + Q + fase HIT` que comparta video debe registrar y comprobar la vista y el error conjunto de sus dos estimadores. El [control sintético de artefacto compartido](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/ceb158a/research/HIT_Q_FASE_PROYECCION_COMPARTIDA.md) ya demuestra que una aparente ganancia de fase puede identificar la cámara en lugar de una relación corporal. Este cálculo con marcadores añade una **escala descriptiva de variación de `Q` por vista** en una toma externa; no mide la fase de esa toma ni prueba que tal artefacto ocurra en Nico. El plan de validación debe contrastar `Q` proyectado con una referencia 3D y preservar la misma tarea, ventana y resultado externo en cada comparación.
 
 ## Desfase artificial entre señales
