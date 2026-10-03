@@ -6,6 +6,8 @@ Saira señaló además [el repositorio de Nico `nicoechaniz/harmonic-weaver`](ht
 
 **Estado posterior, 2-10-2026:** el `main` de Nico permanece en `a4ca91e3`, mientras el `main` de AlterMundi avanzó a `726f3bf` con [dos commits de portabilidad de tests](https://github.com/AlterMundi/harmonic-weaver/compare/a4ca91e3145ce950d4e96f6ae44fd93fd987a4d1...726f3bf899ed384cc3bb16768a501ff655ca6758). Sólo cambiaron dos archivos de pruebas, sin alterar los módulos de runtime auditados en esta nota. Ya no son espejos de commit exactos; para reproducir un ensayo se deben fijar **repositorio y SHA**, además de manifiestos. La [nota de laboratorio](WEAVER_LABORATORIO_ESTADO_20261002.md) separa ese `main` del PR #76 de video/pose/sonido con Shaper. HarMoCAP y `beacon-spatial` permanecen en los SHAs de la tabla al recomprobarlos; ninguna de estas verificaciones ejecutó OSC ni audio.
 
+**Candidato offline, 3-10-2026:** [HarMoCAP PR #4](https://github.com/Mar-IA-no/HarMoCAP/pull/4) propone conservar PTS por cuadro, índice fuente, base de tiempo, SHA-256 y denominadores de descarte en JSONL/CSV; recorta por PTS y rechaza cronologías ausentes o no monótonas. Sus fixtures sintéticos CFR/VFR y la suite del fork pasaron (112 tests, 2 omitidos). El PR está **abierto**: no se atribuye ese comportamiento a `main` ni al contrato OSC en vivo. Tampoco prueba que OpenCV y FFmpeg alineen índices en cualquier video real, que la pose humana sea válida o que la ruta de Weaver conserve la procedencia nueva. Para el primer video autorizado habrá que cotejar cuadro/píxel/PTS del original y versionar el SHA de HarMoCAP realmente usado.
+
 ## Qué existe y qué falta
 
 | Etapa | Código/contrato comprobado | Alcance verificable de esta revisión |
