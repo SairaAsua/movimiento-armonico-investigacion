@@ -94,7 +94,7 @@ class PairGate:
                                 proposed_output="control_candidate"))
 
 
-def main():
+def demo_events():
     gate = PairGate()
     l, r = (0., 0., 0.), (1., 0., 0.)
     gate.receive(observation("left", 1, 0, 5_000, l), 5_000)
@@ -127,7 +127,11 @@ def main():
     assert [e.get("reason", e["state"]) for e in gate.events] == expected
     assert all(e.get("distance", 1) == 1 for e in gate.events)
     assert [e["proposed_output"] for e in gate.events if e["state"] == "invalid"] == ["reset"] * 4
-    print(json.dumps(gate.events, sort_keys=True))
+    return gate.events
+
+
+def main():
+    print(json.dumps(demo_events(), sort_keys=True))
 
 
 if __name__ == "__main__":

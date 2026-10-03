@@ -22,7 +22,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
 
-[Gate de dos fuentes para distancia espacial live](PAR_ESPACIAL_LIVE_CONTRATO.md): [fixture lógico](par_espacial_live_sintetico.py) de pareja de observaciones nuevas, cota de desfase, expiración propia, `held` y cambio de calibración. Prepara una ruta futura sin atribuirla a HarMoCAP/Weaver/Beacon existentes.
+[Gate de dos fuentes para distancia espacial live](PAR_ESPACIAL_LIVE_CONTRATO.md): [fixture lógico](par_espacial_live_sintetico.py) de pareja de observaciones nuevas, cota de desfase, expiración propia, `held` y cambio de calibración. El [replay aislado del motor Weaver](replay_par_espacial_weaver.py) verifica cuatro controles y cuatro resets en su transporte de grabación; no equivale a OSC, Beacon ni audio.
 
 [Cotas alternativas para el contrato `Q_live`](Q_CONTRATO_COTAS_ALTERNATIVAS.md): un tramo angularmente incierto puede hacer trivial la cota v0 aunque una cota global por error de posición sea informativa; documenta la futura decisión de versión sin atribuir precisión a cámaras reales.
 
