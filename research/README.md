@@ -24,6 +24,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Gate de dos fuentes para distancia espacial live](PAR_ESPACIAL_LIVE_CONTRATO.md): [fixture lógico](par_espacial_live_sintetico.py) de pareja de observaciones nuevas, cota de desfase, expiración propia, `held` y cambio de calibración. El [replay aislado del motor Weaver](replay_par_espacial_weaver.py) verifica cuatro controles y cuatro resets en su transporte de grabación; no equivale a OSC, Beacon ni audio.
 
+[Auditoría de contratos del par de muñecas](PAR_ESPACIAL_FRONTERA_CONTRATOS.md): localiza la pérdida actual de ID/tiempo entre el bundle HarMoCAP y el callback Weaver, distingue la separación 2D mono-cámara del futuro 3D multifuente y explicita el choque de relojes monotónico/pared.
+
 [Cotas alternativas para el contrato `Q_live`](Q_CONTRATO_COTAS_ALTERNATIVAS.md): un tramo angularmente incierto puede hacer trivial la cota v0 aunque una cota global por error de posición sea informativa; documenta la futura decisión de versión sin atribuir precisión a cámaras reales.
 
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
