@@ -31,3 +31,5 @@ Este ensayo ya recorre **píxeles sintéticos + PTS → fase calculada → contr
 Para un video de baile autorizado, el siguiente gate es congelar original, PTS, calidad por señal y mapeo antes de escuchar; comparar controles espaciales, temporales y relacionales sobre **el mismo soporte válido**, y revisar el WAV junto al video con evaluadores independientes. Para Nico, además hay que observar soga y manos por separado, medir error y cobertura, y resolver la procedencia de fase y el reloj. La ruta live HarMoCAP→Weaver→Beacon conserva [una issue propia de tiempo e identidad](https://github.com/AlterMundi/harmonic-weaver/issues/77); este replay offline no la cierra.
 
 Un [factorial posterior en MP4 fabricados](WEAVER_VIDEO_QR_FACTORIAL.md) añade `Q_xy` proyectado y cruza geometría de imagen con fase antes del render Shaper. Sigue siendo un banco sin personas.
+
+Un [replay adicional del mismo MP4 bajo dos transformaciones](WEAVER_VIDEO_PROYECCION_PCM.md) prueba que el renderer offline puede hacer audible el sesgo de un plano oblicuo: la diferencia de control nace antes de Shaper, al calcular fase de imagen cruda o rectificada con un factor sintético conocido.

@@ -32,6 +32,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Control factorial Laban–HIT](LABAN_HIT_FACTORIAL.md): trayectorias sintéticas separan plano, marginales de velocidad y relación de fase antes de una predicción o sonificación. [Banco de fase intracíclo para cámaras](BANCO_FASE_INTRACICLO_CAMARAS.md): prueba sin personas para ver si los archivos reales conservan la diferencia que una fase calculada sólo entre cierres de vuelta pierde.
 
+[Proyección oblicua → PCM offline Weaver/Shaper](WEAVER_VIDEO_PROYECCION_PCM.md): el mismo MP4 sintético da controles y WAV distintos al usar fase de imagen cruda o rectificada con el factor del generador; fija la frontera entre sonido diagnóstico y calibración física.
+
 [Auditoría del proxy espacial de HarMoCAP](LABAN_PROXY_VENTANA_TIEMPO.md): misma circunferencia a dos cadencias deja `Q` por arco igual y cambia `laban_space_proxy` de 0,858 a 0,505 por su ventana de 300 ms; fija una sensibilidad necesaria antes de atribuir aportes separados a Laban y HIT.
 
 [Sensibilidad de `Q_live` al marco corporal](CMU_Q_MARCOS_LIVE.md): misma toma y ventana con recorrido co-rotante o desplazamiento relativo sin giro de ejes; cuantifica la diferencia antes de sonificar.
