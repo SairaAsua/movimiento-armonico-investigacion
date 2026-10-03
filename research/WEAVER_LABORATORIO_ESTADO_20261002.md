@@ -11,6 +11,8 @@
 
 El laboratorio usa [Harmonic Shaper](https://github.com/AlterMundi/harmonic-shaper) para reproducción/render PCM. Eso no es idéntico al recorrido pendiente `HarMoCAP → router Weaver → OSC de beacon-spatial`. Tampoco una prueba de su navegador equivale a haber escuchado una grabación autorizada de Nico.
 
+Una [prueba PCM de situación espacial](WEAVER_SITUACION_PCM_FACTORIAL.md) ya llevó los ocho controles sintéticos `Q/R/rho_min/V_r` de la PR #28 al renderer offline de Weaver/Shaper. Confirma WAV y componentes espectrales distintos para pares de igual plano/fase y distinta situación; no ejecuta `beacon-spatial`, no mide percepción ni valida situación 3D humana.
+
 **Registro temporal:** el 2 de octubre, antes de las fusiones, `main` de [Nico](https://github.com/nicoechaniz/harmonic-weaver/tree/a4ca91e3145ce950d4e96f6ae44fd93fd987a4d1) apuntaba a `a4ca91e3` y `main` de AlterMundi a `726f3bf`; PR #76 seguía abierta. Esos datos se conservan sólo como historia de la auditoría. El estado actual de referencia de AlterMundi es `cc5fb57`; R09 fue fusionado el 3 de octubre UTC. La auditoría del código fijado en `7ce7fa3` sigue aplicando a los seis archivos comparados por SHA de contenido, no implica que todo `main` permanezca idéntico. Esta revalidación no ejecutó suites de integración ni audio; el [adaptador R09 sí se ejecutó después con un fixture aislado](R09_FASE_COBERTURA_CRUCE.md).
 
 ## Revalidación offline de la ruta OSC propuesta, 3 de octubre
