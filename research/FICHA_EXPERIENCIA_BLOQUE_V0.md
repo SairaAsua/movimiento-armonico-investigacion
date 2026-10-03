@@ -13,6 +13,8 @@ Registrar primero `session_id`, `block_id`, fin del bloque según reloj de sesi�
 
 La escala `0–4` sólo sirve para comprobar comprensión y carga en la fase de desarrollo. **No se puede tratar como instrumento validado ni comparar días con versiones de ítems diferentes sin marcar la versión.** Si la prueba revela ambigüedad, revisar anclajes y orden antes de congelar; archivar ambas versiones y las razones del cambio.
 
+**Posible extensión vestibular, aún no parte del guion v0:** si la práctica real incluye giros de cabeza/cuerpo identificables, probar durante desarrollo una pregunta separada sobre mareo o desorientación, **después** de la narración libre y sin insinuar trance o éxtasis. Registrar si se preguntó, a qué bloque se refirió, respuesta literal/estado `no sé/no aplica`, versión y giros corporales observados por separado de vueltas de la soga. No usar esta respuesta como diagnóstico ni sumarla a disfrute o absorción. La [lectura de un estudio de simios que giran el cuerpo con cuerda](GIRO_CUERPO_ESTADO_VESTIBULAR_2023.md) explica por qué las dos rotaciones y la experiencia no son intercambiables; su cifra de velocidad no fija una condición para Nico. La decisión de añadir el ítem al protocolo comparativo se tomaría antes de sesiones reservadas y tras comprobar comprensión/carga.
+
 ## Registro mínimo de cada bloque
 
 | Campo | Regla de registro |

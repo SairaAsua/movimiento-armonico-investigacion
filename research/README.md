@@ -74,6 +74,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Experiencia en primera persona](EXPERIENCIA_PRIMERA_PERSONA.md): autoinforme inmediato por bloque y posible entrevista de episodios singulares, con límites de memoria, sugestión y alineación temporal. [Ficha de experiencia por bloque](FICHA_EXPERIENCIA_BLOQUE_V0.md): guion neutral provisional y campos de factibilidad para probar comprensión sin confundir vivencia, video y fisiología.
 
+[Giro corporal y experiencia vestibular](GIRO_CUERPO_ESTADO_VESTIBULAR_2023.md): lectura de un antecedente primario con simios que giran **el cuerpo** sujetos a una cuerda; distingue ese mecanismo y su indicador conductual del rope flow de Nico y de su experiencia informada.
+
 [Cadena de consonancia, belleza y economía](CADENA_CONSONANCIA_BELLEZA_ECONOMIA.md): regla de comparación conjunta por bloques realmente comparables, pares concordantes/discordantes e inferencias observacionales frente a causales.
 
 [Transiciones y reset en Beacon](BEACON_TRANSICIONES_Y_RESET.md): reproducción aislada de que `suppress` deja el último control enviado mientras `reset` emite el default; define el gate para que la fase no siga sonando como válida durante cambios de figura.
