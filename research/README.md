@@ -24,6 +24,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 **Fuente autoral impresa:** se leyó en alemán, mediante transcripción diplomática, [«Tanz und Musik» (1929)](LABAN_TANZ_UND_MUSIK_1929.md). Distingue frecuencia tonal y ángulo espacial, orientación central/periférica y desaconseja un mapeo pitch↔altura corporal; el facsímil no se cotejó y los libros completos siguen pendientes.
 
+[Lectura parcial de *Choreographie* (1926) en traducción ilustrada](LABAN_CHOREOGRAPHIE_TRADUCCION_2011.md): se inspeccionaron páginas sobre inclinaciones, planos, secuencia torso→mano, recorridos centrales/periféricos y caminos en el suelo. El traductor la presenta como borrador; el alemán y el libro completo siguen pendientes.
+
 **Composición y doble ritmo:** una [traducción japonesa institucional de «Tanzkomposition und Schrifttanz» (1928) y un mecanoscrito alemán del archivo de Leipzig](LABAN_TANZKOMPOSITION_1928.md) muestran ritmos espaciales y temporales en solos y grupos y la utilidad de conservar recorridos. Falta cotejar el **impreso** alemán de 1928; la división de descriptores Laban/HIT sigue siendo metodológica.
 
 **Entrenamiento, ritmo y eficacia en Laban:** [extractos traducidos de *Gymnastik und Tanz* (1926), publicados en 2025](LABAN_GYMNASTIK_TANZ_EXTRACTOS_2025.md), reúnen situación espacial, secuencia temporal, fuerza, expresividad y movimiento grupal. La afirmación histórica de que lo armónico **a veces** favorece la eficacia de tarea no es una medición de gasto metabólico ni una ley universal; la consulta aquí fue parcial y mediada por traducción.

@@ -2,6 +2,8 @@
 
 Lectura dirigida del [artículo original de Longstaff (2018), tabla 2 y explicación en p. impresa 8](https://janeway.uncpress.org/jmal/article/944/galley/1569/download/), realizada el 23-09-2026. El artículo reproduce y reorganiza la lista que atribuye a *Choreographie* (1926, p. 13); **el libro de Laban todavía no fue cotejado directamente**. Longstaff dice expresamente que los tres términos de cada nombre indican componente principal, secundaria y terciaria. Las fórmulas y la decisión de codificación de abajo son nuestras.
 
+**Actualización de fuente, 03-10-2026:** se inspeccionó la imagen de la [traducción inglesa de p. 13, capítulo «Direction-theory»](http://www.laban-analyses.org/jeffrey/2011-Rudolf-Laban-1926-Choreographie/chapter-04/04-02.jpg), que contiene la lista de 24 nombres en tres familias (steep/suspended/flat). Esto coteja la **lista traducida**, no la grafía y notación del alemán impreso; la traducción se declara borrador y puede contener errores ([estado y límites](LABAN_CHOREOGRAPHIE_TRADUCCION_2011.md)). La restricción de no presentar nuestra partición de 48 celdas como una norma histórica permanece.
+
 ## Qué orden codifican los nombres
 
 Tomemos `L=|u_lateral|`, `V=|u_vertical|` y `S=|u_sagital|` para una dirección unitaria de un tramo. En cada uno de los ocho octantes, la tabla 2 contiene estas tres órdenes estrictas:
