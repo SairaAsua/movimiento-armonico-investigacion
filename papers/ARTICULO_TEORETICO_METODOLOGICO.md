@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.47, 3 de octubre de 2026
+**Versión:** 0.48, 3 de octubre de 2026
 
 ## Resumen
 
@@ -41,6 +41,8 @@ Una lectura **parcial** de la traducción ilustrada de *Choreographie* por Ziera
 De este marco surge una pregunta matemática nuestra: **¿qué propiedades de una curva corporal y su secuencia pueden estimarse con incertidumbre conocida?** Ajuste a un vértice icosaédrico o mínima desviación no implican belleza, salud ni eficiencia: una frase puede organizar tensiones, cambios de plano y contrastes. Los extractos de 1926 sugieren posibles ventajas de eficacia para ciertas tareas, sin medir gasto fisiológico ni equivalencia universal con belleza [16]. La pertinencia de nuestras categorías requiere revisión experta.
 
 Las pp. 80–88 de esa traducción añaden una distinción útil para el diseño: dirección, forma del camino, equilibrio y miembro empleado no son una sola variable; además, Laban contrapone correlaciones simultáneas de miembros con una sucesión tipo canon en la que uno deja una dirección antes de que otro tome la contraria [58]. Su comparación entre una configuración conjunta y una serie sugiere conservar **orden y solapamiento de eventos** además de `Q` y fase. Las direcciones entre corchetes en una tabla de miembros son inferencias del traductor, y la «armonía» del capítulo es una categoría normativa histórica, no un puntaje fisiológico. Un descriptor de orden para rope flow sería nuestra operacionalización por validar con repertorio, relojes y revisión experta.
+
+Una lectura selectiva de pp. 89–99 añade que la **forma inicial condiciona las transiciones** de una serie y que los ejemplos de escritura distinguen pierna de apoyo, contacto con el suelo y modos de conducir un paso [65]. El apéndice ofrece maneras alternativas de anotar una acción e incluso deja implícito cierto contramovimiento; no se infiere de la ausencia de un signo la ausencia de un gesto observado. Por ello el control matemático de cuatro episodios separados [63] prueba una pérdida de información de `Q/R`, pero no la factibilidad de enlazarlos como frase continua de rope flow. Esa prueba exigirá registrar inicio, estados de apoyo y transiciones reales con calidad conocida.
 
 En «Vom Geist des Tanzes», fechado en enero de 1926 y leído en facsímil, Laban distingue la expresión del movimiento de la belleza física del bailarín, compara la impresión visual del gesto con la impresión auditiva del sonido y relaciona placer, ritmo y regulación del esfuerzo [47]. Son proposiciones estéticas de época, no medidas de belleza, metabolismo o conciencia. El artículo también contiene retórica racializada que no adoptamos como categoría analítica.
 
@@ -370,6 +372,8 @@ Proponemos estudiar el movimiento armónico como una **familia de relaciones obs
 63. Equipo Harmonic Beacon (2026). [*Forma, secuencia y correlación entre miembros en Choreographie*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/de0908f/research/LABAN_CORRELACIONES_1926.md) y [contraejemplo de orden/primer armónico global](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/de0908f/research/canon_fase_orden_sintetico.py). Cuatro episodios ideales independientes; mismo `Q`, `R` y ángulo medio, distinto orden de liderazgo. No modela soga, belleza ni una categoría histórica validada.
 
 64. Equipo Harmonic Beacon (2026). [*Cuándo puede afirmarse qué evento ocurrió primero*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/a3241c6/research/ORDEN_EVENTOS_INTERVALOS.md) y [fixture de seis casos](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/a3241c6/research/orden_eventos_intervalos_sintetico.py). Regla de intervalos con incertidumbre y disponibilidad inventadas; no estima el error temporal de las cámaras disponibles.
+
+65. Equipo Harmonic Beacon (2026). [*Forma inicial, series y apoyo en Choreographie (1926)*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/aeb9ab1/research/LABAN_SERIES_NOTACION_1926.md). Lectura visual selectiva de capítulos 29–30 en la traducción inglesa provisional, pp. 89–99; la notación completa y el alemán no fueron cotejados.
 
 ## Nota de estado y transparencia
 
