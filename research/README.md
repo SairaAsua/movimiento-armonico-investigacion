@@ -22,6 +22,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Situación del recorrido frente a orientación](LABAN_SITUACION_RECORRIDO.md): [banco sintético 3D](situacion_recorrido_sintetica.py) donde trayectorias con el mismo `Q` pasan por regiones distintas respecto del centro; [gate de calidad para huecos y poses espurias](situacion_calidad_sintetica.py); [factorial `Q`–situación–`R`](laban_hit_situacion_factorial.py); y sensibilidades en CMU al [marco de ejes](cmu_situacion_marcos.py), [origen corporal](cmu_situacion_origen.py) y [descarte de cuadros](cmu_situacion_decimacion.py). Define medidas continuas candidatas y su límite de error, sin adjudicar etiquetas Laban ni resultados sobre Nico.
 
+[Sobre sintético de situación del recorrido](CONTRATO_SITUACION_V0.md): [fixture JSONL](research_path_situation.synthetic.jsonl) y [validador](validar_research_path_situation.py) conservan origen, marco, escala, ventana, reloj e invalidez para una futura rama científica HarMoCAP–Weaver–Beacon. Sólo comprueban estructura y aritmética de un ejemplo ideal, no precisión espacial ni audio.
+
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
 
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
