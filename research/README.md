@@ -48,6 +48,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Fase angular y marco rotante](FASE_MARCO_ROTANTE_PQ.md): derivación y control sintético de por qué un giro común se cancela en 1:1 pero modifica relaciones p:q con `p≠q`; fija la procedencia del marco para contrastes HIT y futuras capas sonoras.
 
+[Reloj común medido con error](HIT_RELOJ_COMUN_CON_ERROR.md): [contraejemplo ejecutable](reloj_comun_error_sintetico.py) muestra que residualizar dos manos frente al mismo pulso imperfecto puede fabricar asociación y que reemparejar frases puede aparentar confirmarla. No hay fase circular ni datos humanos.
+
 [Esqueleto del primer paper](ESQUELETO_PAIPER.md): alcance publicable, preguntas por unidad de análisis, secciones redactables, figuras/tablas sin resultados ficticios y guías de reporte pertinentes.
 
 [Ficha de congelamiento del primer estudio](FICHA_CONGELAMIENTO_ESTUDIO.md): decisiones y evidencia que se fijarán tras el piloto, antes de abrir días reservados; todavía es plantilla, no prerregistro.
