@@ -22,7 +22,7 @@ BASE = "https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/main
 CSS = """
 @page { size: A4; margin: 5mm 19mm 5mm 19mm; }
 body { font-family: Georgia, "Noto Serif", serif; font-size: 9.1pt;
-       line-height: 1.015; color: #172d35; }
+       line-height: 1.0; color: #172d35; }
 h1, h2, h3 { font-family: Arial, sans-serif; color: #173f4b;
              line-height: 1.18; break-after: avoid; }
 h1 { font-size: 21pt; margin: 0 0 20pt; }
@@ -42,7 +42,7 @@ th { background: #e4eeee; }
 tr { break-inside: avoid; }
 ul, ol { padding-left: 17pt; margin: 5pt 0 10pt; }
 li { margin: 0 0 4pt; }
-ol li { font-size: 7.7pt; line-height: 0.91; margin-bottom: 0; break-inside: avoid; }
+ol li { font-size: 7.5pt; line-height: 0.90; margin-bottom: 0; break-inside: avoid; }
 ol li p { margin: 0; }
 blockquote { border-left: 3px solid #6ca5a5; padding-left: 10pt;
              color: #425b62; }
