@@ -1,12 +1,14 @@
 # Rope flow, consonancia y experiencia corporal
 
-Archivo local de investigación preliminar, iniciado el 23 de septiembre y actualizado el 24 de septiembre de 2026. Responde a la propuesta de Saira de estudiar a Nico haciendo rope flow y relacionar movimiento, economía, belleza, sensualidad y conciencia con HIT. No constituye un paper de resultados ni un protocolo ya ejecutado.
+Archivo local de investigación preliminar, iniciado el 23 de septiembre y actualizado el 3 de octubre de 2026. Responde a la propuesta de Saira de estudiar a Nico haciendo rope flow y relacionar movimiento, economía, belleza, sensualidad y conciencia con HIT. No constituye un paper de resultados ni un protocolo ya ejecutado.
 
 **Estado operativo:** Saira informó aproximadamente 4 Reolink, 4 «logicam» y 1 Moto G; faltan modelos, archivos originales y pruebas de tiempo/calibración. El [primer banco sin persona](PAQUETE_CAPTURA_NICO_V0.md) puede comparar una unidad de cada tipo antes de elegir montaje. El [estudio con Nico](PROTOCOLO_PILOTO_V0.md) todavía requiere repertorio real, consentimiento y determinación ética; metabolismo exige instrumentación propia. No hay captura, instalación live ni audio Beacon validados. La lectura integral de *Choreographie*/*Choreutics* continúa pendiente ([estado de fuentes](LABAN_ACCESO_OBRAS.md)).
 
 **Preparación práctica sin captura nueva:** [montaje, lista de compras e inventario inicial de videos de Nico](MONTAJE_COMPRAS_Y_VIDEOS_NICO.md). Se identificaron episodios editados de contexto, pero todavía ningún original confirmado de Nico haciendo rope flow.
 
 **Nueva fuente autoral mediada:** se leyó una traducción web de [ocho notas de Laban sobre ritmo](LABAN_NOTAS_RITMO.md). Permite fundamentar que su marco relaciona espacio, tiempo y fuerza; no proporciona una ecuación de eficiencia corporal ni reemplaza los libros pendientes.
+
+**Estética en fuente autoral, lectura parcial:** [«Der Tanz als Eigenkunst» (1925), pp. 356–357 por OCR](LABAN_EIGENKUNST_1925_FRAGMENTO.md), discute la autonomía de la danza y expone una tensión histórica entre expresión mímica y destreza gimnástica. Es una razón para no confundir una medida de técnica motriz con una valoración expresiva; faltan las otras páginas y el facsímil.
 
 **Fuente autoral impresa:** se leyó en alemán, mediante transcripción diplomática, [«Tanz und Musik» (1929)](LABAN_TANZ_UND_MUSIK_1929.md). Distingue frecuencia tonal y ángulo espacial, orientación central/periférica y desaconseja un mapeo pitch↔altura corporal; el facsímil no se cotejó y los libros completos siguen pendientes.
 
