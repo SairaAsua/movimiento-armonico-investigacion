@@ -30,6 +30,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Control factorial Laban–HIT](LABAN_HIT_FACTORIAL.md): trayectorias sintéticas separan plano, marginales de velocidad y relación de fase antes de una predicción o sonificación. [Banco de fase intracíclo para cámaras](BANCO_FASE_INTRACICLO_CAMARAS.md): prueba sin personas para ver si los archivos reales conservan la diferencia que una fase calculada sólo entre cierres de vuelta pierde.
 
+[Cotas por visibilidad selectiva para la asociación espacio–fase](J_COBERTURA_SELECTIVA.md): bajo fase conocida y región binaria oculta, deriva el rango agudo de `J` compatible con todas las completaciones y ofrece un [script 2×2 reproducible](j_cobertura_cotas_2x2.py). Son masas sintéticas exactas, no intervalos estadísticos ni datos de Nico.
+
 [Sensibilidad de `Q_live` al marco corporal](CMU_Q_MARCOS_LIVE.md): misma toma y ventana con recorrido co-rotante o desplazamiento relativo sin giro de ejes; cuantifica la diferencia antes de sonificar.
 
 [Replay causal de `Q_live` en CMU](CMU_Q_CAUSAL_PLANOS.md): cobertura de ventanas y diagnóstico de planitud local; muestra que alargar la ventana gana recorrido pero puede mezclar planos.
