@@ -9,6 +9,7 @@ from math import cos, hypot, isclose, pi, sin
 FPS = 1200
 WINDOW_S = 0.3
 ARC_FRACTION = 0.3
+ARC_TARGET = 2 * pi * ARC_FRACTION  # Radio unitario declarado antes del ensayo.
 
 
 def trajectory(hz):
@@ -30,6 +31,21 @@ def q_from_last_segments(points, count):
     return x_weight / length, 1 - x_weight / length
 
 
+def q_from_last_arc(points, target):
+    """Usa sólo puntos recibidos y un largo físico fijado de antemano."""
+    length = 0.0
+    x_weight = 0.0
+    for a, b in zip(reversed(points[:-1]), reversed(points[1:])):
+        dx, dy = b[0] - a[0], b[1] - a[1]
+        ds = hypot(dx, dy)
+        taken = min(ds, target - length)
+        length += taken
+        x_weight += taken * (dx / ds) ** 2
+        if length >= target - 1e-12:
+            return x_weight / length, 1 - x_weight / length
+    raise ValueError('Arco observado insuficiente')
+
+
 def qx_continuous(arc_fraction):
     # Tangente al círculo: u_x = -sin(theta). El arco termina en theta=2pi.
     return 0.5 - sin(4 * pi * arc_fraction) / (8 * pi * arc_fraction)
@@ -40,13 +56,13 @@ def main():
     for hz in (1, 2):
         points = trajectory(hz)
         by_time = q_from_last_segments(points, round(FPS * WINDOW_S))
-        by_arc = q_from_last_segments(points, round((len(points) - 1) * ARC_FRACTION))
+        by_arc = q_from_last_arc(points, ARC_TARGET)
         results[hz] = (by_time, by_arc)
         expected_time = qx_continuous(WINDOW_S * hz)
         expected_arc = qx_continuous(ARC_FRACTION)
         assert abs(by_time[0] - expected_time) < 2e-5
         assert abs(by_arc[0] - expected_arc) < 2e-5
-        print(f'{hz} Hz: Q_time={by_time}, Q_last_30pct_arc={by_arc}')
+        print(f'{hz} Hz: Q_time={by_time}, Q_fixed_arc_0p6pi={by_arc}')
 
     q1, a1 = results[1]
     q2, a2 = results[2]

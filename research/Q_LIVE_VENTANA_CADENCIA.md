@@ -4,14 +4,14 @@
 
 ## Par adverso
 
-Dos puntos ideales recorren la **misma circunferencia unitaria** una vez, en el mismo sentido, con rapidez uniforme. Uno tarda 1 s (1 Hz) y el otro 0,5 s (2 Hz). Ambos se observan exactamente al final de la vuelta, en la misma posición y fase geométrica. En una ventana retrospectiva de `w=0,3 s`, el primero aporta el último 30 % de la curva y el segundo el último 60 %. Por definición, `Q_x=Σ(ds·u_x²)/Σds` y `Q_y=1−Q_x`; para una fracción final `a` de una circunferencia ideal, `Q_x(a)=1/2−sin(4πa)/(8πa)`.
+Dos puntos ideales recorren la **misma circunferencia unitaria** una vez, en el mismo sentido, con rapidez uniforme. Uno tarda 1 s (1 Hz) y el otro 0,5 s (2 Hz). Ambos se observan exactamente al final de la vuelta, en la misma posición y fase geométrica. En una ventana retrospectiva de `w=0,3 s`, el primero aporta el último 30 % de la curva y el segundo el último 60 %. Para el control por arco se fija **antes** un largo físico de `0,6π` unidades de radio unitario y se acumulan sólo segmentos ya observados; equivale al último 30 % de *esta* circunferencia conocida, sin consultar la longitud de la vuelta actual. Por definición, `Q_x=Σ(ds·u_x²)/Σds` y `Q_y=1−Q_x`; para una fracción final `a` de una circunferencia ideal, `Q_x(a)=1/2−sin(4πa)/(8πa)`.
 
-| Cadencia | Arco contenido en 300 ms | `Q_x` por ventana temporal | `Q_x` por último 30 % de arco | Ganancia `g_x=0,2+0,4Q_x` temporal |
+| Cadencia | Arco contenido en 300 ms | `Q_x` por ventana temporal | `Q_x` por arco fijo `0,6π` | Ganancia `g_x=0,2+0,4Q_x` temporal |
 |---|---:|---:|---:|---:|
 | 1 Hz | 30 % | 0,577958 | 0,577958 | 0,431183 |
-| 2 Hz | 60 % | 0,436930 | 0,577959 | 0,374772 |
+| 2 Hz | 60 % | 0,436930 | 0,577960 | 0,374772 |
 
-El script discretiza a 1200 cuadros/s ideales, coteja con la integral continua y comprueba que la diferencia temporal de `Q_x` supera `0,14` mientras la diferencia de ventana por arco es menor que `0,00002`. El mapeo propuesto a una banda Beacon produciría controles separados por `0,056411` aun cuando la **curva entera y el punto final** sean iguales. Eso demuestra contenido diferente en el control, **no** que el audio real sea distinguible ni que 2 Hz sea mejor o peor. En 3D, el tercer componente de este ejemplo planar sería cero; no se ensayó una reconstrucción multivista.
+El script discretiza a 1200 cuadros/s ideales, coteja con la integral continua y comprueba que la diferencia temporal de `Q_x` supera `0,14` mientras la diferencia de ventana por arco es menor que `0,00002`. La selección por arco inspecciona sólo puntos anteriores al instante de salida y una longitud objetivo predefinida. El mapeo propuesto a una banda Beacon produciría controles separados por `0,056411` aun cuando la **curva entera y el punto final** sean iguales. Eso demuestra contenido diferente en el control, **no** que el audio real sea distinguible ni que 2 Hz sea mejor o peor. En 3D, el tercer componente de este ejemplo planar sería cero; no se ensayó una reconstrucción multivista.
 
 ## Consecuencia para el contrato y el contraste Laban–HIT
 
