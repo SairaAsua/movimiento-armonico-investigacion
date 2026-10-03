@@ -2,6 +2,8 @@
 
 Nota metodológica del 23 de septiembre de 2026. **Diseño y simulación, sin datos de Nico.** La pregunta no es sólo si dos partes del cuerpo tienen fase relativa estable; en rope flow las dos manos, la soga y la música pueden compartir un ciclo. Hay que distinguir coordinación descriptiva, información adicional sobre resultados y acoplamiento causal. El último no se identifica con video observacional.
 
+Un [experimento original de dos personas que giran una soga compartida](CUERDA_RITMO_MULTIMODAL_YONEKURA_2012.md) manipuló oído, visión y sensación de fuerza: ilustra entradas rítmicas múltiples y registra frecuencias de giro, pero no fase intracíclo ni rope flow. Su tarea refuerza la necesidad de guardar el pulso auditivo y el vínculo físico como fuentes, sin transferir su jerarquía sensorial a Nico.
+
 ## Evidencia que delimita la pregunta
 
 Un [experimento de movimiento inducido por música](https://pubmed.ncbi.nlm.nih.gov/25426051/) encontró relaciones con diferentes niveles métricos y ángulos de fase no iguales entre participantes. Es evidencia empírica de que un pulso externo puede estructurar movimiento; no es un estudio de rope flow. Una [investigación original sobre el valor de fase sincronizada en señales neuroeléctricas](https://pmc.ncbi.nlm.nih.gov/articles/PMC3674231/) muestra que mezcla o referencia común puede generar aparente bloqueo de fase. Esa situación instrumental no se traslada literalmente al cuerpo, pero motiva comprobar entradas comunes y artefactos de medición. La [lectura metodológica de fase](FASE_ROPEFLOW.md) y el [diccionario de señales](DICCIONARIO_SENALES_V0.md) fijan unidad, reloj y estados válidos.

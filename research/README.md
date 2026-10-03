@@ -54,6 +54,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Salto con soga de Zhou et al. (2025): transferencia instrumental](SALTO_SOGA_ZHOU_2025_TRANSFERENCIA.md): lectura del método completo; separa las mediciones de cuerpo, agarres y soga de su evento de salto, cinco ciclos centrales y proxy de punto medio por dos marcas.
 
+[Soga compartida y ritmo multimodal de Yonekura et al. (2012)](CUERDA_RITMO_MULTIMODAL_YONEKURA_2012.md): experimento original con señales auditivas, visuales y de fuerza; separa error de frecuencia de fase HIT y orienta controles de contingencia para Beacon.
+
 [Reloj común medido con error](HIT_RELOJ_COMUN_CON_ERROR.md): [contraejemplo ejecutable](reloj_comun_error_sintetico.py) muestra que residualizar dos manos frente al mismo pulso imperfecto puede fabricar asociación y que reemparejar frases puede aparentar confirmarla; también muestra que la diferencia angular directa 1:1 cancela el reloj idéntico. El [presupuesto sintético](reloj_comun_sensibilidad.py) calcula la precisión necesaria bajo ese modelo, sin establecer umbrales de cámara. No hay estimación de fase desde video ni datos humanos.
 
 [Esqueleto del primer paper](ESQUELETO_PAIPER.md): alcance publicable, preguntas por unidad de análisis, secciones redactables, figuras/tablas sin resultados ficticios y guías de reporte pertinentes.
