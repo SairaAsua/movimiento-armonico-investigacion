@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.56, 3 de octubre de 2026
+**Versión:** 0.57, 3 de octubre de 2026
 
 ## Resumen
 
@@ -188,7 +188,7 @@ Dos controles impiden interpretar `J` alto como armonía. En una vuelta uniforme
 
 ### 3.6. Consonancia como hipótesis compuesta, no etiqueta automática
 
-Ninguna de las ecuaciones (1)–(5), incluida (2a), es un índice universal de consonancia. El **perfil relacional** predefinido conserva geometría, secuencia, fase, acople e incertidumbre. Un [orden candidato específico de tarea](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/4ed3317/research/CADENA_CONSONANCIA_BELLEZA_ECONOMIA.md) compararía bloques de **la misma figura** y producción comparable contra referencias espaciales y temporales acordadas en desarrollo con Nico y especialistas, sin consultar belleza, vivencia ni gases. Exigiría duración, cadencia, amplitud y ciclos completados/fallidos documentados; sólo ordenaría `i` sobre `j` si no produjo menos, ningún componente válido empeora y al menos uno mejora más allá de error y margen prefijados. Pares mixtos o inciertos quedarían sin orden. La regla requiere validación experta y entre días: aún no define «consonancia» en rope flow ni prueba belleza, placer o economía. Sin referencias y pares ordenables, la cadena fuerte no es contrastable con este montaje; se analizarán los componentes por separado.
+Ninguna de las ecuaciones (1)–(5), incluida (2a), es un índice universal de consonancia. El **perfil relacional** predefinido conserva geometría, secuencia, fase, acople e incertidumbre. Un [orden candidato específico de tarea](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/84d958c/research/CADENA_CONSONANCIA_BELLEZA_ECONOMIA.md) compararía bloques de **la misma figura** y producción comparable contra referencias espaciales y temporales acordadas en desarrollo con Nico y especialistas, sin consultar belleza, vivencia ni gases. Exigiría duración, cadencia, amplitud y ciclos completados/fallidos documentados; sólo ordenaría `i` sobre `j` si no produjo menos, ningún componente válido empeora y al menos uno mejora más allá de error y margen prefijados. Las cotas usadas para varios componentes y pares deben tener **cobertura conjunta**; intervalos marginales del 95 % no la aseguran. Pares mixtos o inciertos quedarían sin orden. La regla requiere validación experta y entre días: aún no define «consonancia» en rope flow ni prueba belleza, placer o economía. Sin referencias y pares ordenables, la cadena fuerte no es contrastable con este montaje; se analizarán los componentes por separado.
 
 ## 4. Hipótesis contrastables y resultados que las debilitarían
 
