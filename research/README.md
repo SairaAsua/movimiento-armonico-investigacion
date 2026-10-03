@@ -146,7 +146,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Presupuesto de error de `Q`](PRESUPUESTO_ERROR_Q.md): cotas separadas para ángulo del recorrido/marco, pesos por longitud y recorrido oculto; decide cuándo una diferencia entre bloques queda determinada sin convertir `Q` en escala de consonancia.
 
-[Ruido y muestreo de `Q`](Q_RUIDO_MUESTREO.md): [banco 3D sintético](q_ruido_muestreo.py) demuestra que el estimador por arco puede acercarse al valor isotrópico al aumentar cuadros con ruido fijo y absorber diferencias de ritmo; fija un gate de estabilidad instrumental antes del contraste Laban–HIT.
+[Ruido y muestreo de `Q`](Q_RUIDO_MUESTREO.md): [recta 3D sintética](q_ruido_muestreo.py) muestra el sesgo por exceso de cuadros ruidosos; [curva 3D anidada](q_muestreo_compromiso.py) agrega la pérdida de curvatura por pocos cuadros. Juntos fijan un gate de estabilidad instrumental antes del contraste Laban–HIT.
 
 [Contraste geométrico de redes](REDES_CONTRASTE_GEOMETRICO.md): marcos espaciales, sesgos basales de cuboctaedro/icosaedro y reglas de comparación; incluye un [script reproducible de comprobación](redes_sanity.py) sin datos humanos.
 
