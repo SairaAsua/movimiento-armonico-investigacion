@@ -16,6 +16,8 @@ La microfenomenología no debería añadirse como una etiqueta de prestigio a un
 
 La [presentación autoral de *Somatic Learning* de Risa Kaparo](https://www.somaticlearning.com/) describe una práctica de atención a sensaciones, respiración, movimiento y contacto. Para esta investigación sirve como **vocabulario de primera persona y práctica posible**, no como instrumento validado de absorción, placer, economía ni bioelectricidad. El relato abierto puede invitar a Nico a describir lo que nota en cuerpo y atención sin enseñarle previamente la respuesta «consonancia». Si se practicaran ejercicios de Kaparo antes de una toma, registrarlos como **intervención o condición de preparación**: podrían cambiar el gesto y el autoinforme. Las afirmaciones terapéuticas del sitio de la autora no se trasladan a resultados de este piloto.
 
+La [descripción autoral de un taller de tango de Kaparo y Gregory Nisnevich (Hawái, diciembre de 2013)](https://www.somaticlearning.com/tango-workshops.html) acerca ese vocabulario a una danza concreta: relaciona atención encarnada, apoyo del suelo, musicalidad, ritmos en contrapunto, improvisación e intimidad con la pareja. Es **material promocional de una actividad**, sin muestra, método ni mediciones; no prueba que tales experiencias ocurran en Nico ni que la danza descrita tenga menor costo. Para el piloto de rope flow su utilidad es recordar que movimiento individual, pareja, música y preparación somática son **condiciones diferentes**. Preguntar primero qué vivió Nico, y registrar música o práctica previa como contexto, permite que aparezcan o no los términos de Kaparo sin imponerlos como escala o resultado.
+
 ## Tres tiempos de registro propuestos
 
 | Momento | Registro | Qué puede sostener |
