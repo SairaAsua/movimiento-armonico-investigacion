@@ -56,6 +56,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Información mutua espacio–fase](J_ESPACIO_FASE_PONDERACION.md): el [banco exacto](j_espacio_fase_sintetico.py) separa ponderación por tiempo o arco, muestra cómo agrupar ciclos puede borrar relaciones opuestas y demuestra que distinta ocupación radial cambia el techo de `J`. La nota distingue cruces radiales de la polilínea y tiempos entre cuadros; `J` permanece exploratorio hasta fijar medida, región y unidad de análisis.
 
+[Selección por visibilidad en `J`](J_COBERTURA_SELECTIVA.md): un [banco probabilístico sintético](j_cobertura_fase_sintetica.py) muestra `J` espurio por oclusión dependiente de región × fase aun con cobertura igual en cada bin de fase; exige reportar denominadores y sensibilidad de tramos desconocidos.
+
 [Factibilidad del acople con cámaras](ACOPLE_CAMARA_FACTIBILIDAD.md): simulación proyectada con FPS, tamaño de gesto, ruido y pérdida de cuadros hipotéticos; incluye [script reproducible](acople_camara_sintetico.py) y criterios para el banco técnico real.
 
 [AIST++ como banco externo](AIST_BENCHMARK_ALCANCE.md): fuente primaria y estudio de clasificación de géneros; precisa qué puede probar con articulaciones 3D, por qué sus 60 fps no certifican fase física y qué condiciones de acceso faltan antes de usar datos.
