@@ -170,6 +170,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Longstaff 2001, texto completo](LABAN_VECTOR_LONGSTAFF_2001.md): figuras de símbolos de vector, contraste línea/posición, situación central/periférica/transversal e implicaciones operacionales. [Acceso a las obras originales](LABAN_ACCESO_OBRAS.md): ediciones y páginas de Laban aún por cotejar.
 
+[Longstaff 1996, apéndice XVI](LONGSTAFF_TAXONOMIA_RECORRIDOS.md): taxonomía exploratoria de recorridos corporales, con ochos de reversión y de ciclo continuo; separa mecanismo articular, silueta proyectada y fase periódica HIT.
+
 [*The Laban Sourcebook*, vista previa](LABAN_SOURCEBOOK_VISTA_PREVIA.md): introducción y figuras de 1926 reproducidas por McCaw, con distinción entre palabra autoral mediada e interpretación editorial; los capítulos de *Choreography*, *Choreutics* y *The Harmony of Movement* no están en la muestra.
 
 [Tres planos y proporción del icosaedro](PLANOS_RECTANGULOS_ICOSAEDRO.md): deriva la condición áurea que distingue un icosaedro regular de otros doce puntos distribuidos en tres planos ortogonales, con [chequeo sintético](rectangulos_icosaedro.py). Esta condición matemática es nuestra, no una ecuación atribuida a Laban.
