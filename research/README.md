@@ -104,6 +104,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Estimandos y contrastes por fase](ESTIMANDOS_Y_CONTRASTES.md): qué compara cada unidad, secuencia predictiva base → Laban → HIT, prueba metabólica condicionada y resultados que no apoyarían la hipótesis.
 
+[Proyección compartida entre `Q` y fase](HIT_Q_FASE_PROYECCION_COMPARTIDA.md): banco sintético donde un indicador temporal mejora la predicción sólo porque identifica la inclinación de cámara que distorsionó el descriptor espacial.
+
 [Effort, estabilidad y economía](EFFORT_ECONOMIA_CONTRASTES.md): distingue cualidad de movimiento en Laban, esfuerzo percibido y costo metabólico; tres experimentos de coordinación muestran por qué no se pueden equiparar.
 
 [Auditoría de Chang 2026](CHANG_2026_AUDITORIA.md): alcance del resumen sobre belleza, coordinación y «economía» en danza latina, con método pendiente de lectura por restricción de acceso al PDF.
