@@ -108,7 +108,7 @@ Ninguna de las ecuaciones (1)–(5), incluida (2a), es un índice universal de c
 
 ## 4. Hipótesis contrastables y resultados que las debilitarían
 
-**H1 — valor descriptivo espacial.** Los descriptores inspirados en Laban y las secuencias de dirección separarán frases con trayectorias conocidas y mostrarán acuerdo útil con observadores formados en el marco. En particular, se probará si `ρ_min`, `ρ_max` o `V_r` añaden información sobre la **situación del recorrido** que no aportan `Q` y el alcance por sí solos. Si el acuerdo es bajo, la diferencia no supera su incertidumbre o depende de una definición arbitraria de origen/frente, la traducción geométrica deberá revisarse.
+**H1 — valor descriptivo espacial.** Los descriptores inspirados en Laban y las secuencias de dirección separarán frases con trayectorias conocidas y mostrarán acuerdo útil con observadores formados en el marco. En particular, se probará si `ρ_min` o `V_r` añaden información sobre la **situación del recorrido** que no aportan `Q` y el alcance (`ρ_max`) por sí solos. Si el acuerdo es bajo, la diferencia no supera su incertidumbre o depende de una definición arbitraria de origen/frente, la traducción geométrica deberá revisarse.
 
 **H2 — aporte temporal incremental de HIT.** En tareas cíclicas comparables, relaciones de fase especificadas antes de ver el resultado aportarán predicción fuera de muestra más allá de patrón, cadencia, amplitud, velocidad y suavidad. La ausencia de mejora debilitaría esta extensión de HIT a la tarea, aunque no toda la teoría.
 
@@ -135,8 +135,8 @@ Un protocolo futuro deberá determinar qué componentes espaciales y temporales 
 El contraste primario propuesto es **incremental y fuera de muestra**. Sobre los mismos clips y días válidos se compararán:
 
 - `M₀`: tarea, tempo, duración, amplitud, velocidad y variabilidad de velocidad;
-- `M₁a`: `M₀` más `Q`, alcance y secuencia de direcciones identificables;
-- `M₁b`: `M₁a` más situación radial válida (`ρ_min`, `ρ_max` y/o `V_r`), sólo si supera la validación instrumental y el acuerdo de codificación;
+- `M₁a`: `M₀` más `Q`, alcance (`ρ_max`) y secuencia de direcciones identificables;
+- `M₁b`: `M₁a` más situación radial válida (`ρ_min` y/o `V_r`), sólo si supera la validación instrumental y el acuerdo de codificación;
 - `M₂`: el mejor modelo espacial fijado previamente más fase relativa y asociación situada espacio–tiempo.
 
 Las comparaciones se harán por sesiones o días reservados, no separando cuadros contiguos entre entrenamiento y prueba. `M₁a` y `M₁b` usarán exactamente los mismos clips válidos para atribuir la diferencia a los descriptores añadidos; cualquier pérdida de cobertura se reportará aparte. La elección entre modelos y umbrales se fijará con desarrollo, antes de abrir los días reservados. Para estética se obtendrán valoraciones independientes de clips en orden equilibrado y sin mostrar métricas; belleza, sensualidad percibida, fluidez y esfuerzo aparente se preguntarán por separado. Para experiencia se pedirán respuestas breves tras bloques y relatos abiertos con lenguaje neutral. Una entrevista sobre un momento singular podrá añadirse como subestudio y no se convertirá retroactivamente en un continuo segundo a segundo. Se informarán diferencias de predicción, incertidumbre, cobertura y casos discordantes, incluidos clips juzgables cuya pose sea inválida.
