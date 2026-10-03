@@ -58,6 +58,7 @@ def main() -> None:
     with tempfile.TemporaryDirectory(prefix="rotacion-pts-sintetica-") as directory:
         base = Path(directory) / "base.mp4"
         rotated = Path(directory) / "rotation_metadata_90.mp4"
+        baked = Path(directory) / "rotation_baked_90.mp4"
         capture(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo",
                  "-pixel_format", "rgb24", "-video_size", f"{width}x{height}",
                  "-framerate", "10", "-i", "pipe:0", "-c:v", "libx264rgb",
@@ -65,6 +66,12 @@ def main() -> None:
                 b"".join(frame.tobytes() for frame in source_frames))
         capture(["ffmpeg", "-y", "-v", "error", "-display_rotation", "90",
                  "-i", str(base), "-c", "copy", str(rotated)])
+        # FFmpeg autorrota durante el decode y codifica los píxeles ya orientados.
+        # La base 1/10240 es la del fixture; en un medio real se debe cotejar.
+        capture(["ffmpeg", "-y", "-v", "error", "-i", str(rotated),
+                 "-map", "0:v:0", "-an", "-c:v", "libx264rgb", "-crf", "0",
+                 "-pix_fmt", "rgb24", "-video_track_timescale", "10240",
+                 str(baked)])
         info = json.loads(capture(["ffprobe", "-v", "error", "-select_streams", "v:0",
                                    "-show_streams", "-show_frames", "-show_entries",
                                    "stream=width,height,time_base:stream_side_data=rotation:frame=best_effort_timestamp_time",
@@ -76,16 +83,23 @@ def main() -> None:
 
         plain_timeline = probe_video_timeline(base)
         rotated_timeline = probe_video_timeline(rotated)
+        baked_timeline = probe_video_timeline(baked)
         assert plain_timeline.ticks == rotated_timeline.ticks
         assert plain_timeline.time_base == rotated_timeline.time_base
+        assert baked_timeline.ticks == rotated_timeline.ticks
+        assert baked_timeline.time_base == rotated_timeline.time_base
         assert len(plain_timeline.ticks) == count
 
         cv_auto, cv_meta, auto_state = decode_cv(rotated)
         cv_raw, _, raw_state = decode_cv(rotated, autorotate=False)
+        cv_baked, baked_meta, baked_auto = decode_cv(baked)
         assert auto_state == 1 and raw_state == 0
-        assert len(cv_auto) == len(cv_raw) == count
+        assert baked_meta == 0 and baked_auto == 1
+        assert len(cv_auto) == len(cv_raw) == len(cv_baked) == count
         assert all(frame.shape == (width, height, 3) for frame in cv_auto)
+        assert all(frame.shape == (width, height, 3) for frame in cv_baked)
         assert all(frame.shape == (height, width, 3) for frame in cv_raw)
+        assert all(np.array_equal(a, b) for a, b in zip(cv_auto, cv_baked))
 
         ff_auto = np.frombuffer(capture(["ffmpeg", "-v", "error", "-i", str(rotated),
                                           "-f", "rawvideo", "-pix_fmt", "rgb24", "pipe:1"]),
@@ -100,6 +114,9 @@ def main() -> None:
         assert all(np.array_equal(np.rot90(a), b) for a, b in zip(ff_raw, ff_auto))
 
         assert len(rope_probe(base)["frame_times_s"]) == count
+        baked_r08 = rope_probe(baked)
+        assert (baked_r08["width_px"], baked_r08["height_px"]) == (height, width)
+        assert baked_r08["frame_times_s"] == pts
         try:
             rope_probe(rotated)
         except ValueError as exc:
@@ -112,6 +129,7 @@ def main() -> None:
             "fixture": "four asymmetric RGB frames; rotation display matrix 90 degrees",
             "source_sha256": plain_timeline.source_sha256,
             "rotated_sha256": rotated_timeline.source_sha256,
+            "baked_sha256": baked_timeline.source_sha256,
             "source_pts_ticks": list(plain_timeline.ticks),
             "source_time_base": plain_timeline.time_base_text,
             "ffprobe_rotation_deg": rotation,
@@ -121,7 +139,10 @@ def main() -> None:
             "opencv_raw_shape_yx": list(cv_raw[0].shape[:2]),
             "opencv_auto_equals_ffmpeg_auto_all_frames": True,
             "opencv_raw_equals_ffmpeg_noautorotate_all_frames": True,
+            "baked_pixels_equal_rotated_display_all_frames": True,
+            "baked_pts_equal_original_all_frames": True,
             "r08_rotated": r08_rotated,
+            "r08_baked": "accepted_display_coordinates",
             "not": ["PyAV worker runtime", "physical camera", "pose accuracy", "Beacon audio"],
         }
         print(json.dumps(report, ensure_ascii=False, indent=2))
