@@ -12,6 +12,8 @@ En una **tabla de analogías**, p. 134, pone doce tonos musicales en paralelo co
 
 Al final, p. 135, rechaza expresamente la traducción ingenua «tono alto ↔ movimiento hacia arriba; tono bajo ↔ movimiento hacia abajo»: objeta que eso reduce la música a una sola dimensión y no respeta la tridimensionalidad del movimiento. Tampoco ofrece allí una función acústica alternativa, doce frecuencias corporales, un mapeo de vértices a notas o una norma de que consonancia máxima sea belleza, salud o economía. El artículo anuncia una teoría extensa de armonía espacial y reconoce que no puede desarrollarla por completo en esas páginas.
 
+En el cierre de la misma p. 135, Laban critica que muchos comentaristas de danza tengan formación musical pero poca práctica o estudio del movimiento, y pide acercar a escritores y estudiosos de danza. Es una posición **normativa histórica** sobre la crítica, no un ensayo de confiabilidad entre evaluadores ni prueba de que una persona experta siempre acierte. Para nuestro protocolo da una razón adicional para mantener dos observaciones diferentes: analistas formados en movimiento que revisen categorías espaciales y público/observadores que valoren belleza o expresión, con acuerdo y desacuerdo documentados en ambos casos. Un panel experto no sustituye la medida física de las cámaras ni representa automáticamente la experiencia de Nico.
+
 ## Consecuencias específicas para nuestro trabajo
 
 | Antes de leer esta fuente | Decisión tras leerla |
@@ -22,5 +24,7 @@ Al final, p. 135, rechaza expresamente la traducción ingenua «tono alto ↔ mo
 | La propuesta de hacer música desde el movimiento parecía sólo una intuición contemporánea. | Tiene antecedente artístico autoral en 1929, pero no especifica sensores, sonificación algorítmica, feedback contingente ni eficiencia corporal. Es una motivación histórica, no validación técnica ni experimental. |
 
 Para el paper se puede citar este artículo **directamente** para la autonomía de la danza frente a la música, el paralelo entre frecuencia musical y ángulo espacial, y la diferencia central/periférico (pp. 133–135). No autoriza atribuirle `Q`, `C`, la relación p:q de HIT, la frecuencia de bandas 40/80/120 Hz ni una escala de rope flow. Su distinción entre geometría y sonido refuerza el orden del programa: primero describir el gesto 3D y su tiempo con fuentes y error, después diseñar qué información audible transmitir y comprobar que el oyente realmente la distingue.
+
+**Revalidación de acceso, 03-10-2026:** la transcripción HTML completa volvió a abrirse con las pp. 132–135. El servidor respondió `429 Too Many Requests` al intentar obtener el PDF de 26,51 MB anunciado por DBNL y la imagen de página; por ello el facsímil **sigue sin cotejarse**. Esta actualización no eleva el grado de evidencia de las grafías de la transcripción.
 
 El [contraejemplo geométrico de pitch y espacio](PITCH_ESPACIO_PERDIDA.md) formaliza **una consecuencia de diseño nuestra**, no una prueba o fórmula de Laban: una clase cromática por vértice de la plantilla ideal no puede conservar como semitono sus treinta aristas, y la altura vertical sola fusiona doce vértices en cinco niveles.
