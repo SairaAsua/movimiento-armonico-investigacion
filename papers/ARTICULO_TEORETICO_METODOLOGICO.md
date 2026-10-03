@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.39, 3 de octubre de 2026
+**Versión:** 0.40, 3 de octubre de 2026
 
 ## Resumen
 
@@ -265,6 +265,8 @@ La validez del control depende además de la medición previa. Para la asignaci�
 
 En un **banco técnico sintético e independiente**, ocho conjuntos de controles derivados de curvas construidas se enviaron al `PCMWriter` real de Weaver y a Harmonic Shaper [20]. En pares con `Q` y fase iguales, la situación modificó dos voces asignadas a 550 y 660 Hz. Un par de WAV se igualó en RMS para quitar la diferencia global de nivel como atajo obvio; luego una ablación cruzó cada control de situación por separado y conservó los tres controles de plano/fase. La diferencia espectral principal apareció en la voz intervenida, pero otros bins también cambiaron después de síntesis y normalización. Por ello, el banco demuestra **trazabilidad de controles a PCM en ese preset offline**, no independencia acústica exacta, reconocimiento perceptivo de la situación ni la ruta OSC hacia Beacon. Los controles híbridos de la ablación son contrafácticos instrumentales: no representan trayectorias observadas ni necesariamente realizables. Una escucha ciega futura deberá distinguir detección de diferencias de atribución espacial y conservar pares con un solo control intervenido.
 
+Un segundo replay, también sintético, hizo pasar cuatro parejas espaciales válidas y cuatro invalideces por el motor aislado de Weaver. Su transporte de grabación registró cuatro controles y cuatro resets, con los tiempos esperados [61]. Esto prueba la transición de estado en esa ruta de prueba, pero el replay reduce la causa detallada a `OBSERVED`/`INVALID`: no verifica la conservación de ambos IDs y tiempos de captura en el contrato del producto ni una salida OSC o audible.
+
 **Límite lógico de la sonificación.** Sea `z=f(x)` el descriptor de un movimiento `x`, y `a=g(z)` el control/audio producido por un mapeo determinista. Si `f(x₁)=f(x₂)`, entonces `g(f(x₁))=g(f(x₂))` bajo el mismo estado e entrada sonora. Ningún diseño tímbrico posterior puede recuperar de ese canal una lateralidad o un orden que `f` descartó. Esta propiedad obliga a declarar **qué diferencia se promete hacer audible** y a construir controles positivos y negativos antes de escuchar un ejemplo bonito.
 
 La secuencia temporal impone otro límite: `W` se conoce **después** del cierre válido y sólo puede resumir retrospectivamente la vuelta. Un giro local entre dos tramos puede calcularse tras recibir tres puntos consecutivos; asignarlo al tiempo del vértice central es una **convención de análisis**, no una observación instantánea de cuándo ocurrió el giro físico. En un banco construido, comparar ese giro con una fase de `1 Hz` usando la entrega del tercer punto (`0,5 s`) en lugar del vértice central (`0,25 s`) fabrica `90°` de desfase; retardos variables pueden modificar también la concentración `R` [29]. Un eventual audio de Beacon debe registrar tiempo del rasgo, disponibilidad y comienzo acústico por separado. Sin reloj calibrado y salida grabada, no se afirmará que una capa sonora expresa el giro o la fase **actuales**.
@@ -355,7 +357,7 @@ Proponemos estudiar el movimiento armónico como una **familia de relaciones obs
 
 60. Equipo Harmonic Beacon (2026). [*Separación 3D entre proxies de muñeca en una toma pública de danza*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/a616409/research/CMU_RELACION_MANOS.md) y [script reproducible](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/a616409/research/cmu_relacion_manos.py). CMU 05_02, marcadores 3D externos; análisis descriptivo sin referencia anatómica independiente ni soga.
 
-61. Equipo Harmonic Beacon (2026). [*Dos observaciones para una distancia espacial causal*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/86eaff7/research/PAR_ESPACIAL_LIVE_CONTRATO.md) y [fixture lógico reproducible](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/86eaff7/research/par_espacial_live_sintetico.py). Gate de dos fuentes con tiempos y estados inventados; no implementado en HarMoCAP/Weaver/Beacon.
+61. Equipo Harmonic Beacon (2026). [*Dos observaciones para una distancia espacial causal*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/554e936/research/PAR_ESPACIAL_LIVE_CONTRATO.md), [fixture lógico](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/554e936/research/par_espacial_live_sintetico.py) y [replay aislado del motor Weaver](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/554e936/research/replay_par_espacial_weaver.py). Gate con tiempos y estados inventados; control y reset en transporte de prueba, no implementados como señal espacial validada en HarMoCAP/Beacon.
 
 ## Nota de estado y transparencia
 
