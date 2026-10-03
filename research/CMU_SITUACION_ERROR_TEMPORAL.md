@@ -1,0 +1,15 @@
+# Igual error posicional, distinta estructura temporal
+
+Experimento **hipotético** sobre el [archivo externo CMU 05_02](CMU_DANZA_BANCO_REAL.md), no captura de Nico ni simulación validada de una Reolink, «logicam», Moto G o HarMoCAP. El [script](cmu_situacion_error_temporal.py) verifica SHA-256 y marcadores del C3D, toma las mismas nueve ventanas de un segundo por muñeca con origen cintura y ejes co-rotantes, y agrega tres clases construidas de error de **exactamente 1 mm de norma en cada cuadro**. La escala de conversión es `303,531939 mm` por ancho mediano de hombros del primer segundo; no es alcance anatómico. La semilla `20261002` y 30 repeticiones por ventana dejan 270 comparaciones **correlacionadas** por lado y modelo, no 270 personas o ensayos independientes.
+
+| Modelo de error relativo mano–origen | Mediana / máximo `|ΔV_r|`, izquierda | Mediana / máximo `|ΔV_r|`, derecha | Máximo de `L_perturbada/L_CMU`, izquierda / derecha |
+|---|---:|---:|---:|
+| Desplazamiento constante de 1 mm durante toda la frase | `0,000563 / 0,002621` | `0,000378 / 0,001720` | `1,000000 / 1,000000` |
+| Deriva suave: vector de 1 mm que gira una vez en la frase | `0,001255 / 0,007798` | `0,001450 / 0,014531` | `1,019025 / 1,022649` |
+| Jitter: dirección de error independiente en cada cuadro, siempre 1 mm | `0,007263 / 0,114042` | `0,008120 / 0,139661` | `1,918440 / 1,570192` |
+
+El **mismo límite por punto** permite respuestas muy diferentes de `V_r`. Un desplazamiento constante conserva exactamente las longitudes de segmentos y apenas cambia el radio respecto del centro; el jitter introduce zigzags que pueden aumentar mucho el denominador `L`. Las diferencias observadas no violan la [cota dura](PRESUPUESTO_ERROR_SITUACION.md); el script la comprueba en cada perturbación. Para `rho_min`, los máximos de cambio absoluto quedaron dentro de 1 mm por construcción en los tres modelos. Este banco ilustra por qué una cifra única de error espacial o un percentil por cuadro no caracteriza el error de **trayectoria**.
+
+No se infiere que el ruido de alguna cámara sea independiente, suave o constante, ni que 1 mm sea su precisión. Tampoco el C3D es «verdad anatómica» para Nico: aquí funciona como trayectoria de referencia interna, y cada perturbación altera sus puntos artificialmente. Las repeticiones prueban comportamiento del descriptor bajo estos modelos elegidos, no intervalos de confianza ni tasa de fallo en uso real. Un filtro podría reducir jitter y a la vez borrar giros o introducir retardo; habría que validarlo frente a referencia y congelarlo antes de días reservados.
+
+El [banco técnico](PILOTO_VALIDACION_VIDEO.md) deberá registrar no sólo magnitud de error por punto sino su autocorrelación temporal, sesgo sostenido, dependencia con velocidad/giro/oclusión, errores del origen y cambios de longitud de recorrido bajo filtrado y cadencia. Después se evaluarán `rho_min`, `V_r` y `Q` **por frase completa**, con cobertura de todos los intentos. Esta simulación no permite elegir FPS, filtro, cámara ni un umbral de consonancia.

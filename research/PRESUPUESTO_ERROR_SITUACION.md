@@ -26,6 +26,8 @@ Es una **cota conservadora**, no un intervalo de confianza. Se vuelve trivial (`
 
 El [cálculo sobre CMU 05_02](CMU_SITUACION_PRECISION_VR.md) aplica esta desigualdad a nueve ventanas reales de danza y grillas decimadas. Muestra cuán exigente puede resultar la **garantía peor caso**; no convierte ese umbral suficiente en especificación de compra, ni estima error de cámara.
 
+Una [perturbación temporal controlada del mismo C3D](CMU_SITUACION_ERROR_TEMPORAL.md) compara desplazamiento constante, deriva suave y jitter con **igual norma de error por punto**. La respuesta de `V_r` cambia mucho: el piloto deberá caracterizar la estructura temporal del error, además de su magnitud.
+
 ## Qué medir antes de usar la cota
 
 El banco instrumental debe producir error por punto y por origen contra referencia dinámica independiente, con dominio de vista, volumen, giro, rapidez, oclusión y día. Una distribución de errores o un percentil no se puede sustituir por una cota dura sin cambiar el tipo de afirmación. Hay que estimar además error de escala y del marco, y registrar qué frases quedan inválidas; evaluar sólo frases detectadas puede ocultar sesgo de cobertura. Fijar después, en desarrollo y antes de sesiones reservadas, qué diferencia geométrica mínima necesita distinguir el contraste HIT o la capa sonora. Si las cotas cubren esa diferencia, el resultado se reporta como no identificable con ese montaje.

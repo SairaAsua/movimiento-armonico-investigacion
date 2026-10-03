@@ -28,6 +28,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Escala instrumental de la cota `V_r` en danza CMU](CMU_SITUACION_PRECISION_VR.md): el [cálculo reproducible](cmu_situacion_precision_vr.py) aplica la desigualdad a nueve ventanas de muñecas con grillas derivadas de 120/30/24 Hz. Es un ejercicio de diseño, no una especificación de cámaras para Nico.
 
+[Estructura temporal del error en `V_r`](CMU_SITUACION_ERROR_TEMPORAL.md): [perturbaciones sintéticas sobre CMU](cmu_situacion_error_temporal.py) con igual norma de error por cuadro muestran respuestas distintas ante sesgo, deriva y jitter. No describen errores medidos de nuestras cámaras.
+
 [Validación propuesta de situación frente a Laban y HIT](VALIDACION_SITUACION_LABAN_HIT.md): separa exactitud 3D, acuerdo experto, aporte de `rho_min/V_r` sobre `Q` y alcance, y valor incremental de fase en los mismos días y frases. Requiere humanos y originales consentidos; todavía no contiene resultados.
 
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
