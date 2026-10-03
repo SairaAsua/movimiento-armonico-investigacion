@@ -1,0 +1,21 @@
+# Longstaff (1996), apéndices IX–X: orientación, ubicación y proporciones
+
+Lectura del [volumen II de la tesis de Longstaff](https://openaccess.city.ac.uk/id/eprint/11876/2/Cognitive%20Structures%20of%20Kinesthetic%20Space%20-%20vol2.pdf), apéndices IX (pp. impresas 100–108) y X (pp. 109–112), con inspección visual de la p. 110. Las atribuciones a *Choreographie* (1926) se conocen aquí **a través de Longstaff**; no equivalen a haber leído el libro original completo. Su [artículo de 2001](LABAN_VECTOR_LONGSTAFF_2001.md) desarrolla después el análisis de símbolos de vector.
+
+## Apéndice IX: un signo no determina una posición
+
+Longstaff contrasta tres traducciones de símbolos usados en secuencias que atribuye a *Choreographie* pp. 44, 47, 52 y 72. En su lectura, asignar cada signo a una sola inclinación de escala falla en parte de la secuencia; tratarlo sólo como punto de llegada duplica signos para una misma ubicación. Permitir inclinaciones paralelas en orden normal o invertido produce una secuencia que cierra y cuya estructura juzga más coherente (pp. 100–106). El **cierre y la simetría son criterios de su interpretación**, no una demostración de la intención de Laban.
+
+El resultado que sirve al diseño es la distinción entre **orientación de línea** y **ubicación del trazo**: Longstaff propone que un símbolo vectorial puede describir líneas paralelas situadas en regiones diferentes, y extiende esa idea desde inclinaciones transversales hacia periféricas y dimensiones (pp. 104–108). La equivalencia amplia con la “notación libre” de *Choreutics* pp. 125–132 es una hipótesis histórica de Longstaff (p. 108), todavía pendiente de cotejo en el libro original.
+
+Para rope flow, guardar por separado `motion_direction_u`, `radial_position_u` y **recorrido completo**. Dos desplazamientos paralelos de la mano pueden recibir la misma descripción de orientación y una situación espacial distinta. El algoritmo no debe deducir una inclinación ni una escala a partir de un solo punto final. Esta regla también evita que la posición radial de la soga sustituya la dirección local de la mano.
+
+## Apéndice X: qué ángulos son exactos y qué cifra no cuadra
+
+Longstaff dibuja secciones en planos cartesianos de cubo, octaedro, icosaedro y dodecaedro (pp. 109–112). Para cubo y octaedro afirma ángulos exactos de 45° entre ciertas dimensiones y diámetros planos (p. 111). Para las figuras del icosaedro y dodecaedro declara que algunos ángulos se **midieron aproximadamente con transportador** (p. 112); esos números no son definiciones exactas para clasificar video.
+
+La p. 109 identifica el rectángulo del icosaedro regular con razón áurea `φ:1`. Esto concuerda con la [derivación independiente de nuestra plantilla](PLANOS_RECTANGULOS_ICOSAEDRO.md): vértices `(0,±1,±φ)` y permutaciones cíclicas. Con `φ=(1+√5)/2`, el ángulo agudo entre la diagonal de ese rectángulo y su eje corto es `atan(φ)≈58,28°`; respecto del eje largo es `atan(1/φ)≈31,72°`. Son consecuencias geométricas de una plantilla ideal, **no** proporciones observadas en el cuerpo.
+
+La p. 110 imprime **`3.618:1`** para la razón de lados del rectángulo central del dodecaedro, pero en la misma página lo construye como **rectángulo áureo más un cuadrado**. Esa construcción da `φ+1=φ²≈2,618`, no `3,618`. También lo verifican las coordenadas estándar de un dodecaedro regular: cuatro vértices de la sección `x=0` son `(0,±1/φ,±φ)`; su razón de semiejes es `φ/(1/φ)=φ²`. La cifra impresa parece un error aritmético o tipográfico; no se corrige silenciosamente ni se usa para parametrizar la red. La fuente visual confirma que la cifra es la impresa, no un fallo del OCR.
+
+**Decisión para el piloto:** conservar la geometría continua y la incertidumbre angular antes de asignar clases. Si se prueba una red ideal, generarla desde coordenadas explícitas y verificar longitudes/ángulos matemáticamente; no calibrar con los ángulos aproximados del transportador ni con `3,618`. Ninguna coincidencia con estas proporciones prueba belleza, eficiencia, HIT o “consonancia”. El cotejo de las páginas originales de Laban y la revisión experta siguen pendientes en la [issue #1](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/1).

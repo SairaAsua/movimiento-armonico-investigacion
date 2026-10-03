@@ -1,20 +1,66 @@
 # Rope flow, consonancia y experiencia corporal
 
-Archivo local de investigación preliminar, iniciado el 23 de septiembre y actualizado el 24 de septiembre de 2026. Responde a la propuesta de Saira de estudiar a Nico haciendo rope flow y relacionar movimiento, economía, belleza, sensualidad y conciencia con HIT. No constituye un paper de resultados ni un protocolo ya ejecutado.
+Archivo local de investigación preliminar, iniciado el 23 de septiembre y actualizado el 3 de octubre de 2026. Responde a la propuesta de Saira de estudiar a Nico haciendo rope flow y relacionar movimiento, economía, belleza, sensualidad y conciencia con HIT. No constituye un paper de resultados ni un protocolo ya ejecutado.
 
 **Estado operativo:** Saira informó aproximadamente 4 Reolink, 4 «logicam» y 1 Moto G; faltan modelos, archivos originales y pruebas de tiempo/calibración. El [primer banco sin persona](PAQUETE_CAPTURA_NICO_V0.md) puede comparar una unidad de cada tipo antes de elegir montaje. El [estudio con Nico](PROTOCOLO_PILOTO_V0.md) todavía requiere repertorio real, consentimiento y determinación ética; metabolismo exige instrumentación propia. No hay captura, instalación live ni audio Beacon validados. La lectura integral de *Choreographie*/*Choreutics* continúa pendiente ([estado de fuentes](LABAN_ACCESO_OBRAS.md)).
+
+[Mecanoscrito «Tanz und Musik» de Laban](LABAN_TANZ_UND_MUSIK_MANUSCRITO.md): cuatro páginas autorales inspeccionadas en facsímil Leipzig; cotejan doce inclinaciones, centro/periferia y la objeción a equiparar tono agudo con gesto alto, sin autorizar una fórmula acústica para Beacon.
+
+[Hoja autoral *The key to the space harmony of movement*](LABAN_KEY_SPACE_HARMONY_FACSIMIL.md): facsímil completo de Leipzig con texto y kinetogramas A/B; doce secuencias, siete anillos, centro corporal y simetría bilateral. Es una fuente primaria para orden y referencia, no una fórmula de `Q` ni doce clases listas para Nico.
+
+[Forma dinámica y contramovimiento en *Choreographie*](LABAN_FORMA_CONTRAMOVIMIENTO_1926.md): lectura de pp. 3–12 en traducción; las relaciones y el orden entre miembros importan, y un ejemplo armónico divide el espacio de forma desigual. Separa el programa histórico de una ecuación o resultado empírico.
+
+[Introducción de *Choreographie*: transformación antes que postura](LABAN_INTRO_TRANSFORMACIONES_1926.md): lectura de pp. 1–2 en traducción; fundamenta guardar cambios y secuencias, y evita confundir *Formkern* con el «core» anatómico del relato de Beacon.
+
+[Forma, canon y correlaciones espaciales en *Choreographie*](LABAN_CORRELACIONES_1926.md): lectura de pp. 80–88 en traducción ilustrada; distingue dirección, camino, equilibrio, miembros y sucesión frente a simultaneidad. Un [control con episodios separados](canon_fase_orden_sintetico.py) y otro de [trayectorias continuas](canon_fase_continua_sintetico.py) conservan `Q`, `R` y ángulo medio dentro de cada par, pero cambian el orden de liderazgo. No toman la «armonía» histórica como medida fisiológica ni prueban dinámica de soga.
+
+[Forma inicial, series y apoyo en *Choreographie*](LABAN_SERIES_NOTACION_1926.md): lectura visual selectiva de pp. 89–99; una frase continua requiere transiciones y estado inicial, y el apéndice distingue apoyo/contacto y maneras de anotar un paso. Delimita por qué el control anterior de episodios separados no prueba factibilidad de una frase de soga.
+
+[Tres componentes y columnas rítmicas en *Choreographie*](LABAN_GUIA_ESCRITURA_1926.md): lectura visual de pp. 100–103 de la traducción; distingue organización de miembros, situación espacial, progreso y signos temporales en columna aparte. La traducción de `Gliedersatz` y los signos requieren cotejo alemán y revisión experta antes de una codificación automática.
+
+[Minueto, forma y ritmo en *Choreographie*](LABAN_MINUETO_BAILE_1926.md): lectura mediada de pp. 54–64; un motivo de paso admite variantes rítmicas y la comparación histórica reclama describir el cuerpo entero. La nota editorial señala deuda textual con Klemm; no se toma el ejemplo como un control experimental de geometría constante.
+
+[Relación espacial entre miembros](RELACION_ESPACIAL_MIEMBROS.md): [banco sintético reproducible](relacion_espacial_miembros_sintetica.py) con igual `Q`, rapidez individual y fase, pero distinta separación 3D entre manos; delimita un descriptor relacional y su error antes de usarlo con Nico.
+
+[Escalas de eje y ecuador de *Choreographie*](LABAN_ESCALAS_EJE_ECUADOR_1926.md): lectura de pp. 43–48 en traducción ilustrada; separa secuencias axiales, recorridos periféricos y signos añadidos/corregidos por los traductores antes de cualquier comparador para rope flow.
+
+[Volutas y anillos transversales de *Choreographie*](LABAN_VOLUTAS_1926.md): pp. 49–53 en traducción; la voluta es una relación ordenada entre dos inclinaciones y las láminas 12/24/48 son partituras no descifradas con modificaciones editoriales. Incluye cotas propuestas para el ángulo entre tramos y la desviación de la trayectoria respecto de su cuerda; no son umbrales históricos, una regla de frecuencias ni una plantilla de clasificación validada.
+
+[Giros en *Choreographie*](LABAN_GIROS_1926.md): lectura de pp. 70–72; separa el anillo de tres lados y su eje construido del giro corporal, del recorrido de mano y de la torsión de soga. Propone controles de identificabilidad para rope flow.
+
+[Grupos direccionales «plásticos» en *Choreographie*](LABAN_GRUPOS_DIRECCION_1926.md): lectura de pp. 78–79; distingue afinidades cualitativas de orientación, rapidez, fuerza física y signos añadidos por los traductores antes de diseñar señales HarMoCAP/Beacon.
+
+[«Vom Geist des Tanzes» (enero de 1926)](LABAN_VOM_GEIST_1926_FACSIMIL.md): tres páginas autorales en facsímil de Leipzig sobre movimiento, ritmo, armonía, placer, esfuerzo y analogía entre vista y oído. Es teoría estética con contexto histórico problemático, no una prueba fisiológica ni la matemática de *Choreographie*.
+
+[Dos artículos autorales de *Der Tanz* (1927 y fascículo 1928/29)](LABAN_DER_TANZ_1927_1928.md): seis páginas cotejadas en facsímil sobre forma, contraste, movimiento grupal y experiencia. El archivo rotula «1/1929» al segundo número, pero lo fecha noviembre de 1928; no se extrae de estas páginas una fórmula de energía o conciencia.
+
+[Figuras de *Choreographie* (1926) en reproducción editorial](LABAN_CHOREOGRAPHIE_FIGURAS_1926.md): se inspeccionaron el octaedro de p. 20 y los planos dimensionales de p. 23 del original en la vista previa del *Laban Sourcebook*. Son evidencia visual parcial, no lectura del libro completo ni fuente de nuestras ecuaciones.
+
+[Cronología documental CND: ensayos de 1926 y cinétografía de 1928](LABAN_CND_NOTACION_1926_1928.md): síntesis institucional de tres páginas y figura 17 del catálogo de exposición de 2006, un recorte de signos de *Choreographie* sin página original identificable ni escala descifrada. Separa esa evidencia parcial de nuestras ecuaciones para rope flow.
+
+[Escalas A/B y planos en reproducciones húngaras](LABAN_SZITT_FIGURAS_HUNGARAS.md): cuatro figuras de *Koreográfia* (2008) vistas en una tesis universitaria de 2024, con páginas de procedencia. Un panel A coincide con la traducción inglesa aunque quedó bajo un pie general B; no usar ese pie como etiqueta de todo el montaje. Las imágenes estáticas no sustituyen el impreso alemán ni muestran un retorno corporal ejecutado.
 
 **Preparación práctica sin captura nueva:** [montaje, lista de compras e inventario inicial de videos de Nico](MONTAJE_COMPRAS_Y_VIDEOS_NICO.md). Se identificaron episodios editados de contexto, pero todavía ningún original confirmado de Nico haciendo rope flow.
 
 **Nueva fuente autoral mediada:** se leyó una traducción web de [ocho notas de Laban sobre ritmo](LABAN_NOTAS_RITMO.md). Permite fundamentar que su marco relaciona espacio, tiempo y fuerza; no proporciona una ecuación de eficiencia corporal ni reemplaza los libros pendientes.
 
+**Estética en fuente autoral, lectura parcial:** [«Der Tanz als Eigenkunst» (1925), pp. 356–357 por OCR](LABAN_EIGENKUNST_1925_FRAGMENTO.md), discute la autonomía de la danza y expone una tensión histórica entre expresión mímica y destreza gimnástica. Es una razón para no confundir una medida de técnica motriz con una valoración expresiva; faltan las otras páginas y el facsímil.
+
 **Fuente autoral impresa:** se leyó en alemán, mediante transcripción diplomática, [«Tanz und Musik» (1929)](LABAN_TANZ_UND_MUSIK_1929.md). Distingue frecuencia tonal y ángulo espacial, orientación central/periférica y desaconseja un mapeo pitch↔altura corporal; el facsímil no se cotejó y los libros completos siguen pendientes.
+
+[Lectura parcial de *Choreographie* (1926) en traducción ilustrada](LABAN_CHOREOGRAPHIE_TRADUCCION_2011.md): se inspeccionaron páginas sobre inclinaciones, planos, secuencia torso→mano, recorridos centrales/periféricos y caminos en el suelo. El traductor la presenta como borrador; el alemán y el libro completo siguen pendientes.
+
+**Composición y doble ritmo:** una [traducción japonesa institucional de «Tanzkomposition und Schrifttanz» (1928) y un mecanoscrito alemán del archivo de Leipzig](LABAN_TANZKOMPOSITION_1928.md) muestran ritmos espaciales y temporales en solos y grupos y la utilidad de conservar recorridos. Falta cotejar el **impreso** alemán de 1928; la división de descriptores Laban/HIT sigue siendo metodológica.
+
+**Entrenamiento, ritmo y eficacia en Laban:** [extractos traducidos de *Gymnastik und Tanz* (1926), publicados en 2025](LABAN_GYMNASTIK_TANZ_EXTRACTOS_2025.md), reúnen situación espacial, secuencia temporal, fuerza, expresividad y movimiento grupal. La afirmación histórica de que lo armónico **a veces** favorece la eficacia de tarea no es una medición de gasto metabólico ni una ley universal; la consulta aquí fue parcial y mediada por traducción.
 
 [Reseña de Brandt (1927)](LABAN_RESEÑA_BRANDT_1927.md): recepción muy cercana a *Choreographie* que relaciona icosaedro, espacio, tiempo, fuerza y escritura del recorrido; leída por OCR, no sustituye el libro de Laban.
 
 [Auditoría de acuerdo LMA en datos públicos](LABAN_OSF_ACUERDO_REANALISIS.md): reanálisis descriptivo de respuestas originales de analistas certificados; límites de transferencia a rope flow.
 
 [Economía en *Effort* (1947)](LABAN_EFFORT_ECONOMIA_1947.md): cotejo bibliográfico e histórico de Laban/Lawrence y Franco para no confundir eficiencia de tarea, facilidad vivida y gasto metabólico.
+
+[Extractos de *Gymnastik und Tanz* (1926) en traducción académica de 2025](LABAN_GYMNASTIK_TANZ_EXTRACTOS_2025.md): armonía y disarmonía como relaciones expresivas, coro de movimiento y frontera entre formación/experiencia y medición fisiológica. Lectura parcial de contenido editorial indexado; no sustituye *Choreographie* ni el alemán original.
 
 [Lectura de Quirarte Rojas (UNAM, 2017)](LABAN_QUIRARTE_UNAM_2017.md): tesis mexicana que cita la traducción de *Coreografía* y reúne láminas de geometría; guía el cotejo pendiente del libro sin reemplazarlo.
 
@@ -40,7 +86,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Sesgo de concentración de fase](FASE_SESGO_MUESTRAL.md): lectura primaria de Vinck et al. (2010), identidad de `PPC` y [contraejemplo ejecutable](fase_sesgo_muestral_sintetico.py) que muestra por qué copiar cuadros o subir FPS no agrega ciclos independientes.
 
-[Plan metodológico centrado en Laban](PLAN_INVESTIGACION.md): lectura, geometría, sensores, validación, estudio, HarMoCAP, Beacon y paper. [Primera matriz Laban → mediciones](LABAN_MATRIZ.md): fuente, observación, descriptor propuesto y prueba de validez. [Matemática experimental](LABAN_MATEMATICA.md): coordenadas, recorridos, planos, poliedros, fases y validación. [Lectura crítica de Longstaff](LABAN_LECTURA_LONGSTAFF.md): secciones pertinentes del volumen I, experimentos y resultado nulo relevante. [Dirección y redes en Laban](LABAN_RED_Y_VECTOR.md): movimiento frente a ubicación y cuboctaedro frente a icosaedro. [Puente Laban–HIT](PUENTE_LABAN_HIT.md): hipótesis, frecuencias, fases y contrastes. [Fase de rope flow](FASE_ROPEFLOW.md): eventos de ciclo, métodos de fase, relaciones p:q y sus límites. [Búsqueda rope flow y vecinos](BUSQUEDA_ROPEFLOW_ADYACENCIAS.md): consultas reproducibles, falsos positivos y transferencia limitada desde poi. [Preparación de cámaras](CAMARAS_PREPARACION.md): inventario y criterios para decidir 2D/3D. [Decisión de sensores](SENSORES_DECISION.md): qué se puede afirmar con cámaras y qué exige IMU, calorimetría u otros instrumentos. [Piloto de validación de video](PILOTO_VALIDACION_VIDEO.md): errores, sincronización, oclusiones y decisiones por descriptor. [Tareas de rope flow](ROPEFLOW_TAREAS.md): vocabulario, frases y ciclos candidatos, pendientes de observar en Nico. [Experiencia y estética](EXPERIENCIA_ESTETICA.md): autoinformes de Nico, valoraciones visuales y contraste con cinemática/metabolismo sin fusionar constructos. [Integración HarMoCAP–Beacon](INTEGRACION_HARMOCAP_BEACON.md): archivo científico, contrato 1.4, extensión futura y pruebas hasta el audio. Incorpora cámaras disponibles, ausencia de instalación y especialistas aún por incorporar.
+[Plan metodológico centrado en Laban](PLAN_INVESTIGACION.md): lectura, geometría, sensores, validación, estudio, HarMoCAP, Beacon y paper. [Primera matriz Laban → mediciones](LABAN_MATRIZ.md): fuente, observación, descriptor propuesto y prueba de validez. [Cota de `Q` con arco oculto](Q_COBERTURA_ARCO.md): intervalo de identificación y contraejemplo ejecutable de dominancia invertida bajo oclusión. [Cota de `Q` con error posicional](Q_ERROR_POSICIONAL_MUESTREO.md): demuestra por qué más cuadros ruidosos pueden sesgar la dominancia y cuándo invalidarla. [Arco entre cuadros](Q_ARCO_ENTRE_CUADROS.md): un recorrido continuo puede cambiar `Q` aunque todos los vértices sean exactos; una cota condicional exige rapidez y curvatura verificadas. [Matemática experimental](LABAN_MATEMATICA.md): coordenadas, recorridos, planos, poliedros, fases y validación. [Lectura crítica de Longstaff](LABAN_LECTURA_LONGSTAFF.md): secciones pertinentes del volumen I, experimentos y resultado nulo relevante. [Dirección y redes en Laban](LABAN_RED_Y_VECTOR.md): movimiento frente a ubicación y cuboctaedro frente a icosaedro. [Puente Laban–HIT](PUENTE_LABAN_HIT.md): hipótesis, frecuencias, fases y contrastes. [Fase de rope flow](FASE_ROPEFLOW.md): eventos de ciclo, métodos de fase, relaciones p:q y sus límites. [Búsqueda rope flow y vecinos](BUSQUEDA_ROPEFLOW_ADYACENCIAS.md): consultas reproducibles, falsos positivos y transferencia limitada desde poi. [Preparación de cámaras](CAMARAS_PREPARACION.md): inventario y criterios para decidir 2D/3D. [Decisión de sensores](SENSORES_DECISION.md): qué se puede afirmar con cámaras y qué exige IMU, calorimetría u otros instrumentos. [Piloto de validación de video](PILOTO_VALIDACION_VIDEO.md): errores, sincronización, oclusiones y decisiones por descriptor. [Tareas de rope flow](ROPEFLOW_TAREAS.md): vocabulario, frases y ciclos candidatos, pendientes de observar en Nico. [Experiencia y estética](EXPERIENCIA_ESTETICA.md): autoinformes de Nico, valoraciones visuales y contraste con cinemática/metabolismo sin fusionar constructos. [Integración HarMoCAP–Beacon](INTEGRACION_HARMOCAP_BEACON.md): archivo científico, contrato 1.4, extensión futura y pruebas hasta el audio. Incorpora cámaras disponibles, ausencia de instalación y especialistas aún por incorporar.
 
 [Esqueleto del primer paper](ESQUELETO_PAIPER.md): alcance publicable, preguntas por unidad de análisis, secciones redactables, figuras/tablas sin resultados ficticios y guías de reporte pertinentes.
 
@@ -157,6 +203,18 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [Estimadores de fase con perturbaciones](FASE_ESTIMADORES_BANCO.md): [comparación ejecutable](fase_estimadores_sinteticos.py) entre Hilbert offline y posición–velocidad causal con cambio de cadencia, forma asimétrica, ruido, amplitud baja, hueco y un control explícito de fuga futura.
 
 [Longstaff 2001, texto completo](LABAN_VECTOR_LONGSTAFF_2001.md): figuras de símbolos de vector, contraste línea/posición, situación central/periférica/transversal e implicaciones operacionales. [Acceso a las obras originales](LABAN_ACCESO_OBRAS.md): ediciones y páginas de Laban aún por cotejar.
+
+[Contraejemplo de centro y trayectoria](CENTRO_TRAYECTORIA_CONTRAEJEMPLO.md): dos realizaciones sintéticas tienen la misma mano en sala y respecto del torso, pero distinta traslación y rotación torácica. Obliga a medir torso aparte antes de hablar de participación corporal; no identifica energía ni calidad estética.
+
+[Cota de cambio neto de torso](TORSO_CAMBIO_RESOLUBLE.md): desigualdades conservadoras para decidir si traslación o giro observados entre dos eventos exceden error de pose y una diferencia mínima predefinida. No certifica movimiento continuo, trabajo ni causalidad.
+
+[Longstaff 1996, apéndice XVI](LONGSTAFF_TAXONOMIA_RECORRIDOS.md): taxonomía exploratoria de recorridos corporales, con ochos de reversión y de ciclo continuo; separa mecanismo articular, silueta proyectada y fase periódica HIT. Incluye un [contraejemplo sintético](ocho_cinematica_ambigua.py) de dos configuraciones articulares con la misma mano en ocho.
+
+[Ochos humanos rápidos y EMG (2010/2015)](OCHOS_KINEMATICA_EMG_2010_2015.md): dos estudios originales de brazo extendido, sus sensores y límites de transferencia; el 2:1 entre ejes de un solo ocho queda como propiedad intratrayectoria, no evidencia HIT entre segmentos.
+
+[Contrato sintético de ochos proyectados](CONTRATO_OCHO_PROYECTADO_V0.md): [ejemplo JSON](ocho_medicion_ejemplo_sintetico.json), [validador estructural](validar_ocho_proyectado.py) y [cota geométrica del error de área](ocho_area_cota_sintetica.py) para dos lóbulos y tres tiempos de cruce, separados de la anotación humana; aún no mide video ni error de cámaras.
+
+[Longstaff 1996, apéndices IX–X](LONGSTAFF_1996_VECTORES_ANGULOS.md): lectura de símbolos vectoriales y secciones poliédricas; coteja la razón áurea del icosaedro y señala una discrepancia aritmética en la razón impresa para el dodecaedro.
 
 [*The Laban Sourcebook*, vista previa](LABAN_SOURCEBOOK_VISTA_PREVIA.md): introducción y figuras de 1926 reproducidas por McCaw, con distinción entre palabra autoral mediada e interpretación editorial; los capítulos de *Choreography*, *Choreutics* y *The Harmony of Movement* no están en la muestra.
 

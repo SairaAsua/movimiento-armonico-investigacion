@@ -4,6 +4,8 @@ Nota matemática del 23-09-2026. La [introducción de McCaw a *The Laban Sourceb
 
 La inspección directa de las dos páginas de la vista previa precisa el alcance: la figura 0.1 reproduce un octaedro en torno al cuerpo; la figura 0.2, con el rótulo alemán `Dimensionalflächen`, representa tres superficies corporales. **No dibuja doce vértices ni acota rectángulos áureos**. La construcción de abajo formaliza por separado lo que exige un icosaedro regular; no pretende transcribir una operación visible en esa figura. [Registro de la inspección](LABAN_SOURCEBOOK_VISTA_PREVIA.md).
 
+El [apéndice X de Longstaff (1996)](LONGSTAFF_1996_VECTORES_ANGULOS.md) también presenta el rectángulo áureo del icosaedro. Sus ángulos medidos con transportador son aproximados; una cifra `3,618:1` impresa para la sección del dodecaedro contradice su construcción en la misma página y el cálculo exacto `φ²≈2,618`. Por eso las plantillas computables se derivan de coordenadas, no de esa cifra.
+
 Definamos una familia de doce puntos, construida por nosotros, con `r>0`:
 
 `V(r) = {(0,±1,±r), (±1,±r,0), (±r,0,±1)}`,
