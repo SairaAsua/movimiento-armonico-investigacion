@@ -16,7 +16,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Economía en *Effort* (1947)](LABAN_EFFORT_ECONOMIA_1947.md): cotejo bibliográfico e histórico de Laban/Lawrence y Franco para no confundir eficiencia de tarea, facilidad vivida y gasto metabólico.
 
-[Aprendizaje de brazo, gas y EMG (Huang et al., 2012)](APRENDIZAJE_BRAZO_VO2_HUANG_2012.md): experimento original completo que separa la cronología de trayectoria, actividad muscular y potencia oxidativa; obliga a controlar práctica y orden de bloques en el futuro subestudio de Nico.
+[Aprendizaje de brazo, gas y EMG (Huang et al., 2012)](APRENDIZAJE_BRAZO_VO2_HUANG_2012.md): experimento original completo que separa la cronología de trayectoria, actividad muscular y potencia oxidativa. Un contraejemplo algebraico propio añade que incluso cinemática y par neto perfectos no identifican las fuerzas antagonistas; el subestudio de Nico debe medir costo por otra vía y controlar práctica/orden.
 
 [Lectura de Quirarte Rojas (UNAM, 2017)](LABAN_QUIRARTE_UNAM_2017.md): tesis mexicana que cita la traducción de *Coreografía* y reúne láminas de geometría; guía el cotejo pendiente del libro sin reemplazarlo.
 
