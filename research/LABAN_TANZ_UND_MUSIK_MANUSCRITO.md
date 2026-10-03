@@ -1,0 +1,18 @@
+# Laban, «Tanz und Musik»: cotejo del mecanoscrito de Leipzig
+
+**Consulta facsimilar: 3 de octubre de 2026.** La [ficha Kalliope de la Universitätsbibliothek Leipzig](https://kalliope-verbund.info/de/ead?ead.id=DE-611-HS-3386496) atribuye a Rudolf von Laban un **borrador mecanografiado sin fecha ni lugar**, signatura `NL 396/4/1/24`, cuatro hojas/cuatro páginas, identificado como copia al carbón (*Durchschlag*). La [digitalización IIIF](https://iiif.ub.uni-leipzig.de/0000065580/manifest.json) tiene ocho lienzos: texto en [1](https://iiif.ub.uni-leipzig.de/0000065580/canvas/00000001), [3](https://iiif.ub.uni-leipzig.de/0000065580/canvas/00000003), [5](https://iiif.ub.uni-leipzig.de/0000065580/canvas/00000005) y [7](https://iiif.ub.uni-leipzig.de/0000065580/canvas/00000007); los otros son reversos. Se inspeccionaron visualmente las cuatro páginas de texto. El OCR automático fue defectuoso y **no** se utilizó como autoridad para palabras o cifras.
+
+## Afirmaciones comprobables en las imágenes
+
+| Página mecanografiada / lienzo | Lectura relevante | Límite para esta investigación |
+|---|---|---|
+| 1 / 1 | Defiende que la danza escénica puede tener efecto sin acompañamiento musical y que experiencia de movimiento y música no son idénticas. | Es una tesis estética de Laban; no mide percepción, respuesta corporal ni rendimiento. |
+| 2 / 3 | Sostiene la autonomía del movimiento; introduce analogías con la teoría musical para explicar una teoría de armonía espacial aún en desarrollo. | Analogía no implica identidad física entre vibración acústica y movimiento. |
+| 3 / 5 | La tabla compara doce tonos con doce *Raumneigungen* (inclinaciones espaciales), acordes con configuraciones de varias direcciones, y frecuencia musical con ángulos de desviación de direcciones en escalas. Distingue una inclinación **central** de una **periférica**; la misma dirección puede participar en escalas diferentes. | No aparecen coordenadas de las doce inclinaciones, función Hz→grados, señal medida, 40/80/120 Hz ni algoritmo `Q`/`R`. La formulación central/periférica hace útil separar **orientación** de **situación del recorrido** en rope flow. |
+| 4 / 7 | Rechaza equiparar sin más tono alto con gesto alto y tono bajo con gesto bajo, señalando la tridimensionalidad del movimiento. También separa aprender signos de escritura de dominar toda la teoría armónica. | No prescribe una sonificación moderna. Un mapeo de altura musical a eje vertical sería elección experimental nuestra, y perdería información espacial. |
+
+## Relación con el impreso de 1929
+
+El [artículo de igual título publicado en 1929](LABAN_TANZ_UND_MUSIK_1929.md) comparte apertura, núcleo de la tabla y objeción final al mapeo agudo↔alto. El impreso contiene además pasajes que **no se ven** en estas cuatro páginas, como la discusión extensa sobre el ritmo corporal frente al musical y la propuesta de que un compositor escriba música a partir de una danza. La comparación es de pasajes y estructura; **no** se ha hecho una colación línea por línea ni demostrado fecha, precedencia editorial o identidad textual. La ficha del borrador lo cataloga sin fecha. Para el punto central/periférico y la crítica del mapeo vertical, este mecanoscrito sí aporta cotejo visual autoral de una versión; para las otras afirmaciones se mantiene el soporte de la transcripción impresa de DBNL.
+
+**Decisión de diseño:** conservar por separado `motion_direction_u`, situación del recorrido, marco 3D y tiempo; el canal audible se diseña después de decidir qué relación quiere comunicar y se valida con oyentes. La analogía histórica no valida la percepción de Beacon, la consonancia HIT ni la economía del rope flow de Nico. No se suben imágenes del archivo ni medios humanos a este repositorio público.

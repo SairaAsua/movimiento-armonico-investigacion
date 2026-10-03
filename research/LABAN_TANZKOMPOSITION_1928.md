@@ -4,6 +4,16 @@ Lectura del 2 de octubre de 2026. La [Universidad de Waseda publica una traducci
 
 Se encontró además el [expediente alemán digitalizado de Leipzig, NL 396/4/1/6](https://kalliope-verbund.info/de/ead?ead.id=DE-611-HS-3385705), catalogado con Rudolf von Laban como autor (`Verfasser`), **sin fecha**, con 15 hojas: 12 páginas mecanografiadas y seis manuscritas según la ficha. El [manifiesto IIIF](https://iiif.ub.uni-leipzig.de/0000065562/manifest.json) contiene 30 lienzos. Se cribaron los 30 en miniatura; se leyeron ampliados los lienzos mecanografiados **7, 9, 11 y 13** (una secuencia de cuatro páginas), además de comprobar los comienzos repetidos en **15 y 23**. Las hojas manuscritas 1–6 y las otras copias mecanografiadas no recibieron transcripción íntegra. El documento de archivo **no es el impreso de 1928**: todavía falta cotejar la redacción publicada y sus variantes.
 
+## Tres objetos que comparten «Schrifttanz» en su nombre
+
+| Objeto | Evidencia de identidad | Acceso y límite actual |
+|---|---|---|
+| Artículo «Tanzkomposition und Schrifttanz» en la **revista trimestral** *Schrifttanz*, octubre de 1928, pp. 19–20 | Nota editorial de [Kogo/Waseda](https://prj-kyodo-enpaku.w.waseda.jp/prj-kyodo-enpaku/trans/modules/xoonips/download_file_id_94.pdf); la [tesis doctoral de Axelle Locatelli, Universidad Paris 8 (2019), p. 116 y nota 363](https://theses.fr/2019PA080036.pdf) también lo identifica como artículo de octubre de 1928. | Traducción japonesa completa y una cita/lectura francesa localizada por índice; **no** páginas alemanas impresas cotejadas. La tesis se consultó sólo en el pasaje indexado, no íntegra. |
+| Expediente de Leipzig `NL 396/4/1/6` | [Catálogo Kalliope](https://kalliope-verbund.info/de/ead?ead.id=DE-611-HS-3385705), título coincidente y autoría catalogada de Laban. | Cuatro páginas mecanografiadas ampliadas, sin fecha ni demostración de identidad textual con el impreso. |
+| **Manual** *Schrifttanz 1: Methodik, Orthographie, Erläuterungen* (Universal-Edition 9600, 1928) | El [registro MARC de HathiTrust](https://catalog.hathitrust.org/Record/103026269.marc) dice `CONTENTS.--Methodik. Orthographie. Erläuterungen`, `[Heft] 1`, con dos ejemplares digitalizados por NYPL. | **Es otra publicación**, no las pp. 19–20 del artículo trimestral; su ficha y rótulo «Full view» no constituyen cotejo del artículo. El visor de los dos ejemplares no entregó páginas en este entorno. |
+
+Esta separación evita una atribución falsa muy tentadora: citar la ficha de HathiTrust como si se hubiera leído el número de la revista. La tesis de Locatelli aporta una lectura historiográfica independiente de la edición japonesa y del mecanoscrito: en el pasaje accesible interpreta que Laban distinguía composición y escritura de la danza y usaba esta última para revisar y transformar una idea coreográfica. **Es interpretación de la investigadora**, no verificación nuestra de cada palabra alemana del impreso. Para el estudio importa conservar la frase y sus transformaciones como unidad de análisis; no deriva de ahí una métrica de belleza o un criterio de `Q`.
+
 ## Alcance de lo leído
 
 | Lugar en la traducción | Paráfrasis limitada | Consecuencia para el estudio |

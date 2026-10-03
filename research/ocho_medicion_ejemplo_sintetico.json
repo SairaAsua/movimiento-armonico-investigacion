@@ -1,0 +1,34 @@
+{
+  "schema_version": "figure8_projected_measurement_v0",
+  "material": "synthetic",
+  "clip_id": "clip_s_ocho_01",
+  "media_bundle_id": "bundle_s_ocho_01",
+  "view_id": "C1",
+  "media_id": "media_s_ocho_C1",
+  "track_id": "track_s_hand_R_01",
+  "target": "hand_R",
+  "coordinate_convention": "x_right_y_up",
+  "image_transform_id": "identity_synthetic",
+  "clock_map_id": "identity_synthetic",
+  "crossing_times_us": [0, 500000, 1000000],
+  "uncertainty_method_id": "synthetic_vertex_bound",
+  "vertex_error_bound": 0.005,
+  "lobes": [
+    {
+      "lobe_id": 1,
+      "start_us": 0,
+      "end_us": 500000,
+      "signed_area": -0.03999968269048994,
+      "area_error_bound": 0.012846765358645922,
+      "orientation": "clockwise"
+    },
+    {
+      "lobe_id": 2,
+      "start_us": 500000,
+      "end_us": 1000000,
+      "signed_area": 0.03999968269048979,
+      "area_error_bound": 0.012846765358645922,
+      "orientation": "counterclockwise"
+    }
+  ]
+}
