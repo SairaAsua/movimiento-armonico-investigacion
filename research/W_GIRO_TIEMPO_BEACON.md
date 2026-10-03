@@ -2,6 +2,8 @@
 
 **Handoff conceptual para investigación y futura sonificación, 3 de octubre de 2026.** El [giro firmado `W`](Q_CRUCES_ORDEN.md) es una propiedad de una poligonal puntual 2D **cerrada**. El [contrato de `Q_live`](CONTRATO_Q_LIVE_V0.md) y su [gate de transición](https://github.com/SairaAsua/movimiento-armonico-investigacion/pull/30) ya separan muestra, ventana, disponibilidad, invalidez y reset para **otra** señal. No existe aún un canal `W` en HarMoCAP, Harmonic Weaver o Beacon; esta nota sólo delimita qué podría afirmarse antes de diseñarlo bajo la [issue #13](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/13).
 
+«Ciclo terminado» tampoco basta como cierre geométrico: la [prueba de cierre aproximado](W_CIERRE_APROXIMADO.md) distingue regreso observado, cuerda agregada por convención y trayecto físico faltante. El tiempo de disponibilidad de `W` presupone que esa política y sus gates ya se cumplieron.
+
 ## Dos rutas con el mismo pasado y distinto final
 
 El [banco reproducible](w_giro_tiempo_beacon_sintetico.py) fija observaciones ideales en `0`, `0,25`, `0,5`, `0,75` y `1 s`. Ambas rutas comparten `(0,0)→(1,0)→(1,1)` hasta `0,5 s`. Después, una sigue por `(0,1)` y cierra como cuadrado simple (`W=1`); la otra pasa por `(0,5;−0,5)`, se cruza en la proyección y cierra con `W=0`. El resultado de ciclo no puede ser distinto **antes** de que difiera la observación disponible: un audio que anunciase `W=1` frente a `W=0` a `0,5 s` habría usado información futura, una predicción no identificada o un estado oculto diferente.
