@@ -9,6 +9,7 @@ from pathlib import Path
 import sys
 import tempfile
 
+import cv2
 import numpy as np
 
 from auditar_derivado_video import audit
@@ -27,6 +28,7 @@ def main() -> None:
     from harmocap.webapp.offline_time import probe_video_timeline
     from harmonic_weaver.lab.research.rope_media import probe as rope_probe
     if args.check_r09:
+        from harmonic_weaver.lab.research.rope_media import frame_png as rope_frame_png
         from harmonic_weaver.lab.perception_worker import file_frames
 
     width, height = 64, 32
@@ -112,7 +114,7 @@ def main() -> None:
         if args.check_r09:
             import av
 
-            def check_r09(path: Path, expected_frames: list[np.ndarray], ticks: tuple[int, ...]) -> None:
+            def check_r09(path: Path, expected_frames: list[np.ndarray], ticks: tuple[int, ...]) -> list[tuple]:
                 decoded = list(file_frames(path))
                 assert len(decoded) == len(expected_frames) == len(ticks)
                 for (bgr, timing), rgb, tick in zip(decoded, expected_frames, ticks):
@@ -121,10 +123,18 @@ def main() -> None:
                     assert (timing["time_base_num"], timing["time_base_den"]) == (1, 10240)
                     assert timing["source_time_s"] == tick / 10240
                     assert timing["timestamp_origin"] == "pts"
+                return decoded
 
             check_r09(rotated, shown, rotated_time.ticks)
-            check_r09(default, default_frames, default_time.ticks)
-            check_r09(preserved, preserved_frames, preserved_time.ticks)
+            default_r09 = check_r09(default, default_frames, default_time.ticks)
+            preserved_r09 = check_r09(preserved, preserved_frames, preserved_time.ticks)
+            for path, sha256, decoded in ((default, default_time.source_sha256, default_r09),
+                                          (preserved, preserved_time.source_sha256, preserved_r09)):
+                for index, (pose_bgr, _) in enumerate(decoded):
+                    png = rope_frame_png(path, index, sha256)
+                    rope_bgr = cv2.imdecode(np.frombuffer(png, dtype=np.uint8), cv2.IMREAD_COLOR)
+                    assert rope_bgr is not None
+                    assert np.array_equal(rope_bgr, pose_bgr)
             r09_report = {
                 "checked": True,
                 "pyav_version": av.__version__,
@@ -132,6 +142,7 @@ def main() -> None:
                 "default_baked_frames": len(default_frames),
                 "vfr_baked_frames": len(preserved_frames),
                 "all_display_pixels_and_pts_equal_opencv_ffprobe": True,
+                "r08_frame_png_equals_r09_pixels_all_derived_frames": True,
             }
 
         print(json.dumps({
