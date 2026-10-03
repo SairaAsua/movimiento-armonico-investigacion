@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.16, 3 de octubre de 2026
+**Versión:** 0.17, 3 de octubre de 2026
 
 ## Resumen
 
@@ -72,7 +72,7 @@ Esta elección de pesos también separa `Q` de un proxy que ya produce HarMoCAP:
 
 La invariancia temporal de `Q` vale para el **recorrido continuo sin error**; estimar sus pesos desde cuadros ruidosos puede reintroducir la cadencia. En un modelo sintético con errores de posición 3D independientes e isotrópicos de desviación `σ` por eje, pasos reales cada vez más cortos quedan dominados por diferencias de ruido: sobre una recta cuyo `Q_x` verdadero es 1, el estimador tiende a `1/3` y la longitud poligonal crece aproximadamente como `n·4σ/√π` al aumentar el número `n` de pasos [21]. Dos velocidades sobre la misma recta pueden producir `Q̂` distintos a FPS fijo. En una curva sintética, reducir demasiado los cuadros pierde curvatura: error de polilínea y ruido de posición producen un compromiso dependiente de la tarea [21]. Esto exige validar error dinámico, muestreo y filtrado antes de presentar `Q̂` como geometría separada del ritmo; ningún banco prescribe un FPS para las cámaras reales.
 
-**Resultado analítico 1: espejo y orden no identificables desde `Q`.** Al elevar al cuadrado el producto, cambiar `u_i` por `−u_i` deja invariante cada `Q_k`. Al sumar por frase, permutar los tramos también deja invariante el vector. Dos frases con lateralidad u orden diferentes pueden recibir el mismo `Q`; ningún sonido basado únicamente en `Q` permitirá reconstruir esas diferencias. Para estudiar una escala orientada se deberán conservar direcciones **con signo**, eventos y transiciones. La igualdad se deduce de (2), sin datos de personas.
+**Resultado analítico 1: espejo y orden no identificables desde `Q`.** Al elevar al cuadrado el producto, cambiar `u_i` por `−u_i` deja invariante cada `Q_k`. Al sumar por frase, permutar los tramos también deja invariante el vector. Dos frases con lateralidad u orden diferentes pueden recibir el mismo `Q`; ningún sonido basado únicamente en `Q` permitirá reconstruir esas diferencias. Para estudiar una escala orientada se deberán conservar direcciones **con signo**, eventos y transiciones. Un contraejemplo más fuerte conserva incluso los mismos cuatro desplazamientos y el mismo largo en dos trayectorias cerradas: una tiene un autocruce propio y la otra ninguno, pero ambas dan `Q=(0,751774;0,248226;0)` [25]. Se trata del trazo temporal de un punto 2D; no informa cruces simultáneos ni orden delante–detrás de la soga. La igualdad se deduce de (2), sin datos de personas.
 
 ### 3.3. Situación del recorrido respecto del centro
 
@@ -239,6 +239,7 @@ Proponemos estudiar el movimiento armónico como una **familia de relaciones obs
 22. McCaw, D. (ed.) (2011). [*The Laban Sourcebook*, vista previa editorial](https://api.pageplace.de/preview/DT0400.9781136979484_A24268502/preview-9781136979484_A24268502.pdf), Routledge, introducción pp. 11–12 (PDF pp. 33–34), figs. 0.1 y 0.2 reproducidas de Laban, *Choreographie* (1926), pp. 20 y 23; [registro de cotejo](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/b6fa59e/research/LABAN_CHOREOGRAPHIE_FIGURAS_1926.md). Figuras primarias reproducidas y explicación editorial secundaria, sin acceso al texto completo de 1926.
 23. Equipo Harmonic Beacon (2026). [*Propagación de ruido de `Q` a controles Beacon*](../research/Q_RUIDO_BEACON_CONTROLES.md). Cálculo retrospectivo de un mapeo diagnóstico; no se envió OSC ni se registró audio.
 24. Equipo Harmonic Beacon (2026). [*Un reloj de tarea imperfecto puede fabricar asociación residual entre manos*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/88073d3/research/HIT_RELOJ_COMUN_CON_ERROR.md). Derivación algebraica y banco sintético de desviaciones temporales; comprueba además la cancelación del reloj compartido en una diferencia angular 1:1 construida. No estima fase desde video ni informa resultados humanos.
+25. Equipo Harmonic Beacon (2026). [*Mismo `Q`, mismos tramos, distinto cruce del recorrido*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/a029d48/research/Q_CRUCES_ORDEN.md). Contraejemplo geométrico y [script ejecutable](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/a029d48/research/q_cruces_orden_sintetico.py) de trayectoria puntual plana; no es un ensayo con soga ni una inferencia de topología 3D.
 
 ## Nota de estado y transparencia
 
