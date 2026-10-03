@@ -4,6 +4,8 @@ Revisión dirigida realizada el 23 de septiembre de 2026. No es una búsqueda si
 
 ## R1 — Movimiento y estética
 
+- [T/fuente autoral, **tres páginas completas cotejadas en facsímil**] Laban, R. von (1926). [«Vom Geist des Tanzes»](https://iiif.ub.uni-leipzig.de/0000064461/manifest.json), *Das Landestheater* (Schwerin), cuaderno 12, semanas del 16 al 29 de enero, pp. 4, 11 y 13; [ficha Kalliope](https://kalliope.staatsbibliothek-berlin.de/de/ead?ead.id=DE-611-HS-3396828). Teoría estética sobre movimiento, ritmo, armonía, placer y esfuerzo; contiene retórica racializada de época y ninguna medición fisiológica. [Cotejo y límites](LABAN_VOM_GEIST_1926_FACSIMIL.md).
+
 - [D/datos originales, una toma C3D descargada y procesada] Carnegie Mellon University Graphics Lab. [*Motion Capture Database*, sujeto 05, prueba 02](http://mocap.cs.cmu.edu/search.php?subjectnumber=5); [FAQ de uso](http://mocap.cs.cmu.edu/faqs.php). Danza moderna con brazos expresivos/pirueta, 120 Hz declarado en el archivo; marcadores 3D, sin soga ni resultados de experiencia o energía. [Auditoría, hashes y script](CMU_DANZA_BANCO_REAL.md).
 
 - [E/dataset original, documentación oficial consultada; datos no descargados] Li, R., Yang, S., Ross, D. A. y Kanazawa, A. (2021). [*AI Choreographer: Music Conditioned 3D Dance Generation With AIST++*](https://openaccess.thecvf.com/content/ICCV2021/html/Li_AI_Choreographer_Music_Conditioned_3D_Dance_Generation_With_AIST_ICCV_2021_paper.html), ICCV; [formato y tiempos del conjunto](https://google.github.io/aistplusplus_dataset/download.html). Nueve vistas/17 puntos COCO reconstruidos y anotaciones preparadas a 60 fps; no rope flow ni reloj físico de referencia. [Alcance de uso](AIST_BENCHMARK_ALCANCE.md).
