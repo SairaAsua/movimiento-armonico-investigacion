@@ -60,6 +60,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Soga girada por humano y robot con visión, Yamasaki et al. (2025)](CUERDA_ROBOT_VISION_YAMASAKI_2025.md): lectura del experimento original y de dos límites de sus indicadores; orienta controles de longitud, pulso común, fase intracíclo y calidad de mano para Nico y Beacon.
 
+[Cuerda periódica y estado latente, Kobayashi et al. (2022)](CUERDA_MODELO_LATENTE_KOBAYASHI_2022.md): separa predicción de movimiento corporal bajo una consigna robótica de la fase física independiente y de los resultados estéticos o fisiológicos que querríamos estudiar.
+
 [Reloj común medido con error](HIT_RELOJ_COMUN_CON_ERROR.md): [contraejemplo ejecutable](reloj_comun_error_sintetico.py) muestra que residualizar dos manos frente al mismo pulso imperfecto puede fabricar asociación y que reemparejar frases puede aparentar confirmarla; también muestra que la diferencia angular directa 1:1 cancela el reloj idéntico. El [presupuesto sintético](reloj_comun_sensibilidad.py) calcula la precisión necesaria bajo ese modelo, sin establecer umbrales de cámara. No hay estimación de fase desde video ni datos humanos.
 
 [Esqueleto del primer paper](ESQUELETO_PAIPER.md): alcance publicable, preguntas por unidad de análisis, secciones redactables, figuras/tablas sin resultados ficticios y guías de reporte pertinentes.
