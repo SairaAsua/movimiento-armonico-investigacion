@@ -30,6 +30,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Contrato propuesto de frase ordenada hacia Beacon](SERIE_FRASE_CONTRATO_BEACON.md): separa archivo científico de mensaje sonoro retrospectivo, palabra de líderes identificable de orden individual, y reset ante frase parcial, revisión o vencimiento. El [banco sintético de handoff](serie_frase_handoff_sintetico.py) comprueba la entrega lógica y sus resets; no es un endpoint implementado ni una prueba de audio.
 
+[Reconciliación con el laboratorio actual de Weaver](WEAVER_LAB_MAIN_RECONCILIACION_20261003.md): distingue las pruebas del driver antiguo de la ruta video/cámara → `MotionFrame`/`FeatureFrame` → Shaper publicada en `main` `cc5fb57`; separa el comparador R09 de streams de nuestra regla retrospectiva entre dos frases. Delimita qué contrato y pruebas faltarían antes de hacer audible esa comparación.
+
 [Cotas alternativas para el contrato `Q_live`](Q_CONTRATO_COTAS_ALTERNATIVAS.md): un tramo angularmente incierto puede hacer trivial la cota v0 aunque una cota global por error de posición sea informativa; documenta la futura decisión de versión sin atribuir precisión a cámaras reales.
 
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
