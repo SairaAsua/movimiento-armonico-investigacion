@@ -31,9 +31,12 @@ La [formalización posterior de White (2020)](LABAN_SIMETRIAS_Y_ESCALAS.md) perm
 | Shape: expansión/contracción | Cambios de configuración del cuerpo durante el ciclo | Distancias entre manos, ancho entre codos y volumen aproximado de pose, normalizados | 3D; por ciclo | Un simple promedio puede esconder alternancia. Cotejar con observadores; no equiparar forma corporal y apertura emocional. |
 | Effort: Tiempo | Cualidad de aceleración o sostenimiento observada | Perfil de velocidad/aceleración y duración de transición | Trayectoria fiable y timestamps reales | Una aceleración no traduce sin más “Sudden/Sustained”; validar contra codificación experta y contexto de tarea. |
 | Effort: Espacio | Atención o trayectoria directa/indirecta | Tortuosidad y cambios de dirección dentro de una meta de movimiento definida | Trayectoria y objetivo/ciclo | Si no se define objetivo, “directo” geométrico puede no coincidir con Effort Space. |
+
 | Effort: Peso | Cualidad fuerte/ligera observada | Ningún sustituto único aceptado; explorar cinemática y eventualmente fuerzas/EMG | Observadores y medición adicional justificada | Velocidad al cuadrado no mide fuerza ni gasto metabólico. El `laban_weight_proxy` de HarMoCAP es una función interna que requiere validación específica. |
 | Effort: Flow | Cualidad libre/ligada del movimiento | Candidatos: continuidad y capacidad de detener o redirigir, con definiciones previas | Traza más codificación experta | “Flow” de Laban, estado psicológico de flujo y continuidad cinemática son conceptos diferentes. No usar una sola etiqueta para los tres. |
 | Phrasing | Distribución de cambios dentro de una frase de movimiento | Segmentación de frase, duración relativa de preparación, pico y recuperación | Video completo y eventos anotados | Dos anotadores pueden elegir límites diferentes; medir acuerdo y dependencia del patrón. |
+
+**Control temporal de un proxy existente:** el [`laban_space_proxy` de HarMoCAP](LABAN_PROXY_VENTANA_TIEMPO.md) usa directness en los últimos 300 ms. Sobre la misma circunferencia completa, recorrerla a 1 o 2 Hz cambia su salida de 0,858 a 0,505, mientras nuestro `Q` por arco permanece `(0,5; 0,5)`. Por tanto ese proxy no entra sin más como «geometría Laban» independiente de cadencia en el contraste con HIT.
 
 ## La geometría no es una tabla de vértices
 
