@@ -124,8 +124,16 @@ def run_sequence(schema, records):
     return [gate.accept(record) for record in records]
 
 
+def diagnostic_gain_targets(record):
+    """Illustrative dedicated-band targets; no OSC or atomic write occurs."""
+    if record["status"] == "invalid":
+        return [0.0, 0.0, 0.0]
+    return [round(0.2 + 0.4 * component, 10) for component in record["q_lateral_up_front"]]
+
+
 def main():
     schema, base, changed, transition, recovered = fixture()
+    recovered["q_lateral_up_front"] = [0.25, 0.5, 0.25]
     good = run_sequence(schema, [base, transition, recovered])
     assert good == ["value_candidate", "reset_candidate", "value_candidate"]
     stale_recovery = copy.deepcopy(recovered)
@@ -159,6 +167,9 @@ def main():
     print(json.dumps({
         "scope": "synthetic_research_envelope_sequence_gate_not_live_audio",
         "accepted_actions": good,
+        "diagnostic_dedicated_band_4_5_6_targets": [
+            diagnostic_gain_targets(record) for record in (base, transition, recovered)
+        ],
         "rejected_sequences": rejected,
         "reset_boundary_us": transition["clock"]["available_at_us"],
         "recovered_window_start_us": recovered["clock"]["feature_window_start_us"],
