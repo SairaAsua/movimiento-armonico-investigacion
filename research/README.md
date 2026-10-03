@@ -16,6 +16,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Giros en *Choreographie*](LABAN_GIROS_1926.md): lectura de pp. 70–72; separa el anillo de tres lados y su eje construido del giro corporal, del recorrido de mano y de la torsión de soga. Propone controles de identificabilidad para rope flow.
 
+[Grupos direccionales «plásticos» en *Choreographie*](LABAN_GRUPOS_DIRECCION_1926.md): lectura de pp. 78–79; distingue afinidades cualitativas de orientación, rapidez, fuerza física y signos añadidos por los traductores antes de diseñar señales HarMoCAP/Beacon.
+
 [«Vom Geist des Tanzes» (enero de 1926)](LABAN_VOM_GEIST_1926_FACSIMIL.md): tres páginas autorales en facsímil de Leipzig sobre movimiento, ritmo, armonía, placer, esfuerzo y analogía entre vista y oído. Es teoría estética con contexto histórico problemático, no una prueba fisiológica ni la matemática de *Choreographie*.
 
 [Dos artículos autorales de *Der Tanz* (1927 y fascículo 1928/29)](LABAN_DER_TANZ_1927_1928.md): seis páginas cotejadas en facsímil sobre forma, contraste, movimiento grupal y experiencia. El archivo rotula «1/1929» al segundo número, pero lo fecha noviembre de 1928; no se extrae de estas páginas una fórmula de energía o conciencia.
