@@ -4,6 +4,8 @@ Nota metodológica del 23 de septiembre de 2026. **Diseño y simulación, sin da
 
 Un [experimento original de dos personas que giran una soga compartida](CUERDA_RITMO_MULTIMODAL_YONEKURA_2012.md) manipuló oído, visión y sensación de fuerza: ilustra entradas rítmicas múltiples y registra frecuencias de giro, pero no fase intracíclo ni rope flow. Su tarea refuerza la necesidad de guardar el pulso auditivo y el vínculo físico como fuentes, sin transferir su jerarquía sensorial a Nico.
 
+Un [ensayo posterior de persona y robot que giran cuerda con video (2025)](CUERDA_ROBOT_VISION_YAMASAKI_2025.md) refuerza dos controles: el pico espectral compartido a 1 Hz bajo pulso común no determina el desfase intracíclo, y la distancia bruta entre agarres no compara coordinación cuando se altera el largo de la cuerda.
+
 ## Evidencia que delimita la pregunta
 
 Un [experimento de movimiento inducido por música](https://pubmed.ncbi.nlm.nih.gov/25426051/) encontró relaciones con diferentes niveles métricos y ángulos de fase no iguales entre participantes. Es evidencia empírica de que un pulso externo puede estructurar movimiento; no es un estudio de rope flow. Una [investigación original sobre el valor de fase sincronizada en señales neuroeléctricas](https://pmc.ncbi.nlm.nih.gov/articles/PMC3674231/) muestra que mezcla o referencia común puede generar aparente bloqueo de fase. Esa situación instrumental no se traslada literalmente al cuerpo, pero motiva comprobar entradas comunes y artefactos de medición. La [lectura metodológica de fase](FASE_ROPEFLOW.md) y el [diccionario de señales](DICCIONARIO_SENALES_V0.md) fijan unidad, reloj y estados válidos.

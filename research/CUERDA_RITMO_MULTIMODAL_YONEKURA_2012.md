@@ -2,6 +2,8 @@
 
 Lectura del artículo original de [Yonekura, Kim, Nakadai, Tsujino y Sugano (2012), *A role of multi-modal rhythms in physical interaction and cooperation*](https://link.springer.com/article/10.1186/1687-4722-2012-12), *EURASIP Journal on Audio, Speech, and Music Processing* 2012:12, DOI `10.1186/1687-4722-2012-12`. Informa los [controles de ritmo común](CONTROLES_RITMO_COMUN.md), la [fase en rope flow](FASE_ROPEFLOW.md) y el futuro [ensayo de Beacon](ENSAYO_BEACON_CONTINGENCIA.md). **Tarea distinta:** dos personas giran una soga larga entre sus agarres; no es Nico haciendo figuras alrededor de su cuerpo.
 
+Otro [experimento con persona, robot y cuerda larga (2025)](CUERDA_ROBOT_VISION_YAMASAKI_2025.md) aporta un contraste instrumental posterior: el mismo pico de frecuencia y una distancia entre agarres no identifican por sí solos la relación de fase, sobre todo si cambia la longitud de la cuerda.
+
 ## Qué manipularon y qué observaron
 
 En el experimento 1 participaron **6 personas** de 21–23 años junto a un operador que siguió un pulso cercano a 2 Hz. Se combinaron restricciones de visión, audición y sensación de fuerza en ocho condiciones; para retirar la fuerza de la soga, un robot controló un extremo mientras la persona movía un control remoto, de modo que no sujetaba directamente esa soga (Métodos §§2.1–2.2). Había sensores de fuerza/par en los dos agarres a **100 Hz** y Vicon a **100 Hz** para posición de agarres. El experimento 2 incluyó **2 hombres** girando juntos, con señales auditivas de **1,6–2,4 Hz** y condiciones de ojos cubiertos (Métodos §2.2). La manipulación de «fuerza» modifica también el modo de actuar —agarre real frente a control/robot—; no aísla de manera perfecta una modalidad sensorial mientras todo lo demás permanece fijo.
