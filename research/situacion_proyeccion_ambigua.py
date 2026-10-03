@@ -19,16 +19,28 @@ def metrics(
 ) -> dict[str, float]:
     q = [(p[0] - origin[0], p[1] - origin[1], p[2] - origin[2]) for p in hand]
     radii = [sqrt(sum(v * v for v in point)) for point in q]
-    # These three collinear samples include the radial minimum of each segment.
-    length = sum(abs(q[i + 1][0] - q[i][0]) for i in range(len(q) - 1))
-    radial_total = sum(abs(radii[i + 1] - radii[i]) for i in range(len(q) - 1))
+    segments = [tuple(q[i + 1][k] - q[i][k] for k in range(3)) for i in range(len(q) - 1)]
+    segment_lengths = [sqrt(sum(v * v for v in d)) for d in segments]
+    length = sum(segment_lengths)
+    assert length > 0 and all(v > 0 for v in segment_lengths)
+    minimum_radii = []
+    for start, d, d_length in zip(q, segments, segment_lengths):
+        t = max(0.0, min(1.0, -sum(start[k] * d[k] for k in range(3)) / d_length**2))
+        minimum_radii.append(sqrt(sum((start[k] + t * d[k]) ** 2 for k in range(3))))
+    radial_total = sum(
+        radii[i] + radii[i + 1] - 2 * minimum_radii[i] for i in range(len(segments))
+    )
+    q_axes = [
+        sum(d[k] ** 2 / d_length for d, d_length in zip(segments, segment_lengths)) / length
+        for k in range(3)
+    ]
     return {
-        "rho_min": min(radii) / reach,
+        "rho_min": min(minimum_radii) / reach,
         "rho_max": max(radii) / reach,
         "V_r": radial_total / length,
-        "Q_x": 1.0,
-        "Q_y": 0.0,
-        "Q_z": 0.0,
+        "Q_x": q_axes[0],
+        "Q_y": q_axes[1],
+        "Q_z": q_axes[2],
     }
 
 
