@@ -2,6 +2,8 @@
 
 Nota de diseño, 23 de septiembre de 2026. Desarrolla la [matemática experimental](LABAN_MATEMATICA.md) y el [puente con HIT](PUENTE_LABAN_HIT.md). Las fórmulas aquí son propuestas de análisis y **no** fórmulas atribuidas a Laban ni mediciones ya realizadas sobre Nico.
 
+Una fase mano–soga alta puede ser [la respuesta mecánica esperable del objeto](FASE_MANO_SOGA_BASE_MECANICA.md); su medición exige canales observados por separado y no basta para afirmar eficiencia ni coordinación adicional.
+
 ## Primero, identificar qué se repite
 
 El ciclo no lo define un pico de velocidad ni un BPM de software. En cada patrón observado del [repertorio candidato](ROPEFLOW_TAREAS.md), fijar un evento visible de vuelta a la misma configuración **y dirección de movimiento**: por ejemplo, cruce de la soga por una región corporal con mano y sentido especificados. Dos pasos por el mismo punto con sentidos opuestos son eventos distintos. El evento se anota en video original con tiempo de captura; varios anotadores marcan una submuestra sin conocer la fase automática. Si la soga queda oculta, puede usarse un evento de muñeca sólo después de comprobar correspondencia con la soga en los tramos visibles. Cambiar de patrón requiere una nueva definición de ciclo.

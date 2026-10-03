@@ -1,0 +1,21 @@
+# Una fase mano–soga alta también puede ser la respuesta mecánica esperable
+
+Nota de diseño para la [Issue #5](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/5). Complementa [fase de rope flow](FASE_ROPEFLOW.md), [procedencia de cada fase](FASE_PROCEDENCIA_CIRCULAR.md) y [control de ritmo común](CONTROLES_RITMO_COMUN.md). No hay mediciones de Nico, calibración de soga ni un modelo físico validado para sus figuras.
+
+## Fuente y alcance
+
+En [Yamakawa, Namiki e Ishikawa (2013), *Dynamic High-Speed Knotting of a Rope by a Manipulator*](https://journals.sagepub.com/doi/10.5772/56783), la sección 4.2 propone, **bajo la condición de manipulación robótica muy rápida**, una aproximación en la que la posición de cada nodo `i` de una soga flexible es una copia retardada de la posición del extremo que la mueve: `s_i(t)=r(t−d_i)`. Los autores declaran que el retardo aumenta con la distancia al extremo y que el modelo no incorpora explícitamente inercia, gravedad, torsión ni todos los cambios de forma. Lo comparan con simulaciones y ensayos robóticos de figuras simples y anudado rápido. No es un estudio de rope flow humano ni una ley universal de la soga; a velocidades menores los mismos autores advierten que la gravedad exige otra dinámica.
+
+La fuente sirve aquí como **contraejemplo lógico** al salto de «fase estable» a «consonancia corporal especial». Si una coordenada observada de la mano fuera `h(t)=cos(ωt)` y una coordenada distinta de la soga respondiera como `s(t)=h(t−τ)`, sus fases ideales serían `φ_h=ωt` y `φ_s=ω(t−τ)`. La diferencia 1:1 es `φ_h−φ_s=ωτ` en cada instante, por lo que `R₁:₁=1` aunque no se haya postulado optimización, belleza, placer ni ahorro energético. A diferencia de copiar un mismo canal en el *software*, aquí podrían medirse dos objetos físicos distintos; el desfase sigue siendo esperable por el vínculo mecánico. Con cadencia o retardo variables, el resultado dependerá de la dinámica y del estimador, no sólo de una propiedad del ejecutante.
+
+## Tres preguntas que no deben mezclarse
+
+| Pregunta | Comparación admisible | Conclusión limitada |
+|---|---|---|
+| ¿Cómo sigue la soga a la mano? | Eventos y trayectorias **observados por separado**, con relojes, vistas y validez declarados; distribución del desfase por patrón y cadencia. | Describe una relación mano–objeto, aunque sea la respuesta mecánica normal. |
+| ¿Hay organización temporal adicional a una respuesta esperable del objeto? | En material de desarrollo, comparar un pronóstico de soga desde la **historia pasada** de mano, cadencia y condiciones físicas registradas con uno que añada otros segmentos o relaciones; evaluar en sesiones separadas. | Una mejora apoya predicción incremental condicionada al modelo y señales observadas. No identifica control neuronal ni transferencia de energía. Un modelo mecánico pobre o soga ocluida invalidan la comparación. |
+| ¿Esa relación predice belleza, experiencia o costo? | Contraste H2/H3/H4 con resultados externos independientes y las mismas unidades/bloques, controlando tarea y tempo. | La asociación, si aparece, no se deduce de `R` ni prueba que el retardo sea óptimo. Costo requiere medición fisiológica. |
+
+La fase de un **punto material** exige seguir ese punto; la fase de la **figura** exige un evento de forma definido. No usar la muñeca para reconstruir la soga oculta y luego celebrar su acuerdo. Para un pronóstico que pueda informar Beacon en vivo, las entradas deben existir **antes** del instante pronosticado; un filtro centrado o el cuadro siguiente sólo sirven para análisis retrospectivo. Si la soga no se observa con cobertura y error suficientes, conservar la descripción de mano y declarar la comparación mano–soga no identificable. El [contraejemplo de entrada común frente a cadena causal](causa_comun_sintetica.py) delimita además por qué un orden temporal pelvis→mano→soga no decide cuál proceso causó cuál.
+
+**Decisión:** tratar `R_mano_soga` como descriptor de seguimiento de un objeto físicamente conectado. Su valor no será por sí solo el resultado confirmatorio de HIT ni el control sonoro de una «eficiencia» inferida. El contraste confirmatorio, si los datos lo permiten, será aporte predictivo predefinido frente a bases de tarea, cadencia, geometría y dinámica observable, seguido por resultados externos separados.
