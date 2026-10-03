@@ -52,6 +52,10 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Misma trayectoria, distinto ritmo](GEOMETRIA_VS_TIEMPO_TRAYECTORIA.md): diferencia entre ponderar por cuadros y por longitud de recorrido, con [contraejemplo sintético ejecutable](geometria_tiempo_sintetica.py) para separar geometría Laban y tiempo HIT.
 
+[Comparabilidad geométrica entre dos motivos](EQUIVALENCIA_GEOMETRICA_MOTIVO.md): regla prospectiva de tres estados con orden de frase, curvas registradas, margen práctico y error instrumental; evita tratar una diferencia no detectada o un `Q` igual como prueba de «misma geometría» antes del contraste con HIT.
+
+[Banco sintético de comparabilidad geométrica](equivalencia_motivo_sintetica.py): mismo `Q` para círculo y cuadrado girado, misma curva con distinta ley temporal y casos `comparable/different/indeterminate`; demuestra sólo la lógica sobre curvas y cotas inventadas.
+
 [Acople espacio–tiempo](ACOPLE_ESPACIO_TIEMPO.md): misma curva y mismos marginales de rapidez/aceleración, pero acento en regiones corporales opuestas; incluye [control sintético](espacio_tiempo_acople_sintetico.py) y un descriptor condicional a validar antes del piloto.
 
 [Factibilidad del acople con cámaras](ACOPLE_CAMARA_FACTIBILIDAD.md): simulación proyectada con FPS, tamaño de gesto, ruido y pérdida de cuadros hipotéticos; incluye [script reproducible](acople_camara_sintetico.py) y criterios para el banco técnico real.
@@ -135,6 +139,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [Predicciones HIT escalonadas](HIT_PREDICCIONES_ESCALONADAS.md): distingue organización temporal, recurrencia informativa, robustez ante cambios, carga correctiva y experiencia; especifica qué prueba cada fase y qué no puede concluirse del primer piloto.
 
 [Predicción HIT sin fugas](HIT_PREDICCION_SIN_FUGAS.md): fija corte temporal y sesiones reservadas, distingue ganancia de representación de información sensorial nueva e incluye un [banco sintético](prediccion_relacional_sintetica.py).
+
+[Mejora por error de medición compartido](HIT_MEJORA_POR_ERROR_COMPARTIDO.md): testigo algebraico con [script exacto](hit_error_compartido_sintetico.py) en que un candidato temporal sin señal corporal propia mejora la predicción al corregir un descriptor espacial ruidoso; delimita la interpretación de `Δ_H` y `S`.
 
 [Identificabilidad de 2D/3D](IDENTIFICABILIDAD_2D_3D.md): dos recorridos 3D diferentes con la misma imagen, reglas para llamar proyectada a una variable y requisitos de multivista. Incluye un [contraejemplo ejecutable](proyeccion_2d_ambigua.py) sin datos humanos.
 

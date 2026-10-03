@@ -1,7 +1,10 @@
 # Extractos de HIT consultados
 
-Fuente: https://drive.google.com/file/d/1vF8i_S21klJ2M7ud6FuohF7BbPvP_ykp/view
-Autores: Mariano Fernández Méndez y Nicolás Echániz. Harmonic Information Theory: Foundations, primera edición digital, 2026. Licencia CC BY 4.0 https://creativecommons.org/licenses/by/4.0/. Selección de secciones, sin modificaciones internas. Copia de Drive con fecha de modificación 2026-04-17; no se asume última versión. Consulta 2026-09-23. Otros informes internos consultados documentan correcciones posteriores en resultados computacionales, por lo que no se reutilizan aquí esas cifras como resultados vigentes.
+Fuente de la selección original: https://drive.google.com/file/d/1vF8i_S21klJ2M7ud6FuohF7BbPvP_ykp/view
+Edición pública para cotejo: https://hit.altermundi.net/libro/Harmonic_Information_Theory_Foundations_Primera_edici%C3%B3n_digital.md
+Autores: Mariano Fernández Méndez y Nicolás Echániz. *Harmonic Information Theory: Foundations*, primera edición digital, 2026. Licencia CC BY 4.0 https://creativecommons.org/licenses/by/4.0/. Selección de ocho secciones, sin modificaciones internas. La copia de Drive consultada el 2026-09-23 tiene fecha de modificación 2026-04-17.
+
+**Cotejo de fuente, 2026-10-03:** se descargó el Markdown que el [sitio editorial oficial](https://hit.altermundi.net/) presenta como versión de lectura automatizada; SHA-256 de ese archivo en la consulta: `bf1bbb1b6b6e971a68252eae2ad61819757c5beae91a0537f8418a403945b2e6`. Se comparó cada una de las ocho secciones completas entre los encabezados de esta selección y los del Markdown oficial, normalizando sólo secuencias de espacios y saltos de línea: las ocho coincidieron exactamente. **No** se cotejó aquí el PDF tipográfico ni el resto del libro; un hash distinto en una descarga futura exige repetir la comprobación. Otros informes internos documentan correcciones posteriores en resultados computacionales, por lo que no se reutilizan aquí esas cifras como resultados vigentes.
 
 #### 4.2 Consonance as dynamic stability rather than rigid perfection
 
