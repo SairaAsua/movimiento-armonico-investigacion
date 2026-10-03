@@ -2,7 +2,7 @@
 
 **Tipo de manuscrito:** artículo teórico y metodológico; propuesta experimental, sin resultados del caso principal
 **Autoría de trabajo:** Equipo de investigación sobre movimiento, Harmonic Beacon. La lista académica de autores, afiliaciones y contribuciones deberá acordarse antes de una eventual presentación editorial.
-**Versión:** 0.45, 3 de octubre de 2026
+**Versión:** 0.46, 3 de octubre de 2026
 
 ## Resumen
 
@@ -139,6 +139,8 @@ La soga, además, **responde físicamente** a la mano. En un modelo restringido 
 En otra tarea vecina, una persona siguió ocho combinaciones de giro/vaivén, lado y velocidad de una cuerda accionada por robot. Kobayashi, Murata e Inamura representaron 18 puntos corporales 3D y el estado del robot en un modelo recurrente; la configuración con dinámica humano–robot explícita y reservorio complejo predijo mejor las observaciones que su comparación interna [55]. La fase de ese reservorio es un **estado computacional**, no una fase física independiente de mano, torso o soga; el experimento tampoco valoró belleza o gasto. Su utilidad aquí es mostrar que una consigna periódica y el historial de la tarea pueden explicar movimiento sin invocar consonancia HIT. El rope flow individual de Nico exige probar esa alternativa con sus propias entradas observables, no trasladar el rendimiento numérico del robot.
 
 **Resultado analítico 3: estabilidad no identifica «fase correcta».** Si `δ` es constante, `R=1` tanto para `δ=0` como para `δ=π`. La fase alta tampoco demuestra transferencia mecánica ni coordinación causada por un segmento: dos partes pueden seguir una misma consigna externa. Una pausa o transición sin ciclo definido debe quedar como «fase no aplicable» y no como «disonancia».
+
+El resumen global tampoco conserva el **orden entre episodios**: en cuatro vueltas ideales separadas, desfases `++−−` y `+−+−` de magnitud `π/3` dan el mismo `Q=(0,5;0,5)`, `R₁:₁=0,5`, ángulo medio cero y distribución de desfases, pero uno y tres cambios respectivamente en qué mano entra primero en una dirección de referencia [63]. La serie completa de fases sí los distingue. Este control matemático motiva registrar límites de frase y eventos ordenados además del promedio circular, sin inferir de ahí un canon de Laban, una preferencia estética ni un patrón ejecutable con soga.
 
 Antes incluso de interpretar `R`, debe identificarse **la fase de cada señal**. En un control de cuatro ciclos, una orientación de torso observada como `a sin(2πt)` da `R̂₁:₁=1` respecto de una mano ideal; si su error punto a punto admite `2a≤ε`, la misma observación es compatible con un torso que invierte el signo en ciclos alternos y tiene `R₁:₁=0` [40]. Un número de fase calculado tras normalizar una oscilación menor que el error no resuelve esa ambigüedad. Es un caso adverso sintético, no una tasa de fallo de cámaras reales ni una refutación de HIT.
 
@@ -362,6 +364,8 @@ Proponemos estudiar el movimiento armónico como una **familia de relaciones obs
 61. Equipo Harmonic Beacon (2026). [*Dos observaciones para una distancia espacial causal*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/554e936/research/PAR_ESPACIAL_LIVE_CONTRATO.md), [fixture lógico](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/554e936/research/par_espacial_live_sintetico.py) y [replay aislado del motor Weaver](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/554e936/research/replay_par_espacial_weaver.py). Gate con tiempos y estados inventados; control y reset en transporte de prueba, no implementados como señal espacial validada en HarMoCAP/Beacon.
 
 62. Equipo Harmonic Beacon (2026). [*Frontera de procedencia: par de muñecas de HarMoCAP a Weaver*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/2fa4fdc/research/PAR_ESPACIAL_FRONTERA_CONTRATOS.md). Auditoría de dos checkouts públicos y propuesta de contrato; no es un adaptador implementado ni prueba de cámara/audio.
+
+63. Equipo Harmonic Beacon (2026). [*Forma, secuencia y correlación entre miembros en Choreographie*](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/de0908f/research/LABAN_CORRELACIONES_1926.md) y [contraejemplo de orden/primer armónico global](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/de0908f/research/canon_fase_orden_sintetico.py). Cuatro episodios ideales independientes; mismo `Q`, `R` y ángulo medio, distinto orden de liderazgo. No modela soga, belleza ni una categoría histórica validada.
 
 ## Nota de estado y transparencia
 
