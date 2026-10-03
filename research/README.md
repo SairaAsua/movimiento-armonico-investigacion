@@ -141,6 +141,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [Ruta HarMoCAP → Weaver → beacon-spatial](RUTA_HARMOCAP_WEAVER_BEACON.md): contratos y código público actual, límite del MVP sin audio live y alias `kinetic_energy` que no representa energía física.
 
 [Weaver como laboratorio exploratorio, estado revalidado tras fusión de R09](WEAVER_LABORATORIO_ESTADO_20261002.md): distingue el laboratorio offline ya integrado en `main` del driver live aún pendiente de procedencia. Ordena video de baile → sonificación offline → anotación de soga sin afirmar validación humana.
+Incluye la lectura de la PR multivista R09 #121, todavía abierta: un contraejemplo sintético de correspondencia equivocada muestra por qué baja reproyección no alcanza para declarar 3D corporal válido.
 
 [Cruce de contratos R09 → situación del recorrido](R09_SITUACION_CRUCE_CONTRATOS.md): mapea campos y límites de observaciones espaciales por cuadro al sobre derivado de frase; fija gates de 3D, reloj, origen, calidad y disponibilidad antes de una futura implementación, sin atribuir validación física al laboratorio.
 
