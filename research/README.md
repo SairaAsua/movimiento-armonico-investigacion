@@ -34,7 +34,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 La misma nota añade un [banco de giro firmado](q_giro_orden_sintetico.py): `W` de una poligonal cerrada distingue el par con igual `Q`, cambia con reversa/espejo y no equivale al número de cruces. Un [contraejemplo 3D de dos vistas](q_giro_proyeccion_sintetica.py) muestra `W=1` en `xy` y `W=0` en `xz` para la misma trayectoria no plana. Es una representación exploratoria de orden **por vista**, no una categoría histórica de Laban.
 
-[Giro y disponibilidad para una escucha futura](W_GIRO_TIEMPO_BEACON.md): [banco sintético](w_giro_tiempo_beacon_sintetico.py) con dos vueltas de igual prefijo y `W` final distinto; separa giro local causal de resumen retrospectivo, y fija un gate de invalidez/reset sin afirmar audio Beacon.
+[Giro y disponibilidad para una escucha futura](W_GIRO_TIEMPO_BEACON.md): [banco temporal sintético](w_giro_tiempo_beacon_sintetico.py) con dos vueltas de igual prefijo y `W` final distinto; separa giro local causal de resumen retrospectivo. Un [segundo banco](giro_local_incertidumbre_sintetica.py) fija cuándo el signo local queda `unknown` por error de posición o salto de rama. Ninguno afirma audio Beacon.
 
 [Incertidumbre de un cruce de trayectoria 2D](CRUCE_TRAYECTORIA_INCERTIDUMBRE.md): [certificado geométrico ejecutable](cruce_trayectoria_incertidumbre.py) bajo error acotado de vértices; [contraejemplo entre cuadros](cruce_entre_cuadros_sintetico.py) con igual pose puntual muestreada y distinto autocruce; y [envolvente de alcanzabilidad](cruce_envolvente_rapidez_sintetica.py) que sí descarta cruces entre intervalos separados cuando sus regiones posibles no se tocan. Ninguno valida la soga.
 

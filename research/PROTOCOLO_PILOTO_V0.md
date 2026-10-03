@@ -51,6 +51,8 @@ Si se incluye un cruce de la **trayectoria proyectada de un punto**, la [cota de
 
 Si se ensaya el giro firmado `path_turning_number_proj`, conservarlo **por vista** y por ciclo cerrado, con la orientación de imagen y su cobertura. El [contraejemplo multivista](Q_CRUCES_ORDEN.md) da `W=1` y `W=0` para la misma ruta espacial no plana: el desacuerdo entre cámaras no se resolverá por mayoría ni se tomará como error de una cámara sin una referencia 3D y una hipótesis de planitud verificadas.
 
+Si se ensaya además un giro local para escucha causal, medir error posicional por punto y vista, y registrar por separado aristas demasiado cortas, signo incierto cerca de `0` y salto de rama cerca de `±π`. La [cota angular condicional](W_GIRO_TIEMPO_BEACON.md) requiere error duro simultáneo; con sólo RMSE se reportará incertidumbre estadística sin llamarla certificado determinista. El denominador de cobertura incluye los `unknown` y los huecos; ninguna señal de giro local se declara válida sólo porque exista el tercer cuadro.
+
 No usar coincidencia de dos algoritmos sobre la misma imagen como referencia anatómica independiente. La [lista GRRAS original](https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf) orienta reporte de evaluadores, objetos, muestreo, cegamiento, estimaciones de acuerdo e incertidumbre; su actualización [GRRAS-COSMIN](https://www.grras-cosmin.org/) estaba en desarrollo al consultar. Una checklist de reporte no sustituye diseño ni calibra una cámara.
 
 ## Análisis y reglas de paso
