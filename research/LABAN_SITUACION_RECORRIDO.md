@@ -60,6 +60,19 @@ En la ventana izquierda 480–600 (4–5 s), por ejemplo, `rho_min` pasa de `1,4
 
 Este contraste **no estima error instrumental**: cambia deliberadamente el objeto matemático. Muestra que declarar “cercanía al centro” sin fijar qué centro se usa puede producir una diferencia del mismo orden que la medida. La futura guía experta debe escoger el origen según la pregunta, no según cuál resultado parezca más armónico; el banco técnico de Nico deberá medir además la incertidumbre del origen elegido.
 
+### Sensibilidad a cantidad y fase de cuadros
+
+El [tercer script CMU](cmu_situacion_decimacion.py) conserva las mismas nueve ventanas de un segundo y los dos extremos de cada una; descarta puntos interiores para formar grillas nominales de 60, 30, 24, 15 y 12 Hz **desde el C3D de 120 Hz**. Recorre todas las fases posibles de cada grilla. Forzar extremos mantiene el mismo intervalo, pero produce un tramo inicial o final más corto que la cadencia nominal; la salida declara cuántos puntos interiores hubo. Se reconstruye una nueva polilínea sin filtro antialias. **No simula cámara, exposición, compresión, oclusión, triangulación ni HarMoCAP.** La polilínea a 120 Hz es comparador interno, no verdad física continua.
+
+| Proxy y grilla | Comparaciones ventana×fase | `Δrho_min` mín.–máx. (anchos de hombro) | `ΔV_r` mín.–máx. | Distancia L1 de `Q`, mediana / máx. |
+|---|---:|---:|---:|---:|
+| Izquierda, 30 Hz | 36 | `−0,000601 / +0,009734` | `−0,044690 / +0,031835` | `0,032968 / 0,520274` |
+| Derecha, 30 Hz | 36 | `−0,001946 / +0,009169` | `−0,048196 / +0,022819` | `0,030763 / 0,371916` |
+| Izquierda, 24 Hz | 45 | `−0,001273 / +0,010400` | `−0,060532 / +0,033940` | `0,037097 / 0,495770` |
+| Derecha, 24 Hz | 45 | `−0,001946 / +0,010216` | `−0,055045 / +0,025451` | `0,034860 / 0,393484` |
+
+En esta toma, `rho_min` cambia poco por descarte frente a las diferencias observadas al **cambiar de origen**, pero `Q` puede cambiar mucho en algunas ventanas. Un `Δrho_min` negativo no es error de signo: la cuerda que une dos puntos más alejados en el tiempo puede cortar por dentro del recorrido más densamente muestreado y acercarse más al origen. Una verificación NumPy independiente reprodujo un mínimo de segmento decimado. Los máximos provienen de ventanas y fases correlacionadas del **mismo sujeto y ensayo**; no son límites de error para las Reolink, las «logicam», el Moto G ni una tasa mínima de compra. La decimación tampoco verifica fase HIT intracíclo ni la soga. Para fijar FPS en Nico habrá que medir el movimiento real, PTS, blur, oclusión y error contra referencia a las cadencias efectivas.
+
 ## Control factorial con `Q` y fase HIT
 
 El [factorial Laban–HIT anterior](LABAN_HIT_FACTORIAL.md) cruzaba plano `Q` y relación temporal `R₁:₁`. El [nuevo banco 2×2×2](laban_hit_situacion_factorial.py) añade **situación radial**: toma la misma curva circular ideal de la segunda mano y la traslada `0,6` unidades a lo largo del eje lateral, conservando exactamente cada desplazamiento y rapidez cuadro a cuadro. Usa origen fijo `(0,0,0)` y normalizador geométrico `R=2`, que **no** representa alcance humano. La primera mano es el reloj matemático de referencia del banco anterior; las fases son conocidas por construcción, no estimadas de sensores independientes.
