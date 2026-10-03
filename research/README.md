@@ -24,6 +24,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Frontera entre `Q`, tensor y subespacios](Q_TENSOR_SUBESPACIOS.md): un [contraejemplo reproducible](q_tensor_subespacios_sintetico.py) demuestra que tres recorridos pueden compartir `Q` aunque definan líneas ortogonales o un plano; orienta el cruce propuesto con Weaver sin atribuir planos 3D a video monocular.
 
+[Golf, Laban e inercia de un implemento](GOLF_LABAN_INERCIA_2024.md): auditoría de un reanálisis de dos golfistas con captura 3D y plataforma de fuerza; distingue el momento de inercia de masa del palo de nuestro segundo momento direccional `M`, y delimita qué no se transfiere a una soga flexible.
+
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
 
 [Descomposición del marco móvil](MARCO_MOVIL_DESCOMPOSICION_C.md): identidad exacta y banco CMU para cuantificar cuánto del recorrido co-rotante proviene del cambio de ejes; fija una comprobación necesaria antes de sonificar `C`.

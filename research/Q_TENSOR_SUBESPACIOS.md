@@ -41,3 +41,5 @@ De `‖ΔM‖₂≤ε_M` y el principio de mínimo–máximo se sigue que cada a
 5. Con video monocular, calcular sólo objetos **proyectados**. Poner `z=0` en la imagen no recupera el rango, el plano ni `Q` corporal 3D ([ambigüedad 2D/3D](IDENTIFICABILIDAD_2D_3D.md)). HarMoCAP/Weaver/Beacon no deberían recibir un nuevo canal 3D por esta prueba sintética; una integración futura requiere contrato, incertidumbre, replay causal y escucha con audio registrado.
 
 **Reproducir:** `python research/q_tensor_subespacios_sintetico.py`. Su salida es un control de definiciones matemáticas, no una observación sobre movimiento humano. Para la colaboración con Weaver, esta nota complementa su [plan de banco independiente](https://github.com/AlterMundi/harmonic-weaver/issues/35), sin copiar código ni ocupar los directorios reservados a Oliva.
+
+Un [antecedente de golf con Laban e inercia de un implemento](GOLF_LABAN_INERCIA_2024.md) usa otro tensor: el momento de inercia **de masa** del palo, con unidades masa×longitud². Su semejanza algebraica con nuestro `M` adimensional no permite llamar «inercia corporal» a `Q` ni deducir fuerzas de la trayectoria de una soga flexible.
