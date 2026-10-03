@@ -127,6 +127,8 @@ Si se ensaya una **escucha retrospectiva**, la ruta hacia Weaver recibiría sól
 
 El [fixture de orden y correcciones del laboratorio vigente](WEAVER_LAB_MAIN_RECONCILIACION_20261003.md#orden-de-episodios-y-correcciones-todavía-como-contrato-propuesto) agrega `stream_epoch` y `episode_seq` al sobre futuro: una revisión tardía de un episodio anterior actualiza el archivo, pero no reemplaza el sonido de una frase posterior. Una revisión activa `indeterminate` retira la capa, y el vencimiento impide resucitarla con un reenvío. Estas son reglas de aceptación a probar, no comportamientos observados del software actual.
 
+Si alguna escucha se presenta como **próxima al gesto**, su plazo de sonido no demuestra que el video sea reciente: el receptor debe comprobar edad del último cuadro físico y disponibilidad con un mapa de relojes e incertidumbre, o abstenerse. Un mensaje viejo puede escucharse en modo de archivo elegido explícitamente y etiquetado como tal. La [regla y el caso sintético de llegada tardía](WEAVER_LAB_MAIN_RECONCILIACION_20261003.md) separan esas dos experiencias antes de prometer feedback corporal.
+
 ## Gates de implementación y prueba
 
 1. **Congelar análisis offline.** Recuperar trazas y ciclos desde medios originales con versiones, error y exclusiones. Si el descriptor 3D o fase no supera el piloto, no entra al feedback con nombre científico.
