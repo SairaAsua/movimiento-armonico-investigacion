@@ -32,7 +32,7 @@ La recta entre cuadros es una **definición de la trayectoria muestreada**, no p
 | Tramo de `(0.4,0,0)` a `(0.8,0,0)` | `(1,0,0)` | `0,266667` | `1` | Su línea **infinita** pasa por el centro, el trecho observado no. |
 | Semicírculo poligonal de radio `1,5` | `(0.5,0.5,0)` | `0,998795` | `0,024549` | Permanece cerca de la frontera. Las cuerdas entran ligeramente y vuelven a salir; al refinar la malla, `rho_min→1` y `V_r→0` para el círculo ideal. |
 
-El banco también comprueba que trasladar **trayectoria y origen juntos** conserva las cuatro cantidades, y que escalar trayectoria y `R` juntos conserva las razones adimensionales y `Q`. Es una prueba de propiedades del cálculo, no de validez de una categoría histórica o corporal. Un mismo valor de `rho_min` puede describir trayectorias muy distintas; ninguna de estas cantidades por sí sola decide central/periférico/transversal.
+El banco también comprueba que trasladar **trayectoria y origen juntos** conserva las cuatro cantidades, y que escalar trayectoria y `R` juntos conserva las razones adimensionales y `Q`. Es una prueba de propiedades del cálculo, no de validez de una categoría histórica o corporal. Un mismo valor de `rho_min` puede describir trayectorias muy distintas. Más aún: el [contraejemplo de ocupación radial](SITUACION_OCUPACION_ARCO.md) conserva **todo** `Q`, `rho_min`, `rho_max`, `V_r`, longitud y extremos inicial/final, mientras cambia la fracción de recorrido cerca del centro de `0,625` a `0,125`. Ninguna de estas cantidades por sí sola, ni necesariamente su conjunto, decide central/periférico/transversal.
 
 ### Calidad de una ventana antes de calcular
 

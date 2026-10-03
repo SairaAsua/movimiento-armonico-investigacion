@@ -26,6 +26,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Dependencia de extremos radiales con la duración de frase](SITUACION_VENTANA_EXTREMOS.md): un mínimo puede bajar por tener más ciclos observados. Fija ventanas comparables y análisis por ciclo antes de atribuir esa diferencia a situación o HIT.
 
+[Ocupación radial por longitud de arco](SITUACION_OCUPACION_ARCO.md): [banco sintético](situacion_ocupacion_arco_sintetica.py) donde `Q`, extremos, `V_r`, longitud y extremos inicial/final coinciden, pero la fracción del recorrido cerca del centro difiere. Propone una familia descriptiva rival para desarrollo, sin etiqueta Laban ni nueva señal Beacon validada.
+
 [Sobre sintético de situación del recorrido](CONTRATO_SITUACION_V0.md): [fixture JSONL](research_path_situation.synthetic.jsonl) y [validador](validar_research_path_situation.py) conservan origen, marco, escala, ventana, reloj e invalidez para una futura rama científica HarMoCAP–Weaver–Beacon. Sólo comprueban estructura y aritmética de un ejemplo ideal, no precisión espacial ni audio.
 
 [Presupuesto de error de situación](PRESUPUESTO_ERROR_SITUACION.md): intervalos con error duro de posición/origen/escala y cota para variación radial, con [banco sintético](situacion_error_sintetico.py) que expone cuándo la cota se vuelve trivial. No estima el error de las cámaras reales.
