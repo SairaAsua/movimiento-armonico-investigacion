@@ -6,6 +6,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Mecanoscrito «Tanz und Musik» de Laban](LABAN_TANZ_UND_MUSIK_MANUSCRITO.md): cuatro páginas autorales inspeccionadas en facsímil Leipzig; cotejan doce inclinaciones, centro/periferia y la objeción a equiparar tono agudo con gesto alto, sin autorizar una fórmula acústica para Beacon.
 
+[Dos artículos autorales de *Der Tanz* (1927 y fascículo 1928/29)](LABAN_DER_TANZ_1927_1928.md): seis páginas cotejadas en facsímil sobre forma, contraste, movimiento grupal y experiencia. El archivo rotula «1/1929» al segundo número, pero lo fecha noviembre de 1928; no se extrae de estas páginas una fórmula de energía o conciencia.
+
 [Figuras de *Choreographie* (1926) en reproducción editorial](LABAN_CHOREOGRAPHIE_FIGURAS_1926.md): se inspeccionaron el octaedro de p. 20 y los planos dimensionales de p. 23 del original en la vista previa del *Laban Sourcebook*. Son evidencia visual parcial, no lectura del libro completo ni fuente de nuestras ecuaciones.
 
 [Cronología documental CND: ensayos de 1926 y cinétografía de 1928](LABAN_CND_NOTACION_1926_1928.md): lectura de una síntesis institucional de tres páginas y registro de una figura de 1926 aún no accesible; separa ambas tradiciones de nuestras ecuaciones para rope flow.
