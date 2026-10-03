@@ -8,6 +8,8 @@ Saira señaló además [el repositorio de Nico `nicoechaniz/harmonic-weaver`](ht
 
 **Candidato offline, 3-10-2026:** [HarMoCAP PR #4](https://github.com/Mar-IA-no/HarMoCAP/pull/4) propone conservar PTS por cuadro, índice fuente, base de tiempo, SHA-256 y denominadores de descarte en JSONL/CSV; recorta por PTS y rechaza cronologías ausentes o no monótonas. Sus fixtures sintéticos CFR/VFR y la suite del fork pasaron (112 tests, 2 omitidos). El PR está **abierto**: no se atribuye ese comportamiento a `main` ni al contrato OSC en vivo. Tampoco prueba que OpenCV y FFmpeg alineen índices en cualquier video real, que la pose humana sea válida o que la ruta de Weaver conserve la procedencia nueva. Para el primer video autorizado habrá que cotejar cuadro/píxel/PTS del original y versionar el SHA de HarMoCAP realmente usado.
 
+La [comparación de contratos offline](PUENTE_VIDEO_PTS_HARMOCAP_WEAVER_20261003.md) separa el JSONL de **features** de la webapp, el `MotionFrame` de pose del laboratorio R09 y la ruta OSC #77; fija cómo conservar el origen PTS al recortar y qué pruebas faltan antes del video autorizado.
+
 ## Qué existe y qué falta
 
 | Etapa | Código/contrato comprobado | Alcance verificable de esta revisión |

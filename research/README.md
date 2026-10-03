@@ -24,6 +24,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
 
+[Puente temporal de video HarMoCAP–Weaver](PUENTE_VIDEO_PTS_HARMOCAP_WEAVER_20261003.md): cotejo de contratos offline, origen PTS, diferencia entre features y pose, y gates para el primer archivo autorizado; distingue esta ruta de los PRs OSC en vivo.
+
 [Descomposición del marco móvil](MARCO_MOVIL_DESCOMPOSICION_C.md): identidad exacta y banco CMU para cuantificar cuánto del recorrido co-rotante proviene del cambio de ejes; fija una comprobación necesaria antes de sonificar `C`.
 
 [Sensibilidad del umbral de `C` al marco](CMU_UMBRAL_MARCO_VENTANA.md): Monte Carlo local que muestra que jitter angular hipotético puede aumentar la cobertura aparente y sesgar el valor aun cuando el gate pasa; delimita qué error debe medirse con las cámaras reales.
