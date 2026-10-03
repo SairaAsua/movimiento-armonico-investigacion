@@ -34,7 +34,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Figuras de *Choreographie* (1926) en reproducción editorial](LABAN_CHOREOGRAPHIE_FIGURAS_1926.md): se inspeccionaron el octaedro de p. 20 y los planos dimensionales de p. 23 del original en la vista previa del *Laban Sourcebook*. Son evidencia visual parcial, no lectura del libro completo ni fuente de nuestras ecuaciones.
 
-[Cronología documental CND: ensayos de 1926 y cinétografía de 1928](LABAN_CND_NOTACION_1926_1928.md): lectura de una síntesis institucional de tres páginas y registro de una figura de 1926 aún no accesible; separa ambas tradiciones de nuestras ecuaciones para rope flow.
+[Cronología documental CND: ensayos de 1926 y cinétografía de 1928](LABAN_CND_NOTACION_1926_1928.md): síntesis institucional de tres páginas y figura 17 del catálogo de exposición de 2006, un recorte de signos de *Choreographie* sin página original identificable ni escala descifrada. Separa esa evidencia parcial de nuestras ecuaciones para rope flow.
 
 **Preparación práctica sin captura nueva:** [montaje, lista de compras e inventario inicial de videos de Nico](MONTAJE_COMPRAS_Y_VIDEOS_NICO.md). Se identificaron episodios editados de contexto, pero todavía ningún original confirmado de Nico haciendo rope flow.
 
