@@ -4,15 +4,17 @@ Derivación y banco **sintéticos** del 2 de octubre de 2026. El [artículo teó
 
 ## Dos medidas sobre una misma ejecución
 
-Sean `S(t)` una región predefinida y `Φ(t)` una fase obtenida sin reutilizar la misma etiqueta espacial. Para intervalos válidos `i`, con duración `Δt_i`, arco observado `Δs_i=||x(t_{i+1})−x(t_i)||` y etiquetas en el punto medio, hay al menos dos distribuciones legítimas:
+Sean `S(t)` una región predefinida y `Φ(t)` una fase obtenida sin reutilizar la misma etiqueta espacial. **Idealmente**, sobre el tiempo válido de una curva continua con duración `T` y longitud `L>0`, hay al menos dos distribuciones legítimas:
 
-`P_t(k,b) = [Σ_i Δt_i 1{S_i=k,Φ_i=b}]/[Σ_i Δt_i]`,
+`P_t(k,b) = (1/T) ∫ 1{S(t)=k,Φ(t)=b} dt`,
 
-`P_s(k,b) = [Σ_i Δs_i 1{S_i=k,Φ_i=b}]/[Σ_i Δs_i]`.
+`P_s(k,b) = (1/L) ∫ 1{S(t)=k,Φ(t)=b} ds`, donde `ds` es longitud de arco.
 
-`P_t` pregunta **qué fracción del tiempo válido** coincide con cada región y fase; `P_s` pregunta **qué fracción del recorrido válido**. Una pausa visible cuenta en `P_t` y aporta arco cero a `P_s`. Los cuadros duplicados o un FPS variable no deben valer como réplicas nuevas: usar marcas de tiempo y arcos físicos con su incertidumbre, no un conteo bruto de cuadros. Reportar por separado duración, arco, cobertura y exclusiones de cada denominador.
+`P_t` pregunta **qué fracción del tiempo válido** coincide con cada región y fase; `P_s` pregunta **qué fracción del recorrido válido**. Una pausa visible cuenta en `P_t` y aporta arco cero a `P_s`. Desde video se aproximan las integrales con intervalos `Δt_i` y arcos `Δs_i`; usar una sola etiqueta de punto medio para cada intervalo es una **aproximación** que debe comprobarse frente a la resolución temporal y a los cruces de fronteras. Los cuadros duplicados o un FPS variable no deben valer como réplicas nuevas: usar marcas de tiempo y arcos físicos con su incertidumbre, no un conteo bruto de cuadros. Reportar por separado duración, arco, cobertura y exclusiones de cada denominador.
 
-Una región radial puede definirse **en cada tramo** como `S_i=1{||q_i||/R≤a}`, con origen, escala, umbral `a` y regla para cruces de frontera declarados antes del contraste. No sustituir `S_i` por el `rho_min` o la fracción de arco **resumidos para toda la frase**: una etiqueta constante dentro de esa frase da `H(S)=J=0` por definición y no pregunta en qué fase ocurrió la cercanía. El [banco de ocupación radial del PR #28](https://github.com/SairaAsua/movimiento-armonico-investigacion/pull/28) muestra por qué es útil conservar la distribución dentro del recorrido, aunque todavía no valida ninguna región Laban. Los puntos cercanos al umbral con incertidumbre que cruza la frontera requieren estado incierto o análisis de sensibilidad; no se convierten en etiquetas seguras por redondeo.
+Una región radial puede definirse **a lo largo de la curva** como `S(s)=1{||q(s)||/R≤a}`, con origen, escala, umbral `a` y regla para cruces de frontera declarados antes del contraste. No sustituir `S(s)` por el `rho_min` o la fracción de arco **resumidos para toda la frase**: una etiqueta constante dentro de esa frase da `H(S)=J=0` por definición y no pregunta en qué fase ocurrió la cercanía. El [banco de ocupación radial del PR #28](https://github.com/SairaAsua/movimiento-armonico-investigacion/pull/28) muestra por qué es útil conservar la distribución dentro del recorrido, aunque todavía no valida ninguna región Laban. Los puntos cercanos al umbral con incertidumbre que cruza la frontera requieren estado incierto o análisis de sensibilidad; no se convierten en etiquetas seguras por redondeo.
+
+**Un solo segmento basta para mostrar el problema de la etiqueta única.** La cuerda 3D `(-1,0,0)→(1,0,0)`, con `R=1` y región central `||q||≤0,2`, tiene longitud `2` y recorre `0,4` dentro de esa región: su ocupación exacta **en la polilínea** es `P_s(S=1)=0,2`. Etiquetar el segmento por ambos extremos da `0`; etiquetarlo por su punto medio da `1`. Para `P_s`, partir la cuerda en sus intersecciones con la frontera radial recupera `0,2` bajo el modelo de polilínea. Para `P_t`, los dos cuadros no revelan cuánto **tiempo físico** pasó dentro de la región; `0,2` sería válido sólo bajo una interpolación lineal a rapidez constante entre ellos, no una medición. También deben tratarse cruces de bin de fase y errores de reloj. El [límite entre cuadros del PR #28](https://github.com/SairaAsua/movimiento-armonico-investigacion/pull/28) sigue impidiendo confundir cuerda y gesto continuo.
 
 ### El máximo de `J` depende de cuánta curva ocupa cada región
 

@@ -54,7 +54,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Acople espacio–tiempo](ACOPLE_ESPACIO_TIEMPO.md): misma curva y mismos marginales de rapidez/aceleración, pero acento en regiones corporales opuestas; incluye [control sintético](espacio_tiempo_acople_sintetico.py) y un descriptor condicional a validar antes del piloto.
 
-[Información mutua espacio–fase](J_ESPACIO_FASE_PONDERACION.md): el [banco exacto](j_espacio_fase_sintetico.py) separa ponderación por tiempo o arco, muestra cómo agrupar ciclos puede borrar relaciones opuestas y demuestra que distinta ocupación radial cambia el techo de `J`; permanece exploratorio hasta fijar medida, región y unidad de análisis.
+[Información mutua espacio–fase](J_ESPACIO_FASE_PONDERACION.md): el [banco exacto](j_espacio_fase_sintetico.py) separa ponderación por tiempo o arco, muestra cómo agrupar ciclos puede borrar relaciones opuestas y demuestra que distinta ocupación radial cambia el techo de `J`. La nota distingue cruces radiales de la polilínea y tiempos entre cuadros; `J` permanece exploratorio hasta fijar medida, región y unidad de análisis.
 
 [Factibilidad del acople con cámaras](ACOPLE_CAMARA_FACTIBILIDAD.md): simulación proyectada con FPS, tamaño de gesto, ruido y pérdida de cuadros hipotéticos; incluye [script reproducible](acople_camara_sintetico.py) y criterios para el banco técnico real.
 
