@@ -72,7 +72,9 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Ciclos, transiciones y frases](FRASES_TRANSICIONES_SEGMENTACION.md): tres capas de segmentación con fuentes experimentales; preserva el orden espacial de transiciones sin asignar fase periódica donde no corresponde. Incluye [control sintético de orden](frases_orden_sintetico.py).
 
-[Experiencia en primera persona](EXPERIENCIA_PRIMERA_PERSONA.md): autoinforme inmediato por bloque y posible entrevista de episodios singulares, con límites de memoria, sugestión y alineación temporal. [Ficha de experiencia por bloque](FICHA_EXPERIENCIA_BLOQUE_V0.md): guion neutral provisional y campos de factibilidad para probar comprensión sin confundir vivencia, video y fisiología.
+[Experiencia en primera persona](EXPERIENCIA_PRIMERA_PERSONA.md): autoinforme inmediato por bloque y posible entrevista de episodios singulares, con límites de memoria, sugestión y alineación temporal. Incluye la fuente autoral de Kaparo sobre tango como antecedente conceptual, no dato experimental. [Ficha de experiencia por bloque](FICHA_EXPERIENCIA_BLOQUE_V0.md): guion neutral provisional y campos de factibilidad para probar comprensión sin confundir vivencia, video y fisiología.
+
+[Giro corporal y experiencia vestibular](GIRO_CUERPO_ESTADO_VESTIBULAR_2023.md): lectura de un antecedente primario con simios que giran **el cuerpo** sujetos a una cuerda; distingue ese mecanismo y su indicador conductual del rope flow de Nico y de su experiencia informada.
 
 [Cadena de consonancia, belleza y economía](CADENA_CONSONANCIA_BELLEZA_ECONOMIA.md): regla de comparación conjunta por bloques realmente comparables, pares concordantes/discordantes e inferencias observacionales frente a causales.
 
