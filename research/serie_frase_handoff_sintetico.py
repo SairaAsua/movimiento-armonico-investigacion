@@ -17,6 +17,7 @@ class Adjudication:
     episodes_complete: bool
     continuity_verified: bool
     hard_bounds_audited: bool
+    physical_support_audited: bool  # no constructed closure as an observed episode
 
 
 @dataclass(frozen=True)
@@ -92,7 +93,8 @@ class PhraseHandoff:
             return out  # partial, aborted or superseded never becomes an audio value
         proof = message.adjudication
         if (not proof.episodes_complete or not proof.continuity_verified
-                or not proof.hard_bounds_audited or proof.cross_leader_tie_possible
+                or not proof.hard_bounds_audited or not proof.physical_support_audited
+                or proof.cross_leader_tie_possible
                 or not proof.event_ids or len(set(proof.event_ids)) != len(proof.event_ids)
                 or len(proof.possible_words) != 1
                 or message.certified_word != proof.possible_words[0]
@@ -114,10 +116,10 @@ def main() -> None:
           context: tuple[str, str, str, str] = ctx, fingerprint: str | None = None,
           possible_words: tuple[str, ...] | None = None, tie: bool = False,
           complete: bool = True, continuity: bool = True,
-          bounds_audited: bool = True) -> Phrase:
+          bounds_audited: bool = True, physical_support: bool = True) -> Phrase:
         proof = Adjudication(tuple(f"e{i}" for i in range(len(word or ""))),
                              possible_words if possible_words is not None else ((word,) if word else ()),
-                             tie, complete, continuity, bounds_audited)
+                             tie, complete, continuity, bounds_audited, physical_support)
         return Phrase(phrase, rev, context, closed, available, expires, state, word, proof,
                       fingerprint or f"{phrase}:{rev}:{state}:{word}")
 
@@ -137,6 +139,9 @@ def main() -> None:
     assert gate.ingest(m("p4d", 1, complete=False), 163) == []
     assert gate.ingest(m("p4e", 1, continuity=False), 164) == []
     assert gate.ingest(m("p4f", 1, bounds_audited=False), 165) == []
+    # A source that filled a required episode with a drawn geometric link
+    # cannot certify the word as a sequence of physical events.
+    assert gate.ingest(m("p4g", 1, physical_support=False), 166) == []
 
     assert [a.kind for a in gate.ingest(m("p5", 1), 170)] == ["publish"]
     assert [a.reason for a in gate.ingest(m("p6", 1, available=180), 175)] == ["not_available"]
