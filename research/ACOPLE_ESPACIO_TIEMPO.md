@@ -2,6 +2,8 @@
 
 Nota de diseño, 24 de septiembre de 2026. Las [ocho notas sobre ritmo atribuidas a Laban en traducción](LABAN_NOTAS_RITMO.md) tratan espacio, duración y fuerza como aspectos relacionados. Aquí se propone una operación **nuestra** para preguntar por esa relación en rope flow. No es una fórmula histórica de Laban, una ecuación de HIT ni una puntuación de armonía.
 
+La [guía de escritura de *Choreographie*, pp. 100–103](https://github.com/SairaAsua/movimiento-armonico-investigacion/blob/3ec1208/research/LABAN_GUIA_ESCRITURA_1926.md) ubica signos rítmicos en otra columna, mientras incluye lento/rápido entre signos que modifican la línea principal. Es una razón histórica más precisa para contrastar tanto capas separadas como su asociación situada; **no** deriva ni valida el descriptor condicional que definimos abajo. La traducción de 2011 y el significado de los signos necesitan cotejo experto y alemán.
+
 ## Por qué los resúmenes separados son insuficientes
 
 Para una trayectoria `r(t)` en un **marco fijado** y un ciclo válido, sea `s` su longitud acumulada, `L` la longitud total y `v=ds/dt>0` en tramos de avance. Un resumen espacial por arco (`G_s`) conserva la curva pero no dónde fue rápida; un histograma de rapidez conserva cuánta rapidez hubo pero no en qué dirección corporal. Lo mismo vale para un histograma de aceleración o su integral: puede ignorar la asociación de un acento con un lugar del recorrido. El [contraejemplo ejecutable](espacio_tiempo_acople_sintetico.py) construye dos vueltas de un círculo unitario:
