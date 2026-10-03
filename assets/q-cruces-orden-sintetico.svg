@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-labelledby="title desc">
+  <title id="title">Mismos cuatro desplazamientos, distinto cruce</title>
+  <desc id="desc">A la izquierda, un polígono cerrado simple. A la derecha, los mismos desplazamientos en otro orden forman un recorrido que se cruza una vez. Ambos tienen el mismo Q y largo.</desc>
+  <rect width="960" height="380" rx="18" fill="#f5f9f8"/>
+  <text x="240" y="49" text-anchor="middle" fill="#173f4b" font-size="22" font-family="Arial, sans-serif" font-weight="700">Recorrido simple</text>
+  <text x="720" y="49" text-anchor="middle" fill="#173f4b" font-size="22" font-family="Arial, sans-serif" font-weight="700">Recorrido cruzado</text>
+  <line x1="480" y1="72" x2="480" y2="325" stroke="#c1d6d5" stroke-width="2"/>
+  <polyline points="375,150 235,150 95,220 235,290 375,150" fill="none" stroke="#126379" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="580,290 720,150 580,150 720,220 580,290" fill="none" stroke="#126379" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <g fill="#173f4b" stroke="#ffffff" stroke-width="3">
+    <circle cx="375" cy="150" r="10"/><circle cx="235" cy="150" r="10"/><circle cx="95" cy="220" r="10"/><circle cx="235" cy="290" r="10"/>
+    <circle cx="580" cy="290" r="10"/><circle cx="720" cy="150" r="10"/><circle cx="580" cy="150" r="10"/><circle cx="720" cy="220" r="10"/>
+  </g>
+  <circle cx="673.33" cy="196.67" r="9" fill="#bf453b" stroke="#ffffff" stroke-width="3"/>
+  <g fill="#173f4b" font-size="16" font-family="Arial, sans-serif" font-weight="700">
+    <text x="389" y="143">0</text><text x="226" y="132">1</text><text x="72" y="220">2</text><text x="225" y="319">3</text>
+    <text x="557" y="316">0</text><text x="732" y="145">1</text><text x="558" y="140">2</text><text x="733" y="221">3</text>
+  </g>
+  <text x="480" y="353" text-anchor="middle" fill="#425b62" font-size="16" font-family="Arial, sans-serif">Trayectorias puntuales sintéticas · mismo Q y largo · no son curvas de soga medidas</text>
+</svg>

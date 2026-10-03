@@ -20,6 +20,42 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Pérdida de información pitch–espacio](PITCH_ESPACIO_PERDIDA.md): [cálculo de grafo reproducible](pitch_espacio_grafo.py) que muestra qué relaciones no puede comunicar una nota cromática por vértice o un pitch dependiente sólo de altura en nuestra plantilla ideal; define una prueba perceptiva futura para Beacon.
 
+[Situación del recorrido frente a orientación](LABAN_SITUACION_RECORRIDO.md): [banco sintético 3D](situacion_recorrido_sintetica.py) donde trayectorias con el mismo `Q` pasan por regiones distintas respecto del centro; [gate de calidad para huecos y poses espurias](situacion_calidad_sintetica.py); [factorial `Q`–situación–`R`](laban_hit_situacion_factorial.py); y sensibilidades en CMU al [marco de ejes](cmu_situacion_marcos.py), [origen corporal](cmu_situacion_origen.py) y [descarte de cuadros](cmu_situacion_decimacion.py). Define medidas continuas candidatas y su límite de error, sin adjudicar etiquetas Laban ni resultados sobre Nico.
+
+[Ambigüedad de situación con pose 2D idéntica](SITUACION_PROYECCION_2D.md): [contraejemplo pinhole ejecutable](situacion_proyeccion_ambigua.py) con igual mano y origen proyectados, pero distintos `rho_min` y `V_r` 3D. Delimita lo que HarMoCAP 2D puede transmitir a una futura sonificación.
+
+[Dependencia de extremos radiales con la duración de frase](SITUACION_VENTANA_EXTREMOS.md): un mínimo puede bajar por tener más ciclos observados. Fija ventanas comparables y análisis por ciclo antes de atribuir esa diferencia a situación o HIT.
+
+[Ocupación radial por longitud de arco](SITUACION_OCUPACION_ARCO.md): [banco sintético](situacion_ocupacion_arco_sintetica.py) donde `Q`, extremos, `V_r`, longitud y extremos inicial/final coinciden, pero la fracción del recorrido cerca del centro difiere. Propone una familia descriptiva rival para desarrollo, sin etiqueta Laban ni nueva señal Beacon validada.
+
+[Incertidumbre de ocupación radial](SITUACION_OCUPACION_INCERTIDUMBRE.md): deriva una banda condicional para `F_arc` bajo error 3D acotado y muestra con un [banco sintético](situacion_ocupacion_incertidumbre_sintetica.py) que una curva cercana al umbral puede cambiar de ocupación 1 a 0; sin cotas físicas medidas no se usa como señal validada.
+
+[Mismo `Q`, distinto cruce del recorrido](Q_CRUCES_ORDEN.md): [contraejemplo ejecutable](q_cruces_orden_sintetico.py) con idénticos tramos y largo, pero distinto orden/autocruce de una trayectoria puntual; no es topología de soga en 3D.
+
+La misma nota añade un [banco de giro firmado](q_giro_orden_sintetico.py): `W` de una poligonal cerrada distingue el par con igual `Q`, cambia con reversa/espejo y no equivale al número de cruces. Un [contraejemplo 3D de dos vistas](q_giro_proyeccion_sintetica.py) muestra `W=1` en `xy` y `W=0` en `xz` para la misma trayectoria no plana. Es una representación exploratoria de orden **por vista**, no una categoría histórica de Laban.
+
+[Giro y disponibilidad para una escucha futura](W_GIRO_TIEMPO_BEACON.md): [banco temporal sintético](w_giro_tiempo_beacon_sintetico.py) con dos vueltas de igual prefijo y `W` final distinto; separa giro local causal de resumen retrospectivo. Un [segundo banco](giro_local_incertidumbre_sintetica.py) fija cuándo el signo local queda `unknown` por error de posición o salto de rama. Ninguno afirma audio Beacon.
+
+[Cierre aproximado y giro total](W_CIERRE_APROXIMADO.md): un [banco sintético](w_cierre_aproximado_sintetico.py) completa el mismo recorrido abierto de tres maneras dentro de una tolerancia espacial y obtiene `W=0,1,2`; obliga a declarar si se midió un cierre o se agregó una cuerda por convención.
+
+[Cierre y `W` en danza pública CMU](CMU_W_CIERRE_MUESTREO.md): el [script auditado](cmu_w_cierre_muestreo.py) lee un C3D externo sin subirlo a Git; en 18 ventanas arbitrarias con cuerda recta artificial, 9 cambian `W` al descartar cuadros. No son ciclos de Nico ni una validación del giro continuo.
+
+[Incertidumbre de un cruce de trayectoria 2D](CRUCE_TRAYECTORIA_INCERTIDUMBRE.md): [certificado geométrico ejecutable](cruce_trayectoria_incertidumbre.py) bajo error acotado de vértices; [contraejemplo entre cuadros](cruce_entre_cuadros_sintetico.py) con igual pose puntual muestreada y distinto autocruce; y [envolvente de alcanzabilidad](cruce_envolvente_rapidez_sintetica.py) que sí descarta cruces entre intervalos separados cuando sus regiones posibles no se tocan. Ninguno valida la soga.
+
+[Sobre sintético de situación del recorrido](CONTRATO_SITUACION_V0.md): [fixture JSONL](research_path_situation.synthetic.jsonl) y [validador](validar_research_path_situation.py) conservan origen, marco, escala, ventana, reloj e invalidez para una futura rama científica HarMoCAP–Weaver–Beacon. Sólo comprueban estructura y aritmética de un ejemplo ideal, no precisión espacial ni audio.
+
+[Presupuesto de error de situación](PRESUPUESTO_ERROR_SITUACION.md): intervalos con error duro de posición/origen/escala y cota para variación radial, con [banco sintético](situacion_error_sintetico.py) que expone cuándo la cota se vuelve trivial. No estima el error de las cámaras reales.
+
+[Excursiones entre cuadros](MUESTREO_SITUACION_ENTRE_CUADROS.md): [contraejemplo y cota sintéticos](situacion_entre_cuadros_sintetico.py) distinguen el mínimo de la polilínea muestreada del mínimo del gesto continuo; el segundo sólo puede acotarse con un límite de rapidez relativa independiente.
+
+[Rectitud de un episodio entre cuadros](LINEA_RECORRIDO_ENTRE_CUADROS.md): cota inferior por arco observado y dos cotas superiores alternativas, basadas en rapidez o aceleración continuas validadas independientemente. El ejemplo exacto alcanza el límite de aceleración y muestra que dos cuadros de extremos idénticos no prueban un recorrido recto.
+
+[Escala instrumental de la cota `V_r` en danza CMU](CMU_SITUACION_PRECISION_VR.md): el [cálculo reproducible](cmu_situacion_precision_vr.py) aplica la desigualdad a nueve ventanas de muñecas con grillas derivadas de 120/30/24 Hz. Es un ejercicio de diseño, no una especificación de cámaras para Nico.
+
+[Estructura temporal del error en `V_r`](CMU_SITUACION_ERROR_TEMPORAL.md): [perturbaciones sintéticas sobre CMU](cmu_situacion_error_temporal.py) con igual norma de error por cuadro muestran respuestas distintas ante sesgo, deriva y jitter. No describen errores medidos de nuestras cámaras.
+
+[Validación propuesta de situación frente a Laban y HIT](VALIDACION_SITUACION_LABAN_HIT.md): separa exactitud 3D, acuerdo experto, aporte de `rho_min/V_r` sobre `Q` y alcance, y valor incremental de fase en los mismos días y frases. Requiere humanos y originales consentidos; todavía no contiene resultados.
+
 [Sobre científico sintético de `plane_normal_Q_live`](CONTRATO_Q_LIVE_V0.md): schema, fixture y validador que conservan definición de recorrido, cobertura, reloj, vencimiento e incertidumbre para una futura rama 3D de Beacon; la incertidumbre de CMU sigue `not_estimated`.
 
 [Contrato científico sintético de `spacetime_c_live`](CONTRATO_C_LIVE_V0.md): schema, fixture y validador local para una salida causal con cobertura, relojes, procedencia y estado inválido; aún no es una extensión de HarMoCAP ni una prueba de audio.
@@ -35,6 +71,10 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [Replay causal de `Q_live` en CMU](CMU_Q_CAUSAL_PLANOS.md): cobertura de ventanas y diagnóstico de planitud local; muestra que alargar la ventana gana recorrido pero puede mezclar planos.
 
 [Mapeo diagnóstico al contrato Beacon](BEACON_FACTORIAL_CONTROLES.md): cuatro pares `Q/R` generan vectores de ganancias distintos dentro de rangos reales de `beacon-spatial`; es prueba offline numérica, todavía sin ruta aplicada ni audio.
+
+[Mapeo numérico de situación hacia Beacon](BEACON_SITUACION_MAPEO_OFFLINE.md): [ocho casos sintéticos](beacon_situacion_controles.py) conservan bandas Q/R y añaden dos controles para `rho_min/V_r`, con reset separado. Es un diseño de escucha retrospectiva, sin OSC ni audio producido.
+
+[Incertidumbre de las ganancias de situación](BEACON_SITUACION_INCERTIDUMBRE.md): [propagación ejecutable](beacon_situacion_incertidumbre.py) de cotas geométricas hipotéticas a bandas 7/8; separa diferencia nominal, separación garantizada del control y audibilidad todavía no probada.
 
 ## Plan de punta a punta
 
@@ -59,6 +99,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 [AIST++ como banco externo](AIST_BENCHMARK_ALCANCE.md): fuente primaria y estudio de clasificación de géneros; precisa qué puede probar con articulaciones 3D, por qué sus 60 fps no certifican fase física y qué condiciones de acceso faltan antes de usar datos.
 
 [CMU danza moderna, banco humano externo](CMU_DANZA_BANCO_REAL.md): una toma C3D oficial de 1.123 cuadros a 120 Hz procesada con [script auditable](cmu_danza_05_02_audit.py); prueba marco corporal, recorrido de marcadores y sensibilidad del contraste a la definición de «muñeca», sin extrapolar a Nico.
+
+[Relación espacial entre proxies de muñeca en CMU](CMU_RELACION_MANOS.md): [script reproducible](cmu_relacion_manos.py) de distancia 3D, proyección con profundidad omitida y sensibilidad a la elección de punto en la misma toma pública. Es factibilidad descriptiva, sin referencia de exactitud ni rope flow.
 
 [Replay causal del acople en CMU](ACOPLE_CAUSAL_REPLAY.md): [script reproducible](cmu_causal_c_replay.py) con escala fijada al primer segundo, ventanas retrospectivas y estados sin valor cuando falta una región; cuantifica cobertura y verifica que truncar el futuro no cambia el pasado, sin reclamar audio live.
 
@@ -104,6 +146,10 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Seguimiento de soga flexible, fuentes DLO y DOT](SOGA_VISION_DLO_FUENTES.md): separa reconstrucción de figura, topología e identidad de puntos materiales; examina la estructura documentada del dataset DOT y propone un benchmark externo de dos/cuatro vistas, seguido del banco técnico propio antes de incorporar `rope_3d_curve` o `rope_material_track`.
 
+[MovingCables como benchmark externo](SOGA_MOVINGCABLES_BENCHMARK.md): lectura de métodos y discusión y plan de evaluación 2D de cable desplazado; la manguera grabada no se autocruza ni sufre la oclusión corporal relevante para Nico. Dataset aún no ejecutado.
+
+[MCor 2025: imagen más acción conocida](SOGA_MCOR_CORRELACION_2025.md): identificación retrospectiva de un cable agarrado mediante flujo y posición de pinza; distingue correlación de movimiento de fase HIT y documenta por qué no equivale a feedback live de Nico.
+
 [Procedencia de fases y circularidad](FASE_PROCEDENCIA_CIRCULAR.md): evita que dos copias del reloj de soga produzcan una falsa relación HIT perfecta.
 
 [Balance energético de la soga](ENERGIA_SOGA_BALANCE.md): distingue energía de la curva, trabajo de los agarres y metabolismo; decide cuándo haría falta fuerza instrumentada.
@@ -120,7 +166,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Bandas de Beacon y frecuencias corporales](BEACON_BANDAS_NO_FRECUENCIAS_CORPORALES.md): verifica que 40/80/120 Hz son centros de filtros de un audio de entrada, no tonos ni vibraciones corporales garantizadas.
 
-[Guía piloto de anotación Laban](ANOTACION_LABAN_PILOTO.md): capas de observación y lectura experta para rope flow, reglas de codificación, cegamiento, acuerdo entre especialistas y límites de las cámaras. Es diseño pendiente de revisión humana, no una validación realizada.
+[Guía piloto de anotación Laban](ANOTACION_LABAN_PILOTO.md): capas de observación y lectura experta para rope flow, reglas de codificación, cegamiento, acuerdo entre especialistas y límites de las cámaras. Su [sidecar de soportes de eventos](soportes_eventos_ejemplo_sintetico.csv) y [validador](validar_soportes_eventos.py) separan instante nominal de intervalo físico alegado para evaluar orden; son sintéticos y no certifican cámaras. Es diseño pendiente de revisión humana, no una validación realizada.
 
 [Validador de linaje](validar_linaje.py) y [manifiesto sintético](manifiesto_ejemplo_sintetico.json): comprueban la unión estructural anotación→clip→bundle→vistas originales y rango de reloj. El ejemplo no contiene medios reales; pasar el validador no prueba la integridad física de un video ni validez de su geometría.
 

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 390" role="img" aria-labelledby="title desc">
+  <title id="title">Una misma trayectoria 3D cambia de giro firmado al proyectarse</title>
+  <desc id="desc">A la izquierda, la proyección XY de cuatro vértices espaciales forma una ruta cerrada simple con W igual a uno. A la derecha, la proyección XZ de los mismos vértices forma una ruta cruzada con W igual a cero.</desc>
+  <rect width="960" height="390" rx="18" fill="#f5f9f8"/>
+  <line x1="480" y1="70" x2="480" y2="322" stroke="#c1d6d5" stroke-width="2"/>
+  <text x="240" y="48" text-anchor="middle" fill="#173f4b" font-size="22" font-family="Arial, sans-serif" font-weight="700">Vista XY · W = 1</text>
+  <text x="720" y="48" text-anchor="middle" fill="#173f4b" font-size="22" font-family="Arial, sans-serif" font-weight="700">Vista XZ · W = 0</text>
+  <polyline points="100,150 380,300 286.67,100 193.33,150 100,150" fill="none" stroke="#126379" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="580,220 860,140 766.67,300 673.33,100 580,220" fill="none" stroke="#126379" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#173f4b" stroke="#ffffff" stroke-width="3">
+    <circle cx="100" cy="150" r="9"/><circle cx="380" cy="300" r="9"/><circle cx="286.67" cy="100" r="9"/><circle cx="193.33" cy="150" r="9"/>
+    <circle cx="580" cy="220" r="9"/><circle cx="860" cy="140" r="9"/><circle cx="766.67" cy="300" r="9"/><circle cx="673.33" cy="100" r="9"/>
+  </g>
+  <circle cx="711.76" cy="182.35" r="9" fill="#bf453b" stroke="#ffffff" stroke-width="3"/>
+  <g fill="#173f4b" font-size="16" font-family="Arial, sans-serif" font-weight="700">
+    <text x="75" y="142">0</text><text x="390" y="307">1</text><text x="281" y="85">2</text><text x="185" y="178">3</text>
+    <text x="555" y="222">0</text><text x="869" y="144">1</text><text x="773" y="317">2</text><text x="665" y="87">3</text>
+  </g>
+  <text x="480" y="357" text-anchor="middle" fill="#425b62" font-size="16" font-family="Arial, sans-serif">Mismos vértices 3D · proyecciones ortográficas sintéticas · no son datos de soga</text>
+</svg>

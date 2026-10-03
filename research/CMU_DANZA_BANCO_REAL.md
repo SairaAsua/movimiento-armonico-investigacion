@@ -51,6 +51,8 @@ Para probar dependencia de muestreo, el script tomó uno de cada 2, 4, 8 o 16 cu
 
 La amplitud entre fases de decimación crece al espaciar cuadros, especialmente a 7,5 Hz. Esa variación no estima el error de las cámaras de Saira: aquí no se cambió exposición, óptica, ruido ni detector, sólo se descartaron muestras de una toma de marcadores. Es otro motivo para comparar descriptores a los **FPS/PTS efectivos** y contra una referencia, sin suponer que interpolar un clip lento reconstruye el acento que no se observó.
 
+Un [banco posterior de situación del recorrido](LABAN_SITUACION_RECORRIDO.md#sensibilidad-a-cantidad-y-fase-de-cuadros) aplica el mismo principio a `rho_min`, `V_r` y `Q` con ventanas y extremos fijos, recorriendo fases de grilla de 60 a 12 Hz. Separa ese efecto de muestreo de los cambios de origen y marco; tampoco estima error de cámaras.
+
 ## Control de inversión temporal: una pérdida exacta de información
 
 El script invirtió el orden de los 1.123 cuadros **después** de construir las coordenadas corporales y volvió a calcular `C` y `Q`. Ambos permanecieron iguales hasta tolerancia numérica: `C` izquierda +2,251 y derecha +2,775 `L/s`; las ternas `Q` relativas al torso tampoco cambiaron. Esto no es una propiedad exclusiva de la danza CMU: `C` usa longitudes de tramo, rapidez escalar y región espacial; `Q` usa cuadrados de componentes. Revertir la secuencia conserva esas cantidades por tramo, aunque invierte todos los desplazamientos orientados.
