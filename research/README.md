@@ -34,7 +34,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Proyección oblicua → PCM offline Weaver/Shaper](WEAVER_VIDEO_PROYECCION_PCM.md): el mismo MP4 sintético da controles y WAV distintos al usar fase de imagen cruda o rectificada con el factor del generador; fija la frontera entre sonido diagnóstico y calibración física.
 
-[Rotación de MP4 entre HarMoCAP y Weaver](VIDEO_ROTACION_BACKENDS.md): fixture de cuatro cuadros muestra PTS iguales y píxeles autorrotados en OpenCV, mientras R08 rechaza ese medio hasta un adaptador explícito; especifica el gate de coordenadas para combinar pose y soga.
+[Rotación de MP4 entre HarMoCAP y Weaver](VIDEO_ROTACION_BACKENDS.md): fixture de cuatro cuadros muestra PTS iguales y píxeles autorrotados en OpenCV, mientras R08 rechaza ese medio hasta un adaptador explícito; especifica el gate de coordenadas para combinar pose y soga. El [control VFR](VIDEO_ROTACION_VFR.md) demuestra que recodificar sin política de FPS puede duplicar cuadros aunque R08 acepte el derivado; `-fps_mode vfr` conservó cuadro y PTS en ese archivo construido.
 
 [Auditoría del proxy espacial de HarMoCAP](LABAN_PROXY_VENTANA_TIEMPO.md): misma circunferencia a dos cadencias deja `Q` por arco igual y cambia `laban_space_proxy` de 0,858 a 0,505 por su ventana de 300 ms; fija una sensibilidad necesaria antes de atribuir aportes separados a Laban y HIT.
 
