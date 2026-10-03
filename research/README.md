@@ -94,7 +94,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Estimandos y contrastes por fase](ESTIMANDOS_Y_CONTRASTES.md): qué compara cada unidad, secuencia predictiva base → Laban → HIT, prueba metabólica condicionada y resultados que no apoyarían la hipótesis.
 
-[Effort, estabilidad y economía](EFFORT_ECONOMIA_CONTRASTES.md): distingue cualidad de movimiento en Laban, esfuerzo percibido y costo metabólico; tres experimentos de coordinación muestran por qué no se pueden equiparar. [Caminata de tango, cinemática 3D y costo oxidativo](TANGO_CINEMATICA_COSTO_2026.md): lectura primaria de un diseño de bloques con gases y captura, sus exclusiones y sus controles ausentes; no mide belleza ni rope flow.
+[Effort, estabilidad y economía](EFFORT_ECONOMIA_CONTRASTES.md): distingue cualidad de movimiento en Laban, esfuerzo percibido y costo metabólico; tres experimentos de coordinación muestran por qué no se pueden equiparar. [Caminata de tango, cinemática 3D y costo oxidativo](TANGO_CINEMATICA_COSTO_2026.md): lectura primaria de un diseño de bloques con gases y captura, sus exclusiones y sus controles ausentes; no mide belleza ni rope flow. [Inventario de datos abiertos de tango](TANGO_DATOS_PUBLICOS_AUDITORIA.md): versiones, 71 clips y límite para una unión con gases sin importar datos personales al repositorio.
 
 [Auditoría de Chang 2026](CHANG_2026_AUDITORIA.md): alcance del resumen sobre belleza, coordinación y «economía» en danza latina, con método pendiente de lectura por restricción de acceso al PDF.
 
