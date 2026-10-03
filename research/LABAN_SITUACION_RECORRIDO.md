@@ -32,6 +32,21 @@ Para un segmento de extremos relativos `a,b`, `rho_min` proyecta el origen a `a+
 
 El banco también comprueba que trasladar **trayectoria y origen juntos** conserva las cuatro cantidades, y que escalar trayectoria y `R` juntos conserva las razones adimensionales y `Q`. Es una prueba de propiedades del cálculo, no de validez de una categoría histórica o corporal. Un mismo valor de `rho_min` puede describir trayectorias muy distintas; ninguna de estas cantidades por sí sola decide central/periférico/transversal.
 
+## Prueba de sensibilidad en movimiento humano externo
+
+El [archivo CMU 05_02 ya auditado](CMU_DANZA_BANCO_REAL.md) contiene danza moderna con marcadores, **sin soga ni referencia anatómica independiente**. El [script de sensibilidad](cmu_situacion_marcos.py) verifica su SHA-256 `04bb9be74cd9183eb9f873b26c6eb4dbbf613747af5d6d0ef41f146b859d51d7`, residual de diez marcadores y marco no degenerado mediante los lectores existentes. La escala es la mediana de separación de hombros durante los primeros 120 cuadros: `303,532 mm`. En esta prueba `R=1` significa **un ancho de hombros**, no alcance disponible; un valor `rho>1` no es un fallo corporal. Se usan nueve ventanas consecutivas de 120 intervalos a 120 Hz (0–9 s), con extremos compartidos y últimos 42 cuadros fuera.
+
+Se compara la muñeca proxy relativa al centro de cintura expresada (a) en ejes que giran con el torso cuadro a cuadro y (b) en los ejes del primer cuadro, congelados durante la toma. **Ambas restan el traslado de cintura**, pero sólo (a) quita el giro global del torso. El cálculo coteja la rama (a) con el replay CMU anterior. Por conservación de norma bajo rotación, el radio en cada cuadro coincide exactamente; `rho_min` de la *polilínea* puede diferir un poco porque interpolar entre dos cuadros en ejes distintos traza cuerdas distintas.
+
+| Proxy | Máxima diferencia `rho_min` (anchos de hombro) | Mediana / máxima `|ΔV_r|` | Máxima distancia L1 entre `Q` |
+|---|---:|---:|---:|
+| Muñeca izquierda | `0,000000` a seis decimales | `0,046835 / 0,288521` | `0,402935` |
+| Muñeca derecha | `0,000232` | `0,020828 / 0,224827` | `0,388269` |
+
+La diferencia máxima de `V_r` ocurre en la ventana 600–720 (5–6 s) para ambas muñecas. Allí la izquierda da `0,418852` con ejes móviles y `0,130331` con ejes fijos; la derecha, `0,391500` y `0,166673`. La longitud de trayectoria izquierda correspondiente es `2,811059` frente a `9,051072` anchos de hombro, y la derecha `3,513261` frente a `8,280996`: **el denominador de `V_r` cambia mucho** cuando la rotación corporal entra o sale del recorrido. No se atribuye esa ventana a una figura particular sin anotación de la tarea. Los números son descripciones de este archivo y de estos dos marcos, no error de pose ni evidencia de que uno sea la lectura Laban correcta.
+
+La consecuencia práctica es separar dos preguntas: cercanía radial de una mano al centro declarado, relativamente estable frente a una rotación de ejes, y fracción de recorrido radial, que depende mucho de qué movimiento se resta al definir la trayectoria. Registrar ambas versiones en desarrollo; fijar una y su incertidumbre antes de reservar sesiones de Nico. Una sola vista 2D de HarMoCAP no hereda la validez 3D de este C3D ni permite inferir la curva de soga.
+
 ## Condición de medición para el piloto
 
 1. Declarar **qué** trayectoria se mide: mano, codo o curva de soga no son intercambiables. Definir origen, ejes, escala `R`, intervalo de frase, vista y si el marco acompaña la pelvis o conserva orientación de sala. Una base que gira puede producir componentes de desplazamiento aunque el punto esté quieto respecto del cuerpo; la [descomposición del marco móvil](MARCO_MOVIL_DESCOMPOSICION_C.md) hace visible ese problema. Probar sensibilidad a marcos alternativos antes de interpretar `Q` o `V_r`.
