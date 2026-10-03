@@ -1,0 +1,22 @@
+# Giro de trayectoria: qué se sabe durante la vuelta y qué sólo al terminar
+
+**Handoff conceptual para investigación y futura sonificación, 3 de octubre de 2026.** El [giro firmado `W`](Q_CRUCES_ORDEN.md) es una propiedad de una poligonal puntual 2D **cerrada**. El [contrato de `Q_live`](CONTRATO_Q_LIVE_V0.md) y su [gate de transición](https://github.com/SairaAsua/movimiento-armonico-investigacion/pull/30) ya separan muestra, ventana, disponibilidad, invalidez y reset para **otra** señal. No existe aún un canal `W` en HarMoCAP, Harmonic Weaver o Beacon; esta nota sólo delimita qué podría afirmarse antes de diseñarlo bajo la [issue #13](https://github.com/SairaAsua/movimiento-armonico-investigacion/issues/13).
+
+## Dos rutas con el mismo pasado y distinto final
+
+El [banco reproducible](w_giro_tiempo_beacon_sintetico.py) fija observaciones ideales en `0`, `0,25`, `0,5`, `0,75` y `1 s`. Ambas rutas comparten `(0,0)→(1,0)→(1,1)` hasta `0,5 s`. Después, una sigue por `(0,1)` y cierra como cuadrado simple (`W=1`); la otra pasa por `(0,5;−0,5)`, se cruza en la proyección y cierra con `W=0`. El resultado de ciclo no puede ser distinto **antes** de que difiera la observación disponible: un audio que anunciase `W=1` frente a `W=0` a `0,5 s` habría usado información futura, una predicción no identificada o un estado oculto diferente.
+
+En cambio, el giro **local** en un vértice `i` puede calcularse al recibir tres puntos consecutivos válidos: `αᵢ=atan2(det(dᵢ₋₁,dᵢ),dᵢ₋₁·dᵢ)`. El giro del vértice observado a `0,25 s` se conoce con el punto de `0,5 s` y es igual en ambas rutas. El del vértice de `0,5 s` se conoce recién al llegar el punto de `0,75 s` y entonces difiere. El `W` entero de la vuelta necesita además el cierre válido a `1 s` y el giro entre último y primer tramo. Estos tiempos son **lógicos sintéticos con latencia cero modelada**, no latencia física medida. Un estimador real debería registrar `source_time_us`, `feature_time_us`, `available_at_us`, relojes mapeados y vencimiento.
+
+## Dos familias de salida, dos promesas
+
+| Salida candidata | Cuándo existe | Qué podría hacer audible | Qué no certifica |
+|---|---|---|---|
+| `path_turning_number_proj` (`W`) | Después de cierre y gate geométrico de error, por `view_id` y ciclo | Resumen retrospectivo de giro firmado de la **poligonal muestreada** | Cruce real entre cuadros, topología 3D de soga, fase HIT, cualidad estética o señal inmediata de la vuelta aún abierta |
+| `signed_turn_increment_proj` (`αᵢ`) | Tras el tercer punto válido del triple, más tiempo de cómputo/transporte | Cambio local de dirección de un punto proyectado, con signo y magnitud | `W` final, dirección corporal 3D, que el movimiento se originó en el core o que se siente de cierta forma |
+
+Un hueco, identidad perdida, cambio de cámara/marco, reversa ambigua o error mayor que el margen **invalida** los giros que usan esa muestra. El fixture marca falta del cuarto punto en `0,75 s`: no rellena `α` ni `W`; emite un **candidato a reset** para una futura capa que hubiera estado sonando. La fuente real debería calcular su plazo por señal, emitir `invalid` aun si otras señales/cámaras siguen activas, y registrar cuándo el control y el audio dejaron de usar el dato viejo. El [ensayo de reset de Weaver](BEACON_TRANSICIONES_Y_RESET.md) muestra por qué mantener la fuente activa no prueba vigencia del descriptor.
+
+El mapeo audible no queda elegido: `W` entero, `αᵢ` y `Q_live` responden preguntas distintas y no deben compartir un nombre ni reutilizar la misma ganancia sin reglas de propiedad/mezcla. Antes de una escucha científica, el primer gate sería **representacional**: con entradas acústicas, nivel y estado inicial iguales, dos rutas con el mismo prefijo deben producir el mismo control prospectivo hasta que sus observaciones diverjan; tras divergir, el control local que promete expresar dirección debe distinguirlas dentro del error medido, y el audio grabado debe reflejar la diferencia. La señal retrospectiva sólo puede entrar al audio después de cerrar la vuelta. Después vendrían la prueba perceptiva y, por separado, los contrastes con valoraciones, experiencia o costo medidos independientemente. Este banco no prueba ninguna de esas etapas.
+
+**Reproducción:** `python research/w_giro_tiempo_beacon_sintetico.py` desde la raíz del repositorio. Dos ejecuciones locales devolvieron JSON idéntico, SHA-256 `fbc9c4c536dccbc416837ec4dda31aae71697301a0bb698ec158581c66b1df0d`. El fixture no incluye ruido, error de rastreo, exposición, latencia física ni mezcla acústica.
