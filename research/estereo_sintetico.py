@@ -92,14 +92,19 @@ def asynchronous_lateral_point(baseline_m, speed_m_s, offset_s,
     """
     p_left_time = (0.0, 0.0, depth_m)
     p_right_time = (speed_m_s * offset_s, 0.0, depth_m)
-    estimate = triangulate(project(p_left_time, 0, focal_px),
-                           project(p_right_time, baseline_m, focal_px),
+    left_observed = project(p_left_time, 0, focal_px)
+    right_observed = project(p_right_time, baseline_m, focal_px)
+    estimate = triangulate(left_observed, right_observed,
                            baseline_m, focal_px)
     if speed_m_s * offset_s >= baseline_m:
         assert estimate is None
         return None
     expected_z = depth_m * baseline_m / (baseline_m - speed_m_s * offset_s)
     assert estimate is not None and abs(estimate[2] - expected_z) < 1e-10
+    # Aunque las vistas registraron instantes distintos, un único punto 3D
+    # estático ficticio explica exactamente los dos píxeles observados.
+    assert max(abs(a - b) for a, b in zip(project(estimate, 0, focal_px), left_observed)) < 1e-10
+    assert max(abs(a - b) for a, b in zip(project(estimate, baseline_m, focal_px), right_observed)) < 1e-10
     return estimate[2] - depth_m
 
 
