@@ -10,7 +10,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Forma dinámica y contramovimiento en *Choreographie*](LABAN_FORMA_CONTRAMOVIMIENTO_1926.md): lectura de pp. 3–12 en traducción; las relaciones y el orden entre miembros importan, y un ejemplo armónico divide el espacio de forma desigual. Separa el programa histórico de una ecuación o resultado empírico.
 
-[Forma, canon y correlaciones espaciales en *Choreographie*](LABAN_CORRELACIONES_1926.md): lectura de pp. 80–88 en traducción ilustrada; distingue dirección, camino, equilibrio, miembros y sucesión frente a simultaneidad. El [control matemático](canon_fase_orden_sintetico.py) conserva `Q`, `R`, ángulo medio y distribución de fases, pero cambia el orden de liderazgo entre episodios. No toma la «armonía» histórica como medida fisiológica.
+[Forma, canon y correlaciones espaciales en *Choreographie*](LABAN_CORRELACIONES_1926.md): lectura de pp. 80–88 en traducción ilustrada; distingue dirección, camino, equilibrio, miembros y sucesión frente a simultaneidad. Un [control con episodios separados](canon_fase_orden_sintetico.py) y otro de [trayectorias continuas](canon_fase_continua_sintetico.py) conservan `Q`, `R` y ángulo medio dentro de cada par, pero cambian el orden de liderazgo. No toman la «armonía» histórica como medida fisiológica ni prueban dinámica de soga.
 
 [Forma inicial, series y apoyo en *Choreographie*](LABAN_SERIES_NOTACION_1926.md): lectura visual selectiva de pp. 89–99; una frase continua requiere transiciones y estado inicial, y el apéndice distingue apoyo/contacto y maneras de anotar un paso. Delimita por qué el control anterior de episodios separados no prueba factibilidad de una frase de soga.
 
