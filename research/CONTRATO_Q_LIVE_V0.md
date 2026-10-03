@@ -18,6 +18,8 @@ Un [exportador reproducible](exportar_cmu_q_contract.py) tomó el C3D público y
 
 Para una eventual sonificación, los **tres componentes pertenecen a una misma instantánea** y deben aplicarse como conjunto o resetearse como conjunto si la señal vence. La asignación propuesta a ganancias de bandas es una prueba de representación, no una escala corporal ni una frecuencia anatómica ([mapeo](INTEGRACION_HARMOCAP_BEACON.md), [controles factoriales](BEACON_FACTORIAL_CONTROLES.md)). La prueba siguiente con Nico deberá generar este sobre desde posiciones 3D validadas, comprobar `available_at` medido, transportar cuadro y slot sin duplicación por Weaver, registrar controles efectivamente aplicados y audio, y distinguir diferencias audibles con una entrada acústica fijada.
 
+El esquema individual no detecta **cambios entre emisiones**. La [política de continuidad propuesta](Q_STREAM_TRANSICIONES.md) y su banco sintético exigen una emisión `invalid/transition` y una ventana nueva si cambia el significado de `Q`; no prueban que el receptor real ejecute el reset.
+
 Verificar localmente:
 
 ```bash
