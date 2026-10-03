@@ -28,7 +28,7 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Orden temporal de dos eventos con incertidumbre](ORDEN_EVENTOS_INTERVALOS.md): [fixture sintético](orden_eventos_intervalos_sintetico.py) de intervalos de soporte, mapa de reloj y decisión `antes/después/indeterminado`. Define cuándo una sucesión inspirada en la pregunta de Laban podría afirmarse sin inventar orden entre cuadros o fuentes.
 
-[Contrato propuesto de frase ordenada hacia Beacon](SERIE_FRASE_CONTRATO_BEACON.md): separa archivo científico de mensaje sonoro retrospectivo, palabra de líderes identificable de orden individual, y reset ante frase parcial, revisión o vencimiento. No es un endpoint implementado ni una prueba de audio.
+[Contrato propuesto de frase ordenada hacia Beacon](SERIE_FRASE_CONTRATO_BEACON.md): separa archivo científico de mensaje sonoro retrospectivo, palabra de líderes identificable de orden individual, y reset ante frase parcial, revisión o vencimiento. El [banco sintético de handoff](serie_frase_handoff_sintetico.py) comprueba la entrega lógica y sus resets; no es un endpoint implementado ni una prueba de audio.
 
 [Cotas alternativas para el contrato `Q_live`](Q_CONTRATO_COTAS_ALTERNATIVAS.md): un tramo angularmente incierto puede hacer trivial la cota v0 aunque una cota global por error de posición sea informativa; documenta la futura decisión de versión sin atribuir precisión a cámaras reales.
 
