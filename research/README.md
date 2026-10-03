@@ -120,6 +120,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Bandas de Beacon y frecuencias corporales](BEACON_BANDAS_NO_FRECUENCIAS_CORPORALES.md): verifica que 40/80/120 Hz son centros de filtros de un audio de entrada, no tonos ni vibraciones corporales garantizadas.
 
+[Fase corporal y escucha binaural en Beacon](BEACON_FASE_BINAURAL.md): separa fase de tarea, fase entre movimientos e IPD/ITD/ILD acústicos; define qué audio y controles medir antes de afirmar que se escucha un giro.
+
 [Guía piloto de anotación Laban](ANOTACION_LABAN_PILOTO.md): capas de observación y lectura experta para rope flow, reglas de codificación, cegamiento, acuerdo entre especialistas y límites de las cámaras. Es diseño pendiente de revisión humana, no una validación realizada.
 
 [Validador de linaje](validar_linaje.py) y [manifiesto sintético](manifiesto_ejemplo_sintetico.json): comprueban la unión estructural anotación→clip→bundle→vistas originales y rango de reloj. El ejemplo no contiene medios reales; pasar el validador no prueba la integridad física de un video ni validez de su geometría.
