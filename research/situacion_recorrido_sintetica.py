@@ -61,6 +61,40 @@ def describe(points: Sequence[Point], origin: Point, reach: float) -> dict:
             "path_length": round(total, 6)}
 
 
+def describe_gated(points: Sequence[Point], origin: Point, reach: float,
+                   trusted: Sequence[bool], timestamps_s: Sequence[float],
+                   max_gap_s: float) -> dict:
+    """Gate técnico estricto: una ventana incompleta no produce descriptores.
+
+`trusted` debe provenir de calidad/identidad observada, no de interpolación.
+`computed_candidate` NO significa validez científica frente a referencia.
+"""
+    if (len(points) != len(trusted) or len(points) != len(timestamps_s)
+            or not math.isfinite(max_gap_s) or max_gap_s <= 0):
+        raise ValueError("Longitudes iguales y umbral temporal positivo requeridos")
+    evidence = {"samples": len(points), "trusted_samples": sum(bool(x) for x in trusted),
+                "max_gap_s": max_gap_s}
+    def invalid(reason: str) -> dict:
+        return {"status": "invalid", "reason": reason, **evidence}
+    if len(points) < 2:
+        return invalid("insufficient_samples")
+    if not all(trusted):
+        return invalid("missing_or_untrusted_sample")
+    if any(not math.isfinite(t) for t in timestamps_s):
+        return invalid("nonfinite_timestamp")
+    gaps = [b - a for a, b in zip(timestamps_s, timestamps_s[1:])]
+    if any(gap <= 0 for gap in gaps):
+        return invalid("nonmonotonic_timestamp")
+    if any(gap > max_gap_s for gap in gaps):
+        return invalid("temporal_gap")
+    try:
+        metrics = describe(points, origin, reach)
+    except ValueError:
+        return invalid("invalid_geometry")
+    return {"status": "computed_candidate", "reason": None, **evidence,
+            "metrics": metrics}
+
+
 def main() -> None:
     central = [(-1.0, 0.0, 0.0), (0.0, 0.0, 0.0), (1.0, 0.0, 0.0)]
     translated = [(-1.0, 0.5, 0.0), (0.0, 0.5, 0.0), (1.0, 0.5, 0.0)]
