@@ -8,6 +8,8 @@ Longstaff parte de trayectorias de un punto de un **miembro corporal** y cruza c
 
 En su clasificación, un ciclo vuelve a su punto inicial; transiciones solapadas pueden producir una curva redondeada y las discretas, una forma angular (p. 167). El propio autor presenta el esquema como preliminar y pendiente de refinamiento anatómico (p. 172). Una trayectoria y sus causas articulares son observaciones diferentes: Longstaff señala que incluso la circunducción de un hombro puede incluir una rotación menos evidente en la traza distal (p. 168).
 
+Una [serie experimental posterior sobre ochos rápidos dibujados en aire](OCHOS_KINEMATICA_EMG_2010_2015.md) midió cinemática y EMG, pero no ensayó estas dos clases de Longstaff ni rope flow. Ayuda a diseñar un futuro contraste entre trayectoria y músculos sin convertir esta taxonomía en un resultado fisiológico.
+
 ## Dos hipótesis de producción para una figura en ocho
 
 | Clase propuesta por Longstaff | Criterio cinestésico/articular en el apéndice | Consecuencia para observar rope flow |

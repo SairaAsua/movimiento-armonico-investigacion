@@ -172,6 +172,8 @@ Archivo local de investigación preliminar, iniciado el 23 de septiembre y actua
 
 [Longstaff 1996, apéndice XVI](LONGSTAFF_TAXONOMIA_RECORRIDOS.md): taxonomía exploratoria de recorridos corporales, con ochos de reversión y de ciclo continuo; separa mecanismo articular, silueta proyectada y fase periódica HIT. Incluye un [contraejemplo sintético](ocho_cinematica_ambigua.py) de dos configuraciones articulares con la misma mano en ocho.
 
+[Ochos humanos rápidos y EMG (2010/2015)](OCHOS_KINEMATICA_EMG_2010_2015.md): dos estudios originales de brazo extendido, sus sensores y límites de transferencia; el 2:1 entre ejes de un solo ocho queda como propiedad intratrayectoria, no evidencia HIT entre segmentos.
+
 [Contrato sintético de ochos proyectados](CONTRATO_OCHO_PROYECTADO_V0.md): [ejemplo JSON](ocho_medicion_ejemplo_sintetico.json), [validador estructural](validar_ocho_proyectado.py) y [cota geométrica del error de área](ocho_area_cota_sintetica.py) para dos lóbulos y tres tiempos de cruce, separados de la anotación humana; aún no mide video ni error de cámaras.
 
 [Longstaff 1996, apéndices IX–X](LONGSTAFF_1996_VECTORES_ANGULOS.md): lectura de símbolos vectoriales y secciones poliédricas; coteja la razón áurea del icosaedro y señala una discrepancia aritmética en la razón impresa para el dodecaedro.
